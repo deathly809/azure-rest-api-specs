@@ -1,0 +1,277 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2016-01-01",
+        "title": "AzureBridgeAdminClient",
+        "description": "AzureBridge Admin Client."
+    },
+    "host": "management.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/downloadedProducts": {
+            "get": {
+                "x-ms-examples": {
+                    "Get a list of downloaded products.": {
+                        "$ref": "./examples/DownloadedProduct/List.json"
+                    }
+                },
+                "description": "Get a list of downloaded products.",
+                "tags": [
+                    "DownloadedProducts"
+                ],
+                "operationId": "DownloadedProducts_List",
+                "parameters": [
+                    {
+                        "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/DownloadedProductResourcesPage"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/downloadedProducts/{resourceName}": {
+            "get": {
+                "x-ms-examples": {
+                    "Get a list of downloaded products.": {
+                        "$ref": "./examples/DownloadedProduct/List.json"
+                    }
+                },
+                "description": "Get a list of downloaded products.",
+                "tags": [
+                    "DownloadedProducts"
+                ],
+                "operationId": "DownloadedProducts_List",
+                "parameters": [
+                    {
+                        "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ResourceName"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/DownloadedProductResource"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "Resource": {
+            "description": "Base Resource Object",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "readOnly": true,
+                    "description": "URI of the resource.",
+                    "type": "string"
+                },
+                "name": {
+                    "readOnly": true,
+                    "description": "Name of the resource.",
+                    "type": "string"
+                },
+                "type": {
+                    "readOnly": true,
+                    "description": "Type of resource.",
+                    "type": "string"
+                },
+                "location": {
+                    "readOnly": true,
+                    "description": "Location where resource is location.",
+                    "type": "string"
+                },
+                "tags": {
+                    "readOnly": true,
+                    "description": "List of key value pairs.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "x-ms-azure-resource": true
+        },
+        "DownloadedProductResource": {
+            "description": "Downloaded product resource.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "description": "Properties of the resource.",
+                    "$ref": "#/definitions/DownloadedProduct"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "AzureBridge.json#/definitions/Resource"
+                }
+            ]
+        },
+        "DownloadedProduct": {
+            "description": "Properties for aggregate usage.",
+            "type": "object",
+            "properties": {
+                "displayName": {
+                    "description": "Name displayed for the product.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description of the product.",
+                    "type": "string"
+                },
+                "publisherDisplayName": {
+                    "description": "Name of publisher.",
+                    "type": "string"
+                },
+                "publisherIdentifier": {
+                    "description": "Publisher identifier.",
+                    "type": "string"
+                },
+                "provisioningState": {
+                    "description": "Provisioning state of the resource.",
+                    "$ref": "AzureBridge.json#/definitions/ProvisioningState"
+                },
+                "offer": {
+                    "description": "Offer name.",
+                    "type": "string"
+                },
+                "offerVersion": {
+                    "description": "Offer version.",
+                    "type": "string"
+                },
+                "sku": {
+                    "description": "Product SKU.",
+                    "type": "string"
+                },
+                "billingPartNumber": {
+                    "description": "Billing part number.",
+                    "type": "string"
+                },
+                "vmExtensionType": {
+                    "description": "Extension type of the VM.",
+                    "type": "string"
+                },
+                "galleryItemIdentity": {
+                    "description": "Identity in the gallary.",
+                    "type": "string"
+                },
+                "iconUris": {
+                    "description": "Information about gallery icons. Deprecated.",
+                    "type": "string"
+                },
+                "links": {
+                    "description": "Gallery item identity.",
+                    "$ref": "#/definitions/ProductLinks"
+                },
+                "legalTerms": {
+                    "description": "Legal terms for the product.",
+                    "type": "string"
+                },
+                "privacyPolicy": {
+                    "description": "Privacy policy of the product.",
+                    "type": "string"
+                },
+                "payloadLength": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "productKind": {
+                    "description": "The kind. E.g. VirtualMachineProductProperties.ProductKind or WebApp, SolutionTemplate.",
+                    "type": "string"
+                },
+                "productProperties": {
+                    "description": "the product properties. At the moment only VirtualMachineProductProperties is allowed.",
+                    "type": "string"
+                }
+            }
+        },
+        "DownloadedProductResourcesPage": {
+            "description": "Holds an array of downloaded products and the URI to the next page.",
+            "properties": {
+                "value": {
+                    "description": "Array of downloaded products.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DownloadedProductResource"
+                    }
+                },
+                "nextLink": {
+                    "description": "URI to next page.",
+                    "type": "string"
+                }
+            }
+        },
+        "ProductLink": {
+            "properties": {
+                "displayName": {
+                    "description": "Displayed name of product.",
+                    "type": "string"
+                },
+                "uri": {
+                    "description": "URI to product.",
+                    "type": "string"
+                }
+            }
+        },
+        "ProductLinks": {
+            "description": "List of product links.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/ProductLink"
+            }
+        }
+    },
+    "parameters": {},
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
+}

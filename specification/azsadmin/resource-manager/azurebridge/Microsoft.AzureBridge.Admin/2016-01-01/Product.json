@@ -34,7 +34,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "#/definitions/PublishedProductPage"
                         }
                     }
                 },
@@ -47,7 +47,93 @@
             }
         }
     },
-    "definitions": {},
+    "definitions": {
+        "PublishedProduct": {
+            "properties": {
+                "productName": {
+                    "description": "Name of the product.",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "Name displayed for the product.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Description of the product.",
+                    "type": "string"
+                },
+                "publisherDisplayName": {
+                    "description": "Name of publisher.",
+                    "type": "string"
+                },
+                "publisherIdentifier": {
+                    "description": "Publisher identifier.",
+                    "type": "string"
+                },
+                "offer": {
+                    "description": "Offer name.",
+                    "type": "string"
+                },
+                "offerVersion": {
+                    "description": "Offer version.",
+                    "type": "string"
+                },
+                "sku": {
+                    "description": "Product SKU.",
+                    "type": "string"
+                },
+                "billingPartNumber": {
+                    "description": "Billing part number.",
+                    "type": "string"
+                },
+                "provisioningState": {
+                    "description": "Provisioning state of the resource.",
+                    "$ref": "AzureBridge.json#/definitions/ProvisioningState"
+                },
+                "galleryPackageBlobSasUri": {
+                    "description": "Gallery package BLOB SAS URI.",
+                    "type": "string"
+                },
+                "galleryItemIdentity": {
+                    "description": "Gallery item identity.",
+                    "type": "string"
+                },
+                "payloadLength": {
+                    "description": "Payload size in bytes. Deprecated.",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "iconUris": {
+                    "description": "Information about gallery icons. Deprecated.",
+                    "type": "string"
+                },
+                "productKind": {
+                    "description": "The kind. E.g. VirtualMachineProductProperties.ProductKind or WebApp, SolutionTemplate.",
+                    "type": "string"
+                },
+                "productProperties": {
+                    "description": "the product properties. At the moment only VirtualMachineProductProperties is allowed.",
+                    "type": "string"
+                }
+            }
+        },
+        "PublishedProductsPage": {
+            "description": "Holds an array of prodcuts and the next link.",
+            "properties": {
+                "value": {
+                    "description": "List of products.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PublishedProduct"
+                    }
+                },
+                "nextLink": {
+                    "type": "string",
+                    "description": "URI to the next page."
+                }
+            }
+        }
+    },
     "parameters": {
         "SubscriptionIdParameter": {
             "name": "subscriptionId",
