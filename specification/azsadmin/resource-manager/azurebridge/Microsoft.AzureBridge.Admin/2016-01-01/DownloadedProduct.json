@@ -69,7 +69,7 @@
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "AzureBridge.json#/parameters/ResourceName"
+                        "$ref": "AzureBridge.json#/parameters/ResourceNameParameter"
                     }
                 ],
                 "responses": {

@@ -33,7 +33,9 @@ These settings apply only when `--tag=package-2015-06-01-preview` is specified o
 
 ``` yaml $(tag) == 'package-2015-06-01-preview'
 input-file:
+    - Microsoft.AzureBridge.Admin/2016-01-01/AzureBridge.json
     - Microsoft.AzureBridge.Admin/2016-01-01/Product.json
+    - Microsoft.AzureBridge.Admin/2016-01-01/DownloadedProduct.json
 ```
 
 ---
