@@ -1,12 +1,12 @@
-# Commerce Admin
+# AzureBridge Admin
     
 > see https://aka.ms/autorest
 
-This is the AutoRest configuration file for Commerce Admin.
+This is the AutoRest configuration file for AzureBridge Admin.
 
 ---
 ## Getting Started 
-To build the SDK for Commerce Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
+To build the SDK for AzureBridge Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
 
@@ -18,11 +18,11 @@ To see additional help and options, run:
 ## Configuration
 
 ### Basic Information 
-These are the global settings for the Commerce API.
+These are the global settings for the AzureBridge API.
 
 ``` yaml
-title: CommerceAdminClient
-description: Commerce Admin Client
+title: AzureBridgeAdminClient
+description: AzureBridge Admin Client
 openapi-type: arm
 tag: package-2015-06-01-preview
 ```
@@ -33,7 +33,7 @@ These settings apply only when `--tag=package-2015-06-01-preview` is specified o
 
 ``` yaml $(tag) == 'package-2015-06-01-preview'
 input-file:
-    - Microsoft.Commerce.Admin/2015-06-01-preview/CommerceAdmin.json
+    - Microsoft.AzureBridge.Admin/2016-01-01/Product.json
 ```
 
 ---
@@ -45,9 +45,9 @@ input-file:
 csharp:
   azure-arm: true
   license-header: MICROSOFT_MIT_NO_VERSION
-  namespace: Microsoft.AzureStack.Management.Commerce.Admin
+  namespace: Microsoft.AzureStack.Management.AzureBridge.Admin
   payload-flattening-threshold: 1
-  output-folder: $(csharp-sdks-folder)/Commerce/Commerce.Admin/Generated
+  output-folder: $(csharp-sdks-folder)/AzureBridge/AzureBridge.Admin/Generated
   clear-output-folder: true
 ```
 
@@ -68,5 +68,5 @@ python:
 These settings apply only when `--tag=package-2015-06-01-preview --python` is specified on the command line.
 
 ``` yaml $(tag) == 'package-2015-06-01-preview' && $(python)
-namespace: azure.mgmt.commerce.admin.v2015_06_01_preview
+namespace: azure.mgmt.azurebridge.admin.v2015_06_01_preview
 ```
