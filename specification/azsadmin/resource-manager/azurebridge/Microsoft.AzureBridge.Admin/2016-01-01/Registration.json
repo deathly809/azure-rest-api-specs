@@ -10,24 +10,21 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin//{activationName}/downloadedProducts": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/Registrations": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of downloaded products.": {
-                        "$ref": "./examples/DownloadedProduct/List.json"
+                    "Return all registrations.": {
+                        "$ref": "./examples/Registration/List.json"
                     }
                 },
-                "description": "Get a list of downloaded products.",
+                "description": "Return all registrations.",
                 "tags": [
-                    "DownloadedProducts"
+                    "Registrations"
                 ],
-                "operationId": "DownloadedProducts_List",
+                "operationId": "Registrations_List",
                 "parameters": [
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
                     },
                     {
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
@@ -37,7 +34,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DownloadedProductResourcesPage"
+                            "$ref": "#/definitions/RegistrationResourcesPage"
                         }
                     }
                 },
@@ -52,24 +49,21 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{activationName}/downloadedProducts/{resourceName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/Registrations/{resourceName}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of downloaded products.": {
-                        "$ref": "./examples/DownloadedProduct/Get.json"
+                    "Return registration.": {
+                        "$ref": "./examples/Registration/List.json"
                     }
                 },
-                "description": "Get a downloaded product.",
+                "description": "Return product name.",
                 "tags": [
-                    "DownloadedProducts"
+                    "Registrations"
                 ],
-                "operationId": "DownloadedProducts_Get",
+                "operationId": "Registrations_Get",
                 "parameters": [
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
                     },
                     {
                         "$ref": "AzureBridge.json#/parameters/ResourceNameParameter"
@@ -82,7 +76,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DownloadedProductResource"
+                            "$ref": "#/definitions/RegistrationResource"
                         }
                     }
                 },
@@ -96,14 +90,14 @@
         }
     },
     "definitions": {
-        "DownloadedProductResource": {
-            "description": "Downloaded product resource.",
+        "RegistrationResource": {
+            "description": "Registration resource.",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
                     "description": "Properties of the resource.",
-                    "$ref": "#/definitions/DownloadedProduct"
+                    "$ref": "#/definitions/Registration"
                 }
             },
             "allOf": [
@@ -112,68 +106,34 @@
                 }
             ]
         },
-        "DownloadedProduct": {
-            "description": "Properties for aggregate usage.",
+        "Registration": {
+            "description": "Properties for a registration.",
             "type": "object",
             "properties": {
-                "vmExtensionType": {
-                    "description": "Extension type of the VM.",
+                "galleryItemUri": {
+                    "description": "Gallery item URI.",
                     "type": "string"
                 },
-                "links": {
-                    "description": "Gallery item identity.",
-                    "$ref": "#/definitions/ProductLinks"
-                },
-                "legalTerms": {
-                    "description": "Legal terms for the product.",
-                    "type": "string"
-                },
-                "privacyPolicy": {
-                    "description": "Privacy policy of the product.",
-                    "type": "string"
+                "provisioningState": {
+                    "description": "Provisioning state of the resource",
+                    "$ref": "AzureBridge.json#/definitions/ProvisioningState"
                 }
-            },
-            "allOf": [
-                {
-                    "$ref": "AzureBridge.json#/definitions/ProductBase"
-                }
-            ]
+            }
         },
-        "DownloadedProductResourcesPage": {
-            "description": "Holds an array of downloaded products and the URI to the next page.",
+        "RegistrationResourcesPage": {
+            "description": "Holds an array of products and the next link.",
             "properties": {
                 "value": {
-                    "description": "Array of downloaded products.",
+                    "description": "List of Registrations.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DownloadedProductResource"
+                        "$ref": "#/definitions/RegistrationResource"
                     }
                 },
                 "nextLink": {
-                    "description": "URI to next page.",
-                    "type": "string"
+                    "type": "string",
+                    "description": "URI to the next page."
                 }
-            }
-        },
-        "ProductLink": {
-            "description": "Link to a product.",
-            "type": "object",
-            "properties": {
-                "displayName": {
-                    "description": "Displayed name of product.",
-                    "type": "string"
-                },
-                "uri": {
-                    "description": "URI to product.",
-                    "type": "string"
-                }
-            }
-        },
-        "ProductLinks": {
-            "description": "List of product links.",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/ProductLink"
             }
         }
     },

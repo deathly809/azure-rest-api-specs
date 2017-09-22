@@ -10,18 +10,18 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/products": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/GalleryItems": {
             "get": {
                 "x-ms-examples": {
-                    "Return product name.": {
-                        "$ref": "./examples/Product/List.json"
+                    "Return all gallary items.": {
+                        "$ref": "./examples/GalleryItem/List.json"
                     }
                 },
-                "description": "Return product name.",
+                "description": "Return all gallary items.",
                 "tags": [
-                    "Products"
+                    "GalleryItems"
                 ],
-                "operationId": "Products_List",
+                "operationId": "GalleryItems_List",
                 "parameters": [
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
@@ -34,7 +34,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ProductResourcesPage"
+                            "$ref": "#/definitions/GalleryItemResourcesPage"
                         }
                     }
                 },
@@ -49,18 +49,18 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/products/{resourceName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/GalleryItems/{resourceName}": {
             "get": {
                 "x-ms-examples": {
-                    "Return product name.": {
-                        "$ref": "./examples/Product/List.json"
+                    "Return gallary item.": {
+                        "$ref": "./examples/GalleryItem/List.json"
                     }
                 },
-                "description": "Return product name.",
+                "description": "Return gallary item.",
                 "tags": [
-                    "Products"
+                    "GalleryItems"
                 ],
-                "operationId": "Products_Get",
+                "operationId": "GalleryItems_Get",
                 "parameters": [
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
@@ -76,7 +76,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ProductResource"
+                            "$ref": "#/definitions/GalleryItemResource"
                         }
                     }
                 },
@@ -90,14 +90,14 @@
         }
     },
     "definitions": {
-        "ProductResource": {
-            "description": "Product resource.",
+        "GalleryItemResource": {
+            "description": "GalleryItem resource.",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
                     "description": "Properties of the resource.",
-                    "$ref": "#/definitions/Product"
+                    "$ref": "#/definitions/GalleryItem"
                 }
             },
             "allOf": [
@@ -106,41 +106,28 @@
                 }
             ]
         },
-        "Product": {
-            "description": "Properties for a product.",
+        "GalleryItem": {
+            "description": "Properties for a registration.",
             "type": "object",
             "properties": {
-                "vmExtensionType": {
-                    "description": "Extension type of the VM.",
+                "displayName": {
+                    "description": "User-friendly resource name.",
                     "type": "string"
                 },
-                "links": {
-                    "description": "Gallery item identity.",
-                    "$ref": "#/definitions/ProductLinks"
-                },
-                "legalTerms": {
-                    "description": "Legal terms for the product.",
-                    "type": "string"
-                },
-                "privacyPolicy": {
-                    "description": "Privacy policy of the product.",
-                    "type": "string"
+                "provisioningState" : {
+                    "description" : "Provisioning state of the resource.",
+                    "$ref" : "AzureBridge.json#/definitions/ProvisioningState"
                 }
-            },
-            "allOf": [
-                {
-                    "$ref": "AzureBridge.json#/definitions/ProductBase"
-                }
-            ]
+            }
         },
-        "ProductResourcesPage": {
-            "description": "Holds an array of products and the next link.",
+        "GalleryItemResourcesPage": {
+            "description": "Holds an array of gallery items and the next link.",
             "properties": {
                 "value": {
-                    "description": "List of products.",
+                    "description": "List of GalleryItems.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ProductResource"
+                        "$ref": "#/definitions/GalleryItemResource"
                     }
                 },
                 "nextLink": {

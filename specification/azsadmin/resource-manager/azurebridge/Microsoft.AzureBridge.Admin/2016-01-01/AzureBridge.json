@@ -59,6 +59,65 @@
     "modelAsString": true,
     "name": "ProvisioningState"
    }
+  },
+  "ProductBase": {
+   "description": "Base object for all product classes.",
+   "type": "object",
+   "properties": {
+    "displayName": {
+     "description": "Name displayed for the product.",
+     "type": "string"
+    },
+    "description": {
+     "description": "Description of the product.",
+     "type": "string"
+    },
+    "publisherDisplayName": {
+     "description": "Name of publisher.",
+     "type": "string"
+    },
+    "publisherIdentifier": {
+     "description": "Publisher identifier.",
+     "type": "string"
+    },
+    "offer": {
+     "description": "Offer name.",
+     "type": "string"
+    },
+    "offerVersion": {
+     "description": "Offer version.",
+     "type": "string"
+    },
+    "sku": {
+     "description": "Product SKU.",
+     "type": "string"
+    },
+    "billingPartNumber": {
+     "description": "Billing part number.",
+     "type": "string"
+    },
+    "galleryItemIdentity": {
+     "description": "Gallery item identity.",
+     "type": "string"
+    },
+    "iconUris": {
+     "description": "Information about gallery icons. Deprecated.",
+     "type": "string"
+    },
+    "payloadLength": {
+     "description": "Size in bytes.",
+     "type": "integer",
+     "format": "int64"
+    },
+    "productKind": {
+     "description": "The kind. E.g. VirtualMachineProductProperties.ProductKind or WebApp, SolutionTemplate.",
+     "type": "string"
+    },
+    "productProperties": {
+     "description": "the product properties. At the moment only VirtualMachineProductProperties is allowed.",
+     "type": "string"
+    }
+   }
   }
  },
  "parameters": {
@@ -75,7 +134,7 @@
    "description": "Client Api Version.",
    "required": true,
    "type": "string",
-   "default": "2015-06-01-preview"
+   "default": "2016-01-01"
   },
   "ResourceNameParameter": {
    "name": "resourceName",

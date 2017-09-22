@@ -10,24 +10,21 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin//{activationName}/downloadedProducts": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of downloaded products.": {
-                        "$ref": "./examples/DownloadedProduct/List.json"
+                    "Return product name.": {
+                        "$ref": "./examples/Activation/List.json"
                     }
                 },
-                "description": "Get a list of downloaded products.",
+                "description": "Return product name.",
                 "tags": [
-                    "DownloadedProducts"
+                    "Activations"
                 ],
-                "operationId": "DownloadedProducts_List",
+                "operationId": "Activations_List",
                 "parameters": [
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
                     },
                     {
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
@@ -37,7 +34,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DownloadedProductResourcesPage"
+                            "$ref": "#/definitions/ActivationResourcesPage"
                         }
                     }
                 },
@@ -52,37 +49,34 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{activationName}/downloadedProducts/{resourceName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{resourceName}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of downloaded products.": {
-                        "$ref": "./examples/DownloadedProduct/Get.json"
+                    "Return product name.": {
+                        "$ref": "./examples/Activation/Get.json"
                     }
                 },
-                "description": "Get a downloaded product.",
+                "description": "Return product name.",
                 "tags": [
-                    "DownloadedProducts"
+                    "Activations"
                 ],
-                "operationId": "DownloadedProducts_Get",
+                "operationId": "Activations_Get",
                 "parameters": [
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
-                    },
-                    {
-                        "$ref": "AzureBridge.json#/parameters/ResourceNameParameter"
-                    },
-                    {
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/ResourceNameParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DownloadedProductResource"
+                            "$ref": "#/definitions/ActivationResource"
                         }
                     }
                 },
@@ -96,14 +90,14 @@
         }
     },
     "definitions": {
-        "DownloadedProductResource": {
-            "description": "Downloaded product resource.",
+        "ActivationResource": {
+            "description": "Published product resource.",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
                     "description": "Properties of the resource.",
-                    "$ref": "#/definitions/DownloadedProduct"
+                    "$ref": "#/definitions/Activation"
                 }
             },
             "allOf": [
@@ -112,68 +106,51 @@
                 }
             ]
         },
-        "DownloadedProduct": {
-            "description": "Properties for aggregate usage.",
-            "type": "object",
-            "properties": {
-                "vmExtensionType": {
-                    "description": "Extension type of the VM.",
-                    "type": "string"
-                },
-                "links": {
-                    "description": "Gallery item identity.",
-                    "$ref": "#/definitions/ProductLinks"
-                },
-                "legalTerms": {
-                    "description": "Legal terms for the product.",
-                    "type": "string"
-                },
-                "privacyPolicy": {
-                    "description": "Privacy policy of the product.",
-                    "type": "string"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "AzureBridge.json#/definitions/ProductBase"
-                }
-            ]
-        },
-        "DownloadedProductResourcesPage": {
-            "description": "Holds an array of downloaded products and the URI to the next page.",
-            "properties": {
-                "value": {
-                    "description": "Array of downloaded products.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/DownloadedProductResource"
-                    }
-                },
-                "nextLink": {
-                    "description": "URI to next page.",
-                    "type": "string"
-                }
-            }
-        },
-        "ProductLink": {
-            "description": "Link to a product.",
+        "Activation": {
+            "description": "Holds properties related to activation.",
             "type": "object",
             "properties": {
                 "displayName": {
-                    "description": "Displayed name of product.",
+                    "description": "Name displayed for the product.",
                     "type": "string"
                 },
-                "uri": {
-                    "description": "URI to product.",
+                "azureRegistrationResourceIdentifier": {
+                    "description": "Azure registration resource identifier.",
                     "type": "string"
+                },
+                "description": {
+                    "description": "Provisioning state of the resource.",
+                    "$ref": "AzureBridge.json#/definitions/ProvisioningState"
+                },
+                "expiration": {
+                    "description": "The activation expiration.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "marketplaceSyndicationEnabled": {
+                    "description": "Value indicating whether the marketplace syndication feature is enabled.",
+                    "type": "string"
+                },
+                "usageReportingEnabled": {
+                    "description": "Value indicating whether the usage reporting feature is enabled.",
+                    "type": "boolean"
                 }
             }
         },
-        "ProductLinks": {
-            "description": "List of product links.",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/ProductLink"
+        "ActivationResourcesPage": {
+            "description": "Holds an array of activation resources and the next link.",
+            "properties": {
+                "value": {
+                    "description": "List of activation resources.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ActivationResources"
+                    }
+                },
+                "nextLink": {
+                    "type": "string",
+                    "description": "URI to the next page."
+                }
             }
         }
     },
