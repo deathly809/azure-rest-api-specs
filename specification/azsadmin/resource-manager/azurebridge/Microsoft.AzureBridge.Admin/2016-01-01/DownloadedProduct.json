@@ -27,7 +27,7 @@
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
+                        "$ref": "Activation.json#/parameters/ActivationNameParameter"
                     },
                     {
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
@@ -69,7 +69,7 @@
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
+                        "$ref": "Activation.json#/parameters/ActivationNameParameter"
                     },
                     {
                         "$ref": "AzureBridge.json#/parameters/ResourceNameParameter"
