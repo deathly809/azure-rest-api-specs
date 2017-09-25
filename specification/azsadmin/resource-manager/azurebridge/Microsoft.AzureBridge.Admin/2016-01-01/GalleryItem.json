@@ -114,9 +114,9 @@
                     "description": "User-friendly resource name.",
                     "type": "string"
                 },
-                "provisioningState" : {
-                    "description" : "Provisioning state of the resource.",
-                    "$ref" : "AzureBridge.json#/definitions/ProvisioningState"
+                "provisioningState": {
+                    "description": "Provisioning state of the resource.",
+                    "$ref": "AzureBridge.json#/definitions/ProvisioningState"
                 }
             }
         },

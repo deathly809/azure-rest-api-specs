@@ -114,7 +114,7 @@
                     "description": "Resource name (is used in URI when calling platform image repository).",
                     "type": "string"
                 },
-                "description": {
+                "provisioningState": {
                     "description": "Provisioning state of the resource.",
                     "$ref": "AzureBridge.json#/definitions/ProvisioningState"
                 },

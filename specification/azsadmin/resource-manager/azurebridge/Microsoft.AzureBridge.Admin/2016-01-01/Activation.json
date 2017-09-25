@@ -118,7 +118,7 @@
                     "description": "Azure registration resource identifier.",
                     "type": "string"
                 },
-                "description": {
+                "provisioningState": {
                     "description": "Provisioning state of the resource.",
                     "$ref": "AzureBridge.json#/definitions/ProvisioningState"
                 },
