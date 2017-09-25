@@ -85,6 +85,46 @@ namespace Microsoft.AzureStack.Management.AzureBridge.Admin
             }
 
             /// <summary>
+            /// Create a new activation.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='activationName'>
+            /// Name of the activation.
+            /// </param>
+            /// <param name='activation'>
+            /// new activation.
+            /// </param>
+            public static ActivationResource Put(this IActivationsOperations operations, string activationName, Activation activation)
+            {
+                return operations.PutAsync(activationName, activation).GetAwaiter().GetResult();
+            }
+
+            /// <summary>
+            /// Create a new activation.
+            /// </summary>
+            /// <param name='operations'>
+            /// The operations group for this extension method.
+            /// </param>
+            /// <param name='activationName'>
+            /// Name of the activation.
+            /// </param>
+            /// <param name='activation'>
+            /// new activation.
+            /// </param>
+            /// <param name='cancellationToken'>
+            /// The cancellation token.
+            /// </param>
+            public static async Task<ActivationResource> PutAsync(this IActivationsOperations operations, string activationName, Activation activation, CancellationToken cancellationToken = default(CancellationToken))
+            {
+                using (var _result = await operations.PutWithHttpMessagesAsync(activationName, activation, null, cancellationToken).ConfigureAwait(false))
+                {
+                    return _result.Body;
+                }
+            }
+
+            /// <summary>
             /// Return product name.
             /// </summary>
             /// <param name='operations'>

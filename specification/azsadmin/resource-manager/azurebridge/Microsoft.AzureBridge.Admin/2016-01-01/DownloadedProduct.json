@@ -122,7 +122,7 @@
                 },
                 "links": {
                     "description": "Gallery item identity.",
-                    "$ref": "#/definitions/ProductLinks"
+                    "$ref": "AzureBridge.json#/definitions/ProductLinks"
                 },
                 "legalTerms": {
                     "description": "Legal terms for the product.",
@@ -153,27 +153,6 @@
                     "description": "URI to next page.",
                     "type": "string"
                 }
-            }
-        },
-        "ProductLink": {
-            "description": "Link to a product.",
-            "type": "object",
-            "properties": {
-                "displayName": {
-                    "description": "Displayed name of product.",
-                    "type": "string"
-                },
-                "uri": {
-                    "description": "URI to product.",
-                    "type": "string"
-                }
-            }
-        },
-        "ProductLinks": {
-            "description": "List of product links.",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/ProductLink"
             }
         }
     },

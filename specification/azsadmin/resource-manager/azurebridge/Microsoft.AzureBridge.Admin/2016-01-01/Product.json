@@ -116,7 +116,7 @@
                 },
                 "links": {
                     "description": "Gallery item identity.",
-                    "$ref": "#/definitions/ProductLinks"
+                    "$ref": "AzureBridge.json#/definitions/ProductLinks"
                 },
                 "legalTerms": {
                     "description": "Legal terms for the product.",

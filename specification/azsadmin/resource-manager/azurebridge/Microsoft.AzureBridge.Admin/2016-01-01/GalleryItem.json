@@ -49,7 +49,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/GalleryItems/{gallaryItemName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/GalleryItems/{galleryItemName}": {
             "get": {
                 "x-ms-examples": {
                     "Return gallary item.": {
