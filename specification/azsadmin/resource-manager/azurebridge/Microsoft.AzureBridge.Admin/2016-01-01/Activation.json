@@ -169,7 +169,7 @@
                 },
                 "marketplaceSyndicationEnabled": {
                     "description": "Value indicating whether the marketplace syndication feature is enabled.",
-                    "type": "string"
+                    "type": "boolean"
                 },
                 "usageReportingEnabled": {
                     "description": "Value indicating whether the usage reporting feature is enabled.",
