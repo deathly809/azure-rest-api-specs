@@ -27,7 +27,7 @@
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "Activation.json#/parameters/ActivationNameParameter"
+                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
                     },
                     {
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
@@ -52,7 +52,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{activationName}/downloadedProducts/{resourceName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{activationName}/downloadedProducts/{productName}": {
             "get": {
                 "x-ms-examples": {
                     "Get a list of downloaded products.": {
@@ -69,10 +69,10 @@
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "Activation.json#/parameters/ActivationNameParameter"
+                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
                     },
                     {
-                        "$ref": "AzureBridge.json#/parameters/ResourceNameParameter"
+                        "$ref": "AzureBridge.json#/parameters/ProductNameParameter"
                     },
                     {
                         "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"

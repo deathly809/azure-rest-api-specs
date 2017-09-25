@@ -49,7 +49,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/products/{resourceName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/products/{productName}": {
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
@@ -66,10 +66,10 @@
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
+                        "$ref": "AzureBridge.json#/parameters/ProductNameParameter"
                     },
                     {
-                        "$ref": "#/parameters/ResourceNameParameter"
+                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {

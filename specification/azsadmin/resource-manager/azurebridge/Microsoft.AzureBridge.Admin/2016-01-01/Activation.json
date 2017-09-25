@@ -49,7 +49,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{resourceName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureBridge.Admin/activations/{activationName}": {
             "get": {
                 "x-ms-examples": {
                     "Return product name.": {
@@ -66,10 +66,10 @@
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
+                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
                     },
                     {
-                        "$ref": "#/parameters/ResourceNameParameter"
+                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -154,16 +154,7 @@
             }
         }
     },
-    "parameters": {
-        "ActivationNameParameter": {
-            "description": "Name of an activation",
-            "name": "activationName",
-            "type": "string",
-            "in": "path",
-            "required": true,
-            "x-ms-parameter-location": "method"
-        }
-    },
+    "parameters": {},
     "securityDefinitions": {
         "azure_auth": {
             "type": "oauth2",
