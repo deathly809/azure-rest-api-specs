@@ -126,6 +126,43 @@
                 "consumes": [
                     "application/json"
                 ]
+            },
+            "delete": {
+                "x-ms-examples": {
+                    "Return product name.": {
+                        "$ref": "./examples/Activation/Get.json"
+                    }
+                },
+                "description": "Delete an activation.",
+                "tags": [
+                    "Activations"
+                ],
+                "operationId": "Activations_Delete",
+                "parameters": [
+                    {
+                        "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ActivationNameParameter"
+                    },
+                    {
+                        "$ref": "AzureBridge.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/ActivationResource"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
             }
         }
     },

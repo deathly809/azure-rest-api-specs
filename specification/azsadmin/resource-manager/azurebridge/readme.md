@@ -39,7 +39,6 @@ input-file:
     - Microsoft.AzureBridge.Admin/2016-01-01/Product.json
     - Microsoft.AzureBridge.Admin/2016-01-01/Activation.json
     - Microsoft.AzureBridge.Admin/2016-01-01/Registration.json
-    - Microsoft.AzureBridge.Admin/2016-01-01/GalleryItem.json
 ```
 
 ---

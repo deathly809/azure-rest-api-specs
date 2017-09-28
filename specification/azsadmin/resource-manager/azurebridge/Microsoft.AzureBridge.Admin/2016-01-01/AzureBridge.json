@@ -180,14 +180,6 @@
    "required": true,
    "type": "string",
    "x-ms-parameter-location": "method"
-  },
-  "GalleryItemNameParameter": {
-   "name": "galleryItemName",
-   "in": "path",
-   "description": "Name of the gallery item.",
-   "required": true,
-   "type": "string",
-   "x-ms-parameter-location": "method"
   }
  },
  "securityDefinitions": {
