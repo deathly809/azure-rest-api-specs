@@ -1,0 +1,585 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2015-04-01",
+        "title": "GalleryManagementClient",
+        "description": "The Admin Gallery Management Client."
+    },
+    "host": "management.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/providers/microsoft.gallery.admin/galleryItems": {
+            "get": {
+                "x-ms-examples": [
+                    {
+                        "$ref": "./examples/Registration/List.json"
+                    }
+                ],
+                "tags": [
+                    "Registrations"
+                ],
+                "summary": "Lists gallery registrations",
+                "operationId": "Registrations_List",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Gallery.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Gallery.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GalleryItemList"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "x-ms-examples": [
+                    {
+                        "$ref": "./examples/Registration/Create.json"
+                    }
+                ],
+                "tags": [
+                    "Registrations"
+                ],
+                "summary": "Uploads a provider gallery item to the storage",
+                "operationId": "Registrations_Create",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Gallery.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Gallery.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/GalleryItemUriPayloadParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GalleryItem"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/microsoft.gallery.admin/galleryItems/{galleryItemName}": {
+            "get": {
+                "x-ms-examples": [
+                    {
+                        "$ref": "./examples/Registration/Get.json"
+                    }
+                ],
+                "tags": [
+                    "Registrations"
+                ],
+                "summary": "Gets a specific gallery registration",
+                "operationId": "Registrations_Get",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Gallery.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/GalleryItemNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GalleryItem"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "x-ms-examples": [
+                    {
+                        "$ref": "./examples/Registration/Delete.json"
+                    }
+                ],
+                "tags": [
+                    "Registrations"
+                ],
+                "summary": "Deletes a specific gallery registration",
+                "operationId": "Registrations_Delete",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Gallery.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/GalleryItemNameParameter"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "GalleryItemUriPayload": {
+            "description": "Gallery item uri",
+            "type": "object",
+            "properties": {
+                "GalleryItemUri": {
+                    "description": "Gets or sets the gallery item URI.",
+                    "type": "string"
+                }
+            }
+        },
+        "GalleryItem": {
+            "type": "object",
+            "properties": {
+                "identity": {
+                    "description": "Identity of the gallery item.",
+                    "type": "string"
+                },
+                "publisher": {
+                    "type": "string"
+                },
+                "publisherDisplayName": {
+                    "type": "string"
+                },
+                "itemName": {
+                    "type": "string"
+                },
+                "itemDisplayName": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "longSummary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "uiDefinitionUri": {
+                    "type": "string"
+                },
+                "createdTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "changedTime": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "marketingMaterial": {
+                    "$ref": "#/definitions/MarketingMaterial"
+                },
+                "itemType": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "type": "integer"
+                },
+                "categoryIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "readOnly": true
+                },
+                "screenshotUris": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "readOnly": true
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinkProperties"
+                    },
+                    "readOnly": true
+                },
+                "filters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Filter"
+                    },
+                    "readOnly": true
+                },
+                "iconFileUris": {
+                    "type": "object",
+                    "properties": {
+                        "small": {
+                            "type": "string"
+                        },
+                        "medium": {
+                            "type": "string"
+                        },
+                        "large": {
+                            "type": "string"
+                        },
+                        "wide": {
+                            "type": "string"
+                        },
+                        "hero": {
+                            "type": "string"
+                        }
+                    },
+                    "readOnly": true
+                },
+                "artifacts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Artifact"
+                    },
+                    "readOnly": true
+                },
+                "metadata": {
+                    "$ref": "#/definitions/OpenProperty",
+                    "readOnly": true
+                },
+                "properties": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "readOnly": true
+                },
+                "images": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ImageGroup"
+                    },
+                    "readOnly": true
+                },
+                "products": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    },
+                    "readOnly": true
+                },
+                "resourceGroupName": {
+                    "type": "string"
+                },
+                "definitionTemplates": {
+                    "$ref": "#/definitions/DefinitionTemplates",
+                    "readOnly": true
+                },
+                "additionalProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "GalleryItemList": {
+            "description": "List of gallery items.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/GalleryItem"
+            }
+        },
+        "MarketingMaterial": {
+            "type": "object",
+            "properties": {
+                "path": {
+                    "type": "string"
+                },
+                "learnUri": {
+                    "type": "string"
+                }
+            }
+        },
+        "LinkProperties": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                }
+            }
+        },
+        "Filter": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        },
+        "Artifact": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                },
+                "type": {
+                    "format": "int32",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ],
+                    "type": "integer"
+                }
+            }
+        },
+        "OpenProperty": {
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "ImageGroup": {
+            "type": "object",
+            "properties": {
+                "context": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Image"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "Product": {
+            "type": "object",
+            "properties": {
+                "displayName": {
+                    "type": "string"
+                },
+                "publisherDisplayName": {
+                    "type": "string"
+                },
+                "pricingDetailsUri": {
+                    "type": "string"
+                },
+                "offerDetails": {
+                    "$ref": "#/definitions/OfferDetails"
+                },
+                "legalTerms": {
+                    "type": "string"
+                },
+                "privacyPolicy": {
+                    "type": "string"
+                },
+                "legalTermsUri": {
+                    "type": "string"
+                },
+                "privacyPolicyUri": {
+                    "type": "string"
+                }
+            }
+        },
+        "DefinitionTemplates": {
+            "type": "object",
+            "properties": {
+                "uiDefinitionFileUri": {
+                    "type": "string"
+                },
+                "defaultDeploymentTemplateId": {
+                    "type": "string"
+                },
+                "deploymentTemplateFileUris": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "readOnly": true
+                },
+                "deploymentFragmentFileUris": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "Image": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "OfferDetails": {
+            "type": "object",
+            "properties": {
+                "publisherId": {
+                    "type": "string"
+                },
+                "offerId": {
+                    "type": "string"
+                },
+                "plans": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Plan"
+                    },
+                    "readOnly": true
+                }
+            }
+        },
+        "Plan": {
+            "type": "object",
+            "properties": {
+                "planId": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "summary": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        },
+        "Operation": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "origin": {
+                    "type": "string"
+                },
+                "display": {
+                    "$ref": "#/definitions/OperationDisplayDefinition"
+                }
+            }
+        },
+        "OperationDisplayDefinition": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "operation": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "resource": {
+                    "type": "string"
+                }
+            }
+        },
+        "OperationList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Operation"
+            }
+        }
+    },
+    "parameters": {
+        "GalleryItemNameParameter": {
+            "name": "galleryItemName",
+            "in": "path",
+            "description": "Identity of the gallery item. Includes publisher name, item name and may include version separated by period character.",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "GalleryItemUriPayloadParameter": {
+            "name": "galleryItemUri",
+            "in": "body",
+            "description": "The new gallery item.",
+            "required": true,
+            "schema" : {
+                "$ref": "#/definitions/GalleryItemUriPayload"
+            },
+            "x-ms-parameter-location": "method"
+        }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
+}
