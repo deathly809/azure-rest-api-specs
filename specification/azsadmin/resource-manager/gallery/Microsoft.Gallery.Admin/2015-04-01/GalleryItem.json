@@ -332,9 +332,16 @@
         },
         "GalleryItemList": {
             "description": "List of gallery items.",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/GalleryItem"
+            "properties": {
+                "name": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/GalleryItem"
+                    }
+                },
+                "nextLinke" : {
+                    "type" : "string"
+                }
             }
         },
         "MarketingMaterial": {
