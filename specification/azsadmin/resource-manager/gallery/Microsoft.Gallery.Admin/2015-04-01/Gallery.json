@@ -12,11 +12,11 @@
     "paths": {
         "/providers/Microsoft.Gallery.Admin/operations": {
             "get": {
-                "x-ms-examples": [
-                    {
+                "x-ms-examples": {
+                    "Gets the available operations": {
                         "$ref": "./examples/Operations.json"
                     }
-                ],
+                },
                 "tags": [
                     "Operations"
                 ],

@@ -12,11 +12,11 @@
     "paths": {
         "/subscriptions/{subscriptionId}/providers/microsoft.gallery.admin/galleryItems": {
             "get": {
-                "x-ms-examples": [
-                    {
+                "x-ms-examples": {
+                    "Lists gallery registrations": {
                         "$ref": "./examples/Registration/List.json"
                     }
-                ],
+                },
                 "tags": [
                     "Registrations"
                 ],
@@ -43,14 +43,17 @@
                             "$ref": "#/definitions/GalleryItemList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
                 }
             },
             "post": {
-                "x-ms-examples": [
-                    {
+                "x-ms-examples": {
+                    "uploads a provider gallery item to the storage": {
                         "$ref": "./examples/Registration/Create.json"
                     }
-                ],
+                },
                 "tags": [
                     "Registrations"
                 ],
@@ -85,11 +88,11 @@
         },
         "/subscriptions/{subscriptionId}/providers/microsoft.gallery.admin/galleryItems/{galleryItemName}": {
             "get": {
-                "x-ms-examples": [
-                    {
+                "x-ms-examples": {
+                    "Gets a specific gallery registration": {
                         "$ref": "./examples/Registration/Get.json"
                     }
-                ],
+                },
                 "tags": [
                     "Registrations"
                 ],
@@ -119,11 +122,11 @@
                 }
             },
             "delete": {
-                "x-ms-examples": [
-                    {
+                "x-ms-examples": {
+                    "Deletes a specific gallery registration": {
                         "$ref": "./examples/Registration/Delete.json"
                     }
-                ],
+                },
                 "tags": [
                     "Registrations"
                 ],
@@ -558,7 +561,7 @@
             "in": "body",
             "description": "The new gallery item.",
             "required": true,
-            "schema" : {
+            "schema": {
                 "$ref": "#/definitions/GalleryItemUriPayload"
             },
             "x-ms-parameter-location": "method"
