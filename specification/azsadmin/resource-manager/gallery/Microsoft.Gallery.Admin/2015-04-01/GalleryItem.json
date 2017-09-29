@@ -80,7 +80,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GalleryItemResource"
+                            "$ref": "#/definitions/GalleryItem"
                         }
                     }
                 }
@@ -116,7 +116,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GalleryItemResource"
+                            "$ref": "#/definitions/GalleryItem"
                         }
                     }
                 }
@@ -170,17 +170,17 @@
                 }
             ]
         },
-        "GalleryItemResource": {
+        "GalleryItem": {
             "type": "object",
             "properties": {
                 "properties": {
                     "description": "Gallery item properties",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/GalleryItem"
+                    "$ref": "#/definitions/GalleryItemProperties"
                 }
             }
         },
-        "GalleryItem": {
+        "GalleryItemProperties": {
             "type": "object",
             "properties": {
                 "identity": {
@@ -334,7 +334,7 @@
             "description": "List of gallery items.",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/GalleryItemResource"
+                "$ref": "#/definitions/GalleryItem"
             }
         },
         "MarketingMaterial": {
