@@ -80,7 +80,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GalleryItem"
+                            "$ref": "#/definitions/GalleryItemResource"
                         }
                     }
                 }
@@ -116,7 +116,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/GalleryItem"
+                            "$ref": "#/definitions/GalleryItemResource"
                         }
                     }
                 }
@@ -162,6 +162,21 @@
                 "GalleryItemUri": {
                     "description": "Gets or sets the gallery item URI.",
                     "type": "string"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Gallery.json#/definitions/Resource"
+                }
+            ]
+        },
+        "GalleryItemResource": {
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Gallery item properties",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/GalleryItem"
                 }
             }
         },
@@ -319,7 +334,7 @@
             "description": "List of gallery items.",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/GalleryItem"
+                "$ref": "#/definitions/GalleryItemResource"
             }
         },
         "MarketingMaterial": {
