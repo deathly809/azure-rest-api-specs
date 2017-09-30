@@ -333,7 +333,7 @@
         "GalleryItemList": {
             "description": "List of gallery items.",
             "properties": {
-                "name": {
+                "value": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/GalleryItem"
