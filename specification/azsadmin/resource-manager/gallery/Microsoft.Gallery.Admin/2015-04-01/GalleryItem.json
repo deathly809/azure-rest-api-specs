@@ -226,12 +226,23 @@
                     "$ref": "#/definitions/MarketingMaterial"
                 },
                 "itemType": {
-                    "format": "int32",
                     "enum": [
-                        0,
-                        1
+                        "GalleryItem",
+                        "ItemGroup"
                     ],
-                    "type": "integer"
+                    "type": "string",
+                    "x-ms-enum": {
+                        "name": "GalleryItemMenuReferenceType",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "GalleryItem"
+                            },
+                            {
+                                "value": "ItemGroup"
+                            }
+                        ]
+                    }
                 },
                 "categoryIds": {
                     "type": "array",
@@ -339,8 +350,8 @@
                         "$ref": "#/definitions/GalleryItem"
                     }
                 },
-                "nextLinke" : {
-                    "type" : "string"
+                "nextLinke": {
+                    "type": "string"
                 }
             }
         },
