@@ -82,6 +82,12 @@
                         "schema": {
                             "$ref": "#/definitions/GalleryItem"
                         }
+                    },
+                    "201": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/GalleryItem"
+                        }
                     }
                 }
             }
@@ -169,12 +175,7 @@
                     "description": "Gets or sets the gallery item URI.",
                     "type": "string"
                 }
-            },
-            "allOf": [
-                {
-                    "$ref": "Gallery.json#/definitions/Resource"
-                }
-            ]
+            }
         },
         "GalleryItem": {
             "type": "object",
