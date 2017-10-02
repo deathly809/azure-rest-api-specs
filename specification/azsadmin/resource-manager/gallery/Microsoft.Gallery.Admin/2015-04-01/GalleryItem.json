@@ -401,14 +401,31 @@
                     "type": "string"
                 },
                 "type": {
-                    "format": "int32",
                     "enum": [
-                        0,
-                        1,
-                        2,
-                        3
+                        "template",
+                        "fragment",
+                        "custom",
+                        "metadata"
                     ],
-                    "type": "integer"
+                    "type": "string",
+                    "x-ms-enum": {
+                        "name": "ArtifactType",
+                        "modelAsString": true,
+                        "values": [
+                            {
+                                "value": "template"
+                            },
+                            {
+                                "value": "fragment"
+                            },
+                            {
+                                "value": "custom"
+                            },
+                            {
+                                "value": "metadata"
+                            }
+                        ]
+                    }
                 }
             }
         },
