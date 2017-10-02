@@ -20,6 +20,11 @@
                 "tags": [
                     "Operations"
                 ],
+                "parameters": [
+                    {
+                        "$ref": "Gallery.json#/parameters/ApiVersionParameter"
+                    }
+                ],
                 "summary": "Gets the available operations.",
                 "operationId": "Operations",
                 "consumes": [
