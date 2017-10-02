@@ -110,6 +110,9 @@
                     },
                     {
                         "$ref": "#/parameters/GalleryItemNameParameter"
+                    },
+                    {
+                        "$ref": "Gallery.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -144,6 +147,9 @@
                     },
                     {
                         "$ref": "#/parameters/GalleryItemNameParameter"
+                    },
+                    {
+                        "$ref": "Gallery.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
