@@ -1,0 +1,173 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Table service operation endpoints and objects.",
+        "version": "2015-12-01-preview"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default": {
+            "get": {
+                "tags": [
+                    "TableServices"
+                ],
+                "description": "TODO",
+                "operationId": "TableServices_Get",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/TableServiceResource"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metricdefinitions": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "TableServices"
+                ],
+                "description": "",
+                "operationId": "TableServices_ListMetricDefinitions",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "adminStorage.json#/definitions/MetricDefinitionList"
+                        }
+                    }
+                },
+                "x-ms-odata": "adminStorage.json#/definitions/MetricDefinition"
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metrics": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "TableServices"
+                ],
+                "description": "",
+                "operationId": "TableServices_ListMetrics",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "adminStorage.json#/definitions/MetricList"
+                        }
+                    }
+                },
+                "x-ms-odata": "adminStorage.json#/definitions/Metric"
+            }
+        }
+    },
+    "definitions": {
+        "TableServiceWritableSettings": {
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/WritableServiceSettings"
+                }
+            ],
+            "description": "TODO"
+        },
+        "TableServiceSettings": {
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "#/definitions/TableServiceWritableSettings"
+                }
+            ],
+            "description": "TODO"
+        },
+        "TableService": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/TableServiceSettings"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/Service"
+                }
+            ],
+            "description": "TODO"
+        },
+        "TableServiceResource": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/TableService"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/Resource"
+                }
+            ],
+            "description": "TODO"
+        }
+    },
+    "parameters": {}
+}

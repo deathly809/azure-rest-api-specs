@@ -1,0 +1,234 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Share operation endpoints and objects.",
+        "version": "2015-12-01-preview"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Shares"
+                ],
+                "description": "TODO",
+                "operationId": "Shares_List",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/ShareList"
+                        }
+                    }
+                },
+                "x-ms-odata": "#/definitions/Share"
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/metrics": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Shares"
+                ],
+                "description": "TODO",
+                "operationId": "Shares_ListMetrics",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "adminStorage.json#/definitions/MetricList"
+                        }
+                    }
+                },
+                "x-ms-odata": "adminStorage.json#/definitions/Acquisition"
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/metricdefinitions": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Shares"
+                ],
+                "description": "TODO",
+                "operationId": "Shares_ListMetricDefinitions",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "adminStorage.json#/definitions/MetricDefinitionList"
+                        }
+                    }
+                },
+                "x-ms-odata": "adminStorage.json#/definitions/MetricDefinition"
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}": {
+            "get": {
+                "tags": [
+                    "Shares"
+                ],
+                "description": "TODO",
+                "operationId": "Shares_Get",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/Share"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Share": {
+            "properties": {
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/ShareModel"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/Resource"
+                }
+            ]
+        },
+        "ShareList": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Share"
+                    },
+                    "description": "List of shares."
+                },
+                "nextLink": {
+                    "type": "string"
+                }
+            }
+        },
+        "ShareModel": {
+            "properties": {
+                "shareName": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "uncPath": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "totalCapacity": {
+                    "description": "TODO",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "usedCapacity": {
+                    "description": "TODO",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "freeCapacity": {
+                    "description": "TODO",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "healthStatus": {
+                    "description": "",
+                    "$ref": "adminStorage.json#/definitions/HealthStatus"
+                }
+            }
+        }
+    },
+    "parameters": {}
+}

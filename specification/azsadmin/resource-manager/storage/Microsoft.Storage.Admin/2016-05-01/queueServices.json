@@ -1,0 +1,173 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Queue service operation endpoints and objects.",
+        "version": "2015-12-01-preview"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default": {
+            "get": {
+                "tags": [
+                    "Queues"
+                ],
+                "description": "TODO",
+                "operationId": "Queues_Get",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/QueueServiceResource"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metricdefinitions": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Queues"
+                ],
+                "description": "",
+                "operationId": "Queues_ListMetricDefinitions",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "adminStorage.json#/definitions/MetricDefinitionList"
+                        }
+                    }
+                },
+                "x-ms-odata": "adminStorage.json#/definitions/MetricDefinition"
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metrics": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Queues"
+                ],
+                "description": "",
+                "operationId": "Queues_ListMetrics",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "adminStorage.json#/definitions/MetricList"
+                        }
+                    }
+                },
+                "x-ms-odata": "adminStorage.json#/definitions/Metric"
+            }
+        }
+    },
+    "definitions": {
+        "QueueServiceWritableSettings": {
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/WritableServiceSettings"
+                }
+            ],
+            "description": "TODO"
+        },
+        "QueueServiceSettings": {
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "#/definitions/QueueServiceWritableSettings"
+                }
+            ],
+            "description": "TODO"
+        },
+        "QueueService": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/QueueServiceSettings"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/Service"
+                }
+            ],
+            "description": "TODO"
+        },
+        "QueueServiceResource": {
+            "properties": {
+                "properties": {
+                    "$ref": "#/definitions/QueueService"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/Resource"
+                }
+            ],
+            "description": "TODO"
+        }
+    },
+    "parameters": {}
+}

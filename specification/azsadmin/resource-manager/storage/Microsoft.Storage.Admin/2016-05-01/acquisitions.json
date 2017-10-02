@@ -1,0 +1,203 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Acquisition operation endpoints and objects.",
+        "version": "2015-12-01-preview"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions/{acquisitionId}": {
+            "delete": {
+                "tags": [
+                    "Acquisitions"
+                ],
+                "operationId": "Acquisitions_Delete",
+                "Description": "TODO",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/AcquisitionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Acquisition is deleted."
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Acquisitions"
+                ],
+                "operationId": "Acquisitions_Get",
+                "Description": "TODO",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/AcquisitionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Acquisition has been returned.",
+                        "schema": {
+                            "$ref": "#/definitions/Acquisition"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Acquisitions"
+                ],
+                "operationId": "Acquisitions_List",
+                "Description": "Get a list of acquistions",
+                "parameters": [
+                    {
+                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Acquisition has been returned.",
+                        "schema": {
+                            "$ref": "#/definitions/AcquisitionList"
+                        }
+                    }
+                },
+                "x-ms-odata": "#/definitions/Acquisition"
+            }
+        }
+    },
+    "definitions": {
+        "AcquisitionModel": {
+            "properties": {
+                "filePath": {
+                    "type": "string",
+                    "description": "TODO"
+                },
+                "maximumblobsize": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "TODO"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "InProgress",
+                        "Success",
+                        "Failed"
+                    ],
+                    "x-ms-enum": {
+                        "name": "AcquisitionStatus",
+                        "modelAsString": true
+                    },
+                    "description": "TODO"
+                },
+                "susbcriptionid": {
+                    "type": "string",
+                    "description": "TODO"
+                },
+                "storageaccount": {
+                    "type": "string",
+                    "description": "TODO"
+                },
+                "container": {
+                    "type": "string",
+                    "description": "TODO"
+                },
+                "blob": {
+                    "type": "string",
+                    "description": "TODO"
+                },
+                "acquisitionid": {
+                    "type": "string",
+                    "description": "TODO"
+                }
+            }
+        },
+        "Acquisition": {
+            "properties": {
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/AcquisitionModel"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "adminStorage.json#/definitions/Resource"
+                }
+            ]
+        },
+        "AcquisitionList": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Acquisition"
+                    }
+                },
+                "nextLink": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "parameters": {
+        "AcquisitionIdParameter": {
+            "name": "acquisitionId",
+            "type": "string",
+            "required": true,
+            "in": "path",
+            "description": "TODO"
+        }
+    }
+}
