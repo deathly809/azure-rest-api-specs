@@ -32,7 +32,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "object"
+                            "$ref": "#/definitions/OperationList"
                         }
                     }
                 }
@@ -74,6 +74,43 @@
                 }
             },
             "x-ms-azure-resource": true
+        },
+        "Operation": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "origin": {
+                    "type": "string"
+                },
+                "display": {
+                    "$ref": "#/definitions/OperationDisplayDefinition"
+                }
+            }
+        },
+        "OperationDisplayDefinition": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "operation": {
+                    "type": "string"
+                },
+                "provider": {
+                    "type": "string"
+                },
+                "resource": {
+                    "type": "string"
+                }
+            }
+        },
+        "OperationList": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Operation"
+            }
         }
     },
     "parameters": {
