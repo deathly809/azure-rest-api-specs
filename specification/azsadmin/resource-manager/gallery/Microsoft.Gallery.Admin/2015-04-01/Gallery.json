@@ -40,6 +40,9 @@
                             "$ref": "#/definitions/OperationList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
                 }
             }
         }
@@ -112,9 +115,18 @@
             }
         },
         "OperationList": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/Operation"
+            "description": "List of operations.",
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Operation"
+                    }
+                },
+                "nextLinke": {
+                    "type": "string"
+                }
             }
         }
     },
