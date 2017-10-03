@@ -24,16 +24,16 @@
                 "operationId": "Blobs_Get",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -58,30 +58,30 @@
                 "operationId": "Blobs_ListMetricDefinitions",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "TODO",
                         "schema": {
-                            "$ref": "adminStorage.json#/definitions/MetricDefinitionList"
+                            "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
                 },
-                "x-ms-odata": "adminStorage.json#/definitions/MetricDefinition"
+                "x-ms-odata": "storage.json#/definitions/MetricDefinition"
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metrics": {
@@ -96,30 +96,30 @@
                 "operationId": "Blobs_ListMetrics",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "TODO",
                         "schema": {
-                            "$ref": "adminStorage.json#/definitions/MetricList"
+                            "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
                 },
-                "x-ms-odata": "adminStorage.json#/definitions/Metric"
+                "x-ms-odata": "storage.json#/definitions/Metric"
             }
         }
     },
@@ -144,7 +144,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/WritableServiceSettings"
+                    "$ref": "storage.json#/definitions/WritableServiceSettings"
                 }
             ],
             "description": "TODO"
@@ -166,7 +166,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/Service"
+                    "$ref": "storage.json#/definitions/Service"
                 }
             ],
             "description": "TODO"
@@ -180,7 +180,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/Resource"
+                    "$ref": "storage.json#/definitions/Resource"
                 }
             ],
             "description": "TODO"

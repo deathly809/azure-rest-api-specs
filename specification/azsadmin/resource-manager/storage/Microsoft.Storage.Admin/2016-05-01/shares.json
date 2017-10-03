@@ -27,19 +27,19 @@
                 "operationId": "Shares_List",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -65,33 +65,33 @@
                 "operationId": "Shares_ListMetrics",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "TODO",
                         "schema": {
-                            "$ref": "adminStorage.json#/definitions/MetricList"
+                            "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
                 },
-                "x-ms-odata": "adminStorage.json#/definitions/Acquisition"
+                "x-ms-odata": "storage.json#/definitions/Acquisition"
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/metricdefinitions": {
@@ -106,33 +106,33 @@
                 "operationId": "Shares_ListMetricDefinitions",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "TODO",
                         "schema": {
-                            "$ref": "adminStorage.json#/definitions/MetricDefinitionList"
+                            "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
                 },
-                "x-ms-odata": "adminStorage.json#/definitions/MetricDefinition"
+                "x-ms-odata": "storage.json#/definitions/MetricDefinition"
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}": {
@@ -144,19 +144,19 @@
                 "operationId": "Shares_Get",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -180,7 +180,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/Resource"
+                    "$ref": "storage.json#/definitions/Resource"
                 }
             ]
         },
@@ -225,7 +225,7 @@
                 },
                 "healthStatus": {
                     "description": "",
-                    "$ref": "adminStorage.json#/definitions/HealthStatus"
+                    "$ref": "storage.json#/definitions/HealthStatus"
                 }
             }
         }

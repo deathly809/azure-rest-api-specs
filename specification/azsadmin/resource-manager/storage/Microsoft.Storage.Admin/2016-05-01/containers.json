@@ -24,19 +24,19 @@
                 "description": "Cancel share migration.",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/OperationIdParameter"
+                        "$ref": "storage.json#/parameters/OperationIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -56,16 +56,16 @@
                 "description": "Set the status of the share to migrate.",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/OperationIdParameter"
+                        "$ref": "storage.json#/parameters/OperationIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -90,22 +90,22 @@
                 "description": "List all containers under the given parameters",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -131,22 +131,22 @@
                 "description": "List all containers under the given parameters",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -169,19 +169,19 @@
                 "description": "Migration a share",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ShareNameParameter"
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
                         "$ref": "#/parameters/MigrationIntentParameter"

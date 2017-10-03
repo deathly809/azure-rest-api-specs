@@ -24,13 +24,13 @@
                 "operationId": "Quotas_CreateOrUpdate",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/LocationParameter"
+                        "$ref": "storage.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
                         "$ref": "#/parameters/QuotaNameParameter"
@@ -62,13 +62,13 @@
                 "operationId": "Quotas_Delete",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/LocationParameter"
+                        "$ref": "storage.json#/parameters/LocationParameter"
                     },
                     {
                         "$ref": "#/parameters/QuotaNameParameter"
@@ -88,13 +88,13 @@
                 "operationId": "Quotas_Get",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/LocationParameter"
+                        "$ref": "storage.json#/parameters/LocationParameter"
                     },
                     {
                         "$ref": "#/parameters/QuotaNameParameter"
@@ -119,13 +119,13 @@
                 "operationId": "Quotas_List",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/LocationParameter"
+                        "$ref": "storage.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -152,7 +152,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/Resource"
+                    "$ref": "storage.json#/definitions/Resource"
                 }
             ]
         },

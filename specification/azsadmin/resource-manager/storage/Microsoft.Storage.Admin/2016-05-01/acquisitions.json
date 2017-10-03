@@ -24,19 +24,19 @@
                 "Description": "TODO",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
                         "$ref": "#/parameters/AcquisitionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -53,19 +53,19 @@
                 "Description": "TODO",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
                         "$ref": "#/parameters/AcquisitionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -90,19 +90,19 @@
                 "Description": "Get a list of acquistions",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -173,7 +173,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/Resource"
+                    "$ref": "storage.json#/definitions/Resource"
                 }
             ]
         },

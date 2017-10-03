@@ -24,16 +24,16 @@
                 "operationId": "Farms_Create",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
                         "name": "parameters",
@@ -62,16 +62,16 @@
                 "operationId": "Farms_Get",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -91,16 +91,16 @@
                 "operationId": "Farms_Update",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
                         "name": "parameters",
@@ -134,30 +134,30 @@
                 "operationId": "Farms_ListMetricDefinitions",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "List of Metric Definitions",
                         "schema": {
-                            "$ref": "adminStorage.json#/definitions/MetricDefinitionList"
+                            "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
                 },
-                "x-ms-odata": "adminStorage.json#/definitions/MetricDefinition"
+                "x-ms-odata": "storage.json#/definitions/MetricDefinition"
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metrics": {
@@ -172,30 +172,30 @@
                 "operationId": "Farms_ListMetrics",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "List of metrics.",
                         "schema": {
-                            "$ref": "adminStorage.json#/definitions/MetricList"
+                            "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
                 },
-                "x-ms-odata": "adminStorage.json#/definitions/Metric"
+                "x-ms-odata": "storage.json#/definitions/Metric"
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms": {
@@ -210,16 +210,16 @@
                 "operationId": "Farms_List",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FilterParameter"
+                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -242,16 +242,16 @@
                 "description": "TODO",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
                 "responses": {
@@ -281,16 +281,16 @@
                 "description": "TODO",
                 "parameters": [
                     {
-                        "$ref": "adminStorage.json#/parameters/SubscriptionIdParameter"
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ResourceGroupNameParameter"
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/FarmIdParameter"
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "adminStorage.json#/parameters/ApiVersionParameter"
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
                         "name": "operationId",
@@ -335,7 +335,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/Resource"
+                    "$ref": "storage.json#/definitions/Resource"
                 }
             ],
             "description": "TODO"
@@ -350,7 +350,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "adminStorage.json#/definitions/Resource"
+                    "$ref": "storage.json#/definitions/Resource"
                 }
             ],
             "description": "TODO"
@@ -535,7 +535,7 @@
                     "type": "string"
                 },
                 "healthStatus": {
-                    "$ref": "adminStorage.json#/definitions/HealthStatus"
+                    "$ref": "storage.json#/definitions/HealthStatus"
                 }
             },
             "allOf": [
