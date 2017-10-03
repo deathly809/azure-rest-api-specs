@@ -33,16 +33,16 @@ These settings apply only when `--tag=package-2016-05-01` is specified on the co
 
 ``` yaml $(tag) == 'package-2016-05-01'
 input-file:
-    - "Microsoft.Storage.Admin/2016-05-01/S\storage.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\acquisitions.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\blobServices.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\containers.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\farms.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\queueServices.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\quotas.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\shares.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\storageaccounts.json"
-    - "Microsoft.Storage.Admin/2016-05-01/S\tableServices.json"
+    - "Microsoft.Storage.Admin/2016-05-01/storage.json"
+    - "Microsoft.Storage.Admin/2016-05-01/acquisitions.json"
+    - "Microsoft.Storage.Admin/2016-05-01/blobServices.json"
+    - "Microsoft.Storage.Admin/2016-05-01/containers.json"
+    - "Microsoft.Storage.Admin/2016-05-01/farms.json"
+    - "Microsoft.Storage.Admin/2016-05-01/queueServices.json"
+    - "Microsoft.Storage.Admin/2016-05-01/quotas.json"
+    - "Microsoft.Storage.Admin/2016-05-01/shares.json"
+    - "Microsoft.Storage.Admin/2016-05-01/storageaccounts.json"
+    - "Microsoft.Storage.Admin/2016-05-01/tableServices.json"
 ```
 
 ---
