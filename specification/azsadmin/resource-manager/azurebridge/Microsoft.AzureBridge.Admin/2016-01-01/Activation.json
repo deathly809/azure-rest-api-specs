@@ -97,7 +97,7 @@
                 "tags": [
                     "Activations"
                 ],
-                "operationId": "Activations_Put",
+                "operationId": "Activations_CreateOrUpdate",
                 "parameters": [
                     {
                         "$ref": "AzureBridge.json#/parameters/SubscriptionIdParameter"
