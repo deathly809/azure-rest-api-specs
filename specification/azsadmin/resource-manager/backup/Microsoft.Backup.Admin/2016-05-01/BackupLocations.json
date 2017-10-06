@@ -191,7 +191,55 @@
         "BackupLocationModel": {
             "type": "object",
             "description": "Properties of a backup location.",
-            "properties": {}
+            "properties": {
+                "externalStoreDefault": {
+                    "description": "Information about an external storage location.",
+                    "$ref": "#/definitions/ExternalStore",
+                    "x-ms-client-flatten": true
+                }
+            }
+        },
+        "ExternalStore": {
+            "type": "object",
+            "description": "Information about an external storage location.",
+            "properties": {
+                "path": {
+                    "description": "Path to the storage location",
+                    "type": "string"
+                },
+                "userName": {
+                    "description": "Username to access the location.",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "Password to access the location.",
+                    "type": "string"
+                },
+                "encryptionKeyBase64": {
+                    "description": "Encryption key.",
+                    "type": "string"
+                },
+                "backupFrequencyInMinutes": {
+                    "description": "How often a backup is performed.",
+                    "type": "string"
+                },
+                "availableCapacity": {
+                    "description": "Free space in location.",
+                    "type": "string"
+                },
+                "isBackupSchedulerEnabled": {
+                    "description": "True if the backup scheduler is enabled.",
+                    "type": "boolean"
+                },
+                "nextBackupTime": {
+                    "description": "The scheduled time of the next backup.",
+                    "type": "string"
+                },
+                "lastBackupTime": {
+                    "description": "Time of backup.",
+                    "type": "string"
+                }
+            }
         },
         "BackupLocationList": {
             "type": "object",
