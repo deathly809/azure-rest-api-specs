@@ -13,11 +13,11 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of usage aggregates for all tenants.": {
+                    "Get the list of backup locations.": {
                         "$ref": "./examples/BackupLocations/List.json"
                     }
                 },
-                "description": "Gets a collection of BackupLocations, which are UsageAggregates from direct tenants.",
+                "description": "Get the list of backup locations.",
                 "tags": [
                     "BackupLocations"
                 ],
@@ -47,8 +47,8 @@
                 "consumes": [
                     "application/json"
                 ],
-                "x-ms-pageable" : {
-                    "nextLinkName" : "nextLink"
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             },
             "put": {
@@ -138,6 +138,7 @@
                         "$ref": "./examples/BackupLocations/Backup.json"
                     }
                 },
+                "x-ms-long-running-operation": true,
                 "description": "Backup a specific location.",
                 "tags": [
                     "BackupLocations"
@@ -158,6 +159,12 @@
                     }
                 ],
                 "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     "202": {
                         "description": "OK",
                         "schema": {
@@ -207,7 +214,7 @@
             "description": "Information about an external storage location.",
             "properties": {
                 "path": {
-                    "description": "Path to the storage location",
+                    "description": "Path to the update location",
                     "type": "string"
                 },
                 "userName": {

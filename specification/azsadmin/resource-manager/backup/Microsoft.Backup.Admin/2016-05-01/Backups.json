@@ -49,7 +49,10 @@
                 ],
                 "consumes": [
                     "application/json"
-                ]
+                ],
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/backups/{backup}": {
@@ -145,11 +148,11 @@
     },
     "definitions": {
         "Backup": {
-            "description": "",
+            "description": "Information related to a backup.",
             "type": "object",
             "properties": {
                 "properties": {
-                    "description": "",
+                    "description": "Properties for a backup.",
                     "$ref": "#/definitions/BackupModel",
                     "x-ms-client-flatten": true
                 }
@@ -161,16 +164,90 @@
             ]
         },
         "BackupModel": {
+            "description": "Properties for a backup.",
+            "properties": {
+                "backupInfo": {
+                    "description": "Holds information for a backup.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/BackupInfo"
+                }
+            }
+        },
+        "BackupInfo": {
             "type": "object",
-            "description": "",
-            "properties": {}
+            "description": "Holds information for a backup.",
+            "properties": {
+                "backupDataVersion": {
+                    "description": "Version of the backup data.",
+                    "type": "string"
+                },
+                "backupId": {
+                    "description": "Unique GUID for the backup.",
+                    "type": "string"
+                },
+                "roleStatus": {
+                    "description": "Backup status for each role.",
+                    "$ref": "#/definitions/RoleOperationStatusList"
+                },
+                "status": {
+                    "description": "Current status of the backup.",
+                    "$ref": "#/definitions/OperationStatus"
+                },
+                "createdDateTime": {
+                    "description": "Creation time of backup.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "timeTakenToCreate": {
+                    "description": "Duration to create backup.",
+                    "type": "string"
+                }
+            }
+        },
+        "OperationStatus": {
+            "description": "Status of an operation.",
+            "type": "string",
+            "enum": [
+                "Creating",
+                "Queued",
+                "Running",
+                "Deleted",
+                "Failed",
+                "PartialSucceeded",
+                "Succeeded"
+            ],
+            "x-ms-enum": {
+                "name": "OperationStatus",
+                "modelAsString": true
+            }
+        },
+        "RoleOperationStatusList": {
+            "description": "object",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/RoleOperationStatus"
+            }
+        },
+        "RoleOperationStatus": {
+            "description": "Backup status for a role.",
+            "type": "object",
+            "properties": {
+                "roleName": {
+                    "description": "Name of the role.",
+                    "type": "string"
+                },
+                "operationStatus": {
+                    "description": "Status of the role.",
+                    "$ref": "#/definitions/OperationStatus"
+                }
+            }
         },
         "BackupList": {
             "type": "object",
-            "description": "List of .",
+            "description": "List of backups.",
             "properties": {
                 "value": {
-                    "description": "List of .",
+                    "description": "List of backups.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Backup"
