@@ -46,7 +46,10 @@
                 ],
                 "consumes": [
                     "application/json"
-                ]
+                ],
+                "x-ms-pageable" : {
+                    "nextLinkName" : "nextLink"
+                }
             },
             "put": {
                 "x-ms-examples": {
@@ -243,10 +246,10 @@
         },
         "BackupLocationList": {
             "type": "object",
-            "description": "List of .",
+            "description": "List of backup locations.",
             "properties": {
                 "value": {
-                    "description": "List of .",
+                    "description": "List of backup locations.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/BackupLocation"
