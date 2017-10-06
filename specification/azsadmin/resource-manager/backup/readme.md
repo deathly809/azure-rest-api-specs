@@ -1,12 +1,12 @@
-# Commerce Admin
+# Backup Admin
     
 > see https://aka.ms/autorest
 
-This is the AutoRest configuration file for Commerce Admin.
+This is the AutoRest configuration file for Backup Admin.
 
 ---
 ## Getting Started 
-To build the SDK for Commerce Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
+To build the SDK for Backup Admin, simply [Install AutoRest](https://aka.ms/autorest/install) and in this folder, run:
 
 > `autorest`
 
@@ -18,22 +18,24 @@ To see additional help and options, run:
 ## Configuration
 
 ### Basic Information 
-These are the global settings for the Commerce API.
+These are the global settings for the Backup Admin API.
 
 ``` yaml
-title: CommerceAdminClient
-description: Commerce Admin Client
+title: BackupAdminClient
+description: Backup Admin Client
 openapi-type: arm
-tag: package-2015-06-01-preview
+tag: package-2016-05-01
 ```
 
-### Tag: package-2015-06-01-preview
+### Tag: package-2016-05-01
 
-These settings apply only when `--tag=package-2015-06-01-preview` is specified on the command line.
+These settings apply only when `--tag=package-2016-05-01` is specified on the command line.
 
-``` yaml $(tag) == 'package-2015-06-01-preview'
+``` yaml $(tag) == 'package-2016-05-01'
 input-file:
-    - Microsoft.Commerce.Admin/2015-06-01-preview/CommerceAdmin.json
+    - Microsoft.Backup.Admin/2016-05-01/Backup.json
+    - Microsoft.Backup.Admin/2016-05-01/BackupLocations.json
+    - Microsoft.Backup.Admin/2016-05-01/Backups.json
 ```
 
 ---
@@ -45,9 +47,9 @@ input-file:
 csharp:
   azure-arm: true
   license-header: MICROSOFT_MIT_NO_VERSION
-  namespace: Microsoft.AzureStack.Management.Commerce.Admin
+  namespace: Microsoft.AzureStack.Management.Backup.Admin
   payload-flattening-threshold: 1
-  output-folder: $(csharp-sdks-folder)/Commerce/Commerce.Admin/Generated
+  output-folder: $(csharp-sdks-folder)/Backup/Backup.Admin/Generated
   clear-output-folder: true
 ```
 
@@ -63,10 +65,10 @@ python:
   payload-flattening-threshold: 2
 ```
 
-### Tag: package-2015-06-01-preview and python
+### Tag: package-2016-05-01 and python
 
-These settings apply only when `--tag=package-2015-06-01-preview --python` is specified on the command line.
+These settings apply only when `--tag=package-2016-05-01 --python` is specified on the command line.
 
-``` yaml $(tag) == 'package-2015-06-01-preview' && $(python)
-namespace: azure.mgmt.commerce.admin.v2015_06_01_preview
+``` yaml $(tag) == 'package-2016-05-01' && $(python)
+namespace: azure.mgmt.backup.admin.v2015_06_01_preview
 ```
