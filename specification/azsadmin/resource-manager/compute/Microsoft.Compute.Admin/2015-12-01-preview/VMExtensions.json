@@ -1,0 +1,220 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2015-12-01-preview",
+        "title": "Compute Admin Client"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}": {
+            "get": {
+                "tags": [
+                    "VMExtensions"
+                ],
+                "operationId": "VMExtensions_Get",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/PublisherParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/TypeParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "#/definitions/VMExtension"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "VMExtensions"
+                ],
+                "operationId": "VMExtensions_Create",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/PublisherParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/TypeParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/VMExtensionModel"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "VMExtensions"
+                ],
+                "operationId": "VMExtensions_Delete",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/PublisherParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/TypeParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension": {
+            "get": {
+                "tags": [
+                    "VMExtensions"
+                ],
+                "operationId": "VMExtensions_List",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "VMExtensionList"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "VMExtension": {
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/VMExtenionModel"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Compute.json#/definitions/Resource"
+                }
+            ]
+        },
+        "VMExtensionModel": {
+            "type": "object",
+            "properties": {
+                "VmOsType": {
+                    "$ref": "#/definitions/VmOsType"
+                },
+                "ComputeRole": {
+                    "type": "string"
+                },
+                "VMScaleSetEnabled": {
+                    "type": "boolean"
+                },
+                "SupportMultipleExtensions": {
+                    "type": "boolean"
+                },
+                "IsSystemExtension": {
+                    "type": "boolean"
+                },
+                "SourceBlob": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/AzureBlob"
+                },
+                "ProvisioningState": {
+                    "$ref": "#/definitions/ProvisioningState"
+                }
+            }
+        },
+        "AzureBlob": {
+            "type": "object",
+            "properties": {
+                "Uri": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "parameters": {
+        "VMExtension": {
+            "description": "Model of an extension.",
+            "name": "extension",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/VMExtensionModel"
+            },
+            "x-ms-parameter-location": "method"
+        }
+    }
+}

@@ -1,0 +1,236 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2015-12-01-preview",
+        "title": "Compute Admin Client"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quotaName}": {
+            "get": {
+                "tags": [
+                    "Quotas"
+                ],
+                "operationId": "Quotas_Get",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/QuotaParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Quotas"
+                ],
+                "operationId": "Quotas_Create",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/QuotaParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/NewQuotaParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Quotas"
+                ],
+                "operationId": "Quotas_Delete",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/QuotaParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas": {
+            "get": {
+                "tags": [
+                    "Quotas"
+                ],
+                "operationId": "Quotas_List",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/VersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/Microsoft.Compute.Admin/calculateQuotaAggregate": {
+            "post": {
+                "tags": [
+                    "Quotas"
+                ],
+                "operationId": "Quotas_Aggregate",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "quotaRelativePaths",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Quota": {
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/QuotaModel"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Compute.json#/definitions/Resource"
+                }
+            ]
+        },
+        "QuotaModel": {
+            "type": "object",
+            "properties": {
+                "VirtualMachineCount": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "CoresLimit": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "AvailabilitySetCount": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "VmScaleSetCount": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "parameters": {
+        "QuotaParameter": {
+            "description": "Name of the quota.",
+            "name": "quota",
+            "type": "string",
+            "required": true,
+            "in": "path",
+            "x-ms-parameter-location": "method"
+        },
+        "NewQuotaParameter": {
+            "name": "newQuota",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/ARMResource[Quota]"
+            },
+            "x-ms-parameter-location": "method"
+        }
+    }
+}

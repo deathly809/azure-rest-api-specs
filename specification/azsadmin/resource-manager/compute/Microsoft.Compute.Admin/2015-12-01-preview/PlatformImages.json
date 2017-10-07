@@ -1,0 +1,333 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2015-12-01-preview",
+        "title": "Compute Admin Client"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage": {
+            "get": {
+                "tags": [
+                    "PlatformImages"
+                ],
+                "operationId": "PlatformImages_List",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PlatformImageList"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}": {
+            "get": {
+                "tags": [
+                    "PlatformImages"
+                ],
+                "operationId": "PlatformImages_Get",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/PublisherParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/OfferParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/SkuParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/VersionParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PlatformImage"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "PlatformImage"
+                ],
+                "operationId": "PlatformImage_PutPlatformImage",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/PublisherParameter"
+                    },
+                    {
+                        "name": "offer",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "sku",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "platformImageResource",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PlatformImage"
+                        }
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/PlatformImage"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "PlatformImage"
+                ],
+                "description": "Delete a platform image",
+                "operationId": "PlatformImage_Delete",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/PublisherParameter"
+                    },
+                    {
+                        "name": "offer",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "sku",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "Compute.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "PlatformImage": {
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/PlatformImageModel"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Compute.json#/definitions/Resource"
+                }
+            ]
+        },
+        "PlatformImageModel": {
+            "type": "object",
+            "properties": {
+                "OsDisk": {
+                    "$ref": "#/definitions/OsDisk"
+                },
+                "DataDisks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DataDisk"
+                    }
+                },
+                "Details": {
+                    "$ref": "#/definitions/ImageDetails"
+                },
+                "ProvisioningState": {
+                    "$ref": "#/definitions/ProvisioningState"
+                }
+            }
+        },
+        "OsDisk": {
+            "type": "object",
+            "properties": {
+                "OsType": {
+                    "$ref": "#/definitions/OsType"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            }
+        },
+        "DataDisk": {
+            "type": "object",
+            "properties": {
+                "Lun": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            }
+        },
+        "ImageDetails": {
+            "type": "object",
+            "properties": {
+                "BillingPartNumber": {
+                    "type": "string"
+                }
+            }
+        },
+        "Quota": {
+            "type": "object",
+            "properties": {
+                "VirtualMachineCount": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "CoresLimit": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "AvailabilitySetCount": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "VmScaleSetCount": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            }
+        },
+        "VmOsType": {
+            "format": "int32",
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "type": "integer",
+            "x-ms-enum": {
+                "name": "VmOsType"
+            }
+        },
+        "ProvisioningState": {
+            "format": "int32",
+            "enum": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "type": "integer",
+            "x-ms-enum": {
+                "name": "ProvisioningState"
+            }
+        },
+        "OsType": {
+            "format": "int32",
+            "enum": [
+                0,
+                1,
+                2
+            ],
+            "type": "integer",
+            "x-ms-enum": {
+                "name": "OsType"
+            }
+        },
+        "PlatformImageList": {}
+    },
+    "parameters": {
+        "PublisherParameter": {
+            "name": "publisher",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "OfferParameter": {
+            "name": "offer",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "SkuParameter": {
+            "name": "sku",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        }
+    }
+}
