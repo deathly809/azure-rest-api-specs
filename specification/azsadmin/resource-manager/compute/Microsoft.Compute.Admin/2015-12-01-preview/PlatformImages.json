@@ -152,6 +152,12 @@
                             "$ref": "#/definitions/PlatformImage"
                         }
                     },
+                    "201": {
+                        "description": "CREATED",
+                        "schema": {
+                            "$ref": "#/definitions/PlatformImage"
+                        }
+                    },
                     "202": {
                         "description": "ACCEPTED",
                         "schema": {
@@ -161,8 +167,7 @@
                     "404": {
                         "description": "NOT FOUND"
                     }
-                },
-                "x-ms-long-running-operation": true
+                }
             },
             "delete": {
                 "x-ms-examples": {
