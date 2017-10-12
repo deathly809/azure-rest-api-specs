@@ -43,6 +43,9 @@
                         "schema": {
                             "$ref": "#/definitions/PlatformImageList"
                         }
+                    },
+                    "404" : {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -148,6 +151,9 @@
                         "schema": {
                             "$ref": "#/definitions/PlatformImage"
                         }
+                    },
+                    "404" : {
+                        "description": "NOT FOUND"
                     }
                 }
             },

@@ -54,6 +54,9 @@
                         "schema": {
                             "$ref": "#/definitions/VMExtension"
                         }
+                    },
+                    "404" : {
+                        "description": "NOT FOUND"
                     }
                 }
             },
@@ -188,6 +191,9 @@
                         "schema": {
                             "$ref": "#/definitions/VMExtensionList"
                         }
+                    },
+                    "404" : {
+                        "description": "NOT FOUND"
                     }
                 }
             }
