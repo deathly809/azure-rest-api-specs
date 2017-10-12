@@ -160,6 +160,7 @@
         "BlobServiceProperties": {
             "properties": {
                 "settings": {
+                    "x-ms-client-flatten": true,
                     "$ref": "#/definitions/BlobServiceSettings",
                     "description": "TODO"
                 }
