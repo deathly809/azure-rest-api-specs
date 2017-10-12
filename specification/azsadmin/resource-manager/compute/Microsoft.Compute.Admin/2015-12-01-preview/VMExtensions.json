@@ -222,7 +222,6 @@
             "properties": {
                 "vmOsType": {
                     "description": "Target virtaul machine operating system type necessary for deploying the extension handler",
-                    "x-ms-client-name": "VMOSType",
                     "$ref": "#/definitions/OsType"
                 },
                 "computeRole": {
@@ -231,7 +230,6 @@
                 },
                 "vmScaleSetEnabled": {
                     "description": "value indicating whether the extension is enabled for virtual machine scale set support",
-                    "x-ms-client-name": "VMScaleSet",
                     "type": "boolean"
                 },
                 "supportMultipleExtensions": {
