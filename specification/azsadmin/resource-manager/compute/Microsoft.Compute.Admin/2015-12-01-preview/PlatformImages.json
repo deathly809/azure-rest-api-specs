@@ -296,13 +296,12 @@
         },
         "OsType": {
             "description": "Operating system type.",
-            "format": "int32",
             "enum": [
-                0,
-                1,
-                2
+                "Unknown",
+                "Windows",
+                "Linux"
             ],
-            "type": "integer",
+            "type": "string",
             "x-ms-enum": {
                 "name": "OsType"
             }

@@ -38,14 +38,13 @@
   },
   "ProvisioningState": {
    "description": "The provisioning state of the resource.",
-   "format": "int32",
    "enum": [
-    1,
-    2,
-    3,
-    4
+    "Creating",
+    "Failed",
+    "Succeded",
+    "Canceled"
    ],
-   "type": "integer",
+   "type": "string",
    "x-ms-enum": {
     "name": "ProvisioningState"
    }
