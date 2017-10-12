@@ -311,7 +311,7 @@
             "description": "List of platform images.",
             "type": "array",
             "items": {
-                "$ref": "Quotas.json#/definitions/PlatformImage"
+                "$ref": "#/definitions/PlatformImage"
             }
         }
     },

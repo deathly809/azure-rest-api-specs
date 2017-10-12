@@ -277,7 +277,7 @@
                     "description": "List of virtual machine extensions.",
                     "type": "array",
                     "items": {
-                        "$ref": "Quotas.json#/definitions/Quota"
+                        "$ref": "#/definitions/VMExtension"
                     }
                 }
             }
