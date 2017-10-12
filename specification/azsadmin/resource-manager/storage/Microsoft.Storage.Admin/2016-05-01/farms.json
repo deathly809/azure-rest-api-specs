@@ -524,7 +524,6 @@
         "FarmPropertiesBase": {
             "properties": {
                 "settings": {
-                    "x-ms-client-flatten": true,
                     "$ref": "#/definitions/FarmSettings"
                 }
             },
