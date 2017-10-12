@@ -118,7 +118,7 @@
         }
     },
     "definitions": {
-        "AcquisitionModel": {
+        "AcquisitionProperties": {
             "properties": {
                 "filePath": {
                     "type": "string",
@@ -168,7 +168,7 @@
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/AcquisitionModel"
+                    "$ref": "#/definitions/AcquisitionProperties"
                 }
             },
             "allOf": [

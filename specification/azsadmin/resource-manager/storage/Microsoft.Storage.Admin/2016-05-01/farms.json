@@ -344,7 +344,7 @@
             "properties": {
                 "Properties": {
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/FarmModel",
+                    "$ref": "#/definitions/FarmProperties",
                     "description": "TODO"
                 }
             },
@@ -521,7 +521,7 @@
             },
             "description": "TODO"
         },
-        "FarmModelBase": {
+        "FarmPropertiesBase": {
             "properties": {
                 "settings": {
                     "$ref": "#/definitions/FarmSettings"
@@ -529,7 +529,7 @@
             },
             "description": "TODO"
         },
-        "FarmModel": {
+        "FarmProperties": {
             "properties": {
                 "settingsStore": {
                     "type": "string"
@@ -540,7 +540,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "#/definitions/FarmModelBase"
+                    "$ref": "#/definitions/FarmPropertiesBase"
                 }
             ],
             "description": "TODO"

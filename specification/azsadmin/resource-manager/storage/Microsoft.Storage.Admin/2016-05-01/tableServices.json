@@ -40,7 +40,7 @@
                     "200": {
                         "description": "TODO",
                         "schema": {
-                            "$ref": "#/definitions/TableServiceResource"
+                            "$ref": "#/definitions/TableService"
                         }
                     }
                 }
@@ -142,9 +142,10 @@
             ],
             "description": "TODO"
         },
-        "TableService": {
+        "TableServiceProperties": {
             "properties": {
                 "properties": {
+                    "x-ms-client-flatten": true,
                     "$ref": "#/definitions/TableServiceSettings"
                 }
             },
@@ -155,10 +156,11 @@
             ],
             "description": "TODO"
         },
-        "TableServiceResource": {
+        "TableService": {
             "properties": {
                 "properties": {
-                    "$ref": "#/definitions/TableService"
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/TableServiceProperties"
                 }
             },
             "allOf": [

@@ -186,7 +186,7 @@
         }
     },
     "definitions": {
-        "StorageAccountModel": {
+        "StorageAccountProperties": {
             "properties": {
                 "tenantViewId": {
                     "type": "string",
@@ -389,7 +389,7 @@
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/StorageAccountModel"
+                    "$ref": "#/definitions/StorageAccountProperties"
                 }
             },
             "allOf": [

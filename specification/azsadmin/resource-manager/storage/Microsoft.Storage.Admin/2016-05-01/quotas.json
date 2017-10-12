@@ -147,7 +147,7 @@
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/StorageQuotaModel"
+                    "$ref": "#/definitions/StorageQuotaProperties"
                 }
             },
             "allOf": [
@@ -156,7 +156,7 @@
                 }
             ]
         },
-        "StorageQuotaModel": {
+        "StorageQuotaProperties": {
             "properties": {
                 "numberOfStorageAccounts": {
                     "type": "integer",
@@ -174,7 +174,7 @@
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/StorageQuotaModel"
+                    "$ref": "#/definitions/StorageQuotaProperties"
                 }
             }
         },

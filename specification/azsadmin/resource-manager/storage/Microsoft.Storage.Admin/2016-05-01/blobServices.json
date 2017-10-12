@@ -40,7 +40,7 @@
                     "200": {
                         "description": "TODO",
                         "schema": {
-                            "$ref": "#/definitions/BlobServiceResource"
+                            "$ref": "#/definitions/BlobService"
                         }
                     }
                 }
@@ -157,7 +157,7 @@
             ],
             "description": "TODO"
         },
-        "BlobService": {
+        "BlobServiceProperties": {
             "properties": {
                 "settings": {
                     "$ref": "#/definitions/BlobServiceSettings",
@@ -171,10 +171,11 @@
             ],
             "description": "TODO"
         },
-        "BlobServiceResource": {
+        "BlobService": {
             "properties": {
                 "properties": {
-                    "$ref": "#/definitions/BlobService",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/BlobServiceProperties",
                     "description": "TODO"
                 }
             },

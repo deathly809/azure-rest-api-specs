@@ -40,7 +40,7 @@
                     "200": {
                         "description": "TODO",
                         "schema": {
-                            "$ref": "#/definitions/QueueServiceResource"
+                            "$ref": "#/definitions/QueueService"
                         }
                     }
                 }
@@ -142,9 +142,10 @@
             ],
             "description": "TODO"
         },
-        "QueueService": {
+        "QueueServiceProperties": {
             "properties": {
                 "properties": {
+                    "x-ms-client-flatten": true,
                     "$ref": "#/definitions/QueueServiceSettings"
                 }
             },
@@ -155,10 +156,11 @@
             ],
             "description": "TODO"
         },
-        "QueueServiceResource": {
+        "QueueService": {
             "properties": {
                 "properties": {
-                    "$ref": "#/definitions/QueueService"
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/QueueServiceProperties"
                 }
             },
             "allOf": [

@@ -175,7 +175,7 @@
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/ShareModel"
+                    "$ref": "#/definitions/ShareProperties"
                 }
             },
             "allOf": [
@@ -198,7 +198,7 @@
                 }
             }
         },
-        "ShareModel": {
+        "ShareProperties": {
             "properties": {
                 "shareName": {
                     "description": "TODO",
