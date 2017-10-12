@@ -51,7 +51,7 @@
                     }
                 }
             },
-            "post": {
+            "put": {
                 "x-ms-examples": {
                     "Create a quota.": {
                         "$ref": "examples/Quotas/Create.json"
