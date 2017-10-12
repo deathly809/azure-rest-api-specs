@@ -107,6 +107,12 @@
                         "schema": {
                             "$ref": "#/definitions/VMExtension"
                         }
+                    },
+                    "201": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/VMExtension"
+                        }
                     }
                 }
             },
