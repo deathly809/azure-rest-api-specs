@@ -55,7 +55,7 @@
                             "$ref": "#/definitions/VMExtension"
                         }
                     },
-                    "404" : {
+                    "404": {
                         "description": "NOT FOUND"
                     }
                 }
@@ -192,11 +192,9 @@
                             "$ref": "#/definitions/VMExtensionList"
                         }
                     },
-                    "404" : {
+                    "404": {
                         "description": "NOT FOUND"
                     }
-                },"x-ms-pageable" : {
-                    "nextLinkName" : null
                 }
             }
         }
@@ -267,19 +265,9 @@
         },
         "VMExtensionList": {
             "description": "List of virtual machine extensions.",
-            "type": "object",
-            "properties": {
-                "nextLink": {
-                    "description": "URI to the next page.",
-                    "type": "string"
-                },
-                "value": {
-                    "description": "List of virtual machine extensions.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/VMExtension"
-                    }
-                }
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/VMExtension"
             }
         }
     },
