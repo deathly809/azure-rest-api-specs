@@ -11,20 +11,43 @@
  "paths": {},
  "definitions": {
   "Resource": {
+   "description": "Base resource object.",
    "type": "object",
    "properties": {
-    "Id": {
+    "id": {
+     "readonly": true,
+     "description": "Id of the resource.",
      "type": "string"
     },
-    "Name": {
+    "name": {
+     "readonly": true,
+     "description": "Name of the resource.",
      "type": "string"
     },
-    "Type": {
+    "type": {
+     "readonly": true,
+     "description": "Resource type.",
      "type": "string"
     },
-    "Location": {
+    "location": {
+     "description": "Location of the resource.",
      "type": "string"
     }
+   },
+   "x-ms-azure-resource": true
+  },
+  "ProvisioningState": {
+   "description": "The provisioning state of the resource.",
+   "format": "int32",
+   "enum": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "type": "integer",
+   "x-ms-enum": {
+    "name": "ProvisioningState"
    }
   }
  },
@@ -45,11 +68,46 @@
    "default": "2015-06-01-preview"
   },
   "LocationParameter": {
+   "description": "Location of the resource.",
    "name": "locationName",
    "in": "path",
    "required": true,
    "type": "string",
    "x-ms-parameter-location": "method"
+  },
+  "PublisherParameter": {
+   "description": "Name of the publisher.",
+   "name": "publisher",
+   "in": "path",
+   "required": true,
+   "type": "string",
+   "x-ms-parameter-location": "method"
+  },
+  "VersionParameter": {
+   "description": "The version of the resource.",
+   "name": "version",
+   "in": "path",
+   "required": true,
+   "type": "string",
+   "x-ms-parameter-location": "method"
   }
- }
+ },
+ "securityDefinitions": {
+  "azure_auth": {
+   "type": "oauth2",
+   "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+   "flow": "implicit",
+   "description": "Azure Active Directory OAuth2 Flow",
+   "scopes": {
+    "user_impersonation": "impersonate your user account"
+   }
+  }
+ },
+ "security": [
+  {
+   "azure_auth": [
+    "user_impersonation"
+   ]
+  }
+ ]
 }

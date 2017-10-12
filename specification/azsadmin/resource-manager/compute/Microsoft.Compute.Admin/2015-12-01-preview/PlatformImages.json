@@ -11,9 +11,16 @@
     "paths": {
         "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage": {
             "get": {
+                "x-ms-examples": {
+                    "Get a list of all platform images.": {
+                        "$ref": "examples/PlatformImages/List.json"
+                    }
+                },
                 "tags": [
                     "PlatformImages"
                 ],
+                "summary": "Gets all platform images.",
+                "description": "Get a list of all platform images.",
                 "operationId": "PlatformImages_List",
                 "consumes": [],
                 "produces": [
@@ -42,11 +49,20 @@
         },
         "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}": {
             "get": {
+                "x-ms-examples": {
+                    "Get a platform image by name.": {
+                        "$ref": "examples/PlatformImages/Get.json"
+                    }
+                },
                 "tags": [
                     "PlatformImages"
                 ],
+                "summary": "Gets a single platform image.",
+                "description": "Get a platform image by name.",
                 "operationId": "PlatformImages_Get",
-                "consumes": [],
+                "consumes": [
+                    "application/json"
+                ],
                 "produces": [
                     "application/json"
                 ],
@@ -58,7 +74,7 @@
                         "$ref": "Compute.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "#/parameters/PublisherParameter"
+                        "$ref": "Compute.json#/parameters/PublisherParameter"
                     },
                     {
                         "$ref": "#/parameters/OfferParameter"
@@ -67,7 +83,7 @@
                         "$ref": "#/parameters/SkuParameter"
                     },
                     {
-                        "$ref": "#/parameters/VersionParameter"
+                        "$ref": "Compute.Json#/parameters/VersionParameter"
                     },
                     {
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
@@ -83,10 +99,17 @@
                 }
             },
             "put": {
+                "x-ms-examples": {
+                    "Create a new platform image.": {
+                        "$ref": "examples/PlatformImages/Create.json"
+                    }
+                },
                 "tags": [
-                    "PlatformImage"
+                    "PlatformImages"
                 ],
-                "operationId": "PlatformImage_PutPlatformImage",
+                "description": "Create a new platform image.",
+                "summary": "Create a platform image.",
+                "operationId": "PlatformImages_Create",
                 "consumes": [
                     "application/json"
                 ],
@@ -101,30 +124,22 @@
                         "$ref": "Compute.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "#/parameters/PublisherParameter"
+                        "$ref": "Compute.json#/parameters/PublisherParameter"
                     },
                     {
-                        "name": "offer",
-                        "in": "path",
-                        "required": true,
-                        "type": "string"
+                        "$ref": "#/parameters/OfferParameter"
                     },
                     {
-                        "name": "sku",
-                        "in": "path",
-                        "required": true,
-                        "type": "string"
+                        "$ref": "#/parameters/SkuParameter"
                     },
                     {
-                        "name": "platformImageResource",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/PlatformImage"
-                        }
+                        "$ref": "Compute.Json#/parameters/VersionParameter"
                     },
                     {
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/NewPlatformImageParameter"
                     }
                 ],
                 "responses": {
@@ -137,12 +152,20 @@
                 }
             },
             "delete": {
+                "x-ms-examples": {
+                    "Delete a platform image.": {
+                        "$ref": "examples/PlatformImages/Delete.json"
+                    }
+                },
                 "tags": [
-                    "PlatformImage"
+                    "PlatformImages"
                 ],
+                "summary": "Deletes a platform image",
                 "description": "Delete a platform image",
-                "operationId": "PlatformImage_Delete",
-                "consumes": [],
+                "operationId": "PlatformImages_Delete",
+                "consumes": [
+                    "application/json"
+                ],
                 "produces": [
                     "application/json"
                 ],
@@ -154,19 +177,16 @@
                         "$ref": "Compute.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "#/parameters/PublisherParameter"
+                        "$ref": "Compute.json#/parameters/PublisherParameter"
                     },
                     {
-                        "name": "offer",
-                        "in": "path",
-                        "required": true,
-                        "type": "string"
+                        "$ref": "#/parameters/OfferParameter"
                     },
                     {
-                        "name": "sku",
-                        "in": "path",
-                        "required": true,
-                        "type": "string"
+                        "$ref": "#/parameters/SkuParameter"
+                    },
+                    {
+                        "$ref": "Compute.Json#/parameters/VersionParameter"
                     },
                     {
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
@@ -182,12 +202,13 @@
     },
     "definitions": {
         "PlatformImage": {
+            "description": "Platform image represents a virtual machine.",
             "type": "object",
             "properties": {
                 "properties": {
-                    "description": "",
+                    "description": "Platform image properties.",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/PlatformImageModel"
+                    "$ref": "#/definitions/PlatformImageProperties"
                 }
             },
             "allOf": [
@@ -196,104 +217,72 @@
                 }
             ]
         },
-        "PlatformImageModel": {
+        "PlatformImageProperties": {
+            "description": "Properties of platform image.",
             "type": "object",
             "properties": {
-                "OsDisk": {
+                "osDisk": {
+                    "description": "Operating system used for this platform image.",
                     "$ref": "#/definitions/OsDisk"
                 },
-                "DataDisks": {
+                "dataDisks": {
+                    "description": "Data disks used by the platform image.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/DataDisk"
                     }
                 },
-                "Details": {
+                "details": {
+                    "description": "Information about the image.",
                     "$ref": "#/definitions/ImageDetails"
                 },
-                "ProvisioningState": {
-                    "$ref": "#/definitions/ProvisioningState"
+                "provisioningState": {
+                    "description": "Provisioning status of the platform image.",
+                    "$ref": "Compute.json#/definitions/ProvisioningState"
                 }
             }
         },
         "OsDisk": {
+            "description": "Operating system disk.",
             "type": "object",
             "properties": {
-                "OsType": {
+                "osType": {
+                    "description": "Operating system type.",
                     "$ref": "#/definitions/OsType"
                 },
-                "Uri": {
+                "uri": {
+                    "description": "Location of the disk.",
                     "type": "string"
                 }
             }
         },
         "DataDisk": {
+            "description": "Information about datadisk.",
             "type": "object",
             "properties": {
-                "Lun": {
+                "lun": {
+                    "description": "Logical unit number.",
                     "format": "int32",
                     "type": "integer"
                 },
-                "Uri": {
+                "uri": {
+                    "description": "Location of the disk template.",
                     "type": "string"
                 }
             }
         },
         "ImageDetails": {
+            "description": "Information about the disk image.",
             "type": "object",
             "properties": {
-                "BillingPartNumber": {
+                "billingPartNumber": {
+                    "description": "Something about billing?.",
                     "type": "string"
                 }
             }
         },
-        "Quota": {
-            "type": "object",
-            "properties": {
-                "VirtualMachineCount": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "CoresLimit": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "AvailabilitySetCount": {
-                    "format": "int32",
-                    "type": "integer"
-                },
-                "VmScaleSetCount": {
-                    "format": "int32",
-                    "type": "integer"
-                }
-            }
-        },
-        "VmOsType": {
-            "format": "int32",
-            "enum": [
-                0,
-                1,
-                2
-            ],
-            "type": "integer",
-            "x-ms-enum": {
-                "name": "VmOsType"
-            }
-        },
-        "ProvisioningState": {
-            "format": "int32",
-            "enum": [
-                1,
-                2,
-                3,
-                4
-            ],
-            "type": "integer",
-            "x-ms-enum": {
-                "name": "ProvisioningState"
-            }
-        },
         "OsType": {
+            "description": "Operating system type.",
             "format": "int32",
             "enum": [
                 0,
@@ -305,17 +294,27 @@
                 "name": "OsType"
             }
         },
-        "PlatformImageList": {}
+        "PlatformImageList": {
+            "description": "List of platform images.",
+            "type": "object",
+            "properties": {
+                "nextLink": {
+                    "description": "URI to the next page.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "List of platform images.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "Quotas.json#/definitions/PlatformImage"
+                    }
+                }
+            }
+        }
     },
     "parameters": {
-        "PublisherParameter": {
-            "name": "publisher",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
         "OfferParameter": {
+            "description": "Name of the offer.",
             "name": "offer",
             "in": "path",
             "required": true,
@@ -323,11 +322,40 @@
             "x-ms-parameter-location": "method"
         },
         "SkuParameter": {
+            "description": "Name of the sku.",
             "name": "sku",
             "in": "path",
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
+        },
+        "NewPlatformImageParameter": {
+            "description": "New platform image.",
+            "name": "newImage",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/PlatformImage"
+            },
+            "x-ms-parameter-location": "method"
         }
-    }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

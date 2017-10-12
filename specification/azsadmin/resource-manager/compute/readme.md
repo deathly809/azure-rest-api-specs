@@ -33,7 +33,10 @@ These settings apply only when `--tag=package-2015-12-01-preview` is specified o
 
 ``` yaml $(tag) == 'package-2015-12-01-preview'
 input-file:
-    - Microsoft.Compute.Admin/2015-12-01-preview/ComputeAdmin.json
+    - Microsoft.Compute.Admin/2015-12-01-preview/Compute.json
+    - Microsoft.Compute.Admin/2015-12-01-preview/PlatformImages.json
+    - Microsoft.Compute.Admin/2015-12-01-preview/Quotas.json
+    - Microsoft.Compute.Admin/2015-12-01-preview/VMExtensions.json
 ```
 
 ---
@@ -46,7 +49,7 @@ csharp:
   azure-arm: true
   license-header: MICROSOFT_MIT_NO_VERSION
   namespace: Microsoft.AzureStack.Management.Compute.Admin
-  payload-flattening-threshold: 1
+  payload-flattening-threshold: 2
   output-folder: $(csharp-sdks-folder)/Compute/Compute.Admin/Generated
   clear-output-folder: true
 ```
