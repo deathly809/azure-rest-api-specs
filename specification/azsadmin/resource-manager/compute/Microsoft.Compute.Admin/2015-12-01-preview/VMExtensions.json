@@ -217,7 +217,7 @@
                 "vmOsType": {
                     "description": "Target virtaul machine operating system type necessary for deploying the extension handler",
                     "x-ms-client-name": "VMOSType",
-                    "$ref": "#/definitions/VmOsType"
+                    "$ref": "#/definitions/OsType"
                 },
                 "computeRole": {
                     "description": "Compute role",
