@@ -177,7 +177,7 @@
                 }
             }
         },
-        "/Microsoft.Compute.Admin/calculateQuotaAggregate": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/calculateQuotaAggregate": {
             "post": {
                 "x-ms-examples": {
                     "Calculates the aggregate for a list of quotas.": {
@@ -197,6 +197,9 @@
                     "application/json"
                 ],
                 "parameters": [
+                    {
+                        "$ref" : "Compute.json#/parameters/SubscriptionIdParameter"
+                    },
                     {
                         "description" : "List of quota URIs.",
                         "name": "quotaRelativePaths",
