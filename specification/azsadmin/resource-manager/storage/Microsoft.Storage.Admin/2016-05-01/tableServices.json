@@ -145,7 +145,6 @@
         "TableService": {
             "properties": {
                 "properties": {
-                    "x-ms-client-flatten": true,
                     "$ref": "#/definitions/TableServiceSettings"
                 }
             },
@@ -159,7 +158,6 @@
         "TableServiceResource": {
             "properties": {
                 "properties": {
-                    "x-ms-client-flatten": true,
                     "$ref": "#/definitions/TableService"
                 }
             },
