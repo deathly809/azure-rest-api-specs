@@ -47,9 +47,6 @@
                     "404": {
                         "description": "NOT FOUND"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 }
             }
         },
@@ -165,7 +162,7 @@
                         "description": "NOT FOUND"
                     }
                 },
-                "x-ms-long-running-operation" : true
+                "x-ms-long-running-operation": true
             },
             "delete": {
                 "x-ms-examples": {
@@ -312,19 +309,9 @@
         },
         "PlatformImageList": {
             "description": "List of platform images.",
-            "type": "object",
-            "properties": {
-                "nextLink": {
-                    "description": "URI to the next page.",
-                    "type": "string"
-                },
-                "value": {
-                    "description": "List of platform images.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "Quotas.json#/definitions/PlatformImage"
-                    }
-                }
+            "type": "array",
+            "items": {
+                "$ref": "Quotas.json#/definitions/PlatformImage"
             }
         }
     },
