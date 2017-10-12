@@ -47,6 +47,8 @@
                     "404" : {
                         "description": "NOT FOUND"
                     }
+                },"x-ms-pageable" : {
+                    "nextLinkName" : "nextLink"
                 }
             }
         },
