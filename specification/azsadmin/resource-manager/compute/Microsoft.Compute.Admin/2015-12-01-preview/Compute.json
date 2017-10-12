@@ -41,7 +41,7 @@
    "enum": [
     "Creating",
     "Failed",
-    "Succeded",
+    "Succeeded",
     "Canceled"
    ],
    "type": "string",
