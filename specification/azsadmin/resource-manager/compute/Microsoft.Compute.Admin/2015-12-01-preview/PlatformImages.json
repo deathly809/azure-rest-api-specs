@@ -83,7 +83,7 @@
                         "$ref": "#/parameters/SkuParameter"
                     },
                     {
-                        "$ref": "Compute.Json#/parameters/VersionParameter"
+                        "$ref": "Compute.json#/parameters/VersionParameter"
                     },
                     {
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
@@ -133,7 +133,7 @@
                         "$ref": "#/parameters/SkuParameter"
                     },
                     {
-                        "$ref": "Compute.Json#/parameters/VersionParameter"
+                        "$ref": "Compute.json#/parameters/VersionParameter"
                     },
                     {
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
@@ -186,7 +186,7 @@
                         "$ref": "#/parameters/SkuParameter"
                     },
                     {
-                        "$ref": "Compute.Json#/parameters/VersionParameter"
+                        "$ref": "Compute.json#/parameters/VersionParameter"
                     },
                     {
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
