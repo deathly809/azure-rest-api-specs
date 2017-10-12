@@ -176,55 +176,6 @@
                     "nextLinkName": null
                 }
             }
-        },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/calculateQuotaAggregate": {
-            "post": {
-                "x-ms-examples": {
-                    "Calculates the aggregate for a list of quotas.": {
-                        "$ref": "examples/Quotas/Aggregate.json"
-                    }
-                },
-                "tags": [
-                    "Quotas"
-                ],
-                "summary": "Aggregates quotas.",
-                "description": "Calculates the aggregate for a list of quotas.",
-                "operationId": "Quotas_ComputeAggregate",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "$ref" : "Compute.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "description" : "List of quota URIs.",
-                        "name": "quotaRelativePaths",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    {
-                        "$ref": "Compute.json#/parameters/ApiVersionParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                }
-            }
         }
     },
     "definitions": {
