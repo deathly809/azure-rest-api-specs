@@ -167,7 +167,7 @@
                 ],
                 "summary": "Get a platform images.",
                 "description": "Get a platform image by name.",
-                "operationId": "VMExtensions_Get",
+                "operationId": "VMExtensions_ListVersions",
                 "consumes": [
                     "application/json"
                 ],
@@ -310,7 +310,7 @@
                 ],
                 "summary": "Get a platform images.",
                 "description": "Get a platform image by name.",
-                "operationId": "VMExtensions_Get",
+                "operationId": "VMExtensions_GetType",
                 "consumes": [
                     "application/json"
                 ],
@@ -453,7 +453,7 @@
                 ],
                 "summary": "Get a platform images.",
                 "description": "Get a platform image by name.",
-                "operationId": "VMExtensions_Get",
+                "operationId": "VMExtensions_ListTypes",
                 "consumes": [
                     "application/json"
                 ],
@@ -593,7 +593,7 @@
                 ],
                 "summary": "Get a platform images.",
                 "description": "Get a platform image by name.",
-                "operationId": "VMExtensions_Get",
+                "operationId": "VMExtensions_GetPublisher",
                 "consumes": [
                     "application/json"
                 ],
@@ -733,7 +733,7 @@
                 ],
                 "summary": "Get a platform images.",
                 "description": "Get a platform image by name.",
-                "operationId": "VMExtensions_Get",
+                "operationId": "VMExtensions_ListPublishers",
                 "consumes": [
                     "application/json"
                 ],
