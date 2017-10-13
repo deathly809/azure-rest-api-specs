@@ -98,6 +98,9 @@
                         "schema": {
                             "$ref": "#/definitions/PlatformImage"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             },
@@ -213,6 +216,9 @@
                 "responses": {
                     "200": {
                         "description": "OK"
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
