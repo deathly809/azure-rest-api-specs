@@ -71,7 +71,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ShareNameParameter"
-                    }
+                    },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
@@ -108,7 +108,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ShareNameParameter"
-                    }
+                    },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }

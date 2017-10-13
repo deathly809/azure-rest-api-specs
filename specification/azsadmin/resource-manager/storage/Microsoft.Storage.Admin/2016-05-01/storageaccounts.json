@@ -102,7 +102,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    }
+                    },
                     {
                         "$ref": "storage.json#/parameters/SummaryParameter"
                     }
