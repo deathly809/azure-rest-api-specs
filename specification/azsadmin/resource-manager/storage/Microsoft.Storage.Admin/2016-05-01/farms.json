@@ -175,7 +175,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/FarmIdParameter"
-                    }
+                    },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
