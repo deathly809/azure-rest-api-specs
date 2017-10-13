@@ -143,9 +143,6 @@
                         "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "storage.json#/parameters/FilterParameter"
-                    },
-                    {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
                 ],
@@ -156,8 +153,7 @@
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
-                },
-                "x-ms-odata": "storage.json#/definitions/MetricDefinition"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metrics": {
@@ -179,10 +175,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/FarmIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
-                    },
+                    }
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
@@ -194,8 +187,7 @@
                             "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
-                },
-                "x-ms-odata": "storage.json#/definitions/Metric"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms": {
@@ -217,9 +209,6 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -229,8 +218,7 @@
                             "$ref": "#/definitions/FarmList"
                         }
                     }
-                },
-                "x-ms-odata": "#/definitions/Farm"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/ondemandgc": {

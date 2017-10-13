@@ -37,9 +37,6 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -49,8 +46,7 @@
                             "$ref": "#/definitions/ShareList"
                         }
                     }
-                },
-                "x-ms-odata": "#/definitions/Share"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/metrics": {
@@ -75,10 +71,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ShareNameParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
-                    },
+                    }
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
@@ -90,8 +83,7 @@
                             "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
-                },
-                "x-ms-odata": "storage.json#/definitions/Acquisition"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/metricdefinitions": {
@@ -116,10 +108,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ShareNameParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
-                    },
+                    }
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     }
@@ -131,8 +120,7 @@
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
-                },
-                "x-ms-odata": "storage.json#/definitions/MetricDefinition"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}": {

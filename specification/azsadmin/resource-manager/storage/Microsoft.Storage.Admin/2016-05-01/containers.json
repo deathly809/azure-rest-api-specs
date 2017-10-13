@@ -103,9 +103,6 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -115,8 +112,7 @@
                             "$ref": "#/definitions/ContainerList"
                         }
                     }
-                },
-                "x-ms-odata": "#/definitions/Container"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/destinationshares": {
@@ -144,9 +140,6 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
@@ -156,8 +149,7 @@
                             "$ref": "#/definitions/ShareList"
                         }
                     }
-                },
-                "x-ms-odata": "#/definitions/Share"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/migrate": {

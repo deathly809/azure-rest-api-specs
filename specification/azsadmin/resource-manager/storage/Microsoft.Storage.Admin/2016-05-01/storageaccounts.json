@@ -102,10 +102,7 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FilterParameter"
-                    },
+                    }
                     {
                         "$ref": "storage.json#/parameters/SummaryParameter"
                     }
@@ -117,8 +114,7 @@
                             "$ref": "#/definitions/StorageAccountList"
                         }
                     }
-                },
-                "x-ms-odata": "#/definitions/StorageAccount"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/storageaccounts/{accountId}": {
