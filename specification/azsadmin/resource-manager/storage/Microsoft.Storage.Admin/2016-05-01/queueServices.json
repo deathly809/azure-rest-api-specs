@@ -18,10 +18,10 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default": {
             "get": {
                 "tags": [
-                    "Queues"
+                    "QueueServices"
                 ],
                 "description": "TODO",
-                "operationId": "Queues_Get",
+                "operationId": "QueueServices_Get",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -52,10 +52,10 @@
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
-                    "Queues"
+                    "QueueServices"
                 ],
                 "description": "",
-                "operationId": "Queues_ListMetricDefinitions",
+                "operationId": "QueueServices_ListMetricDefinitions",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -86,10 +86,10 @@
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
-                    "Queues"
+                    "QueueServices"
                 ],
                 "description": "",
-                "operationId": "Queues_ListMetrics",
+                "operationId": "QueueServices_ListMetrics",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
