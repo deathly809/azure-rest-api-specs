@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Quota service operation endpoints and objects.",
+        "description": "Storage Quota service operation endpoints and objects.",
         "version": "2015-12-01-preview"
     },
     "host": "adminmanagement.local.azurestack.external",
@@ -18,10 +18,10 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/locations/{location}/quotas/{quotaName}": {
             "put": {
                 "tags": [
-                    "Quotas"
+                    "StorageQuotas"
                 ],
                 "description": "Create or update an existing storage quota",
-                "operationId": "Quotas_CreateOrUpdate",
+                "operationId": "StorageQuotas_CreateOrUpdate",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -42,7 +42,7 @@
                         "schema": {
                             "$ref": "#/definitions/StorageQuotaParameters"
                         },
-                        "description": "parameters used to create or update storage quota"
+                        "description": "Parameters used to create or update storage quota"
                     }
                 ],
                 "responses": {
@@ -56,10 +56,10 @@
             },
             "delete": {
                 "tags": [
-                    "Quotas"
+                    "StorageQuotas"
                 ],
                 "description": "Delete an existing quota",
-                "operationId": "Quotas_Delete",
+                "operationId": "StorageQuotas_Delete",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -82,10 +82,10 @@
             },
             "get": {
                 "tags": [
-                    "Quotas"
+                    "StorageQuotas"
                 ],
                 "description": "Retrieve an existing quota",
-                "operationId": "Quotas_Get",
+                "operationId": "StorageQuotas_Get",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -97,7 +97,7 @@
                         "$ref": "storage.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "#/parameters/QuotaNameParameter"
+                        "$ref": "#/parameters/StorageQuotaNameParameter"
                     }
                 ],
                 "responses": {
@@ -113,10 +113,10 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/locations/{location}/quotas": {
             "get": {
                 "tags": [
-                    "Quotas"
+                    "StorageQuotas"
                 ],
                 "description": "Get a list of quotas for this location",
-                "operationId": "Quotas_List",
+                "operationId": "StorageQuotas_List",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
