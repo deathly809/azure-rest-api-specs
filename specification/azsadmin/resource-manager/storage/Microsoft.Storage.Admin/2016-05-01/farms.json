@@ -226,7 +226,7 @@
                 "tags": [
                     "Farms"
                 ],
-                "operationId": "Farms_StartGarbageCollect",
+                "operationId": "Farms_StartGarbageCollection",
                 "description": "TODO",
                 "parameters": [
                     {
@@ -265,7 +265,7 @@
                 "tags": [
                     "GC"
                 ],
-                "operationId": "Farms_GetGarbageCollectState",
+                "operationId": "Farms_GetGarbageCollectionState",
                 "description": "TODO",
                 "parameters": [
                     {
