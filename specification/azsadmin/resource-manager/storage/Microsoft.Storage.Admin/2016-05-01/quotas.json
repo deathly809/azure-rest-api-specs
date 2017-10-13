@@ -97,7 +97,7 @@
                         "$ref": "storage.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "#/parameters/StorageQuotaNameParameter"
+                        "$ref": "#/parameters/QuotaNameParameter"
                     }
                 ],
                 "responses": {
