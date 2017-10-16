@@ -80,9 +80,6 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions": {
             "get": {
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
                 "tags": [
                     "Acquisitions"
                 ],
@@ -112,8 +109,7 @@
                             "$ref": "#/definitions/AcquisitionList"
                         }
                     }
-                },
-                "x-ms-odata": "#/definitions/Acquisition"
+                }
             }
         }
     },

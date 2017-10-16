@@ -80,9 +80,6 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/containers&Intent={migrationIntent}&MaxCount={maxCount}&StartIndex={startIndex}": {
             "get": {
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
                 "tags": [
                     "Containers"
                 ],
@@ -117,9 +114,6 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/destinationshares": {
             "get": {
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
                 "tags": [
                     "Containers"
                 ],

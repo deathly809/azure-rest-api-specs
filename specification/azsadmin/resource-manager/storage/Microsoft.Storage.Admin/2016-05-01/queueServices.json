@@ -48,9 +48,6 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metricdefinitions": {
             "get": {
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
                 "tags": [
                     "QueueServices"
                 ],
@@ -82,9 +79,6 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metrics": {
             "get": {
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
                 "tags": [
                     "QueueServices"
                 ],

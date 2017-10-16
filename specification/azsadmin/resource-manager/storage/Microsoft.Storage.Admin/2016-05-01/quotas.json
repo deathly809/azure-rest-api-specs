@@ -135,9 +135,6 @@
                             "$ref": "#/definitions/StorageQuotaList"
                         }
                     }
-                },
-                "x-ms-pageable" : {
-                    "nextLinkName": null
                 }
             }
         }
