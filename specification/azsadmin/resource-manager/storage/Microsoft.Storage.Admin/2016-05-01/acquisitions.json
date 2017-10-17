@@ -182,13 +182,12 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Acquisition"
-                    }
+                    },
+                    "description": "TODO"
                 },
-                "description": "TODO",
                 "nextLink": {
                     "type": "string"
                 },
-                "description": "TODO"
             },
             "description": "TODO"
         }
