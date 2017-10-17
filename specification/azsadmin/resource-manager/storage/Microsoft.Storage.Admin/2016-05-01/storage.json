@@ -218,9 +218,6 @@
                         "$ref": "#/definitions/MetricDefinition"
                     },
                     "description": "List of metric definition."
-                },
-                "nextLink": {
-                    "type": "string"
                 }
             }
         },
@@ -233,9 +230,6 @@
                         "$ref": "#/definitions/Metric"
                     },
                     "description": "List of metrics."
-                },
-                "nextLink": {
-                    "type": "string"
                 }
             }
         },

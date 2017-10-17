@@ -298,12 +298,8 @@
                         "$ref": "#/definitions/Farm"
                     },
                     "description": "TODO"
-                },
-                "nextLink": {
-                    "type": "string"
                 }
-            },
-            "description": "TODO"
+            }
         },
         "FarmParameters": {
             "properties": {

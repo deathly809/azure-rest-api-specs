@@ -171,9 +171,6 @@
                         "$ref": "#/definitions/Share"
                     },
                     "description": "List of shares."
-                },
-                "nextLink": {
-                    "type": "string"
                 }
             }
         },

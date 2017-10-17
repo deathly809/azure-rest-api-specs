@@ -421,13 +421,10 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/StorageAccount"
-                    }
-                },
-                "nextLink": {
-                    "type": "string"
+                    },
+                    "description": "List of storage accounts supported by the Storage resource provider."
                 }
-            },
-            "description": "List of storage accounts supported by the Storage resource provider."
+            }
         }
     },
     "parameters": {
