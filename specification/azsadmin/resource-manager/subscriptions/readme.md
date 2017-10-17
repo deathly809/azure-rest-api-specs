@@ -33,7 +33,18 @@ These settings apply only when `--tag=package-2015-11-01` is specified on the co
 
 ``` yaml $(tag) == 'package-2015-11-01'
 input-file:
-    - Microsoft.Subscriptions.Admin/2015-11-01/SubscriptionsAdmin.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/Subscriptions.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/AcquiredPlans.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/DirectoryTenants.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/Locations.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/Offers.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/OfferDelegations.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/OfferMetrics.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/Plans.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/PlanMetrics.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/Quotas.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/Resellers.json
+    - Microsoft.Subscriptions.Admin/2015-11-01/ResellerOffers.json
 ```
 
 ---

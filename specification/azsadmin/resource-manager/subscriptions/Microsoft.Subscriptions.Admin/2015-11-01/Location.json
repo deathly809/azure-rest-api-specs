@@ -44,8 +44,8 @@
                 "consumes": [
                     "application/json"
                 ],
-                "x-ms-pageable" : {
-                    "nextLink" : null
+                "x-ms-pageable": {
+                    "nextLink": null
                 }
             }
         },
@@ -66,10 +66,50 @@
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "Location.json#/parameters/LocationParameter"
+                        "$ref": "Subscriptions.json#/parameters/LocationParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Location"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            },
+            "put": {
+                "x-ms-examples": {
+                    "Puts the location where resource providers can be registered.": {
+                        "$ref": "./examples/Location/Create.json"
+                    }
+                },
+                "tags": [
+                    "Locations"
+                ],
+                "description": "Puts the location where resource providers can be registered.",
+                "operationId": "Locations_Create",
+                "parameters": [
+                    {
+                        "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Subscriptions.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/NewLocationParameter"
                     }
                 ],
                 "responses": {
@@ -94,7 +134,10 @@
             "description": "Where resources can be registered",
             "type": "object",
             "properties": {
-                "$ref": "#/definitions/Location"
+                "properties": {
+                    "x-ms-flatten": true,
+                    "$ref": "#/definitions/Location"
+                }
             },
             "allOf": [
                 {
@@ -123,12 +166,14 @@
         }
     },
     "parameters": {
-        "LocationParameter": {
-            "name": "location",
-            "in": "path",
-            "description": "Name of location where resource providers can be registered.",
+        "NewLocationParameter": {
+            "description": "The new location",
+            "name": "newLocation",
             "required": true,
-            "type": "string",
+            "in": "body",
+            "schema": {
+                "$ref": "#/definitions/Location"
+            },
             "x-ms-parameter-location": "method"
         }
     },
