@@ -82,6 +82,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/storageaccounts": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "StorageAccounts"
                 ],
@@ -421,10 +424,13 @@
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/StorageAccount"
-                    },
-                    "description": "List of storage accounts supported by the Storage resource provider."
+                    }
+                },
+                "nextLink": {
+                    "type": "string"
                 }
-            }
+            },
+            "description": "List of storage accounts supported by the Storage resource provider."
         }
     },
     "parameters": {

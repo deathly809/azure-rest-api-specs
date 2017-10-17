@@ -124,6 +124,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metricdefinitions": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "Farms"
                 ],
@@ -155,6 +158,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metrics": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "Farms"
                 ],
@@ -186,6 +192,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "Farms"
                 ],
@@ -298,8 +307,12 @@
                         "$ref": "#/definitions/Farm"
                     },
                     "description": "TODO"
+                },
+                "nextLink": {
+                    "type": "string"
                 }
-            }
+            },
+            "description": "TODO"
         },
         "FarmParameters": {
             "properties": {

@@ -48,6 +48,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metricdefinitions": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "BlobServices"
                 ],
@@ -79,6 +82,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metrics": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "BlobServices"
                 ],

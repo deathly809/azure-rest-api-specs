@@ -112,6 +112,9 @@
         },
         "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/locations/{location}/quotas": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "StorageQuotas"
                 ],

@@ -17,6 +17,9 @@
     "paths": {
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "Shares"
                 ],
@@ -48,6 +51,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/metrics": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "Shares"
                 ],
@@ -82,6 +88,9 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/metricdefinitions": {
             "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
                 "tags": [
                     "Shares"
                 ],
@@ -171,6 +180,9 @@
                         "$ref": "#/definitions/Share"
                     },
                     "description": "List of shares."
+                },
+                "nextLink": {
+                    "type": "string"
                 }
             }
         },
