@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Lists all the directory tenants under the current subscription and given resource group name.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/DirectoryTenant/List.json"
                     }
                 },
                 "tags": [
@@ -53,10 +53,10 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/DirectoryTenant/Get.json"
                     }
                 },
-                "description": "Gets a collection of SubscriberUsageAggregates, which are UsageAggregates from direct tenants.",
+                "description": "",
                 "tags": [
                     "DirectoryTenants"
                 ],
@@ -93,7 +93,7 @@
             "delete": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/DirectoryTenant/Delete.json"
                     }
                 },
                 "description": "Delete a directory tenant under a resource group.",
@@ -130,7 +130,7 @@
             "put": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/DirectoryTenant/Create.json"
                     }
                 },
                 "description": "Gets a collection of SubscriberUsageAggregates, which are UsageAggregates from direct tenants.",

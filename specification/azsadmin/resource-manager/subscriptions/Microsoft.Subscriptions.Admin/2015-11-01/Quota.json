@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of quotas at a location.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/Quota/List.json"
                     }
                 },
                 "tags": [
@@ -53,7 +53,7 @@
             "get": {
                 "x-ms-examples": {
                     "Gets a quota by name.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/Quota/Get.json"
                     }
                 },
                 "description": "Gets a quota by name.",

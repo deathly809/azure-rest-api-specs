@@ -290,6 +290,96 @@
                     "application/json"
                 ]
             }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/offers/{offer}/link": {
+            "post": {
+                "x-ms-examples": {
+                    "Get the list of offers.": {
+                        "$ref": "./examples/Offer/List.json"
+                    }
+                },
+                "description": "Get the list of offers.",
+                "tags": [
+                    "Offers"
+                ],
+                "operationId": "Offers_Link",
+                "parameters": [
+                    {
+                        "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/OfferParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/PlanLinkParameter"
+                    },
+                    {
+                        "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/MetricDefinitionList"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/offers/{offer}/unlink": {
+            "post": {
+                "x-ms-examples": {
+                    "Get the list of offers.": {
+                        "$ref": "./examples/Offer/List.json"
+                    }
+                },
+                "description": "Get the list of offers.",
+                "tags": [
+                    "Offers"
+                ],
+                "operationId": "Offers_Unlink",
+                "parameters": [
+                    {
+                        "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/OfferParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/PlanLinkParameter"
+                    },
+                    {
+                        "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/MetricDefinitionList"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            }
         }
     },
     "definitions": {
@@ -396,6 +486,10 @@
                     "description": "Continuation token"
                 }
             }
+        },
+        "PlanLink": {
+            "description": "",
+            "type": "object"
         }
     },
     "parameters": {
@@ -407,13 +501,23 @@
             "type": "string",
             "x-ms-parameter-location": "method"
         },
-        "ApiVersionParameter": {
+        "NewOfferParameter": {
             "description": "",
             "name": "newOffer",
             "in": "body",
             "required": true,
             "schema": {
                 "$ref": "#/definitions/Offer"
+            },
+            "x-ms-parameter-location": "method"
+        },
+        "PlanLinkParameter": {
+            "description": "",
+            "name": "planLink",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/PlanLink"
             },
             "x-ms-parameter-location": "method"
         }

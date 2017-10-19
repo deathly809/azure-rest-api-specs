@@ -10,24 +10,27 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/delegatedProviders/": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/delegatedProviders/{delegatedProvider}/offers": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of delegatedProviders.": {
-                        "$ref": "./examples/Reseller/List.json"
+                        "$ref": "./examples/ResellerOffer/List.json"
                     }
                 },
                 "description": "Get the list of delegatedProviders.",
                 "tags": [
-                    "DelegatedProviders"
+                    "ResellerOffers"
                 ],
-                "operationId": "DelegatedProviders_List",
+                "operationId": "ResellerOffers_List",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/DelegatedProviderParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -49,18 +52,18 @@
                 ]
             }
         },
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/delegatedProviders/{delegatedProvider}": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/delegatedProviders/{delegatedProvider}/offers/{offer}": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of delegatedProviders.": {
-                        "$ref": "./examples/Reseller/Get.json"
+                        "$ref": "./examples/ResellerOffer/Get.json"
                     }
                 },
                 "description": "Get the list of delegatedProviders.",
                 "tags": [
-                    "DelegatedProviders"
+                    "ResellerOffers"
                 ],
-                "operationId": "DelegatedProviders_Get",
+                "operationId": "ResellerOffers_Get",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
@@ -70,6 +73,9 @@
                     },
                     {
                         "$ref": "#/parameters/DelegatedProviderParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -211,24 +217,12 @@
             "type": "string",
             "x-ms-parameter-location": "method"
         },
-        "NewDelegatedProviderParameter": {
+        "OfferParameter": {
             "description": "",
-            "name": "newDelegatedProvider",
-            "in": "body",
+            "name": "offer",
+            "in": "path",
             "required": true,
-            "schema": {
-                "$ref": "#/definitions/DelegatedProvider"
-            },
-            "x-ms-parameter-location": "method"
-        },
-        "PlanLinkParameter": {
-            "description": "",
-            "name": "planLink",
-            "in": "body",
-            "required": true,
-            "schema": {
-                "$ref": "#/definitions/PlanLink"
-            },
+            "type": "string",
             "x-ms-parameter-location": "method"
         }
     },

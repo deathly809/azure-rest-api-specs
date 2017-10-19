@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/OfferDelegation/List.json"
                     }
                 },
                 "description": "Get the list of offers.",
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/OfferDelegation/Get.json"
                     }
                 },
                 "description": "Get the list of offers.",
@@ -73,6 +73,9 @@
                     },
                     {
                         "$ref": "#/parameters/OfferParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/OfferDelegationParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -96,7 +99,7 @@
             "put": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/OfferDelegation/Create.json"
                     }
                 },
                 "description": "Get the list of offers.",
@@ -113,6 +116,9 @@
                     },
                     {
                         "$ref": "#/parameters/OfferParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/OfferDelegationParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -136,7 +142,7 @@
             "delete": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/OfferDelegation/Delete.json"
                     }
                 },
                 "description": "Get the list of offers.",
@@ -153,6 +159,9 @@
                     },
                     {
                         "$ref": "#/parameters/OfferParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/OfferDelegationParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -176,14 +185,14 @@
         }
     },
     "definitions": {
-        "Offer": {
+        "OfferDelegation": {
             "description": "",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
                     "description": "Properties for an offer.",
-                    "$ref": "#/definitions/OfferProperties"
+                    "$ref": "#/definitions/OfferDelegationProperties"
                 }
             },
             "allOf": [
@@ -192,7 +201,7 @@
                 }
             ]
         },
-        "OfferProperties": {
+        "OfferDelegationProperties": {
             "description": "Properties for an offer.",
             "type": "object",
             "properties": {
@@ -231,7 +240,7 @@
                     "description": "Array of usage aggregates.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/Offer"
+                        "$ref": "#/definitions/OfferDelegation"
                     }
                 },
                 "nextLink": {
@@ -243,6 +252,14 @@
     },
     "parameters": {
         "OfferDelegationParameter": {
+            "description": "",
+            "name": "offerDelegation",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "OfferParameter": {
             "description": "",
             "name": "offer",
             "in": "path",

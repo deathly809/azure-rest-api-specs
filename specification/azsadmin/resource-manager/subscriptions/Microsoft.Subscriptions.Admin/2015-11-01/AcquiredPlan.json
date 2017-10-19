@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/AcquiredPlan/List.json"
                     }
                 },
                 "description": "Gets a collection of SubscriberUsageAggregates, which are UsageAggregates from direct tenants.",
@@ -53,7 +53,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/AcquiredPlan/Get.json"
                     }
                 },
                 "tags": [
@@ -93,7 +93,7 @@
             "delete": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/AcquiredPlan/Delete.json"
                     }
                 },
                 "description": "Gets a collection of SubscriberUsageAggregates, which are UsageAggregates from direct tenants.",
@@ -130,14 +130,14 @@
             "put": {
                 "x-ms-examples": {
                     "Puts the acquired plan.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/AcquiredPlan/Create.json"
                     }
                 },
                 "tags": [
                     "AcquiredPlans"
                 ],
                 "description": "Creates an acquired plan.",
-                "operationId": "AcquiredPlans_Put",
+                "operationId": "AcquiredPlans_Create",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"

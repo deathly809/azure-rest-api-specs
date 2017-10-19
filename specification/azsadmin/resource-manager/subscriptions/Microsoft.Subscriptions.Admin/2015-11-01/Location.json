@@ -14,10 +14,10 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/Location/List.json"
                     }
                 },
-                "description": "Gets a collection of SubscriberUsageAggregates, which are UsageAggregates from direct tenants.",
+                "description": "",
                 "tags": [
                     "Locations"
                 ],
@@ -53,7 +53,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
-                        "$ref": "./examples/SubscriberUsageAggregates/ListOperation.json"
+                        "$ref": "./examples/Location/Get.json"
                     }
                 },
                 "description": "Gets a collection of SubscriberUsageAggregates, which are UsageAggregates from direct tenants.",
