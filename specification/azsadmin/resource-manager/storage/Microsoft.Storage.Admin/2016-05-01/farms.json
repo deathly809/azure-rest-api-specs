@@ -1,0 +1,547 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Farm operation endpoints and objects.",
+        "version": "2015-12-01-preview"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}": {
+            "put": {
+                "tags": [
+                    "Farms"
+                ],
+                "description": "Create a new farm",
+                "operationId": "Farms_Create",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "name": "parameters",
+                        "description": "Parameters used to create a farm",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/FarmParameters"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/Farm"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Farms"
+                ],
+                "description": "Get an existing farm",
+                "operationId": "Farms_Get",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/Farm"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Farms"
+                ],
+                "description": "Update an existing farm.",
+                "operationId": "Farms_Update",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "name": "parameters",
+                        "required": true,
+                        "in": "body",
+                        "description": "New values for farm",
+                        "schema": {
+                            "$ref": "#/definitions/FarmParameters"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the new values of the farm.",
+                        "schema": {
+                            "$ref": "#/definitions/Farm"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metricdefinitions": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Farms"
+                ],
+                "description": "Get the list of metric definitions.",
+                "operationId": "Farms_ListMetricDefinitions",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of Metric Definitions",
+                        "schema": {
+                            "$ref": "storage.json#/definitions/MetricDefinitionList"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metrics": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Farms"
+                ],
+                "description": "Get the list of metrics.",
+                "operationId": "Farms_ListMetrics",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of metrics.",
+                        "schema": {
+                            "$ref": "storage.json#/definitions/MetricList"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Farms"
+                ],
+                "description": "Get a list of all farms.",
+                "operationId": "Farms_List",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/FarmList"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/ondemandgc": {
+            "post": {
+                "tags": [
+                    "Farms"
+                ],
+                "operationId": "Farms_StartGarbageCollection",
+                "description": "TODO",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO: OK -- Location of GC.",
+                        "schema": {
+                            "description": "Garbage collection identifier",
+                            "type": "string"
+                        }
+                    },
+                    "202": {
+                        "description": "ACCEPTED - Will be performed asynchronous.",
+                        "schema": {
+                            "description": "Garbage collection identifier",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/operationresults/{operationId}": {
+            "get": {
+                "tags": [
+                    "GC"
+                ],
+                "operationId": "Farms_GetGarbageCollectionState",
+                "description": "TODO",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "name": "operationId",
+                        "type": "string",
+                        "required": true,
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The status of the GC operation",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "FarmList": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Farm"
+                    },
+                    "description": "TODO"
+                },
+                "nextLink": {
+                    "type": "string"
+                }
+            },
+            "description": "TODO"
+        },
+        "FarmParameters": {
+            "properties": {
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/SettingAccessString"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "storage.json#/definitions/Resource"
+                }
+            ],
+            "description": "TODO"
+        },
+        "Farm": {
+            "properties": {
+                "Properties": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/FarmProperties",
+                    "description": "TODO"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "storage.json#/definitions/Resource"
+                }
+            ],
+            "description": "TODO"
+        },
+        "FarmSettings": {
+            "properties": {
+                "settingsPollingIntervalInSecond": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "retentionPeriodForDeletedStorageAccountsInDays": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "hostStyleHttpPort": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "hostStyleHttpsPort": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "corsAllowedOriginsList": {
+                    "type": "string"
+                },
+                "dataCenterUriHostSuffixes": {
+                    "type": "string"
+                },
+                "bandwidthThrottleIsEnabled": {
+                    "type": "boolean"
+                },
+                "usageCollectionIntervalInSeconds": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "feedbackRefreshIntervalInSeconds": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "numberOfAccountsToSync": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "defaultThrottleProbabilityDecayIntervalInSeconds": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "gracePeriodForFullThrottlingInRefreshIntervals": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "gracePeriodMaxThrottleProbability": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "overallRequestThresholdInTps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "defaultRequestThresholdInTps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumRequestThresholdInTps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "toleranceFactorForTps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "overallIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "defaultIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "toleranceFactorForIngress": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "overallIntranetIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "defaultIntranetIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumIntranetIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "toleranceFactorForIntranetIngress": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "overallEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "defaultEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "toleranceFactorForEgress": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "overallIntranetEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "defaultIntranetEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumIntranetEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "toleranceFactorForIntranetEgress": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "overallTotalIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "defaultTotalIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumTotalIngressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "toleranceFactorForTotalIngress": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "overallTotalEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "defaultTotalEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimumTotalEgressThresholdInGbps": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "toleranceFactorForTotalEgress": {
+                    "type": "number",
+                    "format": "float"
+                }
+            },
+            "description": "TODO"
+        },
+        "FarmPropertiesBase": {
+            "properties": {
+                "settings": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/FarmSettings"
+                }
+            },
+            "description": "TODO"
+        },
+        "FarmProperties": {
+            "properties": {
+                "settingsStore": {
+                    "type": "string"
+                },
+                "healthStatus": {
+                    "$ref": "storage.json#/definitions/HealthStatus"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/FarmPropertiesBase"
+                }
+            ],
+            "description": "TODO"
+        },
+        "SettingAccessString": {
+            "properties": {
+                "settingAccessString": {
+                    "type": "string"
+                }
+            },
+            "description": "TODO"
+        }
+    },
+    "parameters": {}
+}

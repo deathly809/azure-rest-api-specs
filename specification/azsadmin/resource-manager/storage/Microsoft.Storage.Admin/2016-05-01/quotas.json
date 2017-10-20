@@ -1,0 +1,203 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Storage Quota service operation endpoints and objects.",
+        "version": "2015-12-01-preview"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/locations/{location}/quotas/{quotaName}": {
+            "put": {
+                "tags": [
+                    "StorageQuotas"
+                ],
+                "description": "Create or update an existing storage quota",
+                "operationId": "StorageQuotas_CreateOrUpdate",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/QuotaNameParameter"
+                    },
+                    {
+                        "name": "parameters",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/StorageQuotaParameters"
+                        },
+                        "description": "Parameters used to create or update storage quota"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/StorageQuota"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "StorageQuotas"
+                ],
+                "description": "Delete an existing quota",
+                "operationId": "StorageQuotas_Delete",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/QuotaNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Storage quota has been deleted"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "StorageQuotas"
+                ],
+                "description": "Retrieve an existing quota",
+                "operationId": "StorageQuotas_Get",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/QuotaNameParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Resulting storage quota",
+                        "schema": {
+                            "$ref": "#/definitions/StorageQuota"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/locations/{location}/quotas": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "StorageQuotas"
+                ],
+                "description": "Get a list of quotas for this location",
+                "operationId": "StorageQuotas_List",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/StorageQuotaList"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "StorageQuota": {
+            "properties": {
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/StorageQuotaProperties"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "storage.json#/definitions/Resource"
+                }
+            ]
+        },
+        "StorageQuotaProperties": {
+            "properties": {
+                "numberOfStorageAccounts": {
+                    "type": "integer",
+                    "format": "int32",
+                    "default": "20"
+                },
+                "capacityInGb": {
+                    "type": "integer",
+                    "format": "int32",
+                    "default": "500"
+                }
+            }
+        },
+        "StorageQuotaParameters": {
+            "properties": {
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/StorageQuotaProperties"
+                }
+            }
+        },
+        "StorageQuotaList": {
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/StorageQuota"
+                    },
+                    "description": "List of quotas."
+                }
+            }
+        }
+    },
+    "parameters": {
+        "QuotaNameParameter": {
+            "name": "quotaName",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The name of the quota.",
+            "x-ms-parameter-location": "method"
+        }
+    }
+}

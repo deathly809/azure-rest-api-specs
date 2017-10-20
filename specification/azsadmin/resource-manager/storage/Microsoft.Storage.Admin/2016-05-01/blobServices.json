@@ -1,0 +1,184 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Blob service operation endpoints and objects.",
+        "version": "2015-12-01-preview"
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default": {
+            "get": {
+                "tags": [
+                    "BlobServices"
+                ],
+                "description": "TODO",
+                "operationId": "BlobServices_Get",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "#/definitions/BlobService"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metricdefinitions": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "BlobServices"
+                ],
+                "description": "",
+                "operationId": "BlobServices_ListMetricDefinitions",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "storage.json#/definitions/MetricDefinitionList"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metrics": {
+            "get": {
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "BlobServices"
+                ],
+                "description": "",
+                "operationId": "BlobServices_ListMetrics",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "TODO",
+                        "schema": {
+                            "$ref": "storage.json#/definitions/MetricList"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "BlobServiceWritableSettings": {
+            "properties": {
+                "blobSvcContainerGcInterval": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "blobSvcShallowGcInterval": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "blobSvcStreamMapMinContainerOccupancyPercent": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "storage.json#/definitions/WritableServiceSettings"
+                }
+            ],
+            "description": "TODO"
+        },
+        "BlobServiceSettings": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/BlobServiceWritableSettings"
+                }
+            ],
+            "description": "TODO"
+        },
+        "BlobServiceProperties": {
+            "properties": {
+                "settings": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/BlobServiceSettings",
+                    "description": "TODO"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "storage.json#/definitions/Service"
+                }
+            ],
+            "description": "TODO"
+        },
+        "BlobService": {
+            "properties": {
+                "properties": {
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/BlobServiceProperties",
+                    "description": "TODO"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "storage.json#/definitions/Resource"
+                }
+            ],
+            "description": "TODO"
+        }
+    },
+    "parameters": {}
+}

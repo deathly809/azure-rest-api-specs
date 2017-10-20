@@ -1,0 +1,412 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "x-ms-code-generation-settings": {
+            "header": "MICROSOFT_MIT",
+            "namespace": "Microsoft.AzureStack.Storage.Admin"
+        },
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "paths": {},
+    "definitions": {
+        "WritableSettings": {
+            "properties": {
+                "frontEndCallbackThreadsCount": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "frontEndCpuBasedKeepAliveThrottlingEnabled": {
+                    "type": "boolean",
+                    "description": "TODO"
+                },
+                "frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "TODO"
+                },
+                "frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "TODO"
+                },
+                "frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "frontEndMemoryThrottlingEnabled": {
+                    "type": "boolean",
+                    "description": "TODO"
+                },
+                "frontEndMaxMillisecondsBetweenMemorySamples": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "frontEndMemoryThrottleThresholdSettings": {
+                    "type": "string",
+                    "description": "TODO"
+                },
+                "frontEndMinThreadPoolThreads": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "frontEndThreadPoolBasedKeepAliveIOCompletionThreshold": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "TODO"
+                },
+                "frontEndThreadPoolBasedKeepAlivePercentage": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "TODO"
+                },
+                "frontEndUseSlaTimeInAvailability": {
+                    "type": "boolean",
+                    "description": "TODO"
+                }
+            }
+        },
+        "WritableServiceSettings": {
+            "properties": {
+                "frontEndHttpListenPort": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "backEndHttpListenPort": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "#/definitions/WritableSettings"
+                }
+            ]
+        },
+        "LocalizableString": {
+            "value": {
+                "type": "string"
+            },
+            "localizedValue": {
+                "type": "string"
+            }
+        },
+        "MetricAvailability": {
+            "properties": {
+                "timeGrain": {
+                    "type": "string"
+                },
+                "retention": {
+                    "type": "string"
+                }
+            }
+        },
+        "MetricDefinition": {
+            "properties": {
+                "name": {
+                    "readOnly": true,
+                    "$ref": "#/definitions/LocalizableString"
+                },
+                "unit": {
+                    "readOnly": true,
+                    "type": "string",
+                    "enum": [
+                        "Count",
+                        "Bytes",
+                        "Seconds",
+                        "CountPerSecond",
+                        "BytesPerSecond"
+                    ],
+                    "x-ms-enum": {
+                        "name": "MetricUnit",
+                        "modelAsString": true
+                    }
+                },
+                "primaryAggregationType": {
+                    "readOnly": true,
+                    "type": "string",
+                    "enum": [
+                        "None",
+                        "Average",
+                        "Total",
+                        "Minimum",
+                        "Maximum",
+                        "Last"
+                    ],
+                    "x-ms-enum": {
+                        "name": "AggregateType",
+                        "modelAsString": true
+                    }
+                },
+                "metricAvailabilities": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MetricAvailability"
+                    },
+                    "description": "TODO"
+                }
+            }
+        },
+        "Metric": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "metricUnit": {
+                    "type": "string",
+                    "enum": [
+                        "Count",
+                        "Bytes",
+                        "Seconds",
+                        "CountPerSecond",
+                        "BytesPerSecond"
+                    ],
+                    "x-ms-enum": {
+                        "name": "MetricUnit",
+                        "modelAsString": true
+                    }
+                },
+                "timeGrain": {
+                    "type": "string"
+                },
+                "startTime": {
+                    "name": "dateTime",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endTime": {
+                    "name": "dateTime",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "metricValues": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MetricValue"
+                    },
+                    "description": "List of metric values."
+                }
+            }
+        },
+        "MetricDefinitionList": {
+            "properties": {
+                "value": {
+                    "readOnly": true,
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MetricDefinition"
+                    },
+                    "description": "List of metric definition."
+                },
+                "nextLink": {
+                    "type": "string"
+                }
+            }
+        },
+        "MetricList": {
+            "description": "List of metrics.",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Metric"
+                    },
+                    "description": "List of metrics."
+                },
+                "nextLink": {
+                    "type": "string"
+                }
+            }
+        },
+        "MetricValue": {
+            "properties": {
+                "timeStamp": {
+                    "name": "dateTime",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "average": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "minimum": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "maximum": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "total": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "count": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "properties": {
+                    "type": "string"
+                }
+            }
+        },
+        "HealthStatus": {
+            "readOnly": true,
+            "description": "Current health status of Share",
+            "type": "string",
+            "enum": [
+                "Unknown",
+                "Healthy",
+                "Warning",
+                "Critical"
+            ],
+            "x-ms-enum": {
+                "name": "HealthStatus",
+                "modelAsString": true
+            }
+        },
+        "Resource": {
+            "description": "Base Resource Object",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "readOnly": true,
+                    "description": "URI of the resource.",
+                    "type": "string"
+                },
+                "name": {
+                    "readOnly": true,
+                    "description": "Name of the resource.",
+                    "type": "string"
+                },
+                "type": {
+                    "readOnly": true,
+                    "description": "Type of resource.",
+                    "type": "string"
+                },
+                "location": {
+                    "readOnly": true,
+                    "description": "Location where resource is location.",
+                    "type": "string"
+                },
+                "tags": {
+                    "readOnly": true,
+                    "description": "List of key value pairs.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            },
+            "x-ms-azure-resource": true
+        },
+        "Service": {
+            "properties": {
+                "version ": {
+                    "type": "string",
+                    "description": "TODO"
+                },
+                "healthStatus": {
+                    "$ref": "#/definitions/HealthStatus"
+                }
+            }
+        }
+    },
+    "parameters": {
+        "ShareNameParameter": {
+            "name": "shareName",
+            "type": "string",
+            "in": "path",
+            "required": true,
+            "description": "TODO",
+            "x-ms-parameter-location": "method"
+        },
+        "FilterParameter": {
+            "name": "$filter",
+            "type": "string",
+            "in": "query",
+            "description": "TODO",
+            "x-ms-parameter-location": "method"
+        },
+        "LocationParameter": {
+            "type": "string",
+            "name": "location",
+            "in": "path",
+            "default": "local",
+            "required": false,
+            "description": "Location of storage accounts.",
+            "x-ms-parameter-location": "method"
+        },
+        "SubscriptionIdParameter": {
+            "name": "subscriptionId",
+            "type": "string",
+            "in": "path",
+            "required": true,
+            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+        },
+        "FarmIdParameter": {
+            "type": "string",
+            "name": "farmId",
+            "in": "path",
+            "required": true,
+            "description": "The name of the farm.",
+            "x-ms-parameter-location": "method"
+        },
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "type": "string",
+            "in": "query",
+            "required": true,
+            "description": "Client Api Version."
+        },
+        "ResourceGroupNameParameter": {
+            "name": "resourceGroupName",
+            "type": "string",
+            "in": "path",
+            "required": true,
+            "description": "The name of the resource group within the user's subscription.",
+            "maxLength": "90",
+            "pattern": "^[-\\w\\._]+$",
+            "x-ms-parameter-location": "method"
+        }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
+}
