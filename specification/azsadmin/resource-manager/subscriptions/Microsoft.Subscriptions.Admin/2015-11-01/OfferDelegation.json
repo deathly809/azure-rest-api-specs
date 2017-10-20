@@ -30,7 +30,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -40,7 +40,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/OfferList"
+                            "$ref": "#/definitions/DelegatedOfferList"
                         }
                     }
                 },
@@ -52,7 +52,7 @@
                 ]
             }
         },
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/offers/{offer}/offerDelegations/{offerDelegation}": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/offers/{offer}/offerDelegations/{delegatedOffer}": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
@@ -61,9 +61,9 @@
                 },
                 "description": "Get the list of offers.",
                 "tags": [
-                    "Offers"
+                    "OfferDelegations"
                 ],
-                "operationId": "Offers_Get",
+                "operationId": "OfferDelegations_Get",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
@@ -72,10 +72,10 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferDelegationParameter"
+                        "$ref": "#/parameters/DelegatedOfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -85,7 +85,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/OfferList"
+                            "$ref": "#/definitions/DelegatedOffer"
                         }
                     }
                 },
@@ -104,9 +104,9 @@
                 },
                 "description": "Get the list of offers.",
                 "tags": [
-                    "Offers"
+                    "OfferDelegations"
                 ],
-                "operationId": "Offers_CreateOrUpdate",
+                "operationId": "OfferDelegations_CreateOrUpdate",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
@@ -115,20 +115,23 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferDelegationParameter"
+                        "$ref": "#/parameters/DelegatedOfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/NewDelegatedOfferParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/OfferList"
+                            "$ref": "#/definitions/DelegatedOffer"
                         }
                     }
                 },
@@ -147,9 +150,9 @@
                 },
                 "description": "Get the list of offers.",
                 "tags": [
-                    "Offers"
+                    "OfferDelegations"
                 ],
-                "operationId": "Offers_Delete",
+                "operationId": "OfferDelegations_Delete",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
@@ -158,10 +161,10 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferDelegationParameter"
+                        "$ref": "#/parameters/DelegatedOfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -169,10 +172,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/OfferList"
-                        }
+                        "description": "OK"
                     }
                 },
                 "produces": [
@@ -185,14 +185,14 @@
         }
     },
     "definitions": {
-        "OfferDelegation": {
-            "description": "",
+        "DelegatedOffer": {
+            "description": "Offer delegation.",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
                     "description": "Properties for an offer.",
-                    "$ref": "#/definitions/OfferDelegationProperties"
+                    "$ref": "#/definitions/DelegatedOfferProperties"
                 }
             },
             "allOf": [
@@ -201,46 +201,64 @@
                 }
             ]
         },
-        "OfferDelegationProperties": {
+        "DelegatedOfferProperties": {
             "description": "Properties for an offer.",
             "type": "object",
             "properties": {
+                "resourceTags": {
+                    "description": "Resource tags.",
+                    "$ref" : "Subscriptions.json#/definitions/Dictionary"
+                },
+                "resellerSubscriptionId": {
+                    "description": "Identifier of the reseller subscription that delegated the offer.",
+                    "type": "string"
+                },
+                "offerName": {
+                    "description": "Name of the base admin offer.",
+                    "type": "string"
+                },
+                "offerDisplayName": {
+                    "description": "Display name of the base admin offer.",
+                    "type": "string"
+                },
+                "offerDescription": {
+                    "description": "Description of the base admin offer.",
+                    "type": "string"
+                },
+                "offerResourceGroupName": {
+                    "description": "Resource group name of the base admin offer.",
+                    "type": "string"
+                },
+                "resellerOfferName": {
+                    "description": "Name of the base reseller offer (when the reseller is not the admin subscription).",
+                    "type": "string"
+                },
+                "resellerOfferDisplayName": {
+                    "description": "Display name of the base reseller offer (when the reseller is not the admin subscription).",
+                    "type": "string"
+                },
+                "resellerOfferDescription": {
+                    "description": "Description of the base reseller offer (when the reseller is not the admin subscription).",
+                    "type": "string"
+                },
+                "resellerOfferResourceGroupName": {
+                    "description": "Resource group name of the base reseller offer (when the reseller is not the admin subscription).",
+                    "type": "string"
+                },
                 "subscriptionId": {
-                    "type": "string",
-                    "description": "Subscription id of tenant using plan."
-                },
-                "usageStartTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC start time for the usage bucket to which this usage aggregate belongs."
-                },
-                "usageEndTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC end time for the usage bucket to which this usage aggregate belongs."
-                },
-                "instanceData": {
-                    "description": "Key-value pairs of instance details represented as a string.",
-                    "type": "string"
-                },
-                "quantity": {
-                    "description": "The amount of the resource consumption that occurred in this time frame.",
-                    "type": "string"
-                },
-                "meterId": {
-                    "description": "Unique ID for the resource that was consumed (aka ResourceID).",
+                    "description": "Identifier of the subscription receiving the delegated offer.",
                     "type": "string"
                 }
             }
         },
-        "OfferList": {
+        "DelegatedOfferList": {
             "description": "Holds an array of usage aggregates and the continuation token.",
             "properties": {
                 "value": {
                     "description": "Array of usage aggregates.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/OfferDelegation"
+                        "$ref": "#/definitions/DelegatedOffer"
                     }
                 },
                 "nextLink": {
@@ -251,29 +269,21 @@
         }
     },
     "parameters": {
-        "OfferDelegationParameter": {
-            "description": "",
-            "name": "offerDelegation",
+        "DelegatedOfferParameter": {
+            "description": "Name of a delgated offer.",
+            "name": "delegatedOffer",
             "in": "path",
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
         },
-        "OfferParameter": {
-            "description": "",
-            "name": "offer",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
-        "NewOfferDelegationParameter": {
-            "description": "",
-            "name": "newOfferDelegation",
+        "NewDelegatedOfferParameter": {
+            "description": "New delegated offer.",
+            "name": "newDelegatedOffer",
             "in": "body",
             "required": true,
             "schema": {
-                "$ref": "#/definitions/OfferDelegation"
+                "$ref": "#/definitions/DelegatedOffer"
             },
             "x-ms-parameter-location": "method"
         }

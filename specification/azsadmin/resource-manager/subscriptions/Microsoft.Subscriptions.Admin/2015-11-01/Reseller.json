@@ -69,7 +69,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/DelegatedProviderParameter"
+                        "$ref": "Subscriptions.json#/parameters/DelegatedProviderParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -94,7 +94,7 @@
     },
     "definitions": {
         "DelegatedProvider": {
-            "description": "",
+            "description": "Metadata about a reseller.",
             "type": "object",
             "properties": {
                 "properties": {
@@ -141,14 +141,6 @@
                 }
             }
         },
-        "Metric": {
-            "description": "",
-            "type": "object"
-        },
-        "MetricDefinition": {
-            "description": "",
-            "type": "object"
-        },
         "DelegatedProviderList": {
             "description": "Holds an array of usage aggregates and the continuation token.",
             "properties": {
@@ -164,70 +156,16 @@
                     "description": "Continuation token"
                 }
             }
-        },
-        "MetricList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Metric"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        },
-        "MetricDefinitionList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/MetricDefinition"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        },
-        "PlanLink": {
-            "description": "",
-            "type": "object"
         }
     },
     "parameters": {
-        "DelegatedProviderParameter": {
-            "description": "",
-            "name": "delegatedProvider",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
         "NewDelegatedProviderParameter": {
-            "description": "",
+            "description": "New reseller.",
             "name": "newDelegatedProvider",
             "in": "body",
             "required": true,
             "schema": {
                 "$ref": "#/definitions/DelegatedProvider"
-            },
-            "x-ms-parameter-location": "method"
-        },
-        "PlanLinkParameter": {
-            "description": "",
-            "name": "planLink",
-            "in": "body",
-            "required": true,
-            "schema": {
-                "$ref": "#/definitions/PlanLink"
             },
             "x-ms-parameter-location": "method"
         }

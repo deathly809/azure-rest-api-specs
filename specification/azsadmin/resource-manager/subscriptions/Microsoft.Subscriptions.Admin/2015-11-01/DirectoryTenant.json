@@ -56,7 +56,7 @@
                         "$ref": "./examples/DirectoryTenant/Get.json"
                     }
                 },
-                "description": "",
+                "description": "Get a directory tenant by name.",
                 "tags": [
                     "DirectoryTenants"
                 ],
@@ -171,7 +171,30 @@
     },
     "definitions": {
         "DirectoryTenant": {
-            "type": "object"
+            "description": "Directory tenant.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Directory tenant.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/DirectoryTenantProperties"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Subscriptions.json#/definitions/Resource"
+                }
+            ]
+        },
+        "DirectoryTenantProperties": {
+            "description": "Directory tenant.",
+            "type": "object",
+            "properties": {
+                "tenantId": {
+                    "description": "Tenant unique identifier.",
+                    "type": "string"
+                }
+            }
         },
         "DirectoryTenantList": {
             "description": "List of directory tenants.",

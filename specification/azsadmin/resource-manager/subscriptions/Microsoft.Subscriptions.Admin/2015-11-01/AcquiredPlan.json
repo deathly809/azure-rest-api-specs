@@ -69,7 +69,7 @@
                         "$ref": "#/parameters/TargetSubscriptionParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -109,7 +109,7 @@
                         "$ref": "#/parameters/TargetSubscriptionParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -146,7 +146,7 @@
                         "$ref": "#/parameters/TargetSubscriptionParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -170,7 +170,59 @@
         }
     },
     "definitions": {
-        "AcquiredPlan": {},
+        "AcquiredPlan": {
+            "description": "Represents the acquisition of an add-on plan for a subscription.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Represents the acquisition of an add-on plan for a subscription.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/AcquiredPlanProperties"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Subscriptions.json#/definitions/Resource"
+                }
+            ]
+        },
+        "AcquiredPlanProperties": {
+            "description": "Represents the acquisition of an add-on plan for a subscription.",
+            "type": "object",
+            "properties": {
+                "acquisitionId": {
+                    "description": "Acquisition identifier.",
+                    "type": "string"
+                },
+                "planId": {
+                    "description": "Plan identifier in the tenant subscription context.",
+                    "type": "string"
+                },
+                "externalReferenceId": {
+                    "description": "External reference identifier.",
+                    "type": "string"
+                },
+                "provisioningState": {
+                    "description": "State of the provisioning.",
+                    "$ref": "#/definitions/ProvisioningState"
+                },
+                "acquisitionTime": {
+                    "description": "Acquisition time.",
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "ProvisioningState": {
+            "description" : "Provisioning state for subscriptions service resources e.g. resource provider registration.",
+            "type": "string",
+            "enum": [
+                "NotSpecified",
+                "Accepted",
+                "Failed",
+                "Succeeded"
+            ]
+        },
         "AcquiredPlanList": {
             "description": "List of acquired plans.",
             "properties": {
@@ -193,14 +245,6 @@
             "name": "targetSubscription",
             "in": "path",
             "description": "The target subscription.",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
-        "PlanParameter": {
-            "name": "plan",
-            "in": "path",
-            "description": "The target plan.",
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"

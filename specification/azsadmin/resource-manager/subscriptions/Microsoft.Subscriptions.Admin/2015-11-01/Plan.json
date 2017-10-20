@@ -105,7 +105,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -145,10 +145,13 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/NewPlanParameter"
                     }
                 ],
                 "responses": {
@@ -185,7 +188,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -227,7 +230,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -237,7 +240,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/MetricDefinitionList"
+                            "$ref": "Subscriptions.json#/definitions/MetricList"
                         }
                     }
                 },
@@ -269,7 +272,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/PlanParameter"
+                        "$ref": "Subscriptions.json#/parameters/PlanParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -279,7 +282,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/MetricDefinitionList"
+                            "$ref": "Subscriptions.json#/definitions/MetricDefinitionList"
                         }
                     }
                 },
@@ -294,12 +297,12 @@
     },
     "definitions": {
         "Plan": {
-            "description": "",
+            "description": "A plan represents a package of quotas and capabilities that are offered tenants. A tenant can acquire this plan through an offer to upgrade his access to underlying cloud services.",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
-                    "description": "Properties for an plan.",
+                    "description": "A plan represents a package of quotas and capabilities that are offered tenants. A tenant can acquire this plan through an offer to upgrade his access to underlying cloud services.",
                     "$ref": "#/definitions/PlanProperties"
                 }
             },
@@ -310,7 +313,7 @@
             ]
         },
         "PlanProperties": {
-            "description": "Properties for an plan.",
+            "description": "A plan represents a package of quotas and capabilities that are offered tenants. A tenant can acquire this plan through an offer to upgrade his access to underlying cloud services.",
             "type": "object",
             "properties": {
                 "subscriptionId": {
@@ -341,14 +344,6 @@
                 }
             }
         },
-        "Metric": {
-            "description": "",
-            "type": "object"
-        },
-        "MetricDefinition": {
-            "description": "",
-            "type": "object"
-        },
         "PlanList": {
             "description": "Holds an array of usage aggregates and the continuation token.",
             "properties": {
@@ -364,51 +359,11 @@
                     "description": "Continuation token"
                 }
             }
-        },
-        "MetricList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Metric"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        },
-        "MetricDefinitionList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/MetricDefinition"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
         }
     },
     "parameters": {
-        "PlanParameter": {
-            "description": "",
-            "name": "plan",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
-        "ApiVersionParameter": {
-            "description": "",
+        "NewPlanParameter": {
+            "description": "New plan.",
             "name": "newPlan",
             "in": "body",
             "required": true,

@@ -30,7 +30,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/DelegatedProviderParameter"
+                        "$ref": "Subscriptions.json#/parameters/DelegatedProviderParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -40,7 +40,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DelegatedProviderList"
+                            "$ref": "#/definitions/DelegatedProviderOfferList"
                         }
                     }
                 },
@@ -72,10 +72,10 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/DelegatedProviderParameter"
+                        "$ref": "Subscriptions.json#/parameters/DelegatedProviderParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -85,7 +85,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DelegatedProviderList"
+                            "$ref": "#/definitions/DelegatedProviderOffer"
                         }
                     }
                 },
@@ -99,14 +99,14 @@
         }
     },
     "definitions": {
-        "DelegatedProvider": {
-            "description": "",
+        "DelegatedProviderOffer": {
+            "description": "I don't know.",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
                     "description": "Properties for an delegatedProvider.",
-                    "$ref": "#/definitions/DelegatedProviderProperties"
+                    "$ref": "#/definitions/DelegatedProviderOfferProperties"
                 }
             },
             "allOf": [
@@ -115,7 +115,7 @@
                 }
             ]
         },
-        "DelegatedProviderProperties": {
+        "DelegatedProviderOfferProperties": {
             "description": "Properties for an delegatedProvider.",
             "type": "object",
             "properties": {
@@ -147,22 +147,14 @@
                 }
             }
         },
-        "Metric": {
-            "description": "",
-            "type": "object"
-        },
-        "MetricDefinition": {
-            "description": "",
-            "type": "object"
-        },
-        "DelegatedProviderList": {
+        "DelegatedProviderOfferList": {
             "description": "Holds an array of usage aggregates and the continuation token.",
             "properties": {
                 "value": {
                     "description": "Array of usage aggregates.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/DelegatedProvider"
+                        "$ref": "#/definitions/DelegatedProviderOffer"
                     }
                 },
                 "nextLink": {
@@ -170,56 +162,12 @@
                     "description": "Continuation token"
                 }
             }
-        },
-        "MetricList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Metric"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        },
-        "MetricDefinitionList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/MetricDefinition"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        },
-        "PlanLink": {
-            "description": "",
-            "type": "object"
         }
     },
     "parameters": {
-        "DelegatedProviderParameter": {
-            "description": "",
-            "name": "delegatedProvider",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
-        "OfferParameter": {
-            "description": "",
-            "name": "offer",
+        "DelegatedProviderOfferParameter": {
+            "description": "I don't know.",
+            "name": "delegatedProviderOffer",
             "in": "path",
             "required": true,
             "type": "string",

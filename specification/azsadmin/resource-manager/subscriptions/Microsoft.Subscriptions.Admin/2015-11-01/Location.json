@@ -17,7 +17,7 @@
                         "$ref": "./examples/Location/List.json"
                     }
                 },
-                "description": "",
+                "description": "Get a list of all AzureStack location.",
                 "tags": [
                     "Locations"
                 ],
@@ -131,11 +131,12 @@
     },
     "definitions": {
         "Location": {
-            "description": "Where resources can be registered",
+            "description": "Contains information about a geographical location where resource providers can be deployed.",
             "type": "object",
             "properties": {
                 "properties": {
-                    "x-ms-flatten": true,
+                    "description": "Contains information about a geographical location where resource providers can be deployed.",
+                    "x-ms-client-flatten": true,
                     "$ref": "#/definitions/Location"
                 }
             },
@@ -146,9 +147,22 @@
             ]
         },
         "LocationProperties": {
-            "description": "Where resources can be registered",
+            "description": "Contains information about a geographical location where resource providers can be deployed.",
             "type": "object",
-            "properties": {}
+            "properties": {
+                "displayName": {
+                    "description": "Display name of the location.",
+                    "type": "string"
+                },
+                "latitude": {
+                    "description": "Latitude of the location.",
+                    "type": "string"
+                },
+                "longitude": {
+                    "description": "Longitude of the location.",
+                    "type": "string"
+                }
+            }
         },
         "LocationList": {
             "description": "List of locations",

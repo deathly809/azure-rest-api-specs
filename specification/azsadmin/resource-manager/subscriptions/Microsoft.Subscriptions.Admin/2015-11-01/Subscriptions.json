@@ -292,8 +292,14 @@
             },
             "x-ms-azure-resource": true
         },
+        "Dictionary": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            }
+        },
         "Operation": {
-            "description": "",
+            "description": "Supported REST operation.",
             "type": "object"
         },
         "OperationList": {
@@ -310,6 +316,243 @@
         "SubscriptionList": {
             "description": "List of supported operations.",
             "type": "object"
+        },
+        "Metric": {
+            "description": "The resource metric set that represents the metrics for a particular resource.",
+            "type": "object",
+            "properties": {
+                "metricUnit": {
+                    "description": "Unit of metrics.",
+                    "$ref": "#/definitions/MetricUnit"
+                },
+                "timeGrain": {
+                    "description": "Timespan of the metric.",
+                    "type": "string"
+                },
+                "startTime": {
+                    "description": "Start time of the metric.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "endTime": {
+                    "description": "End time of the metric.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "metricValues": {
+                    "description": "Collected metric values in the timespan.",
+                    "$ref": "#/definitions/MetricValueList"
+                }
+            }
+        },
+        "MetricValue": {
+            "description": "Metric value",
+            "type": "object",
+            "properties": {
+                "timeStamp": {
+                    "description": "Timestamp of when the metric value was collected.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "average": {
+                    "description": "Average value for metric sample period.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "minimum": {
+                    "description": "Minimum value for metric sample period.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "maximum": {
+                    "description": "Maximum value for metric sample period.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "total": {
+                    "description": "Total value for metric sample period.",
+                    "type": "number",
+                    "format": "double"
+                },
+                "count": {
+                    "description": "Number of measurements for metric sample period.",
+                    "type": "integer"
+                },
+                "properties": {
+                    "description": "Extended properties",
+                    "$ref": "#/definitions/Dictionary"
+                }
+            }
+        },
+        "MetricValueList": {
+            "description": "List of metric values.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/MetricValue"
+            }
+        },
+        "MetricDefinition": {
+            "description": "Metric Definition",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Metric definition name.",
+                    "type": "string"
+                },
+                "unit": {
+                    "description": "Unit of metrics.",
+                    "$ref": "#/definitions/MetricUnit"
+                },
+                "primaryAggregationType": {
+                    "description": "Type of the primary aggregation.",
+                    "$ref": "#/definitions/MetricPrimaryAggregationType"
+                },
+                "metricAvailabilities": {
+                    "description": "Metric availabilities.",
+                    "$ref": "#/definitions/MetricAvailabilityList"
+                }
+            }
+        },
+        "MetricUnit": {
+            "description": "The resource metric unit.",
+            "type": "string",
+            "enum": [
+                "Count",
+                "Bytes",
+                "Seconds",
+                "CountPerSecond",
+                "BytesPerSecond"
+            ],
+            "x-ms-enum": {
+                "modelAsString": true,
+                "values": [
+                    {
+                        "description": "The count.",
+                        "name": "Count",
+                        "value": "Count"
+                    },
+                    {
+                        "description": "The bytes.",
+                        "name": "Bytes",
+                        "value": "Bytes"
+                    },
+                    {
+                        "description": "The seconds.",
+                        "name": "Seconds",
+                        "value": "Seconds"
+                    },
+                    {
+                        "description": "The count per second.",
+                        "name": "CountPerSecond",
+                        "value": "CountPerSecond"
+                    },
+                    {
+                        "description": "The bytes per second.",
+                        "name": "BytesPerSecond",
+                        "value": "BytesPerSecond"
+                    }
+                ]
+            }
+        },
+        "MetricPrimaryAggregationType": {
+            "description": "The primary aggregation type for resource metric.",
+            "type": "string",
+            "enum": [
+                "None",
+                "Average",
+                "Total",
+                "Minimum",
+                "Maximum",
+                "Last"
+            ],
+            "x-ms-enum": {
+                "modelAsString": true,
+                "values": [
+                    {
+                        "description": "No aggregation applied to resource.",
+                        "name": "None",
+                        "value": "None"
+                    },
+                    {
+                        "description": "The average aggregation type.",
+                        "name": "Average",
+                        "value": "Average"
+                    },
+                    {
+                        "description": "The total aggregation type.",
+                        "name": "Total",
+                        "value": "Total"
+                    },
+                    {
+                        "description": "The minimum aggregation type.",
+                        "name": "Minimum",
+                        "value": "Minimum"
+                    },
+                    {
+                        "description": "The maximum aggregation type.",
+                        "name": "Maximum",
+                        "value": "Maximum"
+                    },
+                    {
+                        "description": "The last aggregation type.",
+                        "name": "Last",
+                        "value": "Last"
+                    }
+                ]
+            }
+        },
+        "MetricAvailability": {
+            "description": "Metric Definition",
+            "type": "object",
+            "properties": {
+                "timeGrain": {
+                    "description": "The time grain. Metrics will be available for this time grain.",
+                    "type": "string"
+                },
+                "retention": {
+                    "description": "the retention. Metrics may be queried for this interval.",
+                    "type": "string"
+                }
+            }
+        },
+        "MetricAvailabilityList": {
+            "description": "List of metric definitions.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/MetricAvailability"
+            }
+        },
+        "MetricList": {
+            "description": "Holds an array of usage aggregates and the continuation token.",
+            "properties": {
+                "value": {
+                    "description": "Array of usage aggregates.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Metric"
+                    }
+                },
+                "nextLink": {
+                    "type": "string",
+                    "description": "Continuation token"
+                }
+            }
+        },
+        "MetricDefinitionList": {
+            "description": "Holds an array of usage aggregates and the continuation token.",
+            "properties": {
+                "value": {
+                    "description": "Array of usage aggregates.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/MetricDefinition"
+                    }
+                },
+                "nextLink": {
+                    "type": "string",
+                    "description": "Continuation token"
+                }
+            }
         }
     },
     "parameters": {
@@ -360,6 +603,30 @@
                 "$ref": "#/definitions/Subscription"
             },
             "required": true,
+            "x-ms-parameter-location": "method"
+        },
+        "OfferParameter": {
+            "description": "Name of an offer.",
+            "name": "offer",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "PlanParameter": {
+            "description": "Name of the plan.",
+            "name": "plan",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "DelegatedProviderParameter": {
+            "description": "Reseller identifier.",
+            "name": "delegatedProvider",
+            "in": "path",
+            "required": true,
+            "type": "string",
             "x-ms-parameter-location": "method"
         }
     },

@@ -43,7 +43,10 @@
                 ],
                 "consumes": [
                     "application/json"
-                ]
+                ],
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/offers/": {
@@ -105,7 +108,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -145,7 +148,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -185,7 +188,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -211,7 +214,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/Offer/Metrics.json"
                     }
                 },
                 "description": "Get the list of offers.",
@@ -227,7 +230,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -237,7 +240,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/MetricDefinitionList"
+                            "$ref": "Subscriptions.json#/definitions/MetricDefinitionList"
                         }
                     }
                 },
@@ -253,7 +256,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/Offer/MetricDefinitions.json"
                     }
                 },
                 "description": "Get the list of offers.",
@@ -269,7 +272,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -279,7 +282,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/MetricDefinitionList"
+                            "$ref": "Subscriptions.json#/definitions/MetricDefinitionList"
                         }
                     }
                 },
@@ -311,7 +314,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "#/parameters/PlanLinkParameter"
@@ -322,10 +325,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/MetricDefinitionList"
-                        }
+                        "description": "OK"
                     }
                 },
                 "produces": [
@@ -356,7 +356,7 @@
                         "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/OfferParameter"
+                        "$ref": "Subscriptions.json#/parameters/OfferParameter"
                     },
                     {
                         "$ref": "#/parameters/PlanLinkParameter"
@@ -367,10 +367,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/MetricDefinitionList"
-                        }
+                        "description": "OK"
                     }
                 },
                 "produces": [
@@ -384,12 +381,12 @@
     },
     "definitions": {
         "Offer": {
-            "description": "",
+            "description": "Represents an offering of services against which a subscription can be created.",
             "type": "object",
             "properties": {
                 "properties": {
                     "x-ms-client-flatten": true,
-                    "description": "Properties for an offer.",
+                    "description": "Represents an offering of services against which a subscription can be created.",
                     "$ref": "#/definitions/OfferProperties"
                 }
             },
@@ -400,50 +397,25 @@
             ]
         },
         "OfferProperties": {
-            "description": "Properties for an offer.",
+            "description": "Represents an offering of services against which a subscription can be created.",
             "type": "object",
             "properties": {
-                "subscriptionId": {
-                    "type": "string",
-                    "description": "Subscription id of tenant using plan."
-                },
-                "usageStartTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC start time for the usage bucket to which this usage aggregate belongs."
-                },
-                "usageEndTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC end time for the usage bucket to which this usage aggregate belongs."
-                },
-                "instanceData": {
-                    "description": "Key-value pairs of instance details represented as a string.",
+                "displayName": {
+                    "description": "Display name of offer.",
                     "type": "string"
                 },
-                "quantity": {
-                    "description": "The amount of the resource consumption that occurred in this time frame.",
-                    "type": "string"
-                },
-                "meterId": {
-                    "description": "Unique ID for the resource that was consumed (aka ResourceID).",
+                "description": {
+                    "description": "Description of offer.",
                     "type": "string"
                 }
             }
         },
-        "Metric": {
-            "description": "",
-            "type": "object"
-        },
-        "MetricDefinition": {
-            "description": "",
-            "type": "object"
-        },
         "OfferList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
+            "description": "List of offers.",
+            "type": "object",
             "properties": {
                 "value": {
-                    "description": "Array of usage aggregates.",
+                    "description": "List of offers.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Offer"
@@ -451,58 +423,43 @@
                 },
                 "nextLink": {
                     "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        },
-        "MetricList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Metric"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        },
-        "MetricDefinitionList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/MetricDefinition"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
+                    "description": "URI to next page."
                 }
             }
         },
         "PlanLink": {
-            "description": "",
-            "type": "object"
+            "description": "Plan link type.",
+            "type": "string",
+            "enum": [
+                "None",
+                "Base",
+                "Addon"
+            ],
+            "x-ms-enum": {
+                "modelAsString": true,
+                "values": [
+                    {
+                        "description": "The plan link type is not specified or is unknown.",
+                        "name": "None",
+                        "value": "0"
+                    },
+                    {
+                        "description": "The plan is linked to the base collection of the subscribed offer.",
+                        "name": "Base",
+                        "value": "1"
+                    },
+                    {
+                        "description": "The plan is linked to the add-on collection of the subscribed offer.",
+                        "name": "Addon",
+                        "value": "2"
+                    }
+                ]
+            }
         }
     },
     "parameters": {
-        "OfferParameter": {
-            "description": "",
-            "name": "offer",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
         "NewOfferParameter": {
-            "description": "",
+            "description": "New offer.",
             "name": "newOffer",
             "in": "body",
             "required": true,
@@ -512,7 +469,7 @@
             "x-ms-parameter-location": "method"
         },
         "PlanLinkParameter": {
-            "description": "",
+            "description": "New plan link.",
             "name": "planLink",
             "in": "body",
             "required": true,
