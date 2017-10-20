@@ -115,7 +115,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/List"
+                            "$ref": "#/definitions/Plan"
                         }
                     }
                 },

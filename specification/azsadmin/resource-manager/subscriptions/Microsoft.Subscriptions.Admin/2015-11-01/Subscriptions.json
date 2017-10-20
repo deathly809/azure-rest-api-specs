@@ -295,7 +295,11 @@
         "Operation": {
             "description": "Supported REST operation.",
             "type": "object",
-            "properties": {}
+            "properties": {
+                "deleteMe": {
+                    "type": "string"
+                }
+            }
         },
         "OperationList": {
             "description": "List of supported operations.",
@@ -307,7 +311,11 @@
         "Subscription": {
             "description": "List of supported operations.",
             "type": "object",
-            "properties": {},
+            "properties": {
+                "deleteMe": {
+                    "type": "string"
+                }
+            },
             "allOf": [
                 {
                     "$ref": "#/definitions/Resource"
@@ -383,7 +391,7 @@
                     "type": "integer"
                 },
                 "properties": {
-                    "x-ms-client-name": "extendedProperties"  ,
+                    "x-ms-client-name": "extendedProperties",
                     "description": "Extended properties.",
                     "type": "object",
                     "additionalProperties": {
@@ -432,6 +440,7 @@
                 "BytesPerSecond"
             ],
             "x-ms-enum": {
+                "name": "MetricUnit",
                 "modelAsString": true,
                 "values": [
                     {
@@ -474,6 +483,7 @@
                 "Last"
             ],
             "x-ms-enum": {
+                "name": "MetricPrimaryAggregationType",
                 "modelAsString": true,
                 "values": [
                     {

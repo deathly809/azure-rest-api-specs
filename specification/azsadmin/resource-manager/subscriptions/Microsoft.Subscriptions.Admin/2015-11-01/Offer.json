@@ -5,7 +5,7 @@
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
@@ -118,7 +118,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/OfferList"
+                            "$ref": "#/definitions/Offer"
                         }
                     }
                 },
@@ -158,7 +158,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/OfferList"
+                            "$ref": "#/definitions/Offer"
                         }
                     }
                 },
@@ -196,10 +196,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/OfferList"
-                        }
+                        "description": "OK"
                     }
                 },
                 "produces": [
@@ -213,15 +210,15 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/offers/{offer}/Metrics": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of offers.": {
+                    "Get subscription metrics.": {
                         "$ref": "./examples/Offer/Metrics.json"
                     }
                 },
-                "description": "Get the list of offers.",
+                "description": "Get subscription metrics.",
                 "tags": [
                     "Offers"
                 ],
-                "operationId": "Offers_Metrics",
+                "operationId": "Offers_ListMetrics",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
@@ -240,7 +237,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "Subscriptions.json#/definitions/MetricDefinitionList"
+                            "$ref": "Subscriptions.json#/definitions/MetricList"
                         }
                     }
                 },
@@ -263,7 +260,7 @@
                 "tags": [
                     "Offers"
                 ],
-                "operationId": "Offers_MetricDefinitions",
+                "operationId": "Offers_ListMetricDefinitions",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
@@ -436,6 +433,7 @@
                 "Addon"
             ],
             "x-ms-enum": {
+                "name": "PlanLink",
                 "modelAsString": true,
                 "values": [
                     {

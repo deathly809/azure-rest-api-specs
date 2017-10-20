@@ -214,14 +214,40 @@
             }
         },
         "ProvisioningState": {
-            "description" : "Provisioning state for subscriptions service resources e.g. resource provider registration.",
+            "description": "Provisioning state for subscriptions service resources e.g. resource provider registration.",
             "type": "string",
             "enum": [
                 "NotSpecified",
                 "Accepted",
                 "Failed",
                 "Succeeded"
-            ]
+            ],
+            "x-ms-enum": {
+                "name": "ProvisioningState",
+                "modelAsString": true,
+                "values": [
+                    {
+                        "description" : "The provisioning state is not specified.",
+                        "name" : "NotSpecified",
+                        "value" : "NotSpecified"
+                    },
+                    {
+                        "description" : "The provisioning state is accepted, and indicates provisioning is ongoing.",
+                        "name" : "Accepted",
+                        "value" : "Accepted"
+                    },
+                    {
+                        "description" : "The provisioning state is failed, and indicates the data is potentially out-of-sync with third parties.",
+                        "name" : "Failed",
+                        "value" : "Failed"
+                    },
+                    {
+                        "description" : "The provisioning state is succeeded, and indicates the data is in-sync with third-parties.",
+                        "name" : "Succeeded",
+                        "value" : "Succeeded"
+                    }
+                ]
+            }
         },
         "AcquiredPlanList": {
             "description": "List of acquired plans.",
