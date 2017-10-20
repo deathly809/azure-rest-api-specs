@@ -5,7 +5,7 @@
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
@@ -93,7 +93,31 @@
         }
     },
     "definitions": {
-        "Quota": {},
+        "Quota": {
+            "description": "Quotas for resellers.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Quotas for resellers.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/QuotaProperties"
+                }
+            }
+        },
+        "QuotaProperties": {
+            "description": "Quotas for resellers.",
+            "type": "object",
+            "properties": {
+                "allowCustomPortalBranding": {
+                    "description": "Value indicating whether custom portal branding is allowed.",
+                    "type": "boolean"
+                },
+                "name": {
+                    "description": "name of the reseller quota.",
+                    "type": "string"
+                }
+            }
+        },
         "QuotaList": {
             "description": "List of quotas.",
             "properties": {

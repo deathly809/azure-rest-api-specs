@@ -5,12 +5,12 @@
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
     "paths": {
-        "/Microsoft.Subscriptions.Admin/operations": {
+        "/providers/Microsoft.Subscriptions.Admin/operations": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of offers.": {
@@ -21,7 +21,7 @@
                 "tags": [
                     "Subscriptions"
                 ],
-                "operationId": "Operations",
+                "operationId": "ListOperations",
                 "parameters": [
                     {
                         "$ref": "#/parameters/ApiVersionParameter"
@@ -54,7 +54,7 @@
                 "tags": [
                     "Subscriptions"
                 ],
-                "operationId": "RotateEncryption",
+                "operationId": "UpdateEncryption",
                 "parameters": [
                     {
                         "$ref": "#/parameters/SubscriptionIdParameter"
@@ -87,7 +87,7 @@
                 "tags": [
                     "Subscriptions"
                 ],
-                "operationId": "Restore",
+                "operationId": "RestoreData",
                 "parameters": [
                     {
                         "$ref": "#/parameters/SubscriptionIdParameter"
@@ -292,15 +292,10 @@
             },
             "x-ms-azure-resource": true
         },
-        "Dictionary": {
-            "type": "object",
-            "additionalProperties": {
-                "type": "string"
-            }
-        },
         "Operation": {
             "description": "Supported REST operation.",
-            "type": "object"
+            "type": "object",
+            "properties": {}
         },
         "OperationList": {
             "description": "List of supported operations.",
@@ -311,11 +306,20 @@
         },
         "Subscription": {
             "description": "List of supported operations.",
-            "type": "object"
+            "type": "object",
+            "properties": {},
+            "allOf": [
+                {
+                    "$ref": "#/definitions/Resource"
+                }
+            ]
         },
         "SubscriptionList": {
             "description": "List of supported operations.",
-            "type": "object"
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Subscription"
+            }
         },
         "Metric": {
             "description": "The resource metric set that represents the metrics for a particular resource.",
@@ -379,8 +383,12 @@
                     "type": "integer"
                 },
                 "properties": {
-                    "description": "Extended properties",
-                    "$ref": "#/definitions/Dictionary"
+                    "x-ms-client-name": "extendedProperties"  ,
+                    "description": "Extended properties.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 }
             }
         },

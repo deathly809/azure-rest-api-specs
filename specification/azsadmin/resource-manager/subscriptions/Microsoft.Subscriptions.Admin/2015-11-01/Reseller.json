@@ -5,7 +5,7 @@
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
@@ -79,7 +79,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DelegatedProviderList"
+                            "$ref": "#/definitions/DelegatedProvider"
                         }
                     }
                 },

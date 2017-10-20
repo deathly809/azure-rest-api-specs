@@ -5,7 +5,7 @@
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
@@ -115,7 +115,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/PlanList"
+                            "$ref": "#/definitions/List"
                         }
                     }
                 },
@@ -158,7 +158,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/PlanList"
+                            "$ref": "#/definitions/Plan"
                         }
                     }
                 },
@@ -196,10 +196,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/PlanList"
-                        }
+                        "description": "OK"
                     }
                 },
                 "produces": [
@@ -221,7 +218,7 @@
                 "tags": [
                     "Plans"
                 ],
-                "operationId": "Plans_Metrics",
+                "operationId": "Plans_ListMetrics",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
@@ -263,7 +260,7 @@
                 "tags": [
                     "Plans"
                 ],
-                "operationId": "Plans_MetricDefinitions",
+                "operationId": "Plans_ListMetricDefinitions",
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"

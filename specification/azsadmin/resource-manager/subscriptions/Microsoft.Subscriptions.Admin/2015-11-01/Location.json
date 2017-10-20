@@ -5,7 +5,7 @@
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
@@ -137,7 +137,7 @@
                 "properties": {
                     "description": "Contains information about a geographical location where resource providers can be deployed.",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/Location"
+                    "$ref": "#/definitions/LocationProperties"
                 }
             },
             "allOf": [
@@ -165,15 +165,17 @@
             }
         },
         "LocationList": {
-            "description": "List of locations",
+            "description": "List of locations.",
             "properties": {
                 "value": {
+                    "description": "List of locations.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Location"
                     }
                 },
                 "nextLink": {
+                    "description": "URI to next page.",
                     "type": "string"
                 }
             }

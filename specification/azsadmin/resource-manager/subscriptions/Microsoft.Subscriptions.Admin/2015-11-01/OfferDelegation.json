@@ -5,7 +5,7 @@
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
@@ -207,7 +207,10 @@
             "properties": {
                 "resourceTags": {
                     "description": "Resource tags.",
-                    "$ref" : "Subscriptions.json#/definitions/Dictionary"
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
                 },
                 "resellerSubscriptionId": {
                     "description": "Identifier of the reseller subscription that delegated the offer.",
