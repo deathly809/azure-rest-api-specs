@@ -46,7 +46,10 @@
                 ],
                 "consumes": [
                     "application/json"
-                ]
+                ],
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/locations/{location}/quotas/{quota}": {

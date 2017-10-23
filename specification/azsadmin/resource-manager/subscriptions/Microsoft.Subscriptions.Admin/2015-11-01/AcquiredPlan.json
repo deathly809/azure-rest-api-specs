@@ -46,7 +46,10 @@
                 ],
                 "consumes": [
                     "application/json"
-                ]
+                ],
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/subscriptions/{targetSubscription}/acquiredPlans/{plan}": {
@@ -227,24 +230,24 @@
                 "modelAsString": true,
                 "values": [
                     {
-                        "description" : "The provisioning state is not specified.",
-                        "name" : "NotSpecified",
-                        "value" : "NotSpecified"
+                        "description": "The provisioning state is not specified.",
+                        "name": "NotSpecified",
+                        "value": "NotSpecified"
                     },
                     {
-                        "description" : "The provisioning state is accepted, and indicates provisioning is ongoing.",
-                        "name" : "Accepted",
-                        "value" : "Accepted"
+                        "description": "The provisioning state is accepted, and indicates provisioning is ongoing.",
+                        "name": "Accepted",
+                        "value": "Accepted"
                     },
                     {
-                        "description" : "The provisioning state is failed, and indicates the data is potentially out-of-sync with third parties.",
-                        "name" : "Failed",
-                        "value" : "Failed"
+                        "description": "The provisioning state is failed, and indicates the data is potentially out-of-sync with third parties.",
+                        "name": "Failed",
+                        "value": "Failed"
                     },
                     {
-                        "description" : "The provisioning state is succeeded, and indicates the data is in-sync with third-parties.",
-                        "name" : "Succeeded",
-                        "value" : "Succeeded"
+                        "description": "The provisioning state is succeeded, and indicates the data is in-sync with third-parties.",
+                        "name": "Succeeded",
+                        "value": "Succeeded"
                     }
                 ]
             }
