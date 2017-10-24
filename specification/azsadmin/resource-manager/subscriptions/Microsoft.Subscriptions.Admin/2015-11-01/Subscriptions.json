@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "2015-06-01-preview",
+        "version": "2015-11-01",
         "title": "SubscriptionsManagementClient",
         "description": "The Admin Subscriptions Management Client."
     },
@@ -590,7 +590,7 @@
             "description": "Client Api Version.",
             "required": true,
             "type": "string",
-            "default": "2015-06-01-preview"
+            "default": "2015-11-01"
         },
         "ResourceGroupParameter": {
             "description": "The resource group the resource is located under.",
