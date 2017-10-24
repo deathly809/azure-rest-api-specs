@@ -17,7 +17,7 @@
                         "$ref": "./examples/Plan/ListAll.json"
                     }
                 },
-                "description": "Get the list of plans.",
+                "description": "List all plans across all subscriptions.",
                 "tags": [
                     "Plans"
                 ],
@@ -43,7 +43,10 @@
                 ],
                 "consumes": [
                     "application/json"
-                ]
+                ],
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/plans/": {
