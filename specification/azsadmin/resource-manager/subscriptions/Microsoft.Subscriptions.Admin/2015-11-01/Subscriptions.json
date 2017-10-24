@@ -374,11 +374,11 @@
                 },
                 "routingResourceManagerType": {
                     "description": "Routing resource manager type.",
-                    "type": "string"
+                    "$ref": "#/definitions/ResourceManagerType"
                 },
                 "state": {
                     "description": "Subscription state.",
-                    "type": "string"
+                    "$ref": "#/definitions/SubscriptionState"
                 },
                 "subscriptionId": {
                     "description": "Subscription identifier.",
@@ -397,9 +397,37 @@
         },
         "SubscriptionList": {
             "description": "List of subscriptions.",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/Subscription"
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Subscription"
+                    }
+                }
+            }
+        },
+        "ResourceManagerType": {
+            "description": "Resource manager type.",
+            "type": "string",
+            "enum": [
+                "Default",
+                "Admin"
+            ],
+            "x-ms-enum": {
+                "name": "ResourceManagerType",
+                "modelAsString": true,
+                "values": [
+                    {
+                        "description": "The default/user-facing resource manager.",
+                        "name": "Default",
+                        "value": "0"
+                    },
+                    {
+                        "description": "The admin resource manager.",
+                        "name": "Admin",
+                        "value": "1"
+                    }
+                ]
             }
         },
         "SubscriptionState": {
