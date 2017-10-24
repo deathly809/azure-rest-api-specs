@@ -153,6 +153,9 @@
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/NewAcquiredPlanParameter"
                     }
                 ],
                 "responses": {
