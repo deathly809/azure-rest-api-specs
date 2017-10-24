@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/delegatedProviders/": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/delegatedProviders": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of delegatedProviders.": {
@@ -25,9 +25,6 @@
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
@@ -52,7 +49,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Subscriptions.Admin/delegatedProviders/{delegatedProvider}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/delegatedProviders/{delegatedProvider}": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of delegatedProviders.": {
@@ -67,9 +64,6 @@
                 "parameters": [
                     {
                         "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "Subscriptions.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/DelegatedProviderParameter"
