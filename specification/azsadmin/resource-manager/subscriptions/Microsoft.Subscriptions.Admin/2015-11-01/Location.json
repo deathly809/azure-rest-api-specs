@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/location": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/locations": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
@@ -49,7 +49,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/location{location}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Subscriptions.Admin/locations/{location}": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of usage aggregates for all tenants.": {
