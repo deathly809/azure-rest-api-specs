@@ -277,6 +277,16 @@
             "required": true,
             "type": "string",
             "x-ms-parameter-location": "method"
+        },
+        "NewAcquiredPlanParameter" : {
+            "name": "newAcquiredPlan",
+            "in": "body",
+            "description": "The new acquired plan.",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/AcquiredPlan"
+            },
+            "x-ms-parameter-location": "method"
         }
     },
     "securityDefinitions": {

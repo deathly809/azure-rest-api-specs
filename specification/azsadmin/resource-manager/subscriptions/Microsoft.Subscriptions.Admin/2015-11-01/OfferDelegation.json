@@ -204,7 +204,7 @@
                 }
             ]
         },
-        "DelegatedOfferProperties": {
+        "DelegatedOffer": {
             "description": "Properties for an offer.",
             "type": "object",
             "properties": {
