@@ -407,6 +407,79 @@
                 "description": {
                     "description": "Description of offer.",
                     "type": "string"
+                },
+                "externalReferenceId": {
+                    "description": "External reference identifier.",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "Offer accessibility state.",
+                    "$ref": "#/definitions/AccessibilityState"
+                },
+                "subscriptionCount": {
+                    "description": "Current subscription count.",
+                    "type": "integer"
+                },
+                "maxSubscriptionsPerAccount": {
+                    "description": "Maximum subscriptions per account.",
+                    "type": "integer"
+                },
+                "basePlanIds": {
+                    "description": "Identifiers of the base plans that become available to tenant immediately when a tenant subscribes to the offer.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "addonPlanDefinition": {
+                    "description": "References to add-on plans that a tenant can optionally acquire as a part of the offer.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/AddonPlanDefinition"
+                    }
+                }
+            }
+        },
+        "AccessibilityState": {
+            "type": "string",
+            "enum": [
+                "Private",
+                "Public",
+                "Decommissioned"
+            ],
+            "x-ms-enum": {
+                "name": "AccessibilityState",
+                "modelAsString": true,
+                "values": [
+                    {
+                        "description": "The offer or plan is private. Only Admin can see and manage it. ",
+                        "name": "Private",
+                        "value": "Private"
+                    },
+                    {
+                        "description": "The offer or plan is public. Tenants can see and self-subscribe to it.",
+                        "name": "Public",
+                        "value": "Public"
+                    },
+                    {
+                        "description": "The offer or plan is decommissioned. Current subscriptions can still consume it but new subscriptions cannot.",
+                        "name": "Decommissioned",
+                        "value": "Decommissioned"
+                    }
+                ]
+            }
+        },
+        "AddonPlanDefinition": {
+            "description": "Contains the name of the desired plan to be linked or unlinked from an offer.",
+            "type": "object",
+            "properties": {
+                "planId": {
+                    "description": "Plan identifier.",
+                    "type": "string"
+                },
+                "maxAcquisitionCount": {
+                    "description": "maximum number of instances that can be acquired by a single subscription.  If not specified, the assumed value is 1.",
+                    "type": "integer"
                 }
             }
         },

@@ -304,8 +304,8 @@
             "type": "object",
             "properties": {
                 "properties": {
+                    "description": "Properties of a plan.",
                     "x-ms-client-flatten": true,
-                    "description": "A plan represents a package of quotas and capabilities that are offered tenants. A tenant can acquire this plan through an offer to upgrade his access to underlying cloud services.",
                     "$ref": "#/definitions/PlanProperties"
                 }
             },
@@ -316,34 +316,42 @@
             ]
         },
         "PlanProperties": {
-            "description": "A plan represents a package of quotas and capabilities that are offered tenants. A tenant can acquire this plan through an offer to upgrade his access to underlying cloud services.",
+            "description": "Properties of a plan.",
             "type": "object",
             "properties": {
-                "subscriptionId": {
-                    "type": "string",
-                    "description": "Subscription id of tenant using plan."
-                },
-                "usageStartTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC start time for the usage bucket to which this usage aggregate belongs."
-                },
-                "usageEndTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC end time for the usage bucket to which this usage aggregate belongs."
-                },
-                "instanceData": {
-                    "description": "Key-value pairs of instance details represented as a string.",
+                "description": {
+                    "description": "Description of the plan.",
                     "type": "string"
                 },
-                "quantity": {
-                    "description": "The amount of the resource consumption that occurred in this time frame.",
+                "displayName": {
+                    "description": "Display name.",
                     "type": "string"
                 },
-                "meterId": {
-                    "description": "Unique ID for the resource that was consumed (aka ResourceID).",
+                "externalReferenceId": {
+                    "description": "External reference identifier.",
                     "type": "string"
+                },
+                "quotaIds": {
+                    "description": "Quota identifiers under the plan.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "name": {
+                    "description": "Name of the plan.",
+                    "type": "string"
+                },
+                "subscriptionCount": {
+                    "description": "Subscription count.",
+                    "type": "integer"
+                },
+                "skuIds": {
+                    "description": "SKU identifiers.",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },

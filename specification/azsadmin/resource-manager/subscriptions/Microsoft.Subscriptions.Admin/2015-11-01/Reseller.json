@@ -34,7 +34,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DelegatedProviderList"
+                            "$ref": "Subscriptions.json#/definitions/SubscriptionList"
                         }
                     }
                 },
@@ -76,7 +76,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/DelegatedProvider"
+                            "$ref": "Subscriptions.json#/definitions/Subscription"
                         }
                     }
                 },
@@ -89,72 +89,7 @@
             }
         }
     },
-    "definitions": {
-        "DelegatedProvider": {
-            "description": "Metadata about a reseller.",
-            "type": "object",
-            "properties": {
-                "properties": {
-                    "x-ms-client-flatten": true,
-                    "description": "Properties for an delegatedProvider.",
-                    "$ref": "#/definitions/DelegatedProviderProperties"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "Subscriptions.json#/definitions/Resource"
-                }
-            ]
-        },
-        "DelegatedProviderProperties": {
-            "description": "Properties for an delegatedProvider.",
-            "type": "object",
-            "properties": {
-                "subscriptionId": {
-                    "type": "string",
-                    "description": "Subscription id of tenant using plan."
-                },
-                "usageStartTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC start time for the usage bucket to which this usage aggregate belongs."
-                },
-                "usageEndTime": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "UTC end time for the usage bucket to which this usage aggregate belongs."
-                },
-                "instanceData": {
-                    "description": "Key-value pairs of instance details represented as a string.",
-                    "type": "string"
-                },
-                "quantity": {
-                    "description": "The amount of the resource consumption that occurred in this time frame.",
-                    "type": "string"
-                },
-                "meterId": {
-                    "description": "Unique ID for the resource that was consumed (aka ResourceID).",
-                    "type": "string"
-                }
-            }
-        },
-        "DelegatedProviderList": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
-            "properties": {
-                "value": {
-                    "description": "Array of usage aggregates.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/DelegatedProvider"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "Continuation token"
-                }
-            }
-        }
-    },
+    "definitions": {},
     "parameters": {
         "NewDelegatedProviderParameter": {
             "description": "New reseller.",
@@ -162,7 +97,7 @@
             "in": "body",
             "required": true,
             "schema": {
-                "$ref": "#/definitions/DelegatedProvider"
+                "$ref": "Subscriptions.json#/definitions/Subscription"
             },
             "x-ms-parameter-location": "method"
         }

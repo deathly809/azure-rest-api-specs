@@ -144,7 +144,7 @@
                     "application/json"
                 ],
                 "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
+                    "nextLinkName": null
                 }
             }
         },
@@ -299,8 +299,41 @@
             "description": "Supported REST operation.",
             "type": "object",
             "properties": {
-                "deleteMe": {
-                    "type": "string"
+                "display": {
+                    "description": "Display information for the operation.",
+                    "type": "object",
+                    "properties": {
+                        "description": {
+                            "description": "Description for the operation.",
+                            "type": "string",
+                            "readOnly": true
+                        },
+                        "operation": {
+                            "description": "Display name of the operation.",
+                            "type": "string",
+                            "readOnly": true
+                        },
+                        "provider": {
+                            "description": "Resource provider display name.",
+                            "type": "string",
+                            "readOnly": true
+                        },
+                        "resource": {
+                            "description": "Resource type display name related to the operation.",
+                            "type": "string",
+                            "readOnly": true
+                        }
+                    }
+                },
+                "name": {
+                    "description": "name of the operation being performed on an object.",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "origin": {
+                    "description": "Origin for the operation.",
+                    "type": "string",
+                    "readOnly": true
                 }
             }
         },
@@ -315,7 +348,44 @@
             "description": "List of supported operations.",
             "type": "object",
             "properties": {
-                "deleteMe": {
+                "delegatedProviderSubscriptionId": {
+                    "description": "Parent reseller subscription identifier.",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "Subscription name.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Fully qualified identifier.",
+                    "type": "string"
+                },
+                "externalReferenceId": {
+                    "description": "External reference identifier.",
+                    "type": "string"
+                },
+                "offerId": {
+                    "description": "Identifier of the offer under the scope of a delegated provider.",
+                    "type": "string"
+                },
+                "owner": {
+                    "description": "Subscription owner.",
+                    "type": "string"
+                },
+                "routingResourceManagerType": {
+                    "description": "Routing resource manager type.",
+                    "type": "string"
+                },
+                "state": {
+                    "description": "Subscription state.",
+                    "type": "string"
+                },
+                "subscriptionId": {
+                    "description": "Subscription identifier.",
+                    "type": "string"
+                },
+                "tenantId": {
+                    "description": "Directory tenant identifier.",
                     "type": "string"
                 }
             },
@@ -326,10 +396,58 @@
             ]
         },
         "SubscriptionList": {
-            "description": "List of supported operations.",
+            "description": "List of subscriptions.",
             "type": "array",
             "items": {
                 "$ref": "#/definitions/Subscription"
+            }
+        },
+        "SubscriptionState": {
+            "description": "Subscription notification state.",
+            "type": "string",
+            "enum": [
+                "NotDefined",
+                "Enabled",
+                "Warned",
+                "PastDue",
+                "Disabled",
+                "Deleted"
+            ],
+            "x-ms-enum": {
+                "name": "SubscriptionState",
+                "modelAsString": true,
+                "values": [
+                    {
+                        "description": "The subscription state is unknown.",
+                        "name": "NotDefined",
+                        "value": "0"
+                    },
+                    {
+                        "description": "The subscription is enabled.",
+                        "name": "Enabled",
+                        "value": "1"
+                    },
+                    {
+                        "description": "The subscription has been warned.",
+                        "name": "Warned",
+                        "value": "2"
+                    },
+                    {
+                        "description": "The subscription is past due.",
+                        "name": "PastDue",
+                        "value": "3"
+                    },
+                    {
+                        "description": "The subscription is disabled.",
+                        "name": "Disabled",
+                        "value": "4"
+                    },
+                    {
+                        "description": "The subscription is deleted.",
+                        "name": "Deleted",
+                        "value": "5"
+                    }
+                ]
             }
         },
         "Metric": {
