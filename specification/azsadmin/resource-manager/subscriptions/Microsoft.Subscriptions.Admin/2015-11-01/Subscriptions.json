@@ -339,9 +339,15 @@
         },
         "OperationList": {
             "description": "List of supported operations.",
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/Operation"
+            "type": "object",
+            "properties": {
+                "value": {
+                    "description": "List of supported operations.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Operation"
+                    }
+                }
             }
         },
         "Subscription": {
@@ -403,6 +409,10 @@
                     "items": {
                         "$ref": "#/definitions/Subscription"
                     }
+                },
+                "nextLink": {
+                    "description": "URI to the next page.",
+                    "type": "string"
                 }
             }
         },
