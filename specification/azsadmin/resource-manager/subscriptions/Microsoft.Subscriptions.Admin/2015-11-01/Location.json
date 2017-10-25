@@ -86,46 +86,6 @@
                 "consumes": [
                     "application/json"
                 ]
-            },
-            "put": {
-                "x-ms-examples": {
-                    "Puts the location where resource providers can be registered.": {
-                        "$ref": "./examples/Location/Create.json"
-                    }
-                },
-                "tags": [
-                    "Locations"
-                ],
-                "description": "Puts the location where resource providers can be registered.",
-                "operationId": "Locations_Create",
-                "parameters": [
-                    {
-                        "$ref": "Subscriptions.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "Subscriptions.json#/parameters/LocationParameter"
-                    },
-                    {
-                        "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/NewLocationParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/Location"
-                        }
-                    }
-                },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ]
             }
         }
     },
@@ -134,24 +94,12 @@
             "description": "Contains information about a geographical location where resource providers can be deployed.",
             "type": "object",
             "properties": {
-                "properties": {
-                    "description": "Contains information about a geographical location where resource providers can be deployed.",
-                    "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/LocationProperties"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "Subscriptions.json#/definitions/Resource"
-                }
-            ]
-        },
-        "LocationProperties": {
-            "description": "Contains information about a geographical location where resource providers can be deployed.",
-            "type": "object",
-            "properties": {
                 "displayName": {
                     "description": "Display name of the location.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "Location identifier.",
                     "type": "string"
                 },
                 "latitude": {
@@ -160,6 +108,10 @@
                 },
                 "longitude": {
                     "description": "Longitude of the location.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Location name.",
                     "type": "string"
                 }
             }

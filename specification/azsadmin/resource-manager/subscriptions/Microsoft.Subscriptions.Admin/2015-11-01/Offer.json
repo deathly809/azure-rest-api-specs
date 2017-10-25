@@ -158,6 +158,9 @@
                     },
                     {
                         "$ref": "Subscriptions.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/NewOfferParameter"
                     }
                 ],
                 "responses": {
