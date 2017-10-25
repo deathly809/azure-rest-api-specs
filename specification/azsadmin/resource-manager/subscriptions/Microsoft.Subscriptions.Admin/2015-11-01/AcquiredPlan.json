@@ -164,6 +164,9 @@
                         "schema": {
                             "$ref": "#/definitions/AcquiredPlan"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
@@ -281,7 +284,7 @@
             "type": "string",
             "x-ms-parameter-location": "method"
         },
-        "NewAcquiredPlanParameter" : {
+        "NewAcquiredPlanParameter": {
             "name": "newAcquiredPlan",
             "in": "body",
             "description": "The new acquired plan.",

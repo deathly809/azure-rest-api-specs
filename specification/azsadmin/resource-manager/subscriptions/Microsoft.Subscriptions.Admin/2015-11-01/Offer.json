@@ -123,6 +123,9 @@
                         "schema": {
                             "$ref": "#/definitions/Offer"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
