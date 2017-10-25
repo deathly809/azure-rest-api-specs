@@ -108,7 +108,12 @@
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/QuotaProperties"
                 }
-            }
+            },
+            "allOf" : [
+                {
+                    "$ref" : "Subscriptions.json#/definitions/Resource"
+                }
+            ]
         },
         "QuotaProperties": {
             "description": "Quotas for resellers.",
@@ -117,10 +122,6 @@
                 "allowCustomPortalBranding": {
                     "description": "Value indicating whether custom portal branding is allowed.",
                     "type": "boolean"
-                },
-                "name": {
-                    "description": "name of the reseller quota.",
-                    "type": "string"
                 }
             }
         },
