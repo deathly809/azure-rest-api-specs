@@ -84,6 +84,9 @@
                         "schema": {
                             "$ref": "#/definitions/AcquiredPlan"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
@@ -164,9 +167,6 @@
                         "schema": {
                             "$ref": "#/definitions/AcquiredPlan"
                         }
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
