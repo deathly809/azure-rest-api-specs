@@ -5,7 +5,7 @@
         "title": "GalleryManagementClient",
         "description": "The Admin Gallery Management Client."
     },
-    "host": "management.local.azurestack.external",
+    "host": "adminmanagement.local.azurestack.external",
     "schemes": [
         "https"
     ],
@@ -25,8 +25,8 @@
                         "$ref": "Gallery.json#/parameters/ApiVersionParameter"
                     }
                 ],
-                "summary": "Gets the available operations.",
-                "operationId": "Operations",
+                "summary": "Gets the available gallery admin operations.",
+                "operationId": "ListOperations",
                 "consumes": [
                     "application/json"
                 ],
@@ -49,7 +49,7 @@
     },
     "definitions": {
         "Resource": {
-            "description": "Base Resource Object",
+            "description": "Base Resource Object.",
             "type": "object",
             "properties": {
                 "id": {
@@ -69,7 +69,7 @@
                 },
                 "location": {
                     "readOnly": true,
-                    "description": "Location where resource is location.",
+                    "description": "Location of resource.",
                     "type": "string"
                 },
                 "tags": {
@@ -84,32 +84,41 @@
             "x-ms-azure-resource": true
         },
         "Operation": {
+            "description": "Represents a REST operation.",
             "type": "object",
             "properties": {
                 "name": {
+                    "description": "Name of the REST operation.",
                     "type": "string"
                 },
                 "origin": {
+                    "description": "Origin of the REST operation.",
                     "type": "string"
                 },
                 "display": {
+                    "description": "Information about the REST operation.",
                     "$ref": "#/definitions/OperationDisplayDefinition"
                 }
             }
         },
         "OperationDisplayDefinition": {
+            "description": "Information about the REST operation.",
             "type": "object",
             "properties": {
                 "description": {
+                    "description": "Description of the REST operation.",
                     "type": "string"
                 },
                 "operation": {
+                    "description": "Type of REST operation.",
                     "type": "string"
                 },
                 "provider": {
+                    "description": "Provider of the REST operation.",
                     "type": "string"
                 },
                 "resource": {
+                    "description": "Resource returned by the REST operation.",
                     "type": "string"
                 }
             }
@@ -119,12 +128,14 @@
             "type": "object",
             "properties": {
                 "value": {
+                    "description": "List of operations.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Operation"
                     }
                 },
                 "nextLink": {
+                    "description": "URI to the next page.",
                     "type": "string"
                 }
             }
@@ -134,7 +145,7 @@
         "SubscriptionIdParameter": {
             "name": "subscriptionId",
             "in": "path",
-            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription.The subscription ID forms part of the URI for every service call.",
+            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription.  The subscription ID forms part of the URI for every service call.",
             "required": true,
             "type": "string"
         },
@@ -159,7 +170,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Azure Active Directory OAuth2 Flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }
