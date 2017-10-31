@@ -1,0 +1,39 @@
+{
+    "parameters": {
+        "api-version": "2015-06-15",
+        "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
+        "location": "local",
+        "resourceName": "Default Quota"
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "name": "Default Quota",
+                "etag": "W/\"8fbd9932-75d1-4f23-83ab-fefe9c9818b5\"",
+                "type": "Microsoft.Network.Admin/quotas",
+                "location": "local",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "maxPublicIpsPerSubscription": 50,
+                    "maxVnetsPerSubscription": 50,
+                    "maxVirtualNetworkGatewaysPerSubscription": 1,
+                    "maxVirtualNetworkGatewayConnectionsPerSubscription": 2,
+                    "maxLoadBalancersPerSubscription": 50,
+                    "maxNicsPerSubscription": 100,
+                    "maxSecurityGroupsPerSubscription": 50,
+                    "migrationPhase": "None"
+                },
+                "id": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/locations/local/quotas/Default Quota"
+            }
+        },
+        "404": {
+            "body": {
+                "error": {
+                    "code": "NotFound",
+                    "message": "Resource /subscriptions/17f638c8-a0e3-404b-92b8-04c749c03b58/resourceGroups//providers/Microsoft.Network.Admin/quotas/TestQuotaForRemoval not found.",
+                    "details": []
+                }
+            }
+        }
+    }
+}

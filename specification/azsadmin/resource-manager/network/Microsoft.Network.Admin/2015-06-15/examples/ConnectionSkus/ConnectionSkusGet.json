@@ -1,0 +1,44 @@
+{
+    "parameters": {
+        "api-version": "2015-06-15",
+        "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
+        "location": "local",
+        "resourceName": "Basic"
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "name": "Basic",
+                "etag": "W/\"ed0bf5e4-4cfb-4f3a-ae79-28022218237f\"",
+                "type": "Microsoft.Network.Admin/connectionSkus",
+                "properties": {
+                  "provisioningState": "Succeeded",
+                  "resourceType": "Microsoft.Network/connections",
+                  "capabilities": [
+                    {
+                      "name": "GatewayPool",
+                      "value": "default"
+                    },
+                    {
+                      "name": "Type",
+                      "value": "IPSec"
+                    },
+                    {
+                      "name": "TxBandwidthInMegabitsPerSecond",
+                      "value": "100"
+                    },
+                    {
+                      "name": "RxBandwidthInMegabitsPerSecond",
+                      "value": "100"
+                    }
+                  ],
+                  "isDefault": false
+                }
+              
+            }
+        },
+        "404": {
+          
+        }
+    }
+}
