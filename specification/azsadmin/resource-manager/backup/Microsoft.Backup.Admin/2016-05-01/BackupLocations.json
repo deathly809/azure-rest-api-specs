@@ -48,7 +48,7 @@
                     "application/json"
                 ],
                 "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
+                    "nextLinkName": null
                 }
             },
             "put": {
@@ -61,7 +61,7 @@
                 "tags": [
                     "BackupLocations"
                 ],
-                "operationId": "BackupLocations_Create",
+                "operationId": "BackupLocations_Update",
                 "parameters": [
                     {
                         "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
@@ -71,6 +71,9 @@
                     },
                     {
                         "$ref": "Backup.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/BackLocationObjectParameter"
                     }
                 ],
                 "responses": {
@@ -121,6 +124,9 @@
                         "schema": {
                             "$ref": "#/definitions/BackupLocation"
                         }
+                    },
+                    "400": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
@@ -276,6 +282,16 @@
             "description": "Name of the backup location.",
             "required": true,
             "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "BackupLocationObjectParameter": {
+            "name": "backup",
+            "in": "body",
+            "description": "Backup location object.",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/ExternalStore"
+            },
             "x-ms-parameter-location": "method"
         }
     },

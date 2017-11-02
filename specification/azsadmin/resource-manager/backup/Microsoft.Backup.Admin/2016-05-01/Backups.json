@@ -51,7 +51,7 @@
                     "application/json"
                 ],
                 "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
+                    "nextLinkName": null
                 }
             }
         },
@@ -90,6 +90,9 @@
                         "schema": {
                             "$ref": "#/definitions/Backup"
                         }
+                    },
+                    "400": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
@@ -130,10 +133,16 @@
                     }
                 ],
                 "responses": {
-                    "202": {
-                        "description": "ACCEPTED",
+                    "200": {
+                        "description": "OK",
                         "schema": {
                             "type": "string"
+                        },
+                        "202": {
+                            "description": "ACCEPTED",
+                            "schema": {
+                                "type": "string"
+                            }
                         }
                     }
                 },
@@ -142,7 +151,8 @@
                 ],
                 "consumes": [
                     "application/json"
-                ]
+                ],
+                "x-ms-long-running-operation": true
             }
         }
     },
