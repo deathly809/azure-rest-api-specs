@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.KeyVault.Admin/locations/{location}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.KeyVault.Admin/locations/{location}/quotas": {
             "get": {
                 "x-ms-examples": {
                     "Get a list of all quota objects for KeyVault at a location.": {
