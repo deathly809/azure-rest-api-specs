@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get an ip pool": {
-                        "$ref": "./examples/IpPool/IpPoolGetOperation_example.json"
+                        "$ref": "./examples/IpPool/Get.json"
                     }
                 },
                 "tags": [
@@ -54,7 +54,7 @@
             "put": {
                 "x-ms-examples": {
                     "Create an ip pool": {
-                        "$ref": "./examples/IpPool/IpPoolCreateOperation_example.json"
+                        "$ref": "./examples/IpPool/Create.json"
                     }
                 },
                 "tags": [
@@ -100,7 +100,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all ip pools": {
-                        "$ref": "./examples/IpPool/IpPoolListOperation_example.json"
+                        "$ref": "./examples/IpPool/List.json"
                     }
                 },
                 "tags": [

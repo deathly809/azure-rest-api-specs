@@ -20,7 +20,7 @@
             "post": {
                 "x-ms-examples": {
                     "Power off an infra role instance": {
-                        "$ref": "./examples/InfraRoleInstance/InfraRoleInstancePowerOffOperation_example.json"
+                        "$ref": "./examples/InfraRoleInstance/PowerOff.json"
                     }
                 },
                 "tags": [
@@ -69,7 +69,7 @@
             "post": {
                 "x-ms-examples": {
                     "Power on an infra role instance": {
-                        "$ref": "./examples/InfraRoleInstance/InfraRoleInstancePowerOnOperation_example.json"
+                        "$ref": "./examples/InfraRoleInstance/PowerOn.json"
                     }
                 },
                 "tags": [
@@ -118,7 +118,7 @@
             "post": {
                 "x-ms-examples": {
                     "Shutdown an infra role instance": {
-                        "$ref": "./examples/InfraRoleInstance/InfraRoleInstanceShutdownOperation_example.json"
+                        "$ref": "./examples/InfraRoleInstance/Shutdown.json"
                     }
                 },
                 "tags": [
@@ -167,7 +167,7 @@
             "post": {
                 "x-ms-examples": {
                     "Reboot an infra role instance": {
-                        "$ref": "./examples/InfraRoleInstance/InfraRoleInstanceRebootOperation_example.json"
+                        "$ref": "./examples/InfraRoleInstance/Reboot.json"
                     }
                 },
                 "tags": [
@@ -216,7 +216,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get an infra role instance": {
-                        "$ref": "./examples/InfraRoleInstance/InfraRoleInstanceGetOperation_example.json"
+                        "$ref": "./examples/InfraRoleInstance/Get.json"
                     }
                 },
                 "tags": [
@@ -252,7 +252,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all infra role instances": {
-                        "$ref": "./examples/InfraRoleInstance/InfraRoleInstanceListOperation_example.json"
+                        "$ref": "./examples/InfraRoleInstance/Get.json"
                     }
                 },
                 "tags": [

@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a storage pool": {
-                        "$ref": "./examples/StoragePool/StoragePoolGetOperation_example.json"
+                        "$ref": "./examples/StoragePool/Get.json"
                     }
                 },
                 "tags": [
@@ -59,7 +59,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all storage pools": {
-                        "$ref": "./examples/StoragePool/StoragePoolListOperation_example.json"
+                        "$ref": "./examples/StoragePool/List.json"
                     }
                 },
                 "tags": [

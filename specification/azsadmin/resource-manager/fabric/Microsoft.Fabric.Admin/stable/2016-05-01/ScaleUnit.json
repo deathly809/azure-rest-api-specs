@@ -20,7 +20,7 @@
       "get": {
         "x-ms-examples": {
           "Get a scale unit": {
-            "$ref": "./examples/ScaleUnit/ScaleUnitGetOperation_example.json"
+            "$ref": "./examples/ScaleUnit/Get.json"
           }
         },
         "tags": [
@@ -56,7 +56,7 @@
       "get": {
         "x-ms-examples": {
           "List all scale units": {
-            "$ref": "./examples/ScaleUnit/ScaleUnitListOperation_example.json"
+            "$ref": "./examples/ScaleUnit/List.json"
           }
         },
         "tags": [

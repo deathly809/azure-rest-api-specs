@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a storage system": {
-                        "$ref": "./examples/StorageSystem/StorageSystemGetOperation_example.json"
+                        "$ref": "./examples/StorageSystem/Get.json"
                     }
                 },
                 "tags": [
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all storage systems": {
-                        "$ref": "./examples/StorageSystem/StorageSystemListOperation_example.json"
+                        "$ref": "./examples/StorageSystem/List.json"
                     }
                 },
                 "tags": [

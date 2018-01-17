@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get an edge gateway pool": {
-                        "$ref": "./examples/EdgeGatewayPool/EdgeGatewayPoolGetOperation_example.json"
+                        "$ref": "./examples/EdgeGatewayPool/Get.json"
                     }
                 },
                 "description": "Get an EdgeGatewayPool.",
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a list of all edge gateway pools": {
-                        "$ref": "./examples/EdgeGatewayPool/EdgeGatewayPoolListOperation_example.json"
+                        "$ref": "./examples/EdgeGatewayPool/List.json"
                     }
                 },
                 "tags": [

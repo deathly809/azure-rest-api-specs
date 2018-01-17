@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a infra role": {
-                        "$ref": ".//examples/InfraRole/InfraRoleGetOperation_example.json"
+                        "$ref": ".//examples/InfraRole/Get.json"
                     }
                 },
                 "tags": [
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all infra roles": {
-                        "$ref": ".//examples/InfraRole/InfraRoleListOperation_example.json"
+                        "$ref": ".//examples/InfraRole/List.json"
                     }
                 },
                 "tags": [

@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a file share": {
-                        "$ref": "./examples/FileShare/FileShareGetOperation_example.json"
+                        "$ref": "./examples/FileShare/Get.json"
                     }
                 },
                 "tags": [
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all file shares": {
-                        "$ref": "./examples/FileShare/FileShareListOperation_example.json"
+                        "$ref": "./examples/FileShare/List.json"
                     }
                 },
                 "x-ms-pageable": {
