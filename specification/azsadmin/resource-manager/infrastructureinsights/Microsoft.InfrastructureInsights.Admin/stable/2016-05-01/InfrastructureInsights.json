@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/providers/Microsoft.InfrastructureInsights.Admin/operations": {
+        "/providers/Microsoft.InfrastructureInsights/operations": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of support rest operations.": {
@@ -246,14 +246,14 @@
             "description": "List of Operations",
             "properties": {
                 "value": {
-                    "description": "Array of operations.",
+                    "description": "Array of operations",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Operation"
                     }
                 },
                 "nextLink": {
-                    "description": "URI to the next page.",
+                    "description": "URI to the next page of operations.",
                     "type": "string"
                 }
             }
