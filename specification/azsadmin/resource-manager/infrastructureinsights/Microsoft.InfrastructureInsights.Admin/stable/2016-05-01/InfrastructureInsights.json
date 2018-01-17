@@ -10,18 +10,18 @@
         "https"
     ],
     "paths": {
-        "providers/Microsoft.InfrastructureInsights.Admin/operations": {
+        "/providers/Microsoft.InfrastructureInsights.Admin/operations": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of support rest operations.": {
-                        "$ref": "./examples/Operations.json"
+                        "$ref": "./examples/Operations/List.json"
                     }
                 },
                 "description": "Get the list of support rest operations.",
                 "tags": [
                     "InfrastructureInsights"
                 ],
-                "operationId": "Operations",
+                "operationId": "Operations_List",
                 "parameters": [
                     {
                         "$ref": "#/parameters/ApiVersionParameter"
@@ -36,7 +36,7 @@
                     }
                 },
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 }
             }
         }
@@ -238,10 +238,17 @@
         },
         "OperationList": {
             "description": "List of Operations",
-            "value": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/definitions/Operation"
+            "properties": {
+                "value": {
+                    "description": "Array of operations.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Operation"
+                    }
+                },
+                "nextLink": {
+                    "description": "URI to the next page.",
+                    "type": "string"
                 }
             }
         }
