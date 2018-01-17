@@ -95,7 +95,7 @@
             "post": {
                 "x-ms-examples": {
                     "Update the encryption.": {
-                        "$ref": "./examples/UpdateEncryption.json"
+                        "$ref": "./examples/Commerce/UpdateEncryption.json"
                     }
                 },
                 "description": "Update the encryption.",
