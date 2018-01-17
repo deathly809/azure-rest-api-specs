@@ -37,7 +37,13 @@
                 },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
-                }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
             }
         }
     },
