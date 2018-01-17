@@ -10,11 +10,11 @@
         "https"
     ],
     "paths": {
-        "providers/Microsoft.Fabric.Admin/operations": {
+        "/providers/Microsoft.Fabric.Admin/operations": {
             "get": {
                 "x-ms-examples": {
                     "Get the list of support rest operations.": {
-                        "$ref": "./examples/Operations.json"
+                        "$ref": "./examples/Operations/List.json"
                     }
                 },
                 "description": "Get the list of support rest operations.",
@@ -36,7 +36,7 @@
                     }
                 },
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 }
             }
         }
@@ -119,11 +119,18 @@
             }
         },
         "OperationList": {
-            "description": "List of Operations",
-            "value": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/definitions/Operation"
+            "description": "List of Operations.",
+            "properties": {
+                "value": {
+                    "description": "Array of operations.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Operation"
+                    }
+                },
+                "nextLink": {
+                    "description": "URI to next page of operations.",
+                    "type": "string"
                 }
             }
         }

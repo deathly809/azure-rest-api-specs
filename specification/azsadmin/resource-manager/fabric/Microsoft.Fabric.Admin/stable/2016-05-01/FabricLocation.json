@@ -120,14 +120,10 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/FabricLocationList"
+                            "$ref": "#/definitions/FabricLocation"
                         }
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
-                "x-ms-odata": "#/definitions/FabricLocation"
+                }
             }
         }
     },
@@ -172,7 +168,7 @@
         "FabricLocationObjectParameter": {
             "description": "Fabric Location object.",
             "name": "fabricObject",
-            "type": {
+            "schema": {
                 "$ref": "#/definitions/FabricLocation"
             },
             "in": "body",

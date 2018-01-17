@@ -394,35 +394,35 @@
         "BareMetalNodeDescription": {
             "description": "Description of a bare metal node used for ScaleOut operation on a cluster.",
             "properties": {
-                "BMCIPv4Address": {
+                "bMCIPv4Address": {
                     "description": "Bmc address of the physical machine.",
                     "type": "string"
                 },
-                "Vendor": {
+                "vendor": {
                     "description": "Vendor of the physical machine.",
                     "type": "string"
                 },
-                "Model": {
+                "model": {
                     "description": "Model of the physical machine.",
                     "type": "string"
                 },
-                "SerialNumber": {
+                "serialNumber": {
                     "description": "Serial number of the physical machine.",
                     "type": "string"
                 },
-                "BiosVersion": {
+                "biosVersion": {
                     "description": "Bios version of the physical machine.",
                     "type": "string"
                 },
-                "ComputerName": {
+                "computerName": {
                     "description": "Name of the computer.",
                     "type": "string"
                 },
-                "ClusterName": {
+                "clusterName": {
                     "description": "Name of the cluster.",
                     "type": "string"
                 },
-                "MacAddress": {
+                "macAddress": {
                     "description": "Name of the mac address of the bare metal node.",
                     "type": "string"
                 }
@@ -549,7 +549,7 @@
             "description": "Description of a node.",
             "in": "body",
             "required": true,
-            "type": {
+            "schema": {
                 "$ref": "#/definitions/BareMetalNodeDescription"
             },
             "x-ms-parameter-location": "method"
