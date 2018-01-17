@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Resource health operation endpoints and objects.",
+        "description": "Service health operation endpoints and objects.",
         "title": "InfrastructureInsightsManagementClient",
         "version": "2016-05-01"
     },
@@ -10,27 +10,24 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of resource health items": {
-                        "$ref": "./examples/ResourceHealth/ResourceHealthListOperation_example.json"
+                    "List all services health": {
+                        "$ref": "./examples/ServiceHealth/List.json"
                     }
                 },
                 "tags": [
-                    "Resources"
+                    "ServiceHealths"
                 ],
-                "description": "Get a list of resources?.",
-                "operationId": "ResourceHealths_List",
+                "description": "Get a list of all services health",
+                "operationId": "ServiceHealths_List",
                 "parameters": [
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
-                    },
-                    {
-                        "$ref": "InfrastructureInsights.json#/parameters/ServiceRegistrationIdParameter"
                     },
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/ApiVersionParameter"
@@ -43,14 +40,14 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ResourceHealthList"
+                            "$ref": "#/definitions/ServiceHealthList"
                         }
                     }
                 },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
-                "x-ms-odata": "#/definitions/ResourceHealth",
+                "x-ms-odata": "#/definitions/ServiceHealth",
                 "produces": [
                     "application/json"
                 ],
@@ -59,18 +56,18 @@
                 ]
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths/{resourceRegistrationId}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceHealth}": {
             "get": {
                 "x-ms-examples": {
-                    "Get health information about a resource": {
-                        "$ref": "./examples/ResourceHealth/ResourceHealthGetOperation_example.json"
+                    "Get a services health": {
+                        "$ref": "./examples/ServiceHealth/Get.json"
                     }
                 },
                 "tags": [
-                    "Resources"
+                    "ServiceHealths"
                 ],
-                "description": "Get health information about a resources.",
-                "operationId": "ResourceHealths_Get",
+                "description": "Get a services health",
+                "operationId": "ServiceHealths_Get",
                 "parameters": [
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
@@ -79,23 +76,17 @@
                         "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/ServiceRegistrationIdParameter"
-                    },
-                    {
-                        "$ref": "InfrastructureInsights.json#/parameters/ResourceRegistrationIdParameter"
+                        "$ref": "#/parameters/ServiceHealthParameter"
                     },
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "InfrastructureInsights.json#/parameters/FilterParameter"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ResourceHealth"
+                            "$ref": "#/definitions/ServiceHealth"
                         }
                     }
                 },
@@ -109,13 +100,13 @@
         }
     },
     "definitions": {
-        "ResourceHealth": {
-            "description": "Health information related to a resource.",
+        "ServiceHealth": {
+            "description": "Holds information about a services health.",
             "properties": {
                 "properties": {
-                    "description": "Health information related to a resource.",
+                    "description": "Holds information about a services health.",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/ResourceHealthModel"
+                    "$ref": "#/definitions/ServiceHealthModel"
                 }
             },
             "allOf": [
@@ -124,39 +115,20 @@
                 }
             ]
         },
-        "ResourceHealthModel": {
-            "description": "Health information related to a resource.",
+        "ServiceHealthModel": {
+            "description": "Holds information about a services health.",
             "properties": {
-                "resourceLocation": {
-                    "description": "Gets or sets the resource location.",
+                "displayName": {
+                    "description": "Name of the alert.",
                     "type": "string"
                 },
-                "resourceName": {
-                    "description": "Gets or sets the resource name.",
+                "serviceLocation": {
+                    "description": "Location of the service.",
                     "type": "string"
                 },
-                "resourceDisplayName": {
-                    "description": "Gets or sets the resource display name.",
+                "infraURI": {
+                    "description": "The route prefix to the alert.",
                     "type": "string"
-                },
-                "resourceType": {
-                    "description": "Gets or sets the resource type.",
-                    "type": "string"
-                },
-                "resourceURI": {
-                    "description": "Gets or sets the resource uri.",
-                    "type": "string"
-                },
-                "rpRegistrationId": {
-                    "description": "Gets or sets the resource provider registration id.",
-                    "type": "string"
-                },
-                "usageMetrics": {
-                    "description": "Gets or sets the usage metrics.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "InfrastructureInsights.json#/definitions/UsageMetrics"
-                    }
                 }
             },
             "allOf": [
@@ -165,21 +137,31 @@
                 }
             ]
         },
-        "ResourceHealthList": {
-            "description": "Pageable list of resource healths.",
+        "ServiceHealthList": {
+            "description": "Pageable list of service health instances.",
             "properties": {
                 "value": {
-                    "description": "Array of of resource healths",
+                    "description": "Array of service health instances.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/ResourceHealth"
+                        "$ref": "#/definitions/ServiceHealth"
                     }
                 },
                 "nextLink": {
-                    "description": "URI to next page.",
+                    "description": "URI of the next page.",
                     "type": "string"
                 }
             }
+        }
+    },
+    "parameters": {
+        "ServiceHealthParameter": {
+            "description": "Service Health name.",
+            "name": "serviceHealth",
+            "type": "string",
+            "required": true,
+            "in": "path",
+            "x-ms-parameter-location": "method"
         }
     },
     "securityDefinitions": {

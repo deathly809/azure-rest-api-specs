@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all alerts": {
-                        "$ref": "./examples/Alert/AlertListOperation_example.json"
+                        "$ref": "./examples/Alert/List.json"
                     }
                 },
                 "tags": [
@@ -60,7 +60,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get an alert": {
-                        "$ref": "./examples/Alert/AlertGetOperation_example.json"
+                        "$ref": "./examples/Alert/Get.json"
                     }
                 },
                 "tags": [
@@ -100,7 +100,7 @@
             "put": {
                 "x-ms-examples": {
                     "Close an alert": {
-                        "$ref": "./examples/Alert/AlertCloseOperation_example.json"
+                        "$ref": "./examples/Alert/Close.json"
                     }
                 },
                 "tags": [

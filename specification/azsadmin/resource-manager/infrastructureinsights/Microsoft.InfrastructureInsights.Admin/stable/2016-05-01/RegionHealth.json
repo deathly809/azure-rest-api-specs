@@ -14,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of all health items for the region": {
-                        "$ref": "./examples/RegionHealth/RegionHealthListOperation_example.json"
+                        "$ref": "./examples/RegionHealth/List.json"
                     }
                 },
                 "tags": [
@@ -60,7 +60,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the health status of a region": {
-                        "$ref": "./examples/RegionHealth/RegionHealthGetOperation_example.json"
+                        "$ref": "./examples/RegionHealth/Get.json"
                     }
                 },
                 "tags": [
