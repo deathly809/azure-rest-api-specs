@@ -88,6 +88,9 @@
                         "schema": {
                             "$ref": "#/definitions/RegionHealth"
                         }
+                    },
+                    "404" : {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [

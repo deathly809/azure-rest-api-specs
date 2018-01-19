@@ -88,6 +88,9 @@
                         "schema": {
                             "$ref": "#/definitions/Alert"
                         }
+                    },
+                    "404" : {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [

@@ -96,6 +96,9 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/ResourceHealth"
+                        },
+                        "404" : {
+                            "description": "NOT FOUND"
                         }
                     }
                 },
