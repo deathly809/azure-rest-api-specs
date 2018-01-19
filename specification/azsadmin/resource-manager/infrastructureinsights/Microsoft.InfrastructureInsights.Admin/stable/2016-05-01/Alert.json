@@ -89,7 +89,7 @@
                             "$ref": "#/definitions/Alert"
                         }
                     },
-                    "404" : {
+                    "404": {
                         "description": "NOT FOUND"
                     }
                 },
@@ -151,6 +151,7 @@
     "definitions": {
         "Alert": {
             "description": "This class models an alert resource.",
+            "type": "object",
             "properties": {
                 "properties": {
                     "description": "Holds all information related to Alerts",

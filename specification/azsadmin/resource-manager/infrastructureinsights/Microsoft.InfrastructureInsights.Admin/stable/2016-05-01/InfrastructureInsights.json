@@ -49,7 +49,7 @@
     },
     "definitions": {
         "Dictionary": {
-            "description": "dictionary",
+            "description": "Dictionary of string keys and values.",
             "type": "object",
             "additionalProperties": {
                 "type": "string"
@@ -85,26 +85,27 @@
             "type": "object",
             "properties": {
                 "id": {
+                    
                     "description": "URI of the resource.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "name": {
-                    "readOnly": true,
                     "description": "Name of the resource.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "type": {
-                    "readOnly": true,
                     "description": "Type of resource.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "location": {
-                    "readOnly": true,
                     "description": "Location where resource is location.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "tags": {
-                    "readOnly": true,
                     "description": "List of key value pairs.",
                     "type": "object",
                     "additionalProperties": {
