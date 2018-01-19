@@ -19,15 +19,15 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/Shutdown": {
             "post": {
                 "x-ms-examples": {
-                    "Power off a scale unit node": {
+                    "Shutdown a scale unit node": {
                         "$ref": "./examples/ScaleUnitNode/Shutdown.json"
                     }
                 },
                 "tags": [
                     "ScaleUnitNodes"
                 ],
-                "description": "Power off a scale unit node.",
-                "operationId": "ScaleUnitNodes_PowerOff",
+                "description": "Shutdown a scale unit node.",
+                "operationId": "ScaleUnitNodes_Shutdown",
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
@@ -394,7 +394,8 @@
         "BareMetalNodeDescription": {
             "description": "Description of a bare metal node used for ScaleOut operation on a cluster.",
             "properties": {
-                "bMCIPv4Address": {
+                "bmcIpv4Address": {
+                    "x-ms-client-name": "BMCIPv4Address",
                     "description": "Bmc address of the physical machine.",
                     "type": "string"
                 },

@@ -16,6 +16,58 @@
     "application/json"
   ],
   "paths": {
+    "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnits/{scaleUnit}/ScaleOut": {
+      "post": {
+        "x-ms-examples": {
+          "Scale out a scale unit": {
+            "$ref": "./examples/ScaleUnit/ScaleOut.json"
+          }
+        },
+        "tags": [
+          "ScaleUnits"
+        ],
+        "description": "Scale out a scale unit.",
+        "operationId": "ScaleUnits_ScaleOut",
+        "parameters": [
+          {
+            "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "Fabric.json#/parameters/LocationParameter"
+          },
+          {
+            "$ref": "#/parameters/ScaleUnitParameter"
+          },
+          {
+            "$ref": "#/parameters/ScaleOutScaleUnitParametersInBody"
+          },
+          {
+            "$ref": "Fabric.json#/parameters/ApiVersionParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "Operations.json#/definitions/OperationStatus"
+            }
+          },
+          "202": {
+            "description": "ACCEPTED",
+            "schema": {
+              "$ref": "Operations.json#/definitions/OperationStatus"
+            }
+          },
+          "500": {
+            "description": "FAILURE",
+            "schema": {
+              "$ref": "Operations.json#/definitions/OperationStatus"
+            }
+          }
+        },
+        "x-ms-long-running-operation": true
+      }
+    },
     "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnits/{scaleUnit}": {
       "get": {
         "x-ms-examples": {
@@ -197,6 +249,38 @@
           "type": "string"
         }
       }
+    },
+    "ScaleOutScaleUnitParameters": {
+      "description": "Input data that allows for adding a scale unit node.",
+      "type": "object",
+      "properties": {
+        "bmcIv4Address": {
+          "x-ms-client-name": "BMCIPv4Address",
+          "description": "Bmc address of the physical machine.",
+          "type": "string"
+        },
+        "computerName": {
+          "description": "Computer name of the physical machine.",
+          "type": "string"
+        }
+      }
+    },
+    "ScaleOutScaleUnitParametersList": {
+      "description": "A list of input data that allows for adding a set of scale unit nodes.",
+      "type": "object",
+      "properties": {
+        "nodeList": {
+          "description": "The list of nodes.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ScaleOutScaleUnitParameters"
+          }
+        },
+        "awaitStorageConvergence": {
+          "description": "The list of nodes.",
+          "type": "boolean"
+        }
+      }
     }
   },
   "parameters": {
@@ -206,6 +290,16 @@
       "in": "path",
       "required": true,
       "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "ScaleOutScaleUnitParametersInBody": {
+      "name": "nodeList",
+      "description": "A list of input data that allows for adding a set of scale unit nodes.",
+      "in": "body",
+      "required": true,
+      "schema": {
+        "$ref": "#/definitions/ScaleOutScaleUnitParametersList"
+      },
       "x-ms-parameter-location": "method"
     }
   },

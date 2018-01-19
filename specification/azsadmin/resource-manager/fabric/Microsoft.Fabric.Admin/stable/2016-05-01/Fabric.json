@@ -21,7 +21,7 @@
                 "tags": [
                     "Fabric"
                 ],
-                "operationId": "Fabric_Operations",
+                "operationId": "Fabric_ListOperations",
                 "parameters": [
                     {
                         "$ref": "#/parameters/ApiVersionParameter"
