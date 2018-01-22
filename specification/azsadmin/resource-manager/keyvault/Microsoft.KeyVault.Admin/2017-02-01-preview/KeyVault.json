@@ -10,25 +10,19 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.KeyVault.Admin/locations/{location}/quotas": {
+        "/providers/Microsoft.KeyVault.Admin/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of all quota objects for KeyVault at a location.": {
-                        "$ref": "./examples/Quota/List.json"
+                    "Get the list of support rest operations.": {
+                        "$ref": "./examples/Operations/List.json" 
                     }
                 },
-                "description": "Get a list of all quota objects for KeyVault at a location.",
+                "description": "Get the list of support rest operations.",
                 "tags": [
                     "KeyVault"
                 ],
-                "operationId": "Quotas_List",
+                "operationId": "Operations_List",
                 "parameters": [
-                    {
-                        "$ref": "#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/LocationParameter"
-                    },
                     {
                         "$ref": "#/parameters/ApiVersionParameter"
                     }
@@ -37,18 +31,12 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/QuotaList"
+                            "$ref": "#/definitions/OperationList"
                         }
                     }
                 },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 }
             }
         }
@@ -63,11 +51,11 @@
                     "description": "URI of the resource.",
                     "type": "string"
                 },
-                "name": {
-                    "readOnly": true,
-                    "description": "Name of the resource.",
-                    "type": "string"
-                },
+              "name": {
+                "readOnly": true,
+                "description": "Name of the resource.",
+                "type": "string"
+              },
                 "type": {
                     "readOnly": true,
                     "description": "Type of resource.",
@@ -88,43 +76,6 @@
                 }
             },
             "x-ms-azure-resource": true
-        },
-        "Quota": {
-            "description": "KeyVault Quota.",
-            "type": "object",
-            "properties": {
-                "properties": {
-                    "x-ms-client-flatten": true,
-                    "description": "Properties for keyvault quotas.",
-                    "$ref": "#/definitions/QuotaProperties"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "#/definitions/Resource"
-                }
-            ]
-        },
-        "QuotaProperties": {
-            "description": "Properties for keyvault quotas.",
-            "type": "object",
-            "properties": {}
-        },
-        "QuotaList": {
-            "description": "List of keyvault quotas.",
-            "properties": {
-                "value": {
-                    "description": "List of keyvault quotas.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Quota"
-                    }
-                },
-                "nextLink": {
-                    "type": "string",
-                    "description": "URI to the next page."
-                }
-            }
         }
     },
     "parameters": {

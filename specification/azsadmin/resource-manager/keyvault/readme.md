@@ -34,6 +34,7 @@ These settings apply only when `--tag=package-2017-02-01-preview` is specified o
 ``` yaml $(tag) == 'package-2017-02-01-preview'
 input-file:
     - Microsoft.KeyVault.Admin/2017-02-01-preview/KeyVault.json
+    - Microsoft.KeyVault.Admin/2017-02-01-preview/Quotas.json
 ```
 
 ---
