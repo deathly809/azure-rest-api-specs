@@ -137,12 +137,12 @@
                         "description": "OK",
                         "schema": {
                             "type": "string"
-                        },
-                        "202": {
-                            "description": "ACCEPTED",
-                            "schema": {
-                                "type": "string"
-                            }
+                        }
+                    },
+                    "202": {
+                        "description": "ACCEPTED",
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 },

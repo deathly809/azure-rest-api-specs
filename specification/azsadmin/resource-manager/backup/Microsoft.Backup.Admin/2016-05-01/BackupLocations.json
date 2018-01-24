@@ -73,7 +73,7 @@
                         "$ref": "Backup.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "Backup.json#/parameters/BackLocationObjectParameter"
+                        "$ref": "Backup.json#/parameters/BackupLocationObjectParameter"
                     }
                 ],
                 "responses": {
