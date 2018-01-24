@@ -46,17 +46,17 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "readonly": true,
+                    "readOnly": true,
                     "description": "Id of the resource.",
                     "type": "string"
                 },
                 "name": {
-                    "readonly": true,
+                    "readOnly": true,
                     "description": "Name of the resource.",
                     "type": "string"
                 },
                 "type": {
-                    "readonly": true,
+                    "readOnly": true,
                     "description": "Resource type.",
                     "type": "string"
                 },
