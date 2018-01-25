@@ -222,7 +222,8 @@
             "name": "acquisitionId",
             "type": "string",
             "required": true,
-            "in": "path"
+            "in": "path",
+            "x-ms-parameter-location": "method"
         }
     },
     "securityDefinitions": {

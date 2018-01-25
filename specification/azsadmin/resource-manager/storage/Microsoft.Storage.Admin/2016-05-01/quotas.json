@@ -210,9 +210,9 @@
                     },
                     "description": "List of quotas."
                 },
-                "nextLink" : {
-                    "description" : "TODO",
-                    "type" : "string"
+                "nextLink": {
+                    "description": "TODO",
+                    "type": "string"
                 }
             }
         }
@@ -233,7 +233,8 @@
             "schema": {
                 "$ref": "#/definitions/StorageCreationProperties"
             },
-            "description": "Parameters used to create or update storage quota"
+            "description": "Parameters used to create or update storage quota",
+            "x-ms-parameter-location": "method"
         }
     },
     "securityDefinitions": {
