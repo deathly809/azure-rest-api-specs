@@ -1,8 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Farm operation endpoints and objects.",
-        "version": "2015-12-01-preview"
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
     },
     "host": "adminmanagement.local.azurestack.external",
     "schemes": [
@@ -17,6 +18,11 @@
     "paths": {
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}": {
             "put": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/Create.json"
+                    }
+                },
                 "tags": [
                     "Farms"
                 ],
@@ -36,13 +42,7 @@
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "name": "parameters",
-                        "description": "Parameters used to create a farm",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/FarmParameters"
-                        }
+                        "$ref": "#/parameters/FarmParameters"
                     }
                 ],
                 "responses": {
@@ -55,6 +55,11 @@
                 }
             },
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/Get.json"
+                    }
+                },
                 "tags": [
                     "Farms"
                 ],
@@ -84,6 +89,11 @@
                 }
             },
             "patch": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/Update.json"
+                    }
+                },
                 "tags": [
                     "Farms"
                 ],
@@ -103,13 +113,7 @@
                         "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "name": "parameters",
-                        "required": true,
-                        "in": "body",
-                        "description": "New values for farm",
-                        "schema": {
-                            "$ref": "#/definitions/FarmParameters"
-                        }
+                        "$ref": "#/parameters/FarmParameters"
                     }
                 ],
                 "responses": {
@@ -124,6 +128,11 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metricdefinitions": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/ListMetricDefinitions.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
@@ -158,6 +167,11 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metrics": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/ListMetrics.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
@@ -192,6 +206,11 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/List.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
@@ -223,6 +242,11 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/ondemandgc": {
             "post": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/StartGarbageCollection.json"
+                    }
+                },
                 "tags": [
                     "Farms"
                 ],
@@ -262,6 +286,11 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/operationresults/{operationId}": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Farms/GetGarbageCollectionState.json"
+                    }
+                },
                 "tags": [
                     "GC"
                 ],
@@ -281,10 +310,7 @@
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "name": "operationId",
-                        "type": "string",
-                        "required": true,
-                        "in": "path"
+                        "$ref": "storage.json#/parameters/OperationIdParameter"
                     }
                 ],
                 "responses": {
@@ -300,23 +326,26 @@
     },
     "definitions": {
         "FarmList": {
+            "description": "TODO",
             "properties": {
                 "value": {
+                    "description": "TODO",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Farm"
-                    },
-                    "description": "TODO"
+                    }
                 },
                 "nextLink": {
+                    "description": "TODO",
                     "type": "string"
                 }
-            },
-            "description": "TODO"
+            }
         },
-        "FarmParameters": {
+        "FarmCreationProperties": {
+            "description": "TODO",
             "properties": {
                 "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/SettingAccessString"
                 }
@@ -325,205 +354,249 @@
                 {
                     "$ref": "storage.json#/definitions/Resource"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "Farm": {
+            "description": "TODO",
             "properties": {
-                "Properties": {
+                "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/FarmProperties",
-                    "description": "TODO"
+                    "$ref": "#/definitions/FarmProperties"
                 }
             },
             "allOf": [
                 {
                     "$ref": "storage.json#/definitions/Resource"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "FarmSettings": {
+            "description": "TODO",
             "properties": {
                 "settingsPollingIntervalInSecond": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "retentionPeriodForDeletedStorageAccountsInDays": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "hostStyleHttpPort": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "hostStyleHttpsPort": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "corsAllowedOriginsList": {
+                    "description": "TODO",
                     "type": "string"
                 },
                 "dataCenterUriHostSuffixes": {
+                    "description": "TODO",
                     "type": "string"
                 },
                 "bandwidthThrottleIsEnabled": {
+                    "description": "TODO",
                     "type": "boolean"
                 },
                 "usageCollectionIntervalInSeconds": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "feedbackRefreshIntervalInSeconds": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "numberOfAccountsToSync": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "defaultThrottleProbabilityDecayIntervalInSeconds": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "gracePeriodForFullThrottlingInRefreshIntervals": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "gracePeriodMaxThrottleProbability": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "overallRequestThresholdInTps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "defaultRequestThresholdInTps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimumRequestThresholdInTps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "toleranceFactorForTps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "overallIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "defaultIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimumIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "toleranceFactorForIngress": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "overallIntranetIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "defaultIntranetIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimumIntranetIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "toleranceFactorForIntranetIngress": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "overallEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "defaultEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimumEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "toleranceFactorForEgress": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "overallIntranetEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "defaultIntranetEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimumIntranetEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "toleranceFactorForIntranetEgress": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "overallTotalIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "defaultTotalIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimumTotalIngressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "toleranceFactorForTotalIngress": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "overallTotalEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "defaultTotalEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimumTotalEgressThresholdInGbps": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "toleranceFactorForTotalEgress": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 }
-            },
-            "description": "TODO"
+            }
         },
         "FarmPropertiesBase": {
+            "description": "TODO",
             "properties": {
                 "settings": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/FarmSettings"
                 }
-            },
-            "description": "TODO"
+            }
         },
         "FarmProperties": {
+            "description": "TODO",
             "properties": {
                 "settingsStore": {
+                    "description": "TODO",
                     "type": "string"
                 },
                 "healthStatus": {
+                    "description": "TODO",
                     "$ref": "storage.json#/definitions/HealthStatus"
                 }
             },
@@ -531,17 +604,45 @@
                 {
                     "$ref": "#/definitions/FarmPropertiesBase"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "SettingAccessString": {
+            "description": "TODO",
             "properties": {
                 "settingAccessString": {
+                    "description": "TODO",
                     "type": "string"
                 }
-            },
-            "description": "TODO"
+            }
         }
     },
-    "parameters": {}
+    "parameters": {
+        "FarmParameters": {
+            "name": "parameters",
+            "description": "Parameters used to create a farm",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/FarmCreationProperties"
+            }
+        }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

@@ -1,8 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Storage account operation endpoints and objects.",
-        "version": "2015-12-01-preview"
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
     },
     "host": "adminmanagement.local.azurestack.external",
     "schemes": [
@@ -15,73 +16,13 @@
         "application/json"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/subscriptions/{tenantSubscriptionId}/providers/Microsoft.Storage/SynchronizeResources": {
-            "post": {
-                "tags": [
-                    "StorageAccounts"
-                ],
-                "operationId": "StorageAccounts_SynchronizeAll",
-                "description": "TODO",
-                "parameters": [
-                    {
-                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/TenantIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FarmIdParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/AccountIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "TODO",
-                        "schema": {
-                            "$ref": "#/definitions/StorageAccountSyncResult"
-                        }
-                    }
-                }
-            }
-        },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Resources.Admin/subscriptions/{tenantSubscriptionId}/resourceGroups/{resourceGroupName}/SynchronizeResources": {
-            "post": {
-                "tags": [
-                    "StorageAccounts"
-                ],
-                "operationId": "StorageAccounts_Synchronize",
-                "description": "TODO",
-                "parameters": [
-                    {
-                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/TenantSubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "TODO",
-                        "schema": {
-                            "$ref": "#/definitions/StorageAccountSyncResult"
-                        }
-                    }
-                }
-            }
-        },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/storageaccounts": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/StorageAccounts/List.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
@@ -104,7 +45,7 @@
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "storage.json#/parameters/SummaryParameter"
+                        "$ref": "#/parameters/SummaryParameter"
                     }
                 ],
                 "responses": {
@@ -119,6 +60,11 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/storageaccounts/{accountId}": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/StorageAccounts/Get.json"
+                    }
+                },
                 "tags": [
                     "StorageAccounts"
                 ],
@@ -151,6 +97,11 @@
                 }
             },
             "post": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/StorageAccounts/Undelete.json"
+                    }
+                },
                 "tags": [
                     "StorageAccounts"
                 ],
@@ -182,7 +133,113 @@
         }
     },
     "definitions": {
+        "StorageAccountState": {
+            "readOnly": true,
+            "description": "Current state of storage account",
+            "type": "string",
+            "enum": [
+                "PreCreate",
+                "Created",
+                "Suspended"
+            ],
+            "x-ms-enum": {
+                "name": "StorageAccountState",
+                "modelAsString": true
+            }
+        },
+        "StorageAccountType": {
+            "description": "Current operation being performed on Storage Account",
+            "type": "string",
+            "enum": [
+                "Standard_LRS",
+                "Standard_GRS",
+                "Standard_ZRS",
+                "Standard_RAGRS",
+                "Premium_LRS"
+            ],
+            "x-ms-enum": {
+                "name": "StorageAccountType",
+                "modelAsString": true
+            }
+        },
+        "LocationStatus": {
+            "readOnly": true,
+            "type": "string",
+            "description": "Gets the status indicating whether the primary location of the storage account is available or unavailable.",
+            "enum": [
+                "available",
+                "unavailable"
+            ],
+            "x-ms-enum": {
+                "name": "LocationStatus",
+                "modelAsString": true
+            }
+        },
+        "StorageAccountOperation": {
+            "readOnly": true,
+            "description": "Current operation being performed on Storage Account",
+            "type": "string",
+            "enum": [
+                "None",
+                "Create",
+                "Update",
+                "Suspend",
+                "Delete",
+                "Undelete"
+            ],
+            "x-ms-enum": {
+                "name": "StorageAccountOperation",
+                "modelAsString": true
+            }
+        },
+        "StorageAccountStatus": {
+            "description": "TODO",
+            "type": "string",
+            "enum": [
+                "Active",
+                "Deleted",
+                "OutOfRetentionPeriod",
+                "Recycled"
+            ],
+            "x-ms-enum": {
+                "name": "StorageAccountStatus",
+                "modelAsString": true
+            }
+        },
+        "WacAccountPermissions": {
+            "description": "Current operation being performed on Storage Account",
+            "type": "string",
+            "enum": [
+                "Empty",
+                "None",
+                "Read",
+                "Delete",
+                "Write",
+                "Full"
+            ],
+            "x-ms-enum": {
+                "name": "WacAccountPermissions",
+                "modelAsString": true
+            }
+        },
+        "WacAccountStates": {
+            "description": "Current operation being performed on Storage Account",
+            "type": "string",
+            "enum": [
+                "None",
+                "Active",
+                "Deleted",
+                "AboveQuota",
+                "Suspended",
+                "All"
+            ],
+            "x-ms-enum": {
+                "name": "WacAccountStates",
+                "modelAsString": true
+            }
+        },
         "StorageAccountProperties": {
+            "description": "TODO",
             "properties": {
                 "tenantViewId": {
                     "type": "string",
@@ -190,200 +247,114 @@
                     "description": "TODO"
                 },
                 "accountType": {
-                    "name": "StorageAccountType",
                     "readOnly": true,
                     "description": "Current operation being performed on Storage Account",
-                    "type": "string",
-                    "enum": [
-                        "Standard_LRS",
-                        "Standard_GRS",
-                        "Standard_ZRS",
-                        "Standard_RAGRS",
-                        "Premium_LRS"
-                    ],
-                    "x-ms-enum": {
-                        "name": "StorageAccountType",
-                        "modelAsString": true
-                    }
+                    "$ref": "#/definitions/StorageAccountType"
                 },
                 "provisioningState": {
-                    "name": "StorageAccountState",
-                    "readOnly": true,
-                    "description": "Current state of storage account",
-                    "type": "string",
-                    "enum": [
-                        "PreCreate",
-                        "Created",
-                        "Suspended"
-                    ],
-                    "x-ms-enum": {
-                        "name": "StorageAccountState",
-                        "modelAsString": true
-                    }
+                    "description": "TODO",
+                    "$ref": "#/definitions/StorageAccountState"
                 },
                 "primaryEndpoints": {
+                    "description": "Gets the URLs that are used to perform a retrieval of a public blob, queue, or table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint.",
                     "additionalProperties": {
                         "type": "string"
                     },
-                    "readOnly": true,
-                    "description": "Gets the URLs that are used to perform a retrieval of a public blob, queue, or table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint."
+                    "readOnly": true
                 },
                 "creationTime": {
-                    "readOnly": true,
+                    "description": "Gets the creation date and time of the storage account in UTC.",
                     "type": "string",
                     "format": "date-time",
-                    "description": "Gets the creation date and time of the storage account in UTC."
+                    "readOnly": true
                 },
                 "alternateName": {
-                    "type": "string",
-                    "description": "Used during undelete operation"
+                    "description": "Used during undelete operation",
+                    "type": "string"
                 },
                 "primaryLocation": {
-                    "readOnly": true,
+                    "description": "Gets the location of the primary data center for the storage account.",
                     "type": "string",
-                    "description": "Gets the location of the primary data center for the storage account."
+                    "readOnly": true
                 },
                 "statusOfPrimary": {
-                    "name": "LocationStatus",
-                    "readOnly": true,
-                    "type": "string",
-                    "description": "Gets the status indicating whether the primary location of the storage account is available or unavailable.",
-                    "enum": [
-                        "available",
-                        "unavailable"
-                    ],
-                    "x-ms-enum": {
-                        "name": "LocationStatus",
-                        "modelAsString": true
-                    }
+                    "description": "TODO",
+                    "$ref": "#/definitions/LocationStatus"
                 },
                 "tenantSubscriptionId": {
-                    "readOnly": true,
+                    "description": "TODO",
                     "type": "string",
-                    "description": "TODO"
+                    "readOnly": true
                 },
                 "tenantStorageAccountName": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "tenantResourceGroupName": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "currentOperation": {
-                    "name": "StorageAccountOperation",
-                    "readOnly": true,
                     "description": "Current operation being performed on Storage Account",
-                    "type": "string",
-                    "enum": [
-                        "None",
-                        "Create",
-                        "Update",
-                        "Suspend",
-                        "Delete",
-                        "Undelete"
-                    ],
-                    "x-ms-enum": {
-                        "name": "StorageAccountOperation",
-                        "modelAsString": true
-                    }
+                    "$ref": "#/definitions/StorageAccountOperation",
+                    "readOnly": true
                 },
                 "customDomain": {
+                    "description": "Gets the custom domain the user assigned to this storage account.",
                     "type": "string",
-                    "readOnly": true,
-                    "description": "Gets the custom domain the user assigned to this storage account."
+                    "readOnly": true
                 },
                 "acquisitionOperationCount": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "deletedTime": {
-                    "name": "dateTime",
                     "description": "TODO",
                     "type": "string",
                     "format": "date-time"
                 },
                 "accountStatus": {
-                    "name": "StorageAccountStatus",
-                    "description": "TODO",
-                    "type": "string",
-                    "enum": [
-                        "Active",
-                        "Deleted",
-                        "OutOfRetentionPeriod",
-                        "Recycled"
-                    ],
-                    "x-ms-enum": {
-                        "name": "StorageAccountStatus",
-                        "modelAsString": true
-                    }
+                    "$ref": "#/definitions/StorageAccountStatus",
+                    "description": "TODO"
                 },
                 "recoveredTime": {
-                    "name": "dateTime",
                     "description": "TODO",
                     "type": "string",
                     "format": "date-time"
                 },
                 "recycledTime": {
-                    "name": "dateTime",
                     "description": "TODO",
                     "type": "string",
                     "format": "date-time"
                 },
                 "permissions": {
-                    "name": "WacAccountPermissions",
-                    "readOnly": true,
                     "description": "Current operation being performed on Storage Account",
-                    "type": "string",
-                    "enum": [
-                        "Empty",
-                        "None",
-                        "Read",
-                        "Delete",
-                        "Write",
-                        "Full"
-                    ],
-                    "x-ms-enum": {
-                        "name": "WacAccountPermissions",
-                        "modelAsString": true
-                    }
+                    "$ref": "#/definitions/WacAccountPermissions",
+                    "readOnly": true
                 },
                 "accountId": {
+                    "description": "TODO",
                     "type": "string",
-                    "readOnly": true,
-                    "description": "TODO"
+                    "readOnly": true
                 },
                 "wacInternalState": {
-                    "name": "WacAccountStates",
-                    "readOnly": true,
                     "description": "Current operation being performed on Storage Account",
-                    "type": "string",
-                    "enum": [
-                        "None",
-                        "Active",
-                        "Deleted",
-                        "AboveQuota",
-                        "Suspended",
-                        "All"
-                    ],
-                    "x-ms-enum": {
-                        "name": "WacAccountStates",
-                        "modelAsString": true
-                    }
+                    "$ref": "#/definitions/WacAccountStates",
+                    "readOnly": true
                 },
                 "resourceAdminApiVersion": {
                     "description": "TODO",
                     "type": "string",
                     "readOnly": true
                 }
-            },
-            "description": "TODO"
+            }
         },
         "StorageAccount": {
             "description": "Properties of the storage account.",
             "properties": {
                 "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/StorageAccountProperties"
                 }
@@ -395,42 +366,45 @@
             ]
         },
         "StorageAccountSyncResult": {
+            "description": "TODO",
             "properties": {
-                "CorrelationId": {
+                "correlationId": {
+                    "description": "TODO",
                     "type": "string",
-                    "readOnly": true,
-                    "description": "TODO"
+                    "readOnly": true
                 },
-                "FrontdoorLocation": {
+                "frontdoorLocation": {
+                    "description": "TODO",
                     "type": "string",
-                    "readOnly": true,
-                    "description": "TODO"
+                    "readOnly": true
                 },
-                "TimeStamp": {
+                "timeStamp": {
+                    "description": "TODO",
                     "type": "string",
-                    "readOnly": true,
-                    "description": "TODO"
+                    "readOnly": true
                 },
-                "Message": {
+                "message": {
+                    "description": "TODO",
                     "type": "string",
-                    "readOnly": true,
-                    "description": "TODO"
+                    "readOnly": true
                 }
             }
         },
         "StorageAccountList": {
+            "description": "List of storage accounts supported by the Storage resource provider.",
             "properties": {
                 "value": {
+                    "description": "TODO",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/StorageAccount"
                     }
                 },
                 "nextLink": {
+                    "description": "TODO",
                     "type": "string"
                 }
-            },
-            "description": "List of storage accounts supported by the Storage resource provider."
+            }
         }
     },
     "parameters": {
@@ -467,11 +441,30 @@
             "x-ms-parameter-location": "method"
         },
         "ActionParameter": {
+            "description": "TODO",
             "name": "action",
             "type": "string",
             "in": "query",
             "default": "undelete",
             "x-ms-parameter-location": "method"
         }
-    }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

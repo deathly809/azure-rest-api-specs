@@ -1,8 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Blob service operation endpoints and objects.",
-        "version": "2015-12-01-preview"
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
     },
     "host": "adminmanagement.local.azurestack.external",
     "schemes": [
@@ -17,6 +18,11 @@
     "paths": {
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/BlobService/Get.json"
+                    }
+                },
                 "tags": [
                     "BlobServices"
                 ],
@@ -48,13 +54,18 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metricdefinitions": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/BlobService/ListMetricDefinitions.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "BlobServices"
                 ],
-                "description": "",
+                "description": "TODO",
                 "operationId": "BlobServices_ListMetricDefinitions",
                 "parameters": [
                     {
@@ -82,13 +93,18 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metrics": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/BlobService/ListMetrics.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "BlobServices"
                 ],
-                "description": "",
+                "description": "TODO",
                 "operationId": "BlobServices_ListMetrics",
                 "parameters": [
                     {
@@ -180,5 +196,23 @@
             "description": "TODO"
         }
     },
-    "parameters": {}
+    "parameters": {},
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

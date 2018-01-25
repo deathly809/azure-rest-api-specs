@@ -1,10 +1,6 @@
 {
     "swagger": "2.0",
     "info": {
-        "x-ms-code-generation-settings": {
-            "header": "MICROSOFT_MIT",
-            "namespace": "Microsoft.AzureStack.Storage.Admin"
-        },
         "version": "2015-12-01-preview",
         "title": "StorageManagementClient",
         "description": "The Admin Storage Management Client."
@@ -18,7 +14,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the list of support rest operations.": {
-                        "$ref": "./examples/Operations/List.json"
+                        "$ref": "./Examples/Operations/List.json"
                     }
                 },
                 "description": "Get the list of support rest operations.",
@@ -47,82 +43,86 @@
     },
     "definitions": {
         "WritableSettings": {
+            "description": "TODO",
             "properties": {
                 "frontEndCallbackThreadsCount": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "frontEndCpuBasedKeepAliveThrottlingEnabled": {
-                    "type": "boolean",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "boolean"
                 },
                 "frontEndCpuBasedKeepAliveThrottlingPercentCpuThreshold": {
+                    "description": "TODO",
                     "type": "number",
-                    "format": "float",
-                    "description": "TODO"
+                    "format": "float"
                 },
                 "frontEndCpuBasedKeepAliveThrottlingPercentRequestsToThrottle": {
+                    "description": "TODO",
                     "type": "number",
-                    "format": "float",
-                    "description": "TODO"
+                    "format": "float"
                 },
                 "frontEndCpuBasedKeepAliveThrottlingCpuMonitorIntervalInSeconds": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "frontEndMemoryThrottlingEnabled": {
-                    "type": "boolean",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "boolean"
                 },
                 "frontEndMaxMillisecondsBetweenMemorySamples": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "frontEndMemoryThrottleThresholdSettings": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "frontEndMinThreadPoolThreads": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "frontEndThreadPoolBasedKeepAliveIOCompletionThreshold": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "frontEndThreadPoolBasedKeepAliveWorkerThreadThreshold": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "frontEndThreadPoolBasedKeepAliveMonitorIntervalInSeconds": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "frontEndThreadPoolBasedKeepAlivePercentage": {
+                    "description": "TODO",
                     "type": "number",
-                    "format": "float",
-                    "description": "TODO"
+                    "format": "float"
                 },
                 "frontEndUseSlaTimeInAvailability": {
-                    "type": "boolean",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "boolean"
                 }
             }
         },
         "WritableServiceSettings": {
+            "description": "TODO",
             "properties": {
                 "frontEndHttpListenPort": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "backEndHttpListenPort": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 }
@@ -134,123 +134,139 @@
             ]
         },
         "LocalizableString": {
-            "value": {
-                "type": "string"
-            },
-            "localizedValue": {
-                "type": "string"
-            }
-        },
-        "MetricAvailability": {
+            "description": "TODO",
             "properties": {
-                "timeGrain": {
+                "value": {
+                    "description": "TODO",
                     "type": "string"
                 },
-                "retention": {
+                "localizedValue": {
+                    "description": "TODO",
                     "type": "string"
                 }
             }
         },
+        "MetricAvailability": {
+            "description": "TODO",
+            "properties": {
+                "timeGrain": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "retention": {
+                    "description": "TODO",
+                    "type": "string"
+                }
+            }
+        },
+        "AggregateType": {
+            "description": "TODO",
+            "readOnly": true,
+            "type": "string",
+            "enum": [
+                "None",
+                "Average",
+                "Total",
+                "Minimum",
+                "Maximum",
+                "Last"
+            ],
+            "x-ms-enum": {
+                "name": "AggregateType",
+                "modelAsString": true
+            }
+        },
+        "MetricUnit": {
+            "description": "TODO",
+            "type": "string",
+            "enum": [
+                "Count",
+                "Bytes",
+                "Seconds",
+                "CountPerSecond",
+                "BytesPerSecond"
+            ],
+            "x-ms-enum": {
+                "name": "MetricUnit",
+                "modelAsString": true
+            }
+        },
         "MetricDefinition": {
+            "description": "TODO",
             "properties": {
                 "name": {
+                    "description": "TODO",
                     "readOnly": true,
                     "$ref": "#/definitions/LocalizableString"
                 },
                 "unit": {
-                    "readOnly": true,
-                    "type": "string",
-                    "enum": [
-                        "Count",
-                        "Bytes",
-                        "Seconds",
-                        "CountPerSecond",
-                        "BytesPerSecond"
-                    ],
-                    "x-ms-enum": {
-                        "name": "MetricUnit",
-                        "modelAsString": true
-                    }
+                    "description": "TODO",
+                    "$ref": "#/definitions/MetricUnit",
+                    "readOnly": true
                 },
                 "primaryAggregationType": {
-                    "readOnly": true,
-                    "type": "string",
-                    "enum": [
-                        "None",
-                        "Average",
-                        "Total",
-                        "Minimum",
-                        "Maximum",
-                        "Last"
-                    ],
-                    "x-ms-enum": {
-                        "name": "AggregateType",
-                        "modelAsString": true
-                    }
+                    "description": "TODO",
+                    "$ref": "#/definitions/AggregateType",
+                    "readOnly": true
                 },
                 "metricAvailabilities": {
+                    "description": "TODO",
                     "readOnly": true,
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/MetricAvailability"
-                    },
-                    "description": "TODO"
+                    }
                 }
             }
         },
         "Metric": {
+            "description": "TODO",
             "properties": {
                 "name": {
+                    "description": "TODO",
                     "type": "string"
                 },
                 "metricUnit": {
-                    "type": "string",
-                    "enum": [
-                        "Count",
-                        "Bytes",
-                        "Seconds",
-                        "CountPerSecond",
-                        "BytesPerSecond"
-                    ],
-                    "x-ms-enum": {
-                        "name": "MetricUnit",
-                        "modelAsString": true
-                    }
+                    "description": "TODO",
+                    "$ref": "#/definitions/MetricUnit"
                 },
                 "timeGrain": {
+                    "description": "TODO",
                     "type": "string"
                 },
                 "startTime": {
-                    "name": "dateTime",
+                    "description": "TODO",
                     "type": "string",
                     "format": "date-time"
                 },
                 "endTime": {
-                    "name": "dateTime",
+                    "description": "TODO",
                     "type": "string",
                     "format": "date-time"
                 },
                 "metricValues": {
-                    "readOnly": true,
+                    "description": "List of metric values.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/MetricValue"
                     },
-                    "description": "List of metric values."
+                    "readOnly": true
                 }
             }
         },
         "MetricDefinitionList": {
+            "description": "TODO",
             "properties": {
                 "value": {
-                    "readOnly": true,
+                    "description": "List of metric definition.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/MetricDefinition"
                     },
-                    "description": "List of metric definition."
+                    "readOnly": true
                 },
                 "nextLink": {
+                    "description": "TODO",
                     "type": "string"
                 }
             }
@@ -259,45 +275,53 @@
             "description": "List of metrics.",
             "properties": {
                 "value": {
+                    "description": "List of metrics.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Metric"
-                    },
-                    "description": "List of metrics."
+                    }
                 },
                 "nextLink": {
+                    "description": "TODO",
                     "type": "string"
                 }
             }
         },
         "MetricValue": {
+            "description": "TODO",
             "properties": {
                 "timeStamp": {
-                    "name": "dateTime",
+                    "description": "TODO",
                     "type": "string",
                     "format": "date-time"
                 },
                 "average": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "minimum": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "maximum": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "total": {
+                    "description": "TODO",
                     "type": "number",
                     "format": "float"
                 },
                 "count": {
+                    "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
                 "properties": {
+                    "description": "TODO",
                     "type": "string"
                 }
             }
@@ -322,104 +346,48 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "readOnly": true,
                     "description": "URI of the resource.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "name": {
-                    "readOnly": true,
                     "description": "Name of the resource.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "type": {
-                    "readOnly": true,
                     "description": "Type of resource.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "location": {
-                    "readOnly": true,
                     "description": "Location where resource is location.",
-                    "type": "string"
+                    "type": "string",
+                    "readOnly": true
                 },
                 "tags": {
-                    "readOnly": true,
                     "description": "List of key value pairs.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
-                    }
+                    },
+                    "readOnly": true
                 }
             },
             "x-ms-azure-resource": true
         },
         "Service": {
+            "description": "TODO",
             "properties": {
-                "version ": {
-                    "type": "string",
-                    "description": "TODO"
+                "version": {
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "healthStatus": {
+                    "description": "TODO",
                     "$ref": "#/definitions/HealthStatus"
                 }
             }
-        }
-    },
-    "parameters": {
-        "ShareNameParameter": {
-            "name": "shareName",
-            "type": "string",
-            "in": "path",
-            "required": true,
-            "description": "TODO",
-            "x-ms-parameter-location": "method"
-        },
-        "FilterParameter": {
-            "name": "$filter",
-            "type": "string",
-            "in": "query",
-            "description": "TODO",
-            "x-ms-parameter-location": "method"
-        },
-        "LocationParameter": {
-            "type": "string",
-            "name": "location",
-            "in": "path",
-            "default": "local",
-            "required": false,
-            "description": "Location of storage accounts.",
-            "x-ms-parameter-location": "method"
-        },
-        "SubscriptionIdParameter": {
-            "name": "subscriptionId",
-            "type": "string",
-            "in": "path",
-            "required": true,
-            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
-        },
-        "FarmIdParameter": {
-            "type": "string",
-            "name": "farmId",
-            "in": "path",
-            "required": true,
-            "description": "The name of the farm.",
-            "x-ms-parameter-location": "method"
-        },
-        "ApiVersionParameter": {
-            "name": "api-version",
-            "type": "string",
-            "in": "query",
-            "required": true,
-            "description": "Client Api Version."
-        },
-        "ResourceGroupNameParameter": {
-            "name": "resourceGroupName",
-            "type": "string",
-            "in": "path",
-            "required": true,
-            "description": "The name of the resource group within the user's subscription.",
-            "maxLength": "90",
-            "pattern": "^[-\\w\\._]+$",
-            "x-ms-parameter-location": "method"
         },
         "Operation": {
             "description": "Describes the supported rest operation.",
@@ -470,6 +438,69 @@
                     "type": "string"
                 }
             }
+        }
+    },
+    "parameters": {
+        "ShareNameParameter": {
+            "name": "shareName",
+            "type": "string",
+            "in": "path",
+            "required": true,
+            "description": "TODO",
+            "x-ms-parameter-location": "method"
+        },
+        "FilterParameter": {
+            "name": "$filter",
+            "type": "string",
+            "in": "query",
+            "description": "TODO",
+            "x-ms-parameter-location": "method"
+        },
+        "LocationParameter": {
+            "name": "location",
+            "type": "string",
+            "in": "path",
+            "required": true,
+            "description": "Location of storage accounts.",
+            "x-ms-parameter-location": "method"
+        },
+        "SubscriptionIdParameter": {
+            "name": "subscriptionId",
+            "type": "string",
+            "in": "path",
+            "required": true,
+            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call."
+        },
+        "FarmIdParameter": {
+            "type": "string",
+            "name": "farmId",
+            "in": "path",
+            "required": true,
+            "description": "The name of the farm.",
+            "x-ms-parameter-location": "method"
+        },
+        "ApiVersionParameter": {
+            "name": "api-version",
+            "type": "string",
+            "in": "query",
+            "required": true,
+            "description": "Client Api Version."
+        },
+        "ResourceGroupNameParameter": {
+            "name": "resourceGroupName",
+            "type": "string",
+            "in": "path",
+            "required": true,
+            "description": "The name of the resource group within the user's subscription.",
+            "x-ms-parameter-location": "method"
+        },
+        "OperationIdParameter": {
+            "name": "operationId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Operation identifier.",
+            "x-ms-parameter-location": "method"
         }
     },
     "securityDefinitions": {

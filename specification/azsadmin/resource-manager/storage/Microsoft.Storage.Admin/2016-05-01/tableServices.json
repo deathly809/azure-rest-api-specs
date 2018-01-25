@@ -1,8 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Table service operation endpoints and objects.",
-        "version": "2015-12-01-preview"
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
     },
     "host": "adminmanagement.local.azurestack.external",
     "schemes": [
@@ -17,6 +18,11 @@
     "paths": {
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/TableService/Get.json"
+                    }
+                },
                 "tags": [
                     "TableServices"
                 ],
@@ -48,13 +54,18 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metricdefinitions": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/TableService/ListMetricDefinitions.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "",
+                "description": "TODO",
                 "operationId": "TableServices_ListMetricDefinitions",
                 "parameters": [
                     {
@@ -82,13 +93,18 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metrics": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/TableService/ListMetrics.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "",
+                "description": "TODO",
                 "operationId": "TableServices_ListMetrics",
                 "parameters": [
                     {
@@ -117,26 +133,28 @@
     },
     "definitions": {
         "TableServiceWritableSettings": {
+            "description": "TODO",
             "properties": {},
             "allOf": [
                 {
                     "$ref": "storage.json#/definitions/WritableServiceSettings"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "TableServiceSettings": {
+            "description": "TODO",
             "properties": {},
             "allOf": [
                 {
                     "$ref": "#/definitions/TableServiceWritableSettings"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "TableServiceProperties": {
+            "description": "TODO",
             "properties": {
                 "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/TableServiceSettings"
                 }
@@ -145,12 +163,13 @@
                 {
                     "$ref": "storage.json#/definitions/Service"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "TableService": {
+            "description": "TODO",
             "properties": {
                 "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/TableServiceProperties"
                 }
@@ -159,9 +178,26 @@
                 {
                     "$ref": "storage.json#/definitions/Resource"
                 }
-            ],
-            "description": "TODO"
+            ]
         }
     },
-    "parameters": {}
+    "parameters": {},
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

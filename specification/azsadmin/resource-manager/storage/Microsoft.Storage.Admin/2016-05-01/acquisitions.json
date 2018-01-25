@@ -1,8 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Acquisition operation endpoints and objects.",
-        "version": "2015-12-01-preview"
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
     },
     "host": "adminmanagement.local.azurestack.external",
     "schemes": [
@@ -17,11 +18,16 @@
     "paths": {
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions/{acquisitionId}": {
             "delete": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Acquisitions/Delete.json"
+                    }
+                },
                 "tags": [
                     "Acquisitions"
                 ],
                 "operationId": "Acquisitions_Delete",
-                "Description": "TODO",
+                "description": "TODO",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -46,11 +52,16 @@
                 }
             },
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Acquisitions/Get.json"
+                    }
+                },
                 "tags": [
                     "Acquisitions"
                 ],
                 "operationId": "Acquisitions_Get",
-                "Description": "TODO",
+                "description": "TODO",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -80,6 +91,11 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Acquisitions/List.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
@@ -87,7 +103,7 @@
                     "Acquisitions"
                 ],
                 "operationId": "Acquisitions_List",
-                "Description": "Get a list of acquistions",
+                "description": "Get a list of acquistions",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -117,55 +133,62 @@
         }
     },
     "definitions": {
+        "AcquisitionStatus": {
+            "description": "TODO",
+            "type": "string",
+            "enum": [
+                "InProgress",
+                "Success",
+                "Failed"
+            ],
+            "x-ms-enum": {
+                "name": "AcquisitionStatus",
+                "modelAsString": true
+            }
+        },
         "AcquisitionProperties": {
+            "description": "TODO",
             "properties": {
                 "filePath": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "maximumblobsize": {
+                    "description": "TODO",
                     "type": "integer",
-                    "format": "int64",
-                    "description": "TODO"
+                    "format": "int64"
                 },
                 "status": {
-                    "type": "string",
-                    "enum": [
-                        "InProgress",
-                        "Success",
-                        "Failed"
-                    ],
-                    "x-ms-enum": {
-                        "name": "AcquisitionStatus",
-                        "modelAsString": true
-                    },
-                    "description": "TODO"
+                    "description": "TODO",
+                    "$ref": "#/definitions/AcquisitionStatus"
                 },
                 "susbcriptionid": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "storageaccount": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "container": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "blob": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 },
                 "acquisitionid": {
-                    "type": "string",
-                    "description": "TODO"
+                    "description": "TODO",
+                    "type": "string"
                 }
             }
         },
         "Acquisition": {
+            "description": "TODO",
             "properties": {
                 "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/AcquisitionProperties"
                 }
@@ -177,28 +200,47 @@
             ]
         },
         "AcquisitionList": {
+            "description": "TODO",
             "properties": {
                 "value": {
+                    "description": "TODO",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Acquisition"
-                    },
-                    "description": "TODO"
+                    }
                 },
                 "nextLink": {
+                    "description": "TODO",
                     "type": "string"
-                },
-            },
-            "description": "TODO"
+                }
+            }
         }
     },
     "parameters": {
         "AcquisitionIdParameter": {
+            "description": "TODO",
             "name": "acquisitionId",
             "type": "string",
             "required": true,
-            "in": "path",
-            "description": "TODO"
+            "in": "path"
         }
-    }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

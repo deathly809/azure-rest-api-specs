@@ -1,8 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Queue service operation endpoints and objects.",
-        "version": "2015-12-01-preview"
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
     },
     "host": "adminmanagement.local.azurestack.external",
     "schemes": [
@@ -17,6 +18,11 @@
     "paths": {
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/QueueService/Get.json"
+                    }
+                },
                 "tags": [
                     "QueueServices"
                 ],
@@ -48,13 +54,18 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metricdefinitions": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/QueueService/ListMetricDefinitions.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "QueueServices"
                 ],
-                "description": "",
+                "description": "TODO",
                 "operationId": "QueueServices_ListMetricDefinitions",
                 "parameters": [
                     {
@@ -82,13 +93,18 @@
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metrics": {
             "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/QueueService/ListMetrics.json"
+                    }
+                },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "QueueServices"
                 ],
-                "description": "",
+                "description": "TODO",
                 "operationId": "QueueServices_ListMetrics",
                 "parameters": [
                     {
@@ -135,8 +151,10 @@
             "description": "TODO"
         },
         "QueueServiceProperties": {
+            "description": "TODO",
             "properties": {
                 "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/QueueServiceSettings"
                 }
@@ -145,12 +163,13 @@
                 {
                     "$ref": "storage.json#/definitions/Service"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "QueueService": {
+            "description": "TODO",
             "properties": {
                 "properties": {
+                    "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/QueueServiceProperties"
                 }
@@ -159,9 +178,26 @@
                 {
                     "$ref": "storage.json#/definitions/Resource"
                 }
-            ],
-            "description": "TODO"
+            ]
         }
     },
-    "parameters": {}
+    "parameters": {},
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }
