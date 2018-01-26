@@ -201,14 +201,9 @@
         },
         "AcquisitionList": {
             "description": "TODO",
-            "properties": {
-                "value": {
-                    "description": "TODO",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Acquisition"
-                    }
-                }
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Acquisition"
             }
         }
     },
