@@ -91,7 +91,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metrics": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/queueservices/default/metrics": {
             "get": {
                 "x-ms-examples": {
                     "TODO.": {
@@ -153,7 +153,7 @@
         "QueueServiceProperties": {
             "description": "TODO",
             "properties": {
-                "properties": {
+                "settings": {
                     "description": "TODO",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/QueueServiceSettings"

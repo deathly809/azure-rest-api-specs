@@ -196,19 +196,10 @@
             ]
         },
         "ShareList": {
-            "description": "TODO",
-            "properties": {
-                "value": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Share"
-                    },
-                    "description": "List of shares."
-                },
-                "nextLink": {
-                    "description": "TODO",
-                    "type": "string"
-                }
+            "description": "List of shares.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Share"
             }
         },
         "ShareProperties": {

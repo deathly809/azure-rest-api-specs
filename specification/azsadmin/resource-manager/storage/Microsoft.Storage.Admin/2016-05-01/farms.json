@@ -281,7 +281,8 @@
                             "type": "string"
                         }
                     }
-                }
+                },
+                "x-ms-long-running-operation" : true
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/operationresults/{operationId}": {

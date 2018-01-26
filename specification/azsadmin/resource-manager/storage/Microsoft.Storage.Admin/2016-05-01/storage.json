@@ -116,12 +116,12 @@
         "WritableServiceSettings": {
             "description": "TODO",
             "properties": {
-                "frontEndHttpListenPort": {
+                "frontEndHttpsListenPort": {
                     "description": "TODO",
                     "type": "integer",
                     "format": "int32"
                 },
-                "backEndHttpListenPort": {
+                "frontEndHttpListenPort": {
                     "description": "TODO",
                     "type": "integer",
                     "format": "int32"
@@ -224,7 +224,8 @@
             "properties": {
                 "name": {
                     "description": "TODO",
-                    "type": "string"
+                    "readOnly": true,
+                    "$ref": "#/definitions/LocalizableString"
                 },
                 "metricUnit": {
                     "description": "TODO",
@@ -264,10 +265,6 @@
                         "$ref": "#/definitions/MetricDefinition"
                     },
                     "readOnly": true
-                },
-                "nextLink": {
-                    "description": "TODO",
-                    "type": "string"
                 }
             }
         },
@@ -280,10 +277,6 @@
                     "items": {
                         "$ref": "#/definitions/Metric"
                     }
-                },
-                "nextLink": {
-                    "description": "TODO",
-                    "type": "string"
                 }
             }
         },

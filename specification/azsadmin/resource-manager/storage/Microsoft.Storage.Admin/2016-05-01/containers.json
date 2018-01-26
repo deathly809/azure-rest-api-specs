@@ -99,9 +99,6 @@
                         "$ref": "./Examples/Containers/List.json"
                     }
                 },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
                 "tags": [
                     "Containers"
                 ],
@@ -282,19 +279,10 @@
             }
         },
         "ContainerList": {
-            "description": "TODO",
-            "properties": {
-                "value": {
-                    "description": "List of Containers.",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Container"
-                    }
-                },
-                "nextLink": {
-                    "description": "TODO",
-                    "type": "string"
-                }
+            "description": "List of Containers.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Container"
             }
         },
         "MigrationResult": {
@@ -374,8 +362,8 @@
             "description": "TODO",
             "name": "Intent",
             "in": "query",
-            "type": "string",
             "required": true,
+            "type": "string",
             "x-ms-parameter-location": "method"
         },
         "MaxCountParameter": {

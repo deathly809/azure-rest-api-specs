@@ -59,9 +59,6 @@
                         "$ref": "./Examples/BlobService/ListMetricDefinitions.json"
                     }
                 },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
-                },
                 "tags": [
                     "BlobServices"
                 ],
@@ -88,6 +85,9 @@
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
                 }
             }
         },
@@ -97,9 +97,6 @@
                     "TODO.": {
                         "$ref": "./Examples/BlobService/ListMetrics.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "BlobServices"
@@ -127,6 +124,9 @@
                             "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": null
                 }
             }
         }
