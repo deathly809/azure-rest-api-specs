@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a logical network": {
-                        "$ref": "./examples/LogicalNetwork/LogicalNetworkGetOperation_example.json"
+                        "$ref": "./examples/LogicalNetwork/Get.json"
                     }
                 },
                 "tags": [
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all logical networks": {
-                        "$ref": "./examples/LogicalNetwork/LogicalNetworkListOperation_example.json"
+                        "$ref": "./examples/LogicalNetwork/List.json"
                     }
                 },
                 "x-ms-pageable": {

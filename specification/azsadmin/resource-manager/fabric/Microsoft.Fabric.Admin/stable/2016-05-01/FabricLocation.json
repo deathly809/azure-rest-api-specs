@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a fabric location": {
-                        "$ref": "./examples/FabricLocation/FabricLocationGetOperation_example.json"
+                        "$ref": "./examples/FabricLocation/Get.json"
                     }
                 },
                 "tags": [
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all fabric locations": {
-                        "$ref": "./examples/FabricLocation/FabricLocationListOperation_example.json"
+                        "$ref": "./examples/FabricLocation/List.json"
                     }
                 },
                 "tags": [
@@ -90,6 +90,40 @@
                     "nextLinkName": "nextLink"
                 },
                 "x-ms-odata": "#/definitions/FabricLocation"
+            },
+            "put": {
+                "x-ms-examples": {
+                    "Create or update a fabric location.": {
+                        "$ref": "./examples/FabricLocation/Put.json"
+                    }
+                },
+                "tags": [
+                    "FabricLocations"
+                ],
+                "description": "Create or update a fabric location.",
+                "operationId": "FabricLocations_CreateOrUpdate",
+                "parameters": [
+                    {
+                        "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/FabricLocationObjectParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/FabricLocation"
+                        }
+                    }
+                }
             }
         }
     },
@@ -128,6 +162,16 @@
             "name": "fabricLocation",
             "type": "string",
             "in": "path",
+            "required": true,
+            "x-ms-parameter-location": "method"
+        },
+        "FabricLocationObjectParameter": {
+            "description": "Fabric Location object.",
+            "name": "fabricObject",
+            "schema": {
+                "$ref": "#/definitions/FabricLocation"
+            },
+            "in": "body",
             "required": true,
             "x-ms-parameter-location": "method"
         }

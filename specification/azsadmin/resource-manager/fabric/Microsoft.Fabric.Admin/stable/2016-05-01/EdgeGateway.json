@@ -20,7 +20,7 @@
       "get": {
         "x-ms-examples": {
           "Get an edge gateway": {
-            "$ref": "./examples/EdgeGateway/EdgeGatewayGetOperation_example.json"
+            "$ref": "./examples/EdgeGateway/Get.json"
           }
         },
         "tags": [
@@ -56,7 +56,7 @@
       "get": {
         "x-ms-examples": {
           "List all edge gateways": {
-            "$ref": "./examples/EdgeGateway/EdgeGatewayListOperation_example.json"
+            "$ref": "./examples/EdgeGateway/List.json"
           }
         },
         "tags": [

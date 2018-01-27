@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a mac address pool": {
-                        "$ref": "./examples/MacAddressPool/MacAddressPoolGetOperation_example.json"
+                        "$ref": "./examples/MacAddressPool/Get.json"
                     }
                 },
                 "tags": [
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all mac address pools": {
-                        "$ref": "./examples/MacAddressPool/MacAddressPoolListOperation_example.json"
+                        "$ref": "./examples/MacAddressPool/List.json"
                     }
                 },
                 "tags": [

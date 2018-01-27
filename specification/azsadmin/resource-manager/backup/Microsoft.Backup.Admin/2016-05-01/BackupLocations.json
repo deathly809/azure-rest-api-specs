@@ -1,0 +1,316 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2016-05-01",
+        "title": "BackupManagementClient",
+        "description": "The Admin Backup Management Client."
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations": {
+            "get": {
+                "x-ms-examples": {
+                    "Get the list of backup locations.": {
+                        "$ref": "./examples/BackupLocations/List.json"
+                    }
+                },
+                "description": "Get the list of backup locations.",
+                "tags": [
+                    "BackupLocations"
+                ],
+                "operationId": "BackupLocations_List",
+                "parameters": [
+                    {
+                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/BackupLocationList"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "x-ms-pageable": {
+                    "nextLinkName": null
+                }
+            },
+            "put": {
+                "x-ms-examples": {
+                    "Create a new backup location.": {
+                        "$ref": "./examples/BackupLocations/Create.json"
+                    }
+                },
+                "description": "Create a new backup location.",
+                "tags": [
+                    "BackupLocations"
+                ],
+                "operationId": "BackupLocations_Update",
+                "parameters": [
+                    {
+                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/BackupLocationObjectParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/BackupLocation"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}": {
+            "get": {
+                "x-ms-examples": {
+                    "Get a specific backup location based on name.": {
+                        "$ref": "./examples/BackupLocations/Get.json"
+                    }
+                },
+                "description": "Get a specific backup location based on name",
+                "tags": [
+                    "BackupLocations"
+                ],
+                "operationId": "BackupLocations_Get",
+                "parameters": [
+                    {
+                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/BackupLocationParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/BackupLocation"
+                        }
+                    },
+                    "400": {
+                        "description": "NOT FOUND"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/createBackup": {
+            "post": {
+                "x-ms-examples": {
+                    "Backup a specific location.": {
+                        "$ref": "./examples/BackupLocations/Backup.json"
+                    }
+                },
+                "x-ms-long-running-operation": true,
+                "description": "Backup a specific location.",
+                "tags": [
+                    "BackupLocations"
+                ],
+                "operationId": "BackupLocations_CreateBackup",
+                "parameters": [
+                    {
+                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/BackupLocationParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "202": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "BackupLocation": {
+            "description": "Information about the backup location.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Properties of a backup location.",
+                    "$ref": "#/definitions/BackupLocationModel",
+                    "x-ms-client-flatten": true
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "Backup.json#/definitions/Resource"
+                }
+            ]
+        },
+        "BackupLocationModel": {
+            "type": "object",
+            "description": "Properties of a backup location.",
+            "properties": {
+                "externalStoreDefault": {
+                    "description": "Information about an external storage location.",
+                    "$ref": "#/definitions/ExternalStore",
+                    "x-ms-client-flatten": true
+                }
+            }
+        },
+        "ExternalStore": {
+            "type": "object",
+            "description": "Information about an external storage location.",
+            "properties": {
+                "path": {
+                    "description": "Path to the update location",
+                    "type": "string"
+                },
+                "userName": {
+                    "description": "Username to access the location.",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "Password to access the location.",
+                    "type": "string"
+                },
+                "encryptionKeyBase64": {
+                    "description": "Encryption key.",
+                    "type": "string"
+                },
+                "backupFrequencyInMinutes": {
+                    "description": "How often a backup is performed.",
+                    "type": "string"
+                },
+                "availableCapacity": {
+                    "description": "Free space in location.",
+                    "type": "string"
+                },
+                "isBackupSchedulerEnabled": {
+                    "description": "True if the backup scheduler is enabled.",
+                    "type": "boolean"
+                },
+                "nextBackupTime": {
+                    "description": "The scheduled time of the next backup.",
+                    "type": "string"
+                },
+                "lastBackupTime": {
+                    "description": "Time of backup.",
+                    "type": "string"
+                }
+            }
+        },
+        "BackupLocationList": {
+            "type": "object",
+            "description": "List of backup locations.",
+            "properties": {
+                "value": {
+                    "description": "List of backup locations.",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/BackupLocation"
+                    }
+                },
+                "nextLink": {
+                    "description": "URI to the next page.",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "parameters": {
+        "BackupLocationParameter": {
+            "name": "backupLocation",
+            "in": "path",
+            "description": "Name of the backup location.",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "BackupLocationObjectParameter": {
+            "name": "backup",
+            "in": "body",
+            "description": "Backup location object.",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/ExternalStore"
+            },
+            "x-ms-parameter-location": "method"
+        }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
+}

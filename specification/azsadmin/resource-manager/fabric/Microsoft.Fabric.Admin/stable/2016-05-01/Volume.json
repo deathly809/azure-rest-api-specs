@@ -20,7 +20,7 @@
       "get": {
         "x-ms-examples": {
           "Get a volume": {
-            "$ref": "./examples/Volume/VolumeGetOperation_example.json"
+            "$ref": "./examples/Volume/Get.json"
           }
         },
         "tags": [
@@ -62,7 +62,7 @@
       "get": {
         "x-ms-examples": {
           "List all volumes": {
-            "$ref": "./examples/Volume/VolumeListOperation_example.json"
+            "$ref": "./examples/Volume/List.json"
           }
         },
         "tags": [

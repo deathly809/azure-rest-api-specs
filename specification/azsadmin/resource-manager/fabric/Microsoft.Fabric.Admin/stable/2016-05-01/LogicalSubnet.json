@@ -20,7 +20,7 @@
       "get": {
         "x-ms-examples": {
           "Get a logical subnet": {
-            "$ref": "./examples/LogicalSubnet/LogicalSubnetGetOperation_example.json"
+            "$ref": "./examples/LogicalSubnet/Get.json"
           }
         },
         "tags": [
@@ -59,7 +59,7 @@
       "get": {
         "x-ms-examples": {
           "List all logical subnets": {
-            "$ref": "./examples/LogicalSubnet/LogicalSubnetListOperation_example.json"
+            "$ref": "./examples/LogicalSubnet/List.json"
           }
         },
         "tags": [

@@ -1,0 +1,28 @@
+{
+    "parameters": {
+        "api-version": "2016-05-01",
+        "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "location": "local",
+        "nodeList": {
+          "scaleUnitNode": "HC1n25r2236",
+          "bmcIPv4Address": "10.0.0.1"
+        }
+    },
+    "responses": {
+        "200": {
+            "provisioningState": {
+                "provisioningState": "Success"
+            }
+        },
+        "202": {
+            "provisioningState": {
+                "provisioningState": "Working"
+            }
+        },
+        "500": {
+            "provisioningState": {
+                "provisioningState": "Working"
+            }
+        }
+    }
+}

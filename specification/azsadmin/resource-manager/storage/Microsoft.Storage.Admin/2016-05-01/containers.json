@@ -1,0 +1,416 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "2015-12-01-preview",
+        "title": "StorageManagementClient",
+        "description": "The Admin Storage Management Client."
+    },
+    "host": "adminmanagement.local.azurestack.external",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/operationresults/{operationId}": {
+            "post": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Containers/CancelMigration.json"
+                    }
+                },
+                "tags": [
+                    "Containers"
+                ],
+                "operationId": "Containers_CancelMigration",
+                "description": "Cancel share migration.",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/OperationIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Operation has been accepted and processed"
+                    },
+                    "202": {
+                        "description": "ACCEPTED - Operation has been accepted will be processed asynchronously"
+                    }
+                }
+            },
+            "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Containers/MigrateShare.json"
+                    }
+                },
+                "tags": [
+                    "Containers"
+                ],
+                "operationId": "Containers_MigrateShare",
+                "description": "Set the status of the share to migrate.",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/OperationIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Operation has been accepted and processed",
+                        "schema": {
+                            "$ref": "#/definitions/MigrationResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/containers": {
+            "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Containers/List.json"
+                    }
+                },
+                "tags": [
+                    "Containers"
+                ],
+                "operationId": "Containers_List",
+                "description": "List all containers under the given parameters",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/MigrationIntentParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/MaxCountParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/StartIndexParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of containers",
+                        "schema": {
+                            "$ref": "#/definitions/ContainerList"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/destinationshares": {
+            "get": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Containers/ListDestinationShares.json"
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                },
+                "tags": [
+                    "Containers"
+                ],
+                "operationId": "Containers_ListDestinationShares",
+                "description": "List all containers under the given parameters",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of containers",
+                        "schema": {
+                            "$ref": "shares.json#/definitions/ShareList"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/migrate": {
+            "post": {
+                "x-ms-examples": {
+                    "TODO.": {
+                        "$ref": "./Examples/Containers/Migrate.json"
+                    }
+                },
+                "tags": [
+                    "Containers"
+                ],
+                "operationId": "Containers_Migrate",
+                "description": "Migration a share",
+                "parameters": [
+                    {
+                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/FarmIdParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ShareNameParameter"
+                    },
+                    {
+                        "$ref": "storage.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/MigrationIntentParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/MaxCountParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/StartIndexParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/MigrationParameterParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK -- Container has been migrated",
+                        "schema": {
+                            "description": "location migrated too.",
+                            "type": "string"
+                        }
+                    },
+                    "202": {
+                        "description": "ACCEPTED -- Operation accepted and will be performed asynchronously",
+                        "schema": {
+                            "description": "location migrated too",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Container": {
+            "description": "TODO",
+            "properties": {
+                "sharename": {
+                    "description": "Name of the share container is located.",
+                    "type": "string"
+                },
+                "accountname": {
+                    "description": "Name of account container belongs too.",
+                    "type": "string"
+                },
+                "containername": {
+                    "description": "Name of the container.",
+                    "type": "string"
+                },
+                "containerid": {
+                    "description": "TODO",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "accountid": {
+                    "description": "GUID of account.",
+                    "type": "string"
+                },
+                "usedBytesInPrimaryVolume": {
+                    "description": "Number of bytes used by the primary volume.",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "containerState": {
+                    "description": "TODO",
+                    "type": "string"
+                }
+            }
+        },
+        "ContainerList": {
+            "description": "List of Containers.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Container"
+            }
+        },
+        "MigrationResult": {
+            "description": "TODO",
+            "required": [
+                "jobId",
+                "sourceShareName",
+                "storageAccountName",
+                "containerName"
+            ],
+            "properties": {
+                "jobId": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "sourceShareName": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "storageAccountName": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "containerName": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "destinationShareName": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "migrationStatus": {
+                    "description": "TODO",
+                    "type": "string"
+                },
+                "subEntitiesCompleted": {
+                    "description": "TODO",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "subEntitiesFailed": {
+                    "description": "TODO",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "failureReason": {
+                    "description": "TODO",
+                    "type": "string"
+                }
+            }
+        },
+        "MigrationParameters": {
+            "description": "TODO",
+            "properties": {
+                "storageAccountName": {
+                    "type": "string",
+                    "description": "Share location where container is located."
+                },
+                "containerName": {
+                    "type": "string",
+                    "description": "Name of container to migrate."
+                },
+                "destinationShareUNCPath": {
+                    "type": "string",
+                    "description": "UNC path of share where container should be places."
+                }
+            },
+            "required": [
+                "storageAccountName",
+                "containerName",
+                "destinationShareUNCPath"
+            ]
+        }
+    },
+    "parameters": {
+        "MigrationIntentParameter": {
+            "description": "TODO",
+            "name": "Intent",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "MaxCountParameter": {
+            "description": "TODO",
+            "name": "MaxCount",
+            "in": "query",
+            "type": "integer",
+            "format": "int32",
+            "required": true,
+            "x-ms-parameter-location": "method"
+        },
+        "StartIndexParameter": {
+            "description": "TODO",
+            "name": "StartIndex",
+            "in": "query",
+            "type": "integer",
+            "format": "int32",
+            "required": true,
+            "x-ms-parameter-location": "method"
+        },
+        "MigrationParameterParameter": {
+            "description": "Parameters needed to perform migration",
+            "name": "migrationParameters",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/MigrationParameters"
+            },
+            "x-ms-parameter-location": "method"
+        }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
+}

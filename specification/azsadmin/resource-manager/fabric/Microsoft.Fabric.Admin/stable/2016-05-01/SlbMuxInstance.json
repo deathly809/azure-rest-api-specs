@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get a Software Load Balancer Mux Instance": {
-                        "$ref": "./examples/SlbMuxInstance/SlbMuxInstanceGetOperation_example.json"
+                        "$ref": "./examples/SlbMuxInstance/Get.json"
                     }
                 },
                 "tags": [
@@ -56,7 +56,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all Software Load Balancer Mux Instances": {
-                        "$ref": "./examples/SlbMuxInstance/SlbMuxInstanceListOperation_example.json"
+                        "$ref": "./examples/SlbMuxInstance/List.json"
                     }
                 },
                 "tags": [
