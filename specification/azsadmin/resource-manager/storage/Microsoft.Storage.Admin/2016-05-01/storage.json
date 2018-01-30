@@ -263,6 +263,7 @@
         },
         "MetricDefinitionList": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "value": {
                     "description": "List of metric definition.",
@@ -276,6 +277,7 @@
         },
         "MetricList": {
             "description": "List of metrics.",
+            "type": "object",
             "properties": {
                 "value": {
                     "description": "List of metrics.",

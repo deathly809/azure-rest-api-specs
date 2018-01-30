@@ -166,6 +166,7 @@
     "definitions": {
         "StorageQuota": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "properties": {
                     "description": "Storage quota properties.",
@@ -181,6 +182,7 @@
         },
         "StorageQuotaProperties": {
             "description": "Storage quota properties.",
+            "type": "object",
             "properties": {
                 "numberOfStorageAccounts": {
                     "description": "TODO",
@@ -198,6 +200,7 @@
         },
         "StorageCreationProperties": {
             "description": "Storage creation properties.",
+            "type": "object",
             "properties": {
                 "properties": {
                     "description": "Storage quota properties.",
@@ -208,6 +211,7 @@
         },
         "StorageQuotaList": {
             "description": "A page containing storage quotas.",
+            "type": "object",
             "properties": {
                 "value": {
                     "description": "List of quotas.",
