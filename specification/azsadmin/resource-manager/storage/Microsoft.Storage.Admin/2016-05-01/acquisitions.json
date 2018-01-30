@@ -17,43 +17,9 @@
     ],
     "paths": {
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions/{acquisitionId}": {
-            "delete": {
-                "x-ms-examples": {
-                    "TODO.": {
-                        "$ref": "./Examples/Acquisitions/Delete.json"
-                    }
-                },
-                "tags": [
-                    "Acquisitions"
-                ],
-                "operationId": "Acquisitions_Delete",
-                "description": "TODO",
-                "parameters": [
-                    {
-                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FarmIdParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/AcquisitionIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK -- Acquisition is deleted."
-                    }
-                }
-            },
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns the requested page blob acquisition.": {
                         "$ref": "./Examples/Acquisitions/Get.json"
                     }
                 },
@@ -61,7 +27,7 @@
                     "Acquisitions"
                 ],
                 "operationId": "Acquisitions_Get",
-                "description": "TODO",
+                "description": "Returns the requested page blob acquisition.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -85,6 +51,9 @@
                         "schema": {
                             "$ref": "#/definitions/Acquisition"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The Acquisition does not exist."
                     }
                 }
             }
@@ -92,7 +61,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of blob acquistions.": {
                         "$ref": "./Examples/Acquisitions/List.json"
                     }
                 },
@@ -100,7 +69,7 @@
                     "Acquisitions"
                 ],
                 "operationId": "Acquisitions_List",
-                "description": "Get a list of acquistions",
+                "description": "Returns a list of blob acquistions.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -120,7 +89,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- Acquisition has been returned.",
+                        "description": "OK -- Acquisitions have been returned.",
                         "schema": {
                             "$ref": "#/definitions/AcquisitionList"
                         }
@@ -134,7 +103,7 @@
     },
     "definitions": {
         "AcquisitionStatus": {
-            "description": "TODO",
+            "description": "The status of page blob acquisition.",
             "type": "string",
             "enum": [
                 "InProgress",
@@ -147,48 +116,50 @@
             }
         },
         "AcquisitionProperties": {
-            "description": "TODO",
+            "description": "The Properties of page blob acquisition.",
+            "type": "object",
             "properties": {
                 "filePath": {
-                    "description": "TODO",
+                    "description": "The file path of the page blob file on storage cluster.",
                     "type": "string"
                 },
                 "maximumblobsize": {
-                    "description": "TODO",
+                    "description": "The maximum size of the page blob.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "status": {
-                    "description": "TODO",
+                    "description": "The status of the page blob acquisition.",
                     "$ref": "#/definitions/AcquisitionStatus"
                 },
                 "susbcriptionid": {
-                    "description": "TODO",
+                    "description": "ID of the subscription where the page blob is in.",
                     "type": "string"
                 },
                 "storageaccount": {
-                    "description": "TODO",
+                    "description": "The storage account where the page blob is in.",
                     "type": "string"
                 },
                 "container": {
-                    "description": "TODO",
+                    "description": "The container where the page blob is in.",
                     "type": "string"
                 },
                 "blob": {
-                    "description": "TODO",
+                    "description": "The name of the page blob.",
                     "type": "string"
                 },
                 "acquisitionid": {
-                    "description": "TODO",
+                    "description": "The ID of page blob acquisition.",
                     "type": "string"
                 }
             }
         },
         "Acquisition": {
-            "description": "TODO",
+            "description": "The acquisition of page blob.",
+            "type": "object",
             "properties": {
                 "properties": {
-                    "description": "TODO",
+                    "description": "The properties of page blob acquisition.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/AcquisitionProperties"
                 }
@@ -200,7 +171,7 @@
             ]
         },
         "AcquisitionList": {
-            "description": "TODO",
+            "description": "The list of page blob acquisitions.",
             "type": "array",
             "items": {
                 "$ref": "#/definitions/Acquisition"
@@ -209,7 +180,7 @@
     },
     "parameters": {
         "AcquisitionIdParameter": {
-            "description": "TODO",
+            "description": "The ID of page blob acquisition.",
             "name": "acquisitionId",
             "type": "string",
             "required": true,

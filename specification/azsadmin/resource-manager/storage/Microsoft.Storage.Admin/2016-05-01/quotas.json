@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/locations/{location}/quotas/{quotaName}": {
             "put": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Create or update an existing storage quota.": {
                         "$ref": "./Examples/Quotas/CreateOrUpdate.json"
                     }
                 },
                 "tags": [
                     "StorageQuotas"
                 ],
-                "description": "Create or update an existing storage quota",
+                "description": "Create or update an existing storage quota.",
                 "operationId": "StorageQuotas_CreateOrUpdate",
                 "parameters": [
                     {
@@ -47,7 +47,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/StorageQuota"
                         }
@@ -56,7 +56,7 @@
             },
             "delete": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Delete an existing storage quota..": {
                         "$ref": "./Examples/Quotas/Delete.json"
                     }
                 },
@@ -81,20 +81,23 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- Storage quota has been deleted"
+                        "description": "OK -- Storage quota has been deleted."
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- Storage quota does not exist."
                     }
                 }
             },
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a storage quota.": {
                         "$ref": "./Examples/Quotas/Get.json"
                     }
                 },
                 "tags": [
                     "StorageQuotas"
                 ],
-                "description": "Retrieve an existing quota",
+                "description": "Returns a storage quota.",
                 "operationId": "StorageQuotas_Get",
                 "parameters": [
                     {
@@ -112,10 +115,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- Resulting storage quota",
+                        "description": "OK -- Resulting storage quota.",
                         "schema": {
                             "$ref": "#/definitions/StorageQuota"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The storage quota does not exist."
                     }
                 }
             }
@@ -123,17 +129,14 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Storage.Admin/locations/{location}/quotas": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of all storage quotas at the given location.": {
                         "$ref": "./Examples/Quotas/List.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "StorageQuotas"
                 ],
-                "description": "Get a list of quotas for this location",
+                "description": "Returns a list of all storage quotas at the given location.",
                 "operationId": "StorageQuotas_List",
                 "parameters": [
                     {
@@ -148,11 +151,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/StorageQuotaList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         }
@@ -162,7 +168,7 @@
             "description": "TODO",
             "properties": {
                 "properties": {
-                    "description": "TODO",
+                    "description": "Storage quota properties.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/StorageQuotaProperties"
                 }
@@ -174,7 +180,7 @@
             ]
         },
         "StorageQuotaProperties": {
-            "description": "TODO",
+            "description": "Storage quota properties.",
             "properties": {
                 "numberOfStorageAccounts": {
                     "description": "TODO",
@@ -191,27 +197,27 @@
             }
         },
         "StorageCreationProperties": {
-            "description": "TODO",
+            "description": "Storage creation properties.",
             "properties": {
                 "properties": {
-                    "description": "TODO",
+                    "description": "Storage quota properties.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/StorageQuotaProperties"
                 }
             }
         },
         "StorageQuotaList": {
-            "description": "TODO",
+            "description": "A page containing storage quotas.",
             "properties": {
                 "value": {
+                    "description": "List of quotas.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/StorageQuota"
-                    },
-                    "description": "List of quotas."
+                    }
                 },
                 "nextLink": {
-                    "description": "TODO",
+                    "description": "URI to the next page.",
                     "type": "string"
                 }
             }
@@ -219,21 +225,21 @@
     },
     "parameters": {
         "QuotaNameParameter": {
+            "description": "The name of the quota.",
             "name": "quotaName",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the quota.",
             "x-ms-parameter-location": "method"
         },
         "StorgeQuotaParameters": {
+            "description": "Parameters used to create or update storage quota",
             "name": "parameters",
             "in": "body",
             "required": true,
             "schema": {
                 "$ref": "#/definitions/StorageCreationProperties"
             },
-            "description": "Parameters used to create or update storage quota",
             "x-ms-parameter-location": "method"
         }
     },

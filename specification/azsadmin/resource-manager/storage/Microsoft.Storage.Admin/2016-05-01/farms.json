@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}": {
             "put": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Create a new storage farm.": {
                         "$ref": "./Examples/Farms/Create.json"
                     }
                 },
                 "tags": [
                     "Farms"
                 ],
-                "description": "Create a new farm",
+                "description": "Create a new storage farm.",
                 "operationId": "Farms_Create",
                 "parameters": [
                     {
@@ -47,7 +47,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/Farm"
                         }
@@ -56,14 +56,14 @@
             },
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Get a storage farm.": {
                         "$ref": "./Examples/Farms/Get.json"
                     }
                 },
                 "tags": [
                     "Farms"
                 ],
-                "description": "Get an existing farm",
+                "description": "Get a storage farm.",
                 "operationId": "Farms_Get",
                 "parameters": [
                     {
@@ -81,23 +81,26 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/Farm"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             },
             "patch": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Update an existing storage farm.": {
                         "$ref": "./Examples/Farms/Update.json"
                     }
                 },
                 "tags": [
                     "Farms"
                 ],
-                "description": "Update an existing farm.",
+                "description": "Update an existing storage farm.",
                 "operationId": "Farms_Update",
                 "parameters": [
                     {
@@ -129,17 +132,14 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metricdefinitions": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of metric definitions for a storage farm.": {
                         "$ref": "./Examples/Farms/ListMetricDefinitions.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "Farms"
                 ],
-                "description": "Get the list of metric definitions.",
+                "description": "Returns a list of metric definitions for a storage farm.",
                 "operationId": "Farms_ListMetricDefinitions",
                 "parameters": [
                     {
@@ -157,28 +157,28 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of Metric Definitions",
+                        "description": "OK",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/metrics": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of storage farm metrics.": {
                         "$ref": "./Examples/Farms/ListMetrics.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "Farms"
                 ],
-                "description": "Get the list of metrics.",
+                "description": "Returns a list of storage farm metrics.",
                 "operationId": "Farms_ListMetrics",
                 "parameters": [
                     {
@@ -201,23 +201,23 @@
                             "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of all storage farms.": {
                         "$ref": "./Examples/Farms/List.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "Farms"
                 ],
-                "description": "Get a list of all farms.",
+                "description": "Returns a list of all storage farms.",
                 "operationId": "Farms_List",
                 "parameters": [
                     {
@@ -232,18 +232,21 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/FarmList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/ondemandgc": {
             "post": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Start garbage collection on deleted storage objects.": {
                         "$ref": "./Examples/Farms/StartGarbageCollection.json"
                     }
                 },
@@ -251,7 +254,7 @@
                     "Farms"
                 ],
                 "operationId": "Farms_StartGarbageCollection",
-                "description": "TODO",
+                "description": "Start garbage collection on deleted storage objects.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -268,27 +271,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO: OK -- Location of GC.",
-                        "schema": {
-                            "description": "Garbage collection identifier",
-                            "type": "string"
-                        }
+                        "description": "OK."
                     },
                     "202": {
-                        "description": "ACCEPTED - Will be performed asynchronous.",
-                        "schema": {
-                            "description": "Garbage collection identifier",
-                            "type": "string"
-                        }
+                        "description": "ACCEPTED."
                     }
                 },
-                "x-ms-long-running-operation" : true
+                "x-ms-long-running-operation": true
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/operationresults/{operationId}": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns the current state of garbage collection.": {
                         "$ref": "./Examples/Farms/GetGarbageCollectionState.json"
                     }
                 },
@@ -296,7 +291,7 @@
                     "GC"
                 ],
                 "operationId": "Farms_GetGarbageCollectionState",
-                "description": "TODO",
+                "description": "Returns the current state of garbage collection.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -316,10 +311,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "The status of the GC operation",
+                        "description": "OK",
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -327,23 +325,25 @@
     },
     "definitions": {
         "FarmList": {
-            "description": "TODO",
+            "description": "Single page of storage farms.",
+            "type": "object",
             "properties": {
                 "value": {
-                    "description": "TODO",
+                    "description": "List of storage farms.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Farm"
                     }
                 },
                 "nextLink": {
-                    "description": "TODO",
+                    "description": "URI to the next page.",
                     "type": "string"
                 }
             }
         },
         "FarmCreationProperties": {
-            "description": "TODO",
+            "description": "Storage farm properties.",
+            "type": "object",
             "properties": {
                 "properties": {
                     "description": "TODO",
@@ -359,9 +359,10 @@
         },
         "Farm": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "properties": {
-                    "description": "TODO",
+                    "description": "Storage farm properties.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/FarmProperties"
                 }
@@ -373,7 +374,8 @@
             ]
         },
         "FarmSettings": {
-            "description": "TODO",
+            "description": "Storage farm settings.",
+            "type": "object",
             "properties": {
                 "settingsPollingIntervalInSecond": {
                     "description": "TODO",
@@ -580,7 +582,8 @@
             }
         },
         "FarmPropertiesBase": {
-            "description": "TODO",
+            "description": "Storage farm properties base object.",
+            "type": "object",
             "properties": {
                 "settings": {
                     "description": "TODO",
@@ -590,7 +593,8 @@
             }
         },
         "FarmProperties": {
-            "description": "TODO",
+            "description": "Storage farm properties.",
+            "type": "object",
             "properties": {
                 "settingsStore": {
                     "description": "TODO",
@@ -609,6 +613,7 @@
         },
         "SettingAccessString": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "settingAccessString": {
                     "description": "TODO",

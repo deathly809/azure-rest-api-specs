@@ -19,7 +19,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/operationresults/{operationId}": {
             "post": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Cancel container migration.": {
                         "$ref": "./Examples/Containers/CancelMigration.json"
                     }
                 },
@@ -27,7 +27,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_CancelMigration",
-                "description": "Cancel share migration.",
+                "description": "Cancel container migration.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -52,11 +52,12 @@
                     "202": {
                         "description": "ACCEPTED - Operation has been accepted will be processed asynchronously"
                     }
-                }
+                },
+                "x-ms-long-running-operation": true
             },
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Sets the status of the share to migrate.": {
                         "$ref": "./Examples/Containers/MigrateShare.json"
                     }
                 },
@@ -64,7 +65,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_MigrateShare",
-                "description": "Set the status of the share to migrate.",
+                "description": "Sets the status of the share to migrate.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -95,7 +96,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/containers": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns all containers under the given parameters.": {
                         "$ref": "./Examples/Containers/List.json"
                     }
                 },
@@ -103,7 +104,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_List",
-                "description": "List all containers under the given parameters",
+                "description": "Returns all containers under the given parameters.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -132,7 +133,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of containers",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/ContainerList"
                         }
@@ -143,18 +144,15 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/destinationshares": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns all destination shares under the given parameters.": {
                         "$ref": "./Examples/Containers/ListDestinationShares.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "Containers"
                 ],
                 "operationId": "Containers_ListDestinationShares",
-                "description": "List all containers under the given parameters",
+                "description": "Returns all destination shares under the given parameters.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -174,18 +172,21 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "List of containers",
+                        "description": "OK",
                         "schema": {
                             "$ref": "shares.json#/definitions/ShareList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/migrate": {
             "post": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Migrate a container.": {
                         "$ref": "./Examples/Containers/Migrate.json"
                     }
                 },
@@ -193,7 +194,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_Migrate",
-                "description": "Migration a share",
+                "description": "Migrate a container.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -238,13 +239,15 @@
                             "type": "string"
                         }
                     }
-                }
+                },
+                "x-ms-long-running-operation": true
             }
         }
     },
     "definitions": {
         "Container": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "sharename": {
                     "description": "Name of the share container is located.",
@@ -259,7 +262,7 @@
                     "type": "string"
                 },
                 "containerid": {
-                    "description": "TODO",
+                    "description": "The container id.",
                     "type": "integer",
                     "format": "int64"
                 },
@@ -273,7 +276,7 @@
                     "format": "int64"
                 },
                 "containerState": {
-                    "description": "TODO",
+                    "description": "The current state of the container.",
                     "type": "string"
                 }
             }
@@ -286,7 +289,8 @@
             }
         },
         "MigrationResult": {
-            "description": "TODO",
+            "description": "The result of the container migration.",
+            "type": "object",
             "required": [
                 "jobId",
                 "sourceShareName",
@@ -335,7 +339,8 @@
             }
         },
         "MigrationParameters": {
-            "description": "TODO",
+            "description": "Parameters for container migration.",
+            "type": "object",
             "properties": {
                 "storageAccountName": {
                     "type": "string",
@@ -359,7 +364,7 @@
     },
     "parameters": {
         "MigrationIntentParameter": {
-            "description": "TODO",
+            "description": "The container migration intent.",
             "name": "Intent",
             "in": "query",
             "required": true,

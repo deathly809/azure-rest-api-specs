@@ -44,6 +44,7 @@
     "definitions": {
         "WritableSettings": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "frontEndCallbackThreadsCount": {
                     "description": "TODO",
@@ -115,6 +116,7 @@
         },
         "WritableServiceSettings": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "frontEndHttpsListenPort": {
                     "description": "TODO",
@@ -135,6 +137,7 @@
         },
         "LocalizableString": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "value": {
                     "description": "TODO",
@@ -148,6 +151,7 @@
         },
         "MetricAvailability": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "timeGrain": {
                     "description": "TODO",
@@ -193,6 +197,7 @@
         },
         "MetricDefinition": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "name": {
                     "description": "TODO",
@@ -221,6 +226,7 @@
         },
         "Metric": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "name": {
                     "description": "TODO",

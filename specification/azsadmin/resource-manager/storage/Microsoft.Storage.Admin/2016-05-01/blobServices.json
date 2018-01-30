@@ -19,15 +19,15 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns the default blob service.": {
                         "$ref": "./Examples/BlobService/Get.json"
                     }
                 },
                 "tags": [
                     "BlobServices"
                 ],
-                "description": "TODO",
                 "operationId": "BlobServices_Get",
+                "description": "Returns the default blob service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -44,7 +44,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/BlobService"
                         }
@@ -55,15 +55,15 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metricdefinitions": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns the list of metric definitions for the default blob service.": {
                         "$ref": "./Examples/BlobService/ListMetricDefinitions.json"
                     }
                 },
                 "tags": [
                     "BlobServices"
                 ],
-                "description": "TODO",
                 "operationId": "BlobServices_ListMetricDefinitions",
+                "description": "Returns the list of metric definitions for the default blob service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -80,7 +80,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "200",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
@@ -94,15 +94,15 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metrics": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns the list of metric for the blob service.": {
                         "$ref": "./Examples/BlobService/ListMetrics.json"
                     }
                 },
                 "tags": [
                     "BlobServices"
                 ],
-                "description": "TODO",
                 "operationId": "BlobServices_ListMetrics",
+                "description": "Returns the list of metric for the blob service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -119,7 +119,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricList"
                         }
@@ -133,6 +133,8 @@
     },
     "definitions": {
         "BlobServiceWritableSettings": {
+            "description": "TODO",
+            "type": "object",
             "properties": {
                 "blobSvcContainerGcInterval": {
                     "type": "integer",
@@ -154,46 +156,48 @@
                 {
                     "$ref": "storage.json#/definitions/WritableServiceSettings"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "BlobServiceSettings": {
+            "description": "Blob service settings.",
+            "type": "object",
             "allOf": [
                 {
                     "$ref": "#/definitions/BlobServiceWritableSettings"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "BlobServiceProperties": {
+            "description": "Blob service properties.",
+            "type": "object",
             "properties": {
                 "settings": {
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/BlobServiceSettings",
-                    "description": "TODO"
+                    "description": "Blob service settings."
                 }
             },
             "allOf": [
                 {
                     "$ref": "storage.json#/definitions/Service"
                 }
-            ],
-            "description": "TODO"
+            ]
         },
         "BlobService": {
+            "description": "TODO",
+            "type": "object",
             "properties": {
                 "properties": {
+                    "description": "Blob service properties.",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/BlobServiceProperties",
-                    "description": "TODO"
+                    "$ref": "#/definitions/BlobServiceProperties"
                 }
             },
             "allOf": [
                 {
                     "$ref": "storage.json#/definitions/Resource"
                 }
-            ],
-            "description": "TODO"
+            ]
         }
     },
     "parameters": {},

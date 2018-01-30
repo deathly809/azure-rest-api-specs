@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns the default table servie.": {
                         "$ref": "./Examples/TableService/Get.json"
                     }
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "TODO",
+                "description": "Returns the default table servie.",
                 "operationId": "TableServices_Get",
                 "parameters": [
                     {
@@ -55,17 +55,14 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metricdefinitions": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of metric definitions for the default table service.": {
                         "$ref": "./Examples/TableService/ListMetricDefinitions.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "TODO",
+                "description": "Returns a list of metric definitions for the default table service.",
                 "operationId": "TableServices_ListMetricDefinitions",
                 "parameters": [
                     {
@@ -83,28 +80,28 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metrics": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of metrics for the default table service..": {
                         "$ref": "./Examples/TableService/ListMetrics.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "TODO",
+                "description": "Returns a list of metrics for the default table service.",
                 "operationId": "TableServices_ListMetrics",
                 "parameters": [
                     {
@@ -122,11 +119,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         }
@@ -134,6 +134,7 @@
     "definitions": {
         "TableServiceWritableSettings": {
             "description": "TODO",
+            "type": "object",
             "properties": {},
             "allOf": [
                 {
@@ -143,6 +144,7 @@
         },
         "TableServiceSettings": {
             "description": "TODO",
+            "type": "object",
             "properties": {},
             "allOf": [
                 {
@@ -151,10 +153,11 @@
             ]
         },
         "TableServiceProperties": {
-            "description": "TODO",
+            "description": "Properties of the table service.",
+            "type": "object",
             "properties": {
                 "settings": {
-                    "description": "TODO",
+                    "description": "Table service settings.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/TableServiceSettings"
                 }
@@ -167,9 +170,10 @@
         },
         "TableService": {
             "description": "TODO",
+            "type": "object",
             "properties": {
                 "properties": {
-                    "description": "TODO",
+                    "description": "Table service properties.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/TableServiceProperties"
                 }

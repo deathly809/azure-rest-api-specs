@@ -19,18 +19,15 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/storageaccounts": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns a list of storage accounts.": {
                         "$ref": "./Examples/StorageAccounts/List.json"
                     }
-                },
-                "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
                 },
                 "tags": [
                     "StorageAccounts"
                 ],
                 "operationId": "StorageAccounts_List",
-                "description": "TODO",
+                "description": "Returns a list of storage accounts.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -50,18 +47,21 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/StorageAccountList"
                         }
                     }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/storageaccounts/{accountId}": {
             "get": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Returns the requested storage account.": {
                         "$ref": "./Examples/StorageAccounts/Get.json"
                     }
                 },
@@ -69,7 +69,7 @@
                     "StorageAccounts"
                 ],
                 "operationId": "StorageAccounts_Get",
-                "description": "Get a specific storage account",
+                "description": "Returns the requested storage account.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -89,16 +89,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- Returns the storage account",
+                        "description": "OK -- Returns the storage account.",
                         "schema": {
                             "$ref": "#/definitions/StorageAccount"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The storage account was not found.",
                     }
                 }
             },
             "post": {
                 "x-ms-examples": {
-                    "TODO.": {
+                    "Undelete a deleted storage account.": {
                         "$ref": "./Examples/StorageAccounts/Undelete.json"
                     }
                 },
@@ -106,7 +109,7 @@
                     "StorageAccounts"
                 ],
                 "operationId": "StorageAccounts_Undelete",
-                "description": "TODO",
+                "description": "Undelete a deleted storage account.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -193,7 +196,7 @@
             }
         },
         "StorageAccountStatus": {
-            "description": "TODO",
+            "description": "The current status of the storage account.",
             "type": "string",
             "enum": [
                 "Active",
@@ -239,7 +242,8 @@
             }
         },
         "StorageAccountProperties": {
-            "description": "TODO",
+            "description": "Properties of a storage account.",
+            "type": "object",
             "properties": {
                 "tenantViewId": {
                     "type": "string",
@@ -310,7 +314,7 @@
                     "format": "int32"
                 },
                 "deletedTime": {
-                    "description": "TODO",
+                    "description": "The date-time when the storage account was deleted.",
                     "type": "string",
                     "format": "date-time"
                 },
@@ -352,9 +356,10 @@
         },
         "StorageAccount": {
             "description": "Properties of the storage account.",
+            "type": "object",
             "properties": {
                 "properties": {
-                    "description": "TODO",
+                    "description": "Properties of the storage account.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/StorageAccountProperties"
                 }
@@ -365,43 +370,19 @@
                 }
             ]
         },
-        "StorageAccountSyncResult": {
-            "description": "TODO",
-            "properties": {
-                "correlationId": {
-                    "description": "TODO",
-                    "type": "string",
-                    "readOnly": true
-                },
-                "frontdoorLocation": {
-                    "description": "TODO",
-                    "type": "string",
-                    "readOnly": true
-                },
-                "timeStamp": {
-                    "description": "TODO",
-                    "type": "string",
-                    "readOnly": true
-                },
-                "message": {
-                    "description": "TODO",
-                    "type": "string",
-                    "readOnly": true
-                }
-            }
-        },
         "StorageAccountList": {
-            "description": "List of storage accounts supported by the Storage resource provider.",
+            "description": "Page containing a list of storage accounts.",
+            "type": "object",
             "properties": {
                 "value": {
-                    "description": "TODO",
+                    "description": "List of storage accounts.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/StorageAccount"
                     }
                 },
                 "nextLink": {
-                    "description": "TODO",
+                    "description": "URI to the next page.",
                     "type": "string"
                 }
             }
