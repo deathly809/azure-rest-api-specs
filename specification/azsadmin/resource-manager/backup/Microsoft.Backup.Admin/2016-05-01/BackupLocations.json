@@ -48,7 +48,7 @@
                     "application/json"
                 ],
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 }
             },
             "put": {
