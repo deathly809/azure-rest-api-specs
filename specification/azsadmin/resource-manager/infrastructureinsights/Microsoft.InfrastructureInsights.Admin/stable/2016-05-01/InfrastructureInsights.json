@@ -13,11 +13,11 @@
         "/providers/Microsoft.InfrastructureInsights/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of support rest operations.": {
+                    "Returns a list of support rest operations.": {
                         "$ref": "./examples/Operations/List.json"
                     }
                 },
-                "description": "Get the list of support rest operations.",
+                "description": "Returns a list of support rest operations.",
                 "tags": [
                     "InfrastructureInsights"
                 ],
@@ -59,23 +59,23 @@
             "description": "Models the base properties for health resource.",
             "properties": {
                 "alertSummary": {
-                    "description": "Gets or sets the alert summary.",
+                    "description": "Alert summary.",
                     "$ref": "#/definitions/AlertSummary"
                 },
                 "healthState": {
-                    "description": "Gets or sets the health status.",
+                    "description": "Health status.",
                     "type": "string"
                 },
                 "namespace": {
-                    "description": "Gets or sets the name space.",
+                    "description": "Name space.",
                     "type": "string"
                 },
                 "registrationId": {
-                    "description": "Gets or sets the registration id.",
+                    "description": "Registration id.",
                     "type": "string"
                 },
                 "routePrefix": {
-                    "description": "Gets or sets the route prefix.",
+                    "description": "Route prefix.",
                     "type": "string"
                 }
             }
@@ -85,7 +85,6 @@
             "type": "object",
             "properties": {
                 "id": {
-                    
                     "description": "URI of the resource.",
                     "type": "string",
                     "readOnly": true

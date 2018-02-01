@@ -13,14 +13,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths": {
             "get": {
                 "x-ms-examples": {
-                    "List all services health": {
+                    "Returns a list of each service's health.": {
                         "$ref": "./examples/ServiceHealth/List.json"
                     }
                 },
                 "tags": [
                     "ServiceHealths"
                 ],
-                "description": "Get a list of all services health",
+                "description": "Returns a list of each service's health.",
                 "operationId": "ServiceHealths_List",
                 "parameters": [
                     {
@@ -42,6 +42,9 @@
                         "schema": {
                             "$ref": "#/definitions/ServiceHealthList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-pageable": {
@@ -59,14 +62,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceHealth}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a services health": {
+                    "Returns the health of the requested service.": {
                         "$ref": "./examples/ServiceHealth/Get.json"
                     }
                 },
                 "tags": [
                     "ServiceHealths"
                 ],
-                "description": "Get a services health",
+                "description": "Returns the health of the requested service.",
                 "operationId": "ServiceHealths_Get",
                 "parameters": [
                     {
@@ -122,7 +125,7 @@
             "description": "Holds information about a services health.",
             "properties": {
                 "displayName": {
-                    "description": "Name of the alert.",
+                    "description": "Name of the service.",
                     "type": "string"
                 },
                 "serviceLocation": {
@@ -130,7 +133,7 @@
                     "type": "string"
                 },
                 "infraURI": {
-                    "description": "The route prefix to the alert.",
+                    "description": "The route prefix to the service.",
                     "type": "string"
                 }
             },

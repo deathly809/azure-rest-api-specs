@@ -13,14 +13,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of all health items for the region": {
+                    "Returns a list of region's health status.": {
                         "$ref": "./examples/RegionHealth/List.json"
                     }
                 },
                 "tags": [
                     "RegionHealths"
                 ],
-                "description": "Get the list of all regions health status.",
+                "description": "Returns a list of region's health status.",
                 "operationId": "RegionHealths_List",
                 "parameters": [
                     {
@@ -42,6 +42,9 @@
                         "schema": {
                             "$ref": "#/definitions/RegionHealthList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-pageable": {
@@ -59,14 +62,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}": {
             "get": {
                 "x-ms-examples": {
-                    "Get the health status of a region": {
+                    "Returns the requested health status of a region.": {
                         "$ref": "./examples/RegionHealth/Get.json"
                     }
                 },
                 "tags": [
                     "RegionHealths"
                 ],
-                "description": "Get health status of a region.",
+                "description": "Returns the requested health status of a region.",
                 "operationId": "RegionHealths_Get",
                 "parameters": [
                     {
@@ -89,7 +92,7 @@
                             "$ref": "#/definitions/RegionHealth"
                         }
                     },
-                    "404" : {
+                    "404": {
                         "description": "NOT FOUND"
                     }
                 },

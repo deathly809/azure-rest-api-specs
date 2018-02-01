@@ -13,14 +13,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of resource health items": {
+                    "Returns a list of each resource's health under a service.": {
                         "$ref": "./examples/ResourceHealth/List.json"
                     }
                 },
                 "tags": [
                     "Resources"
                 ],
-                "description": "Get a list of resources?.",
+                "description": "Returns a list of each resource's health under a service.",
                 "operationId": "ResourceHealths_List",
                 "parameters": [
                     {
@@ -45,6 +45,9 @@
                         "schema": {
                             "$ref": "#/definitions/ResourceHealthList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-pageable": {
@@ -62,14 +65,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceRegistrationId}/resourceHealths/{resourceRegistrationId}": {
             "get": {
                 "x-ms-examples": {
-                    "Get health information about a resource": {
+                    "Returns the requested health information about a resource.": {
                         "$ref": "./examples/ResourceHealth/Get.json"
                     }
                 },
                 "tags": [
                     "Resources"
                 ],
-                "description": "Get health information about a resources.",
+                "description": "Returns the requested health information about a resource.",
                 "operationId": "ResourceHealths_Get",
                 "parameters": [
                     {
@@ -131,31 +134,31 @@
             "description": "Health information related to a resource.",
             "properties": {
                 "resourceLocation": {
-                    "description": "Gets or sets the resource location.",
+                    "description": "Resource location.",
                     "type": "string"
                 },
                 "resourceName": {
-                    "description": "Gets or sets the resource name.",
+                    "description": "Resource name.",
                     "type": "string"
                 },
                 "resourceDisplayName": {
-                    "description": "Gets or sets the resource display name.",
+                    "description": "Resource display name.",
                     "type": "string"
                 },
                 "resourceType": {
-                    "description": "Gets or sets the resource type.",
+                    "description": "Resource type.",
                     "type": "string"
                 },
                 "resourceURI": {
-                    "description": "Gets or sets the resource uri.",
+                    "description": "Resource URI.",
                     "type": "string"
                 },
                 "rpRegistrationId": {
-                    "description": "Gets or sets the resource provider registration id.",
+                    "description": "Resource provider registration Id.",
                     "type": "string"
                 },
                 "usageMetrics": {
-                    "description": "Gets or sets the usage metrics.",
+                    "description": "Usage metrics.",
                     "type": "array",
                     "items": {
                         "$ref": "InfrastructureInsights.json#/definitions/UsageMetrics"
