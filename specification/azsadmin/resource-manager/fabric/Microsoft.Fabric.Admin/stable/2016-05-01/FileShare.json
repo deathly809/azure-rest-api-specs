@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/fileShares/{fileShare}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a file share": {
+                    "Returns the requested fabric file share.": {
                         "$ref": "./examples/FileShare/Get.json"
                     }
                 },
                 "tags": [
                     "FileShares"
                 ],
-                "description": "Get a fabric file share.",
+                "description": "Returns the requested fabric file share.",
                 "operationId": "FileShares_Get",
                 "parameters": [
                     {
@@ -48,6 +48,9 @@
                         "schema": {
                             "$ref": "#/definitions/FileShare"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -55,7 +58,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/fileShares": {
             "get": {
                 "x-ms-examples": {
-                    "List all file shares": {
+                    "Returns a list of all fabric file shares at a certain location.": {
                         "$ref": "./examples/FileShare/List.json"
                     }
                 },
@@ -65,7 +68,7 @@
                 "tags": [
                     "FileShares"
                 ],
-                "description": "Get a list of all fabric file shares at a certain location.",
+                "description": "Returns a list of all fabric file shares at a certain location.",
                 "operationId": "FileShares_List",
                 "parameters": [
                     {

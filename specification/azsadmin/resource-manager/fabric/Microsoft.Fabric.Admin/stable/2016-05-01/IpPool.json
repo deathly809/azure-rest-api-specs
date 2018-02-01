@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools/{ipPool}": {
             "get": {
                 "x-ms-examples": {
-                    "Get an ip pool": {
+                    "Return the requested Ip pool.": {
                         "$ref": "./examples/IpPool/Get.json"
                     }
                 },
                 "tags": [
                     "IpPools"
                 ],
-                "description": "Get an ip pool.",
+                "description": "Return the requested Ip pool.",
                 "operationId": "IpPools_Get",
                 "parameters": [
                     {
@@ -48,19 +48,22 @@
                         "schema": {
                             "$ref": "#/definitions/IpPool"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             },
             "put": {
                 "x-ms-examples": {
-                    "Create an ip pool": {
+                    "Create an Ip pool.  Once created an Ip pool cannot be deleted.": {
                         "$ref": "./examples/IpPool/Create.json"
                     }
                 },
                 "tags": [
                     "IpPools"
                 ],
-                "description": "Create an ip pool.",
+                "description": "Create an Ip pool.  Once created an Ip pool cannot be deleted.",
                 "operationId": "IpPools_Create",
                 "parameters": [
                     {
@@ -99,14 +102,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools": {
             "get": {
                 "x-ms-examples": {
-                    "List all ip pools": {
+                    "Returns a list of all ip pools at a certain location.": {
                         "$ref": "./examples/IpPool/List.json"
                     }
                 },
                 "tags": [
                     "IpPools"
                 ],
-                "description": "Get a list of all ip pools at a certain location.",
+                "description": "Returns a list of all ip pools at a certain location.",
                 "operationId": "IpPools_List",
                 "parameters": [
                     {
@@ -128,6 +131,9 @@
                         "schema": {
                             "$ref": "#/definitions/IpPoolList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-pageable": {

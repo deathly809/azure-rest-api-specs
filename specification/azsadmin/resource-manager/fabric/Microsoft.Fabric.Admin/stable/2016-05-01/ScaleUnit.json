@@ -58,6 +58,9 @@
               "$ref": "Operations.json#/definitions/OperationStatus"
             }
           },
+          "404": {
+            "description": "NOT FOUND"
+          },
           "500": {
             "description": "FAILURE",
             "schema": {
@@ -71,14 +74,14 @@
     "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnits/{scaleUnit}": {
       "get": {
         "x-ms-examples": {
-          "Get a scale unit": {
+          "Returns the requested scale unit": {
             "$ref": "./examples/ScaleUnit/Get.json"
           }
         },
         "tags": [
           "ScaleUnits"
         ],
-        "description": "Get a scale unit.",
+        "description": "Returns the requested scale unit.",
         "operationId": "ScaleUnits_Get",
         "parameters": [
           {
@@ -100,6 +103,9 @@
             "schema": {
               "$ref": "#/definitions/ScaleUnit"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         }
       }
@@ -107,14 +113,14 @@
     "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnits": {
       "get": {
         "x-ms-examples": {
-          "List all scale units": {
+          "Returns a list of all scale units at a location.": {
             "$ref": "./examples/ScaleUnit/List.json"
           }
         },
         "tags": [
           "ScaleUnits"
         ],
-        "description": "Get a list of all scale units at a location.",
+        "description": "Returns a list of all scale units at a location.",
         "operationId": "ScaleUnits_List",
         "parameters": [
           {
@@ -136,6 +142,9 @@
             "schema": {
               "$ref": "#/definitions/ScaleUnitList"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         },
         "x-ms-pageable": {

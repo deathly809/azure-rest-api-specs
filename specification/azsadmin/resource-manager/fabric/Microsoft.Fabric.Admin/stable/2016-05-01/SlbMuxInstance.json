@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/slbMuxInstances/{slbMuxInstance}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a Software Load Balancer Mux Instance": {
+                    "Returns the requested Software Load Balancer Mux Instance": {
                         "$ref": "./examples/SlbMuxInstance/Get.json"
                     }
                 },
                 "tags": [
                     "SlbMuxInstances"
                 ],
-                "description": "Get a software load balancer multiplexer instance.",
+                "description": "Returns the requested software load balancer multiplexer instance.",
                 "operationId": "SlbMuxInstances_Get",
                 "parameters": [
                     {
@@ -48,6 +48,9 @@
                         "schema": {
                             "$ref": "#/definitions/SlbMuxInstance"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -55,14 +58,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/slbMuxInstances": {
             "get": {
                 "x-ms-examples": {
-                    "List all Software Load Balancer Mux Instances": {
+                    "Returns all Software Load Balancer Mux Instances": {
                         "$ref": "./examples/SlbMuxInstance/List.json"
                     }
                 },
                 "tags": [
                     "SlbMuxInstances"
                 ],
-                "description": "Get a list of all software load balancer instances at a location.",
+                "description": "Returns a list of all software load balancer instances at a location.",
                 "operationId": "SlbMuxInstances_List",
                 "parameters": [
                     {
@@ -84,6 +87,9 @@
                         "schema": {
                             "$ref": "#/definitions/SlbMuxInstanceList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-pageable": {
@@ -159,22 +165,22 @@
             "x-ms-parameter-location": "method"
         }
     },
- "securityDefinitions": {
-  "azure_auth": {
-   "type": "oauth2",
-   "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
-   "flow": "implicit",
-   "description": "Azure Active Directory OAuth2 Flow",
-   "scopes": {
-    "user_impersonation": "impersonate your user account"
-   }
-  }
- },
- "security": [
-  {
-   "azure_auth": [
-    "user_impersonation"
-   ]
-  }
- ]
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

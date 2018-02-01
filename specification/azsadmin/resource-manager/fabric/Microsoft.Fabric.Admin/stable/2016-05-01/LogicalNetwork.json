@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/logicalNetworks/{logicalNetwork}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a logical network": {
+                    "Returns the requested logical network.": {
                         "$ref": "./examples/LogicalNetwork/Get.json"
                     }
                 },
                 "tags": [
                     "LogicalNetworks"
                 ],
-                "description": "Get a logical network.",
+                "description": "Returns the requested logical network.",
                 "operationId": "LogicalNetworks_Get",
                 "parameters": [
                     {
@@ -48,6 +48,9 @@
                         "schema": {
                             "$ref": "#/definitions/LogicalNetwork"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -55,7 +58,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/logicalNetworks": {
             "get": {
                 "x-ms-examples": {
-                    "List all logical networks": {
+                    "Returns a list of all logical networks at a location.": {
                         "$ref": "./examples/LogicalNetwork/List.json"
                     }
                 },
@@ -65,7 +68,7 @@
                 "tags": [
                     "LogicalNetworks"
                 ],
-                "description": "Get a list of all logical networks at a location.",
+                "description": "Returns a list of all logical networks at a location.",
                 "operationId": "LogicalNetworks_List",
                 "parameters": [
                     {
@@ -87,6 +90,9 @@
                         "schema": {
                             "$ref": "#/definitions/LogicalNetworkList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-odata": "#/definitions/LogicalNetwork"

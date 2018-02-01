@@ -19,14 +19,14 @@
     "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGateways/{edgeGateway}": {
       "get": {
         "x-ms-examples": {
-          "Get an edge gateway": {
+          "Returns the requested edge gateway.": {
             "$ref": "./examples/EdgeGateway/Get.json"
           }
         },
         "tags": [
           "EdgeGateways"
         ],
-        "description": "Get an edge gateway by name.",
+        "description": "Returns the requested edge gateway.",
         "operationId": "EdgeGateways_Get",
         "parameters": [
           {
@@ -48,6 +48,9 @@
             "schema": {
               "$ref": "#/definitions/EdgeGateway"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         }
       }
@@ -55,14 +58,14 @@
     "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGateways": {
       "get": {
         "x-ms-examples": {
-          "List all edge gateways": {
+          "Returns the list of all edge gateways at a certain location.": {
             "$ref": "./examples/EdgeGateway/List.json"
           }
         },
         "tags": [
           "EdgeGateways"
         ],
-        "description": "Get a list of all edge gateways at a certain location.",
+        "description": "Returns the list of all edge gateways at a certain location.",
         "operationId": "EdgeGateways_List",
         "parameters": [
           {
@@ -140,7 +143,7 @@
       "type": "object",
       "properties": {
         "value": {
-          "description": "Array of edge gateways.",
+          "description": "List of edge gateways.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/EdgeGateway"
@@ -156,7 +159,7 @@
   "parameters": {
     "EdgeGatewayParameter": {
       "name": "edgeGateway",
-      "description": "name of the edge gateway.",
+      "description": "Name of the edge gateway.",
       "in": "path",
       "required": true,
       "type": "string",

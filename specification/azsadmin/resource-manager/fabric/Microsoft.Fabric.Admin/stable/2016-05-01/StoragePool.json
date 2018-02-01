@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/storageSubSystems/{storageSubSystem}/storagePools/{storagePool}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a storage pool": {
+                    "Return the requested a storage pool.": {
                         "$ref": "./examples/StoragePool/Get.json"
                     }
                 },
                 "tags": [
                     "StoragePools"
                 ],
-                "description": "Get a storage pool.",
+                "description": "Return the requested a storage pool.",
                 "operationId": "StoragePools_Get",
                 "parameters": [
                     {
@@ -51,6 +51,9 @@
                         "schema": {
                             "$ref": "#/definitions/StoragePool"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -58,14 +61,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/storageSubSystems/{storageSubSystem}/storagePools": {
             "get": {
                 "x-ms-examples": {
-                    "List all storage pools": {
+                    "Returns a list of all storage pools for a location.": {
                         "$ref": "./examples/StoragePool/List.json"
                     }
                 },
                 "tags": [
                     "StoragePools"
                 ],
-                "description": "Get a list of all storage pools for a location.",
+                "description": "Returns a list of all storage pools for a location.",
                 "operationId": "StoragePools_List",
                 "parameters": [
                     {
@@ -90,6 +93,9 @@
                         "schema": {
                             "$ref": "#/definitions/StoragePoolList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-pageable": {
@@ -155,22 +161,22 @@
             "x-ms-parameter-location": "method"
         }
     },
- "securityDefinitions": {
-  "azure_auth": {
-   "type": "oauth2",
-   "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
-   "flow": "implicit",
-   "description": "Azure Active Directory OAuth2 Flow",
-   "scopes": {
-    "user_impersonation": "impersonate your user account"
-   }
-  }
- },
- "security": [
-  {
-   "azure_auth": [
-    "user_impersonation"
-   ]
-  }
- ]
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "flow": "implicit",
+            "description": "Azure Active Directory OAuth2 Flow",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            }
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ]
 }

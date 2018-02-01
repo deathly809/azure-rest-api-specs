@@ -19,14 +19,14 @@
     "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/logicalNetworks/{logicalNetwork}/logicalSubnets/{logicalSubnet}": {
       "get": {
         "x-ms-examples": {
-          "Get a logical subnet": {
+          "Returns the requested logical subnet.": {
             "$ref": "./examples/LogicalSubnet/Get.json"
           }
         },
         "tags": [
           "LogicalSubnets"
         ],
-        "description": "Get a list of all volumes at a location.",
+        "description": "Returns the requested logical subnet.",
         "operationId": "LogicalSubnets_Get",
         "parameters": [
           {
@@ -51,6 +51,9 @@
             "schema": {
               "$ref": "#/definitions/LogicalSubnet"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         }
       }
@@ -58,14 +61,14 @@
     "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/logicalNetworks/{logicalNetwork}/logicalSubnets": {
       "get": {
         "x-ms-examples": {
-          "List all logical subnets": {
+          "Returns a list of all logical subnets.": {
             "$ref": "./examples/LogicalSubnet/List.json"
           }
         },
         "tags": [
           "LogicalSubnets"
         ],
-        "description": "Get a list of all logical subnets.",
+        "description": "Returns a list of all logical subnets.",
         "operationId": "LogicalSubnets_List",
         "parameters": [
           {
@@ -90,6 +93,9 @@
             "schema": {
               "$ref": "#/definitions/LogicalSubnetList"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         },
         "x-ms-pageable": {

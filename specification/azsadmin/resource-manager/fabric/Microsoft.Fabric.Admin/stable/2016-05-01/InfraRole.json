@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoles/{infraRole}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a infra role": {
+                    "Returns the requested infra role description.": {
                         "$ref": "./examples/InfraRole/Get.json"
                     }
                 },
                 "tags": [
                     "InfraRoles"
                 ],
-                "description": "Get an infra role description.",
+                "description": "Returns the requested infra role description.",
                 "operationId": "InfraRoles_Get",
                 "parameters": [
                     {
@@ -48,6 +48,9 @@
                         "schema": {
                             "$ref": "#/definitions/InfraRole"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -55,14 +58,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoles": {
             "get": {
                 "x-ms-examples": {
-                    "List all infra roles": {
+                    "Returns a list of all infra roles at a location.": {
                         "$ref": "./examples/InfraRole/List.json"
                     }
                 },
                 "tags": [
                     "InfraRoles"
                 ],
-                "description": "Get a list of all infra roles at a location.",
+                "description": "Returns a list of all infra roles at a location.",
                 "operationId": "InfraRoles_List",
                 "parameters": [
                     {
@@ -95,7 +98,7 @@
     },
     "definitions": {
         "InfraRole": {
-            "description": "Get an infra role description.",
+            "description": "Infra role description.",
             "type": "object",
             "properties": {
                 "properties": {
@@ -120,6 +123,14 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "displayName": {
+                    "description": "Display name for the infra role",
+                    "type": "array"
+                },
+                "restartable": {
+                    "description": "Value indicating whether the infra role can be restarted.",
+                    "type": "boolean"
                 }
             }
         },

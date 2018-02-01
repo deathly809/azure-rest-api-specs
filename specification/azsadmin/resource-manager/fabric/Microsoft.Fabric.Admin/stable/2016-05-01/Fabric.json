@@ -13,11 +13,11 @@
         "/providers/Microsoft.Fabric.Admin/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of support rest operations.": {
+                    "Returns the list of support rest operations.": {
                         "$ref": "./examples/Operations/List.json"
                     }
                 },
-                "description": "Get the list of support rest operations.",
+                "description": "Returns the list of support rest operations.",
                 "tags": [
                     "Fabric"
                 ],

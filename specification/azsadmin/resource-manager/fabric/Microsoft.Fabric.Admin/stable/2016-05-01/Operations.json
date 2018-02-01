@@ -15,7 +15,7 @@
                 "tags": [
                     "ComputeFabricOperations"
                 ],
-                "description": "Get the status of a compute fabric operation.",
+                "description": "Returns the status of a compute fabric operation.",
                 "operationId": "ComputeFabricOperations_Get",
                 "parameters": [
                     {
@@ -55,7 +55,7 @@
                 "tags": [
                     "NetworkFabricOperations"
                 ],
-                "description": "Get the status of a network fabric operation.",
+                "description": "Returns the status of a network fabric operation.",
                 "operationId": "NetworkFabricOperations_Get",
                 "parameters": [
                     {
@@ -92,13 +92,30 @@
         }
     },
     "definitions": {
+        "CodeStatus": {
+            "type": "string",
+            "enum": [
+                "OperationFailed",
+                "ArgumentError",
+                "InvalidOperationState",
+                "OperationBlockedDueToUpdateInProgress"
+            ],
+            "x-ms-enum": {
+                "name": "CodeStatus",
+                "modelAsString": false
+            }
+        },
         "OperationStatus": {
             "description": "Status of the compute operation.",
             "properties": {
-                "properties": {
+                "code": {
                     "description": "The state of the operation.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/ProvisioningStateModel"
+                },
+                "message": {
+                    "description": "Additional information related to the error.",
+                    "type" : "string"
                 }
             }
         },

@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGatewayPools/{edgeGatewayPool}": {
             "get": {
                 "x-ms-examples": {
-                    "Get an edge gateway pool": {
+                    "Returns the requested edge gateway pool.": {
                         "$ref": "./examples/EdgeGatewayPool/Get.json"
                     }
                 },
-                "description": "Get an EdgeGatewayPool.",
                 "tags": [
                     "EdgeGatewayPools"
                 ],
+                "description": "Returns the requested edge gateway pool.",
                 "operationId": "EdgeGatewayPools_Get",
                 "parameters": [
                     {
@@ -48,6 +48,9 @@
                         "schema": {
                             "$ref": "#/definitions/EdgeGatewayPool"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -55,14 +58,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGatewayPools": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of all edge gateway pools": {
+                    "Returns a list of all edge gateway pools at a location.": {
                         "$ref": "./examples/EdgeGatewayPool/List.json"
                     }
                 },
                 "tags": [
                     "EdgeGatewayPools"
                 ],
-                "description": "Get a list of all edge gateway pools at a location.",
+                "description": "Returns a list of all edge gateway pools at a location.",
                 "operationId": "EdgeGatewayPools_List",
                 "parameters": [
                     {

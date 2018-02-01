@@ -55,6 +55,9 @@
                             "$ref": "Operations.json#/definitions/OperationStatus"
                         }
                     },
+                    "404": {
+                        "description": "NOT FOUND"
+                    },
                     "500": {
                         "description": "FAILURE",
                         "schema": {
@@ -103,6 +106,9 @@
                         "schema": {
                             "$ref": "Operations.json#/definitions/OperationStatus"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     },
                     "500": {
                         "description": "FAILURE",
@@ -153,6 +159,9 @@
                             "$ref": "Operations.json#/definitions/OperationStatus"
                         }
                     },
+                    "404": {
+                        "description": "NOT FOUND"
+                    },
                     "500": {
                         "description": "FAILURE",
                         "schema": {
@@ -202,6 +211,9 @@
                             "$ref": "Operations.json#/definitions/OperationStatus"
                         }
                     },
+                    "404": {
+                        "description": "NOT FOUND"
+                    },
                     "500": {
                         "description": "FAILURE",
                         "schema": {
@@ -215,14 +227,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}": {
             "get": {
                 "x-ms-examples": {
-                    "Get an infra role instance": {
+                    "Return the requested infra role instance.": {
                         "$ref": "./examples/InfraRoleInstance/Get.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Get an infra role instance.",
+                "description": "Return the requested infra role instance.",
                 "operationId": "InfraRoleInstances_Get",
                 "parameters": [
                     {
@@ -245,20 +257,23 @@
                             "$ref": "#/definitions/InfraRoleInstance"
                         }
                     }
+                    "404": {
+                        "description": "NOT FOUND"
+                    },
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances": {
             "get": {
                 "x-ms-examples": {
-                    "List all infra role instances": {
+                    "Returns a list of all infra role instances at a location.": {
                         "$ref": "./examples/InfraRoleInstance/Get.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Get a list of all infra role instances at a location.",
+                "description": "Returns a list of all infra role instances at a location.",
                 "operationId": "InfraRoleInstances_List",
                 "parameters": [
                     {

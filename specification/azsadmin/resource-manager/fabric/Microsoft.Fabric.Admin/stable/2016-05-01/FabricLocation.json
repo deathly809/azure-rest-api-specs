@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{fabricLocation}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a fabric location": {
+                    "Returns the requested fabric location.": {
                         "$ref": "./examples/FabricLocation/Get.json"
                     }
                 },
                 "tags": [
                     "FabricLocations"
                 ],
-                "description": "Get a fabric location.",
+                "description": "Returns the requested fabric location.",
                 "operationId": "FabricLocations_Get",
                 "parameters": [
                     {
@@ -48,6 +48,9 @@
                         "schema": {
                             "$ref": "#/definitions/FabricLocation"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -55,14 +58,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations": {
             "get": {
                 "x-ms-examples": {
-                    "List all fabric locations": {
+                    "Returns a list of all fabric locations.": {
                         "$ref": "./examples/FabricLocation/List.json"
                     }
                 },
                 "tags": [
                     "FabricLocations"
                 ],
-                "description": "Get a list of all fabric locations.",
+                "description": "Returns a list of all fabric locations.",
                 "operationId": "FabricLocations_List",
                 "parameters": [
                     {
@@ -93,14 +96,14 @@
             },
             "put": {
                 "x-ms-examples": {
-                    "Create or update a fabric location.": {
+                    "Creates or updates a fabric location.  This will fail if not called during deployment.": {
                         "$ref": "./examples/FabricLocation/Put.json"
                     }
                 },
                 "tags": [
                     "FabricLocations"
                 ],
-                "description": "Create or update a fabric location.",
+                "description": "Creates or updates a fabric location.  This will fail if not called during deployment.",
                 "operationId": "FabricLocations_CreateOrUpdate",
                 "parameters": [
                     {
@@ -122,6 +125,9 @@
                         "schema": {
                             "$ref": "#/definitions/FabricLocation"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 }
             }
