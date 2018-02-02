@@ -13,11 +13,11 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/backups": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of backups from a location.": {
+                    "Returns a list of backups from a location.": {
                         "$ref": "./examples/Backups/List.json"
                     }
                 },
-                "description": "Get a list of backups from a location.",
+                "description": "Returns a list of backups from a location.",
                 "tags": [
                     "Backups"
                 ],
@@ -42,6 +42,9 @@
                         "schema": {
                             "$ref": "#/definitions/BackupList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
@@ -58,11 +61,11 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/backups/{backup}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a backup from a location based on name.": {
+                    "Returns a backup from a location based on name.": {
                         "$ref": "./examples/Backups/Get.json"
                     }
                 },
-                "description": "Get a backup from a location based on name.",
+                "description": "Returns a backup from a location based on name.",
                 "tags": [
                     "Backups"
                 ],
@@ -91,7 +94,7 @@
                             "$ref": "#/definitions/Backup"
                         }
                     },
-                    "400": {
+                    "404": {
                         "description": "NOT FOUND"
                     }
                 },
@@ -144,6 +147,9 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "produces": [
@@ -204,12 +210,12 @@
                     "$ref": "#/definitions/OperationStatus"
                 },
                 "createdDateTime": {
-                    "description": "Creation time of backup.",
+                    "description": "Creation time of the backup.",
                     "type": "string",
                     "format": "date-time"
                 },
                 "timeTakenToCreate": {
-                    "description": "Duration to create backup.",
+                    "description": "Duration to create the backup.",
                     "type": "string"
                 }
             }
@@ -285,7 +291,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

@@ -13,11 +13,11 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of backup locations.": {
+                    "Returns the list of backup locations.": {
                         "$ref": "./examples/BackupLocations/List.json"
                     }
                 },
-                "description": "Get the list of backup locations.",
+                "description": "Returns the list of backup locations.",
                 "tags": [
                     "BackupLocations"
                 ],
@@ -50,56 +50,16 @@
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
                 }
-            },
-            "put": {
-                "x-ms-examples": {
-                    "Create a new backup location.": {
-                        "$ref": "./examples/BackupLocations/Create.json"
-                    }
-                },
-                "description": "Create a new backup location.",
-                "tags": [
-                    "BackupLocations"
-                ],
-                "operationId": "BackupLocations_Update",
-                "parameters": [
-                    {
-                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
-                    },
-                    {
-                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "Backup.json#/parameters/BackupLocationObjectParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/BackupLocation"
-                        }
-                    }
-                },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ]
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}": {
             "get": {
                 "x-ms-examples": {
-                    "Get a specific backup location based on name.": {
+                    "Returns a specific backup location based on name.": {
                         "$ref": "./examples/BackupLocations/Get.json"
                     }
                 },
-                "description": "Get a specific backup location based on name",
+                "description": "Returns a specific backup location based on name.",
                 "tags": [
                     "BackupLocations"
                 ],
@@ -125,7 +85,7 @@
                             "$ref": "#/definitions/BackupLocation"
                         }
                     },
-                    "400": {
+                    "404": {
                         "description": "NOT FOUND"
                     }
                 },
@@ -140,12 +100,12 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/createBackup": {
             "post": {
                 "x-ms-examples": {
-                    "Backup a specific location.": {
+                    "Back up a specific location.": {
                         "$ref": "./examples/BackupLocations/Backup.json"
                     }
                 },
                 "x-ms-long-running-operation": true,
-                "description": "Backup a specific location.",
+                "description": "Back up a specific location.",
                 "tags": [
                     "BackupLocations"
                 ],
@@ -168,13 +128,19 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "type": "string"
+                            "$ref": "Backup.json#/definitions/LongRunningOperationStatus"
                         }
                     },
                     "202": {
-                        "description": "OK",
+                        "description": "ACCEPTED",
                         "schema": {
-                            "type": "string"
+                            "$ref": "Backup.json#/definitions/LongRunningOperationStatus"
+                        }
+                    },
+                    "500": {
+                        "description": "INTERNAL SERVER ERROR",
+                        "schema": {
+                            "$ref": "Backup.json#/definitions/LongRunningOperationStatus"
                         }
                     }
                 },
@@ -184,6 +150,59 @@
                 "consumes": [
                     "application/json"
                 ]
+            },
+            "put": {
+                "x-ms-examples": {
+                    "Create a new backup location.": {
+                        "$ref": "./examples/BackupLocations/Create.json"
+                    }
+                },
+                "description": "Create a new backup location.",
+                "tags": [
+                    "BackupLocations"
+                ],
+                "operationId": "BackupLocations_Update",
+                "parameters": [
+                    {
+                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/BackupLocationParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/BackupLocationObjectParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/BackupLocation"
+                        }
+                    },
+                    "202": {
+                        "description": "ACCEPTED",
+                        "schema": {
+                            "$ref": "#/definitions/BackupLocation"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "x-ms-long-running-operation": true
             }
         }
     },
@@ -236,11 +255,11 @@
                     "type": "string"
                 },
                 "backupFrequencyInMinutes": {
-                    "description": "How often a backup is performed.",
+                    "description": "The interval, in minutes, of backups.",
                     "type": "string"
                 },
                 "availableCapacity": {
-                    "description": "Free space in location.",
+                    "description": "Free space at the backup location.",
                     "type": "string"
                 },
                 "isBackupSchedulerEnabled": {
@@ -290,7 +309,7 @@
             "description": "Backup location object.",
             "required": true,
             "schema": {
-                "$ref": "#/definitions/ExternalStore"
+                "$ref": "#/definitions/BackupLocation"
             },
             "x-ms-parameter-location": "method"
         }
@@ -300,7 +319,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }
