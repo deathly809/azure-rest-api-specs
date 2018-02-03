@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of region's health status.": {
@@ -27,7 +27,7 @@
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/ApiVersionParameter"
@@ -59,7 +59,7 @@
                 ]
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}": {
             "get": {
                 "x-ms-examples": {
                     "Returns the requested health status of a region.": {
@@ -76,10 +76,10 @@
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/ResourceGroupParameter"
                     },
                     {
-                        "$ref": "#/parameters/RegionParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/RegionParameter"
                     },
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/ApiVersionParameter"
@@ -154,16 +154,7 @@
             }
         }
     },
-    "parameters": {
-        "RegionParameter": {
-            "description": "Name of the region",
-            "name": "region",
-            "type": "string",
-            "required": true,
-            "in": "path",
-            "x-ms-parameter-location": "method"
-        }
-    },
+    "parameters": {},
     "securityDefinitions": {
         "azure_auth": {
             "type": "oauth2",

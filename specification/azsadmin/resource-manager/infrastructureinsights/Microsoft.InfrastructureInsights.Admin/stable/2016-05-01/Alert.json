@@ -10,24 +10,27 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/alerts": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/alerts": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the list of all alerts in a given location.": {
+                    "Returns the list of all alerts in a given region.": {
                         "$ref": "./examples/Alert/List.json"
                     }
                 },
                 "tags": [
                     "Alerts"
                 ],
-                "description": "Returns the list of all alerts in a given location.",
+                "description": "Returns the list of all alerts in a given region.",
                 "operationId": "Alerts_List",
                 "parameters": [
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "InfrastructureInsights.json#/parameters/RegionParameter"
                     },
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/ApiVersionParameter"
@@ -59,7 +62,7 @@
                 ]
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/alerts/{alertName}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/alerts/{alertName}": {
             "get": {
                 "x-ms-examples": {
                     "Returns the requested an alert.": {
@@ -76,7 +79,10 @@
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "InfrastructureInsights.json#/parameters/RegionParameter"
                     },
                     {
                         "$ref": "#/parameters/AlertNameParameter"
@@ -119,7 +125,10 @@
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "InfrastructureInsights.json#/parameters/RegionParameter"
                     },
                     {
                         "$ref": "#/parameters/AlertNameParameter"

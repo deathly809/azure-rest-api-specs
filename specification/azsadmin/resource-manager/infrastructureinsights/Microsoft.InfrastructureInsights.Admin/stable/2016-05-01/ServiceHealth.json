@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of each service's health.": {
@@ -27,7 +27,10 @@
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "InfrastructureInsights.json#/parameters/RegionParameter"
                     },
                     {
                         "$ref": "InfrastructureInsights.json#/parameters/ApiVersionParameter"
@@ -59,7 +62,7 @@
                 ]
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{location}/serviceHealths/{serviceHealth}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths/{region}/serviceHealths/{serviceHealth}": {
             "get": {
                 "x-ms-examples": {
                     "Returns the health of the requested service.": {
@@ -76,7 +79,10 @@
                         "$ref": "InfrastructureInsights.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "InfrastructureInsights.json#/parameters/LocationParameter"
+                        "$ref": "InfrastructureInsights.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "InfrastructureInsights.json#/parameters/RegionParameter"
                     },
                     {
                         "$ref": "#/parameters/ServiceHealthParameter"
@@ -108,6 +114,7 @@
     "definitions": {
         "ServiceHealth": {
             "description": "Holds information about a services health.",
+            "type": "object",
             "properties": {
                 "properties": {
                     "description": "Holds information about a services health.",

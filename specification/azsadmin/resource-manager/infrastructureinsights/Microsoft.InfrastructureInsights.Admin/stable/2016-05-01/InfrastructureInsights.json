@@ -282,9 +282,17 @@
             "type": "string",
             "x-ms-parameter-location": "method"
         },
-        "LocationParameter": {
-            "description": "Location name.",
-            "name": "location",
+        "RegionParameter": {
+            "description": "Name of the region",
+            "name": "region",
+            "type": "string",
+            "required": true,
+            "in": "path",
+            "x-ms-parameter-location": "method"
+        },
+        "ResourceGroupParameter": {
+            "description": "resourceGroupName.",
+            "name": "resourceGroupName",
             "in": "path",
             "required": true,
             "type": "string",
