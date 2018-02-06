@@ -19,7 +19,7 @@
                 "tags": [
                     "Quotas"
                 ],
-                "summary": "Gets the quota.",
+                "summary": "Returns the requested quota.",
                 "description": "Get an existing Quota.",
                 "operationId": "Quotas_Get",
                 "consumes": [
@@ -49,22 +49,22 @@
                             "$ref": "#/definitions/Quota"
                         }
                     },
-                    "404" : {
+                    "404": {
                         "description": "NOT FOUND"
                     }
                 }
             },
             "put": {
                 "x-ms-examples": {
-                    "Create a quota.": {
+                    "Creates or Updates a Quota.": {
                         "$ref": "examples/Quotas/Create.json"
                     }
                 },
                 "tags": [
                     "Quotas"
                 ],
-                "description": "Create a new Quota.",
-                "summary": "Create a quota.",
+                "description": "Creates or Updates a Quota.",
+                "summary": "Creates or Updates a Quota.",
                 "operationId": "Quotas_Create",
                 "consumes": [
                     "application/json"
@@ -100,15 +100,15 @@
             },
             "delete": {
                 "x-ms-examples": {
-                    "Delete an existing quota.": {
+                    "Deletes specified quota.": {
                         "$ref": "examples/Quotas/Delete.json"
                     }
                 },
                 "tags": [
                     "Quotas"
                 ],
+                "summary": "Deletes specified quota",
                 "description": "Delete an existing quota.",
-                "summary": "Deletes a quota",
                 "operationId": "Quotas_Delete",
                 "consumes": [
                     "application/json"
@@ -174,7 +174,7 @@
                             "$ref": "#/definitions/QuotaList"
                         }
                     },
-                    "404" : {
+                    "404": {
                         "description": "NOT FOUND"
                     }
                 },
@@ -259,7 +259,7 @@
             "x-ms-parameter-location": "method"
         },
         "NewQuotaParameter": {
-            "description" : "New quota to create.",
+            "description": "New quota to create.",
             "name": "newQuota",
             "in": "body",
             "required": true,
@@ -274,7 +274,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

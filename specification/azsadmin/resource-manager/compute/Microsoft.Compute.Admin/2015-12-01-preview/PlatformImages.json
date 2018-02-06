@@ -12,15 +12,15 @@
         "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage": {
             "get": {
                 "x-ms-examples": {
-                    "Get a list of all platform images.": {
+                    "Returns a list of all platform images.": {
                         "$ref": "examples/PlatformImages/List.json"
                     }
                 },
                 "tags": [
                     "PlatformImages"
                 ],
-                "summary": "Gets all platform images.",
-                "description": "Get a list of all platform images.",
+                "summary": "Returns all platform images.",
+                "description": "Returns a list of all platform images.",
                 "operationId": "PlatformImages_List",
                 "consumes": [],
                 "produces": [
@@ -60,8 +60,8 @@
                 "tags": [
                     "PlatformImages"
                 ],
-                "summary": "Gets a single platform image.",
-                "description": "Get a platform image by name.",
+                "summary": "Returns the requested platform image.",
+                "description": "Returns the requested platform image.",
                 "operationId": "PlatformImages_Get",
                 "consumes": [
                     "application/json"
@@ -106,15 +106,15 @@
             },
             "put": {
                 "x-ms-examples": {
-                    "Create a new platform image.": {
+                    "Creates a new platform image.": {
                         "$ref": "examples/PlatformImages/Create.json"
                     }
                 },
                 "tags": [
                     "PlatformImages"
                 ],
-                "description": "Create a new platform image.",
-                "summary": "Create a platform image.",
+                "description": "Creates a new platform image.",
+                "summary": "Creates a platform image.",
                 "operationId": "PlatformImages_Create",
                 "consumes": [
                     "application/json"
@@ -301,7 +301,7 @@
             "type": "object",
             "properties": {
                 "billingPartNumber": {
-                    "description": "Something about billing?.",
+                    "description": "The part number is used to bill for software costs.",
                     "type": "string"
                 }
             }
@@ -336,7 +336,7 @@
             "x-ms-parameter-location": "method"
         },
         "SkuParameter": {
-            "description": "Name of the sku.",
+            "description": "Name of the SKU.",
             "name": "sku",
             "in": "path",
             "required": true,
@@ -359,7 +359,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }
