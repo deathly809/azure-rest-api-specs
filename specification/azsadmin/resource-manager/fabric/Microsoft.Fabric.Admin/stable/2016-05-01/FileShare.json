@@ -16,7 +16,7 @@
         "application/json"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/fileShares/{fileShare}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/fileShares/{fileShare}": {
             "get": {
                 "x-ms-examples": {
                     "Returns the requested fabric file share.": {
@@ -31,6 +31,9 @@
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -55,7 +58,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/fileShares": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/fileShares": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of all fabric file shares at a certain location.": {
@@ -75,6 +78,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -90,6 +96,9 @@
                         "schema": {
                             "$ref": "#/definitions/FileShareList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-odata": "#/definitions/FileShare"

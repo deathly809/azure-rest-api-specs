@@ -16,7 +16,7 @@
         "application/json"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/Shutdown": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/Shutdown": {
             "post": {
                 "x-ms-examples": {
                     "Shutdown a scale unit node": {
@@ -33,6 +33,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -44,31 +47,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/PowerOff": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/PowerOff": {
             "post": {
                 "x-ms-examples": {
                     "Power off a scale unit node": {
@@ -85,6 +76,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -96,31 +90,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/PowerOn": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/PowerOn": {
             "post": {
                 "x-ms-examples": {
                     "Power on a scale unit node": {
@@ -137,6 +119,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -148,28 +133,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/StartMaintenanceMode": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/StartMaintenanceMode": {
             "post": {
                 "x-ms-examples": {
                     "Start maintenance mode on a scale unit node": {
@@ -186,6 +162,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -197,31 +176,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/StopMaintenanceMode": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/StopMaintenanceMode": {
             "post": {
                 "x-ms-examples": {
                     "Stop maintenance mode on a scale unit node": {
@@ -238,6 +205,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -249,31 +219,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/Repair": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/Repair": {
             "post": {
                 "x-ms-examples": {
                     "Repairs a node of the cluster.": {
@@ -290,6 +248,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -304,31 +265,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}": {
             "get": {
                 "x-ms-examples": {
                     "Return the requested scale unit node.": {
@@ -343,6 +292,9 @@
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -367,7 +319,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes": {
             "get": {
                 "x-ms-examples": {
                     "List all scale unit node": {
@@ -382,6 +334,9 @@
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/LocationParameter"

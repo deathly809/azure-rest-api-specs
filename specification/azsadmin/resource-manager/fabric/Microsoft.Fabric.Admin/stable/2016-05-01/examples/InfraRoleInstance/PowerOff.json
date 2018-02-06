@@ -18,7 +18,7 @@
         },
         "500": {
             "provisioningState": {
-                "provisioningState": "Working"
+                "provisioningState": "Failure"
             }
         }
     }

@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/storageSubSystems/{storageSubSystem}/storagePools/{storagePool}/volumes/{volume}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/storageSubSystems/{storageSubSystem}/storagePools/{storagePool}/volumes/{volume}": {
       "get": {
         "x-ms-examples": {
           "Return the requested a storage volume.": {
@@ -31,6 +31,9 @@
         "parameters": [
           {
             "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+              "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
           },
           {
             "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -61,7 +64,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/storageSubSystems/{storageSubSystem}/storagePools/{storagePool}/volumes": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/storageSubSystems/{storageSubSystem}/storagePools/{storagePool}/volumes": {
       "get": {
         "x-ms-examples": {
           "Returns a list of all storage volumes at a location.": {
@@ -76,6 +79,9 @@
         "parameters": [
           {
             "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+              "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
           },
           {
             "$ref": "Fabric.json#/parameters/LocationParameter"

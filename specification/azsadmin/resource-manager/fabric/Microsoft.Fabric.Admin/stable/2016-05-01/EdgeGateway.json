@@ -16,7 +16,7 @@
     "application/json"
   ],
   "paths": {
-    "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGateways/{edgeGateway}": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGateways/{edgeGateway}": {
       "get": {
         "x-ms-examples": {
           "Returns the requested edge gateway.": {
@@ -31,6 +31,9 @@
         "parameters": [
           {
             "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
           },
           {
             "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -55,7 +58,7 @@
         }
       }
     },
-    "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGateways": {
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGateways": {
       "get": {
         "x-ms-examples": {
           "Returns the list of all edge gateways at a certain location.": {
@@ -70,6 +73,9 @@
         "parameters": [
           {
             "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+          },
+          {
+            "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
           },
           {
             "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -87,6 +93,9 @@
             "schema": {
               "$ref": "#/definitions/EdgeGatewayList"
             }
+          },
+          "404": {
+            "description": "NOT FOUND"
           }
         },
         "x-ms-pageable": {

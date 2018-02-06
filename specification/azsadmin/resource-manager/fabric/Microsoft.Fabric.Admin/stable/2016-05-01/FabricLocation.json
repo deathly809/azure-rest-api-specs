@@ -16,7 +16,7 @@
         "application/json"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{fabricLocation}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{fabricLocation}": {
             "get": {
                 "x-ms-examples": {
                     "Returns the requested fabric location.": {
@@ -33,7 +33,7 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "Fabric.json#/parameters/LocationParameter"
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "#/parameters/FabricLocationParameter"
@@ -55,7 +55,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of all fabric locations.": {
@@ -72,7 +72,7 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "Fabric.json#/parameters/LocationParameter"
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/ApiVersionParameter"
@@ -104,13 +104,13 @@
                     "FabricLocations"
                 ],
                 "description": "Creates or updates a fabric location.  This will fail if not called during deployment.",
-                "operationId": "FabricLocations_CreateOrUpdate",
+                "operationId": "FabricLocations_Create",
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
-                        "$ref": "Fabric.json#/parameters/LocationParameter"
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/ApiVersionParameter"

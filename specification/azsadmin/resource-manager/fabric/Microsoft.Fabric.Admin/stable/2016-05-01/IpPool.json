@@ -16,7 +16,7 @@
         "application/json"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools/{ipPool}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools/{ipPool}": {
             "get": {
                 "x-ms-examples": {
                     "Return the requested Ip pool.": {
@@ -31,6 +31,9 @@
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -70,6 +73,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -86,20 +92,20 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
+                            "$ref": "#/definitions/IpPool"
                         }
                     },
                     "202": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of all ip pools at a certain location.": {
@@ -114,6 +120,9 @@
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/LocationParameter"

@@ -16,7 +16,7 @@
         "application/json"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/PowerOff": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/PowerOff": {
             "post": {
                 "x-ms-examples": {
                     "Power off an infra role instance": {
@@ -33,6 +33,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -44,31 +47,16 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
-                    },
-                    "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/PowerOn": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/PowerOn": {
             "post": {
                 "x-ms-examples": {
                     "Power on an infra role instance": {
@@ -85,6 +73,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -96,31 +87,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/Shutdown": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/Shutdown": {
             "post": {
                 "x-ms-examples": {
                     "Shutdown an infra role instance": {
@@ -137,6 +116,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -148,31 +130,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/Reboot": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/Reboot": {
             "post": {
                 "x-ms-examples": {
                     "Reboot an infra role instance": {
@@ -189,6 +159,9 @@
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
                     },
                     {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
                     },
                     {
@@ -200,31 +173,19 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
-                    },
-                    "500": {
-                        "description": "FAILURE",
-                        "schema": {
-                            "$ref": "Operations.json#/definitions/OperationStatus"
-                        }
                     }
                 },
                 "x-ms-long-running-operation": true
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}": {
             "get": {
                 "x-ms-examples": {
                     "Return the requested infra role instance.": {
@@ -239,6 +200,9 @@
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -256,14 +220,14 @@
                         "schema": {
                             "$ref": "#/definitions/InfraRoleInstance"
                         }
-                    }
+                    },
                     "404": {
                         "description": "NOT FOUND"
-                    },
+                    }
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/resourceGroups/System.{location}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of all infra role instances at a location.": {
@@ -278,6 +242,9 @@
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
                     },
                     {
                         "$ref": "Fabric.json#/parameters/LocationParameter"
@@ -295,6 +262,9 @@
                         "schema": {
                             "$ref": "#/definitions/InfraRoleInstanceList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-pageable": {

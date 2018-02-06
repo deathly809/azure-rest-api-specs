@@ -75,15 +75,6 @@
             },
             "x-ms-azure-resource": true
         },
-        "OperationStatusLocation": {
-            "description": "URI where you can poll for status of operation.",
-            "properties": {
-                "location": {
-                    "description": "URI where you can poll for status of operation.",
-                    "type": "string"
-                }
-            }
-        },
         "Operation": {
             "description": "Describes the supported rest operation.",
             "properties": {
@@ -154,6 +145,14 @@
         "LocationParameter": {
             "description": "Location of the resource.",
             "name": "location",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "x-ms-parameter-location": "method"
+        },
+        "ResourceGroupParameter": {
+            "description": "Name of the resource group.",
+            "name": "resourceGroupName",
             "in": "path",
             "required": true,
             "type": "string",
