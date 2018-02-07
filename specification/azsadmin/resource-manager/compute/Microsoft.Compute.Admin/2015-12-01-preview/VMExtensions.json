@@ -270,7 +270,7 @@
             "description": "List of virtual machine extensions.",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/VMExtension"
+                "$ref": "#/definitions/VMExtensionProperties"
             }
         }
     },

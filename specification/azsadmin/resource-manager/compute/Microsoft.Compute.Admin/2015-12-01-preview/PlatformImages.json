@@ -322,7 +322,7 @@
             "description": "List of platform images.",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/PlatformImage"
+                "$ref": "#/definitions/PlatformImageProperties"
             }
         }
     },

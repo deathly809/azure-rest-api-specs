@@ -9,7 +9,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quota}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quotaName}": {
             "get": {
                 "x-ms-examples": {
                     "Get an existing Quota.": {
@@ -252,7 +252,7 @@
     "parameters": {
         "QuotaParameter": {
             "description": "Name of the quota.",
-            "name": "quota",
+            "name": "quotaName",
             "type": "string",
             "required": true,
             "in": "path",
