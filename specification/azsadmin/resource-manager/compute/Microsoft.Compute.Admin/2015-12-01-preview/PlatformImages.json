@@ -324,6 +324,17 @@
             "items": {
                 "$ref": "#/definitions/PlatformImage"
             }
+        },
+        "PlatformImageParameters": {
+            "description": "Parameters used to create a new platform image.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Platform image properties.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/PlatformImageProperties"
+                }
+            }
         }
     },
     "parameters": {
@@ -349,7 +360,7 @@
             "in": "body",
             "required": true,
             "schema": {
-                "$ref": "#/definitions/PlatformImageProperties"
+                "$ref": "#/definitions/PlatformImageParameters"
             },
             "x-ms-parameter-location": "method"
         }

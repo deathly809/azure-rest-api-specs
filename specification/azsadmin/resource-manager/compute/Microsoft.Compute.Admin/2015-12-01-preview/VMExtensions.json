@@ -98,7 +98,7 @@
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "#/parameters/NewVMExtensionParameter"
+                        "$ref": "#/parameters/VMExtensionParameter"
                     }
                 ],
                 "responses": {
@@ -272,16 +272,27 @@
             "items": {
                 "$ref": "#/definitions/VMExtension"
             }
+        },
+        "VMExtensionParameters": {
+            "description": "Parameters used to create a new Virtual Machine Extension Image.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Properties of a Virtual Machine Extension Image.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/VMExtensionProperties"
+                }
+            }
         }
     },
     "parameters": {
-        "NewVMExtensionParameter": {
+        "VMExtensionParameter": {
             "description": "Virtual Machine Extension Image creation properties.",
             "name": "extension",
             "in": "body",
             "required": true,
             "schema": {
-                "$ref": "#/definitions/VMExtensionProperties"
+                "$ref": "#/definitions/VMExtensionParameters"
             },
             "x-ms-parameter-location": "method"
         },
