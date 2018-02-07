@@ -65,7 +65,7 @@
                 ],
                 "description": "Creates or Updates a Quota.",
                 "summary": "Creates or Updates a Quota.",
-                "operationId": "Quotas_Create",
+                "operationId": "Quotas_CreateOrUpdate",
                 "consumes": [
                     "application/json"
                 ],
