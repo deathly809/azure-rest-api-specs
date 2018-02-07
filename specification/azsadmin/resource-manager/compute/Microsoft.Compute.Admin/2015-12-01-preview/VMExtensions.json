@@ -98,7 +98,7 @@
                         "$ref": "Compute.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "#/parameters/VMExtensionParameter"
+                        "$ref": "#/parameters/NewVMExtensionParameter"
                     }
                 ],
                 "responses": {
@@ -270,18 +270,18 @@
             "description": "List of virtual machine extensions.",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/VMExtensionProperties"
+                "$ref": "#/definitions/VMExtension"
             }
         }
     },
     "parameters": {
-        "VMExtensionParameter": {
+        "NewVMExtensionParameter": {
             "description": "Virtual Machine Extension Image creation properties.",
             "name": "extension",
             "in": "body",
             "required": true,
             "schema": {
-                "$ref": "#/definitions/VMExtension"
+                "$ref": "#/definitions/VMExtensionProperties"
             },
             "x-ms-parameter-location": "method"
         },
