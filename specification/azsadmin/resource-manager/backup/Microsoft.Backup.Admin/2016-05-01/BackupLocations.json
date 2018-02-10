@@ -95,6 +95,59 @@
                 "consumes": [
                     "application/json"
                 ]
+            },
+            "put": {
+                "x-ms-examples": {
+                    "Create a new backup location.": {
+                        "$ref": "./examples/BackupLocations/Create.json"
+                    }
+                },
+                "description": "Create a new backup location.",
+                "tags": [
+                    "BackupLocations"
+                ],
+                "operationId": "BackupLocations_Update",
+                "parameters": [
+                    {
+                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/BackupLocationParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "Backup.json#/parameters/BackupLocationObjectParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/BackupLocation"
+                        }
+                    },
+                    "202": {
+                        "description": "ACCEPTED",
+                        "schema": {
+                            "$ref": "#/definitions/BackupLocation"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "x-ms-long-running-operation": true
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/createBackup": {
@@ -150,59 +203,6 @@
                 "consumes": [
                     "application/json"
                 ]
-            },
-            "put": {
-                "x-ms-examples": {
-                    "Create a new backup location.": {
-                        "$ref": "./examples/BackupLocations/Create.json"
-                    }
-                },
-                "description": "Create a new backup location.",
-                "tags": [
-                    "BackupLocations"
-                ],
-                "operationId": "BackupLocations_Update",
-                "parameters": [
-                    {
-                        "$ref": "Backup.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "Backup.json#/parameters/ResourceGroupParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/BackupLocationParameter"
-                    },
-                    {
-                        "$ref": "Backup.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "Backup.json#/parameters/BackupLocationObjectParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK",
-                        "schema": {
-                            "$ref": "#/definitions/BackupLocation"
-                        }
-                    },
-                    "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "$ref": "#/definitions/BackupLocation"
-                        }
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
-                    }
-                },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
-                "x-ms-long-running-operation": true
             }
         }
     },
