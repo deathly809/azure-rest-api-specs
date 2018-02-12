@@ -47,7 +47,6 @@ input-file:
     - "Microsoft.Fabric.Admin/stable/2016-05-01/Volume.json"
     - "Microsoft.Fabric.Admin/stable/2016-05-01/LogicalSubnet.json"
     - "Microsoft.Fabric.Admin/stable/2016-05-01/MacAddressPool.json"
-    - "Microsoft.Fabric.Admin/stable/2016-05-01/Operations.json"
     - "Microsoft.Fabric.Admin/stable/2016-05-01/ScaleUnit.json"
     - "Microsoft.Fabric.Admin/stable/2016-05-01/ScaleUnitNode.json"
     - "Microsoft.Fabric.Admin/stable/2016-05-01/SlbMuxInstance.json"
