@@ -9,6 +9,12 @@
     "schemes": [
         "https"
     ],
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
     "paths": {
         "/providers/Microsoft.Fabric.Admin/operations": {
             "get": {
@@ -121,6 +127,27 @@
                 },
                 "nextLink": {
                     "description": "URI to next page of operations.",
+                    "type": "string"
+                }
+            }
+        },
+        "ProvisioningState": {
+            "description": "Provisioning status of the resource.",
+            "type": "object",
+            "properties": {
+                "properties": {
+                    "description": "Provisioning status of the resource.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/ProvisioningStateProperties"
+                }
+            }
+        },
+        "ProvisioningStateProperties": {
+            "description": "Provisioning status of the resource.",
+            "type": "object",
+            "properties": {
+                "provisioningState": {
+                    "description": "Provisioning status of the resource.",
                     "type": "string"
                 }
             }

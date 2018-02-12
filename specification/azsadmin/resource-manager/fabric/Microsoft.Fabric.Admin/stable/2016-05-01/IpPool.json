@@ -67,7 +67,7 @@
                     "IpPools"
                 ],
                 "description": "Create an Ip pool.  Once created an Ip pool cannot be deleted.",
-                "operationId": "IpPools_Create",
+                "operationId": "IpPools_CreateOrUpdate",
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
@@ -92,14 +92,11 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/IpPool"
+                            "$ref": "Fabric.json#/definitions/ProvisioningState"
                         }
                     },
                     "202": {
                         "description": "OK"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true

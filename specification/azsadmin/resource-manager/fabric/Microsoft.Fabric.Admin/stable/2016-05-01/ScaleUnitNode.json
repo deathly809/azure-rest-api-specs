@@ -51,9 +51,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -94,9 +91,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -137,9 +131,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -180,9 +171,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -223,9 +211,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -260,7 +245,7 @@
                         "$ref": "Fabric.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "Fabric.json#/parameters/BareMetalNodeParameter"
+                        "$ref": "#/parameters/BareMetalNodeParameter"
                     }
                 ],
                 "responses": {
@@ -269,9 +254,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -369,6 +351,7 @@
     "definitions": {
         "BareMetalNodeDescription": {
             "description": "Description of a bare metal node used for ScaleOut operation on a cluster.",
+            "type" : "object",
             "properties": {
                 "bmcIpv4Address": {
                     "x-ms-client-name": "BMCIPv4Address",

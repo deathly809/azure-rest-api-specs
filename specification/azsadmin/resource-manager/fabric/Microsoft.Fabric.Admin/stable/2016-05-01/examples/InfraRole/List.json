@@ -2,6 +2,7 @@
     "parameters": {
         "api-version": "2016-05-01",
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "resourceGroupName": "System.local",
         "location": "local"
     },
     "responses": {
@@ -9,559 +10,666 @@
             "body": {
                 "value": [
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Active Directory Federation Services",
-                        "name": "Active Directory Federation Services",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/ActiveDirectoryCertificateServices",
+                        "name": "ActiveDirectoryCertificateServices",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ADFS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-CA01"
+                            ],
+                            "displayName": "Certificate management",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Authorization service (Administrator)",
-                        "name": "Authorization service (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/ActiveDirectoryDomainServices",
+                        "name": "ActiveDirectoryDomainServices",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-DC01"
+                            ],
+                            "displayName": "Directory management",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Authorization service (User)",
-                        "name": "Authorization service (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/ActiveDirectoryFederationServices",
+                        "name": "ActiveDirectoryFederationServices",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ADFS01"
+                            ],
+                            "displayName": "Active Directory Federation Services",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Azure bridge",
-                        "name": "Azure bridge",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/ApplicationGateway",
+                        "name": "ApplicationGateway",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Partition request broker (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Azure Resource Manager (Administrator)",
-                        "name": "Azure Resource Manager (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/AuthorizationServiceAdmin",
+                        "name": "AuthorizationServiceAdmin",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Authorization service (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Azure Resource Manager (User)",
-                        "name": "Azure Resource Manager (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/AuthorizationServiceUser",
+                        "name": "AuthorizationServiceUser",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
+                            ],
+                            "displayName": "Authorization service (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Backup controller",
-                        "name": "Backup controller",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/AzureBridge",
+                        "name": "AzureBridge",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ERCS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Azure bridge",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Backup Restore Resource Provider",
-                        "name": "Backup Restore Resource Provider",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/AzureConsistentStorageRing",
+                        "name": "AzureConsistentStorageRing",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ACS01"
+                            ],
+                            "displayName": "Storage services",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Capacity",
-                        "name": "Capacity",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/AzureResourceManagerAdmin",
+                        "name": "AzureResourceManagerAdmin",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Azure Resource Manager (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Certificate management",
-                        "name": "Certificate management",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/AzureResourceManagerUser",
+                        "name": "AzureResourceManagerUser",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-CA01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
+                            ],
+                            "displayName": "Azure Resource Manager (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Compute",
-                        "name": "Compute",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/BackupController",
+                        "name": "BackupController",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ERCS01"
+                            ],
+                            "displayName": "Backup controller",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Compute controller",
-                        "name": "Compute controller",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/BackupRestoreResourceProvider",
+                        "name": "BackupRestoreResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Infrastructure backup",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Directory management",
-                        "name": "Directory management",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/ComputeController",
+                        "name": "ComputeController",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-DC01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Compute controller",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Edge gateway",
-                        "name": "Edge gateway",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/ComputeResourceProvider",
+                        "name": "ComputeResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Gwy01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Compute",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Gallery service (Administrator)",
-                        "name": "Gallery service (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/EnterpriseCloudEngine",
+                        "name": "EnterpriseCloudEngine",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ERCS01"
+                            ],
+                            "displayName": "Infrastructure deployment",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Gallery service (User)",
-                        "name": "Gallery service (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/FabricControllerRing",
+                        "name": "FabricControllerRing",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Infrastructure management controller",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Health controller",
-                        "name": "Health controller",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/FabricResourceProvider",
+                        "name": "FabricResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Capacity",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Infrastructure deployment",
-                        "name": "Infrastructure deployment",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/GalleryServiceAdmin",
+                        "name": "GalleryServiceAdmin",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ERCS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Gallery service (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Infrastructure management controller",
-                        "name": "Infrastructure management controller",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/GalleryServiceUser",
+                        "name": "GalleryServiceUser",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
+                            ],
+                            "displayName": "Gallery service (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Infrastructure role controller",
-                        "name": "Infrastructure role controller",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/HealthMonitoring",
+                        "name": "HealthMonitoring",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Health controller",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Insights service (Administrator)",
-                        "name": "Insights service (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/HealthResourceProvider",
+                        "name": "HealthResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Region Management",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Insights service (User)",
-                        "name": "Insights service (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/InsightsServiceAdmin",
+                        "name": "InsightsServiceAdmin",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Insights service (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Internal data store",
-                        "name": "Internal data store",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/InsightsServiceUser",
+                        "name": "InsightsServiceUser",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Sql01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
+                            ],
+                            "displayName": "Insights service (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Key Vault",
-                        "name": "Key Vault",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/KeyVaultControlPlane",
+                        "name": "KeyVaultControlPlane",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Key Vault controller (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Key Vault controller (Administrator)",
-                        "name": "Key Vault controller (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/KeyVaultDataPlane",
+                        "name": "KeyVaultDataPlane",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Key Vault service (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Key Vault controller (User)",
-                        "name": "Key Vault controller (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/KeyVaultInternalControlPlane",
+                        "name": "KeyVaultInternalControlPlane",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Key Vault controller (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Key Vault name manager",
-                        "name": "Key Vault name manager",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/KeyVaultInternalDataPlane",
+                        "name": "KeyVaultInternalDataPlane",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Key Vault service (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Key Vault service (Administrator)",
-                        "name": "Key Vault service (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/KeyVaultNamingService",
+                        "name": "KeyVaultNamingService",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Key Vault name manager",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Key Vault service (User)",
-                        "name": "Key Vault service (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/KeyVaultResourceProvider",
+                        "name": "KeyVaultResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Key Vault",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Load balancer multiplexer",
-                        "name": "Load balancer multiplexer",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/MicrosoftSQLServer",
+                        "name": "MicrosoftSQLServer",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-SLB01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Sql01"
+                            ],
+                            "displayName": "Internal data store",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Network",
-                        "name": "Network",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/NetworkControllerRing",
+                        "name": "NetworkControllerRing",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-NC01"
+                            ],
+                            "displayName": "Network controller",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Network controller",
-                        "name": "Network controller",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/NetworkResourceProvider",
+                        "name": "NetworkResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-NC01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Network",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Partition request broker (Administrator)",
-                        "name": "Partition request broker (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/NonPrivilegedApplicationGateway",
+                        "name": "NonPrivilegedApplicationGateway",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Partition request broker (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Partition request broker (User)",
-                        "name": "Partition request broker (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/PortalAdmin",
+                        "name": "PortalAdmin",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Portal (Administrator)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Portal (Administrator)",
-                        "name": "Portal (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/PortalUser",
+                        "name": "PortalUser",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
+                            ],
+                            "displayName": "Portal (User)",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Portal (User)",
-                        "name": "Portal (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/RASGateway",
+                        "name": "RASGateway",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Gwy01"
+                            ],
+                            "displayName": "Edge gateway",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Privileged endpoint",
-                        "name": "Privileged endpoint",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/SeedRing",
+                        "name": "SeedRing",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ERCS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ERCS01"
+                            ],
+                            "displayName": "Privileged endpoint",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Region Management",
-                        "name": "Region Management",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/ServicesController",
+                        "name": "ServicesController",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Infrastructure role controller",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Storage",
-                        "name": "Storage",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/SLBMultiplexer",
+                        "name": "SLBMultiplexer",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-SLB01"
+                            ],
+                            "displayName": "Load balancer multiplexer",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Storage controller",
-                        "name": "Storage controller",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/StorageController",
+                        "name": "StorageController",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Storage controller",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Storage services",
-                        "name": "Storage services",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/StorageResourceProvider",
+                        "name": "StorageResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ACS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Storage",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Subscriptions service",
-                        "name": "Subscriptions service",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/SubscriptionsServices",
+                        "name": "SubscriptionsServices",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Subscriptions service",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Updates",
-                        "name": "Updates",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/UpdateResourceProvider",
+                        "name": "UpdateResourceProvider",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Updates",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Usage Bridge host",
-                        "name": "Usage Bridge host",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/UsageBridge",
+                        "name": "UsageBridge",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Usage bridge",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Usage service (Administrator)",
-                        "name": "Usage service (Administrator)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/UsageBridgeHost",
+                        "name": "UsageBridgeHost",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01"
+                            ],
+                            "displayName": "Usage Bridge host",
+                            "restartable": false
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/Usage service (User)",
-                        "name": "Usage service (User)",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/UsageServiceAdmin",
+                        "name": "UsageServiceAdmin",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
                         "location": "local",
                         "tags": {},
                         "properties": {
                             "instances": [
-                                "subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
-                            ]
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01"
+                            ],
+                            "displayName": "Usage service (Administrator)",
+                            "restartable": false
+                        }
+                    },
+                    {
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoles/UsageServiceUser",
+                        "name": "UsageServiceUser",
+                        "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoles",
+                        "location": "local",
+                        "tags": {},
+                        "properties": {
+                            "instances": [
+                                "subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/system.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01"
+                            ],
+                            "displayName": "Usage service (User)",
+                            "restartable": false
                         }
                     }
                 ]
             }
-        }
+        },
+        "404": {}
     }
 }

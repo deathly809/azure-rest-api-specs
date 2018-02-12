@@ -2,13 +2,14 @@
     "parameters": {
         "api-version": "2016-05-01",
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "resourceGroupName": "System.local",
         "location": "local",
         "edgeGatewayPool": "default"
     },
     "responses": {
         "200": {
             "body": {
-                "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/edgeGatewayPools/default",
+                "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/edgeGatewayPools/default",
                 "name": "default",
                 "type": "Microsoft.Fabric.Admin/fabricLocations/edgeGatewayPools",
                 "location": "local",
@@ -24,6 +25,7 @@
                     ]
                 }
             }
-        }
+        },
+        "404": {}
     }
 }

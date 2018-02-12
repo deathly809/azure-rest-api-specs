@@ -54,9 +54,6 @@
           },
           "202": {
             "description": "ACCEPTED"
-          },
-          "404": {
-            "description": "NOT FOUND"
           }
         },
         "x-ms-long-running-operation": true
@@ -236,6 +233,10 @@
         "totalCapacity": {
           "description": "Capacity information for the cluster.",
           "$ref": "#/definitions/ScaleUnitCapacity"
+        },
+        "isMultiNode": {
+          "description": "Denotes if more than one node in cluster.",
+          "type": "boolean"
         }
       }
     },

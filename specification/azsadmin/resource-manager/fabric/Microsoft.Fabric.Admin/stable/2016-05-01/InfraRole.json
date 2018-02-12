@@ -135,7 +135,7 @@
                 },
                 "displayName": {
                     "description": "Display name for the infra role",
-                    "type": "array"
+                    "type": "string"
                 },
                 "restartable": {
                     "description": "Value indicating whether the infra role can be restarted.",

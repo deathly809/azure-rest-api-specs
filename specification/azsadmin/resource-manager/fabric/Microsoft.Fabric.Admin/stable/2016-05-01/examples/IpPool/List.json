@@ -2,6 +2,7 @@
     "parameters": {
         "api-version": "2016-05-01",
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "resourceGroupName" : "System.local",
         "location": "local"
     },
     "responses": {
@@ -9,36 +10,8 @@
             "body": {
                 "value": [
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/04938f7f-797b-4dd2-80c6-077542be121a",
-                        "name": "04938f7f-797b-4dd2-80c6-077542be121a",
-                        "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
-                        "location": "local",
-                        "tags": {},
-                        "properties": {
-                            "startIpAddress": "192.168.102.1",
-                            "endIpAddress": "192.168.102.255",
-                            "numberOfIpAddresses": 255,
-                            "numberOfAllocatedIpAddresses": 31,
-                            "numberOfIpAddressesInTransition": 0
-                        }
-                    },
-                    {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/3019a64c-9886-4e94-ba6e-2241da0472eb",
-                        "name": "3019a64c-9886-4e94-ba6e-2241da0472eb",
-                        "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
-                        "location": "local",
-                        "tags": {},
-                        "properties": {
-                            "startIpAddress": "192.168.200.65",
-                            "endIpAddress": "192.168.200.111",
-                            "numberOfIpAddresses": 47,
-                            "numberOfAllocatedIpAddresses": 0,
-                            "numberOfIpAddressesInTransition": 0
-                        }
-                    },
-                    {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/8516e3aa-0aea-4503-88d7-335ebd1f1a46",
-                        "name": "8516e3aa-0aea-4503-88d7-335ebd1f1a46",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/13ff1d24-17e5-4a95-a4b2-f3ec7ceaafb1",
+                        "name": "13ff1d24-17e5-4a95-a4b2-f3ec7ceaafb1",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
                         "location": "local",
                         "tags": {},
@@ -46,13 +19,13 @@
                             "startIpAddress": "192.168.200.1",
                             "endIpAddress": "192.168.200.62",
                             "numberOfIpAddresses": 62,
-                            "numberOfAllocatedIpAddresses": 1,
+                            "numberOfAllocatedIpAddresses": 3,
                             "numberOfIpAddressesInTransition": 0
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/90e70aa4-663f-44e5-a7c5-d77d9f06f809",
-                        "name": "90e70aa4-663f-44e5-a7c5-d77d9f06f809",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/7d78b1d4-059d-4956-bd08-a174ef5db6ae",
+                        "name": "7d78b1d4-059d-4956-bd08-a174ef5db6ae",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
                         "location": "local",
                         "tags": {},
@@ -65,8 +38,36 @@
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/981fec89-67d6-453e-bf21-5ff11562564f",
-                        "name": "981fec89-67d6-453e-bf21-5ff11562564f",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/acd04be9-69fe-4713-99d3-99046f971f73",
+                        "name": "acd04be9-69fe-4713-99d3-99046f971f73",
+                        "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
+                        "location": "local",
+                        "tags": {},
+                        "properties": {
+                            "startIpAddress": "192.168.200.65",
+                            "endIpAddress": "192.168.200.111",
+                            "numberOfIpAddresses": 47,
+                            "numberOfAllocatedIpAddresses": 0,
+                            "numberOfIpAddressesInTransition": 0
+                        }
+                    },
+                    {
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/cace184f-12a4-43a7-ab22-9796cda85c56",
+                        "name": "cace184f-12a4-43a7-ab22-9796cda85c56",
+                        "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
+                        "location": "local",
+                        "tags": {},
+                        "properties": {
+                            "startIpAddress": "192.168.200.112",
+                            "endIpAddress": "192.168.200.127",
+                            "numberOfIpAddresses": 16,
+                            "numberOfAllocatedIpAddresses": 1,
+                            "numberOfIpAddressesInTransition": 0
+                        }
+                    },
+                    {
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/cf9ccfbf-d902-44ef-914c-3e59c2cc5215",
+                        "name": "cf9ccfbf-d902-44ef-914c-3e59c2cc5215",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
                         "location": "local",
                         "tags": {},
@@ -79,21 +80,64 @@
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/f5c138af-2f47-4c22-81fe-c675a5d2c3a2",
-                        "name": "f5c138af-2f47-4c22-81fe-c675a5d2c3a2",
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/e7eb5792-8240-4210-8f25-73cf2d0be74a",
+                        "name": "e7eb5792-8240-4210-8f25-73cf2d0be74a",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
                         "location": "local",
                         "tags": {},
                         "properties": {
-                            "startIpAddress": "192.168.200.112",
-                            "endIpAddress": "192.168.200.127",
-                            "numberOfIpAddresses": 16,
-                            "numberOfAllocatedIpAddresses": 1,
+                            "startIpAddress": "192.168.102.1",
+                            "endIpAddress": "192.168.102.255",
+                            "numberOfIpAddresses": 255,
+                            "numberOfAllocatedIpAddresses": 33,
+                            "numberOfIpAddressesInTransition": 0
+                        }
+                    },
+                    {
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/TestIpPool199198",
+                        "name": "TestIpPool199198",
+                        "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
+                        "location": "local",
+                        "tags": {},
+                        "properties": {
+                            "startIpAddress": "192.198.9.1",
+                            "endIpAddress": "192.198.9.255",
+                            "numberOfIpAddresses": 255,
+                            "numberOfAllocatedIpAddresses": 0,
+                            "numberOfIpAddressesInTransition": 0
+                        }
+                    },
+                    {
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/TestIpPool1992",
+                        "name": "TestIpPool1992",
+                        "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
+                        "location": "local",
+                        "tags": {},
+                        "properties": {
+                            "startIpAddress": "192.2.9.1",
+                            "endIpAddress": "192.2.9.255",
+                            "numberOfIpAddresses": 255,
+                            "numberOfAllocatedIpAddresses": 0,
+                            "numberOfIpAddressesInTransition": 0
+                        }
+                    },
+                    {
+                        "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/ipPools/TestIpPool1993",
+                        "name": "TestIpPool1993",
+                        "type": "Microsoft.Fabric.Admin/fabricLocations/ipPools",
+                        "location": "local",
+                        "tags": {},
+                        "properties": {
+                            "startIpAddress": "192.3.9.1",
+                            "endIpAddress": "192.3.9.255",
+                            "numberOfIpAddresses": 255,
+                            "numberOfAllocatedIpAddresses": 0,
                             "numberOfIpAddressesInTransition": 0
                         }
                     }
                 ]
             }
-        }
+        },
+        "404": {}
     }
 }

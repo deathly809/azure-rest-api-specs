@@ -96,14 +96,14 @@
             },
             "put": {
                 "x-ms-examples": {
-                    "Creates or updates a fabric location.  This will fail if not called during deployment.": {
+                    "Creates or updates a fabric location.  This will fail if called outside deployment.": {
                         "$ref": "./examples/FabricLocation/Put.json"
                     }
                 },
                 "tags": [
                     "FabricLocations"
                 ],
-                "description": "Creates or updates a fabric location.  This will fail if not called during deployment.",
+                "description": "Creates or updates a fabric location.  This will fail if called outside deployment.",
                 "operationId": "FabricLocations_Create",
                 "parameters": [
                     {
@@ -116,7 +116,7 @@
                         "$ref": "Fabric.json#/parameters/ApiVersionParameter"
                     },
                     {
-                        "$ref": "Fabric.json#/parameters/FabricLocationObjectParameter"
+                        "$ref": "#/parameters/FabricLocationObjectParameter"
                     }
                 ],
                 "responses": {
@@ -125,9 +125,6 @@
                         "schema": {
                             "$ref": "#/definitions/FabricLocation"
                         }
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 }
             }
@@ -137,7 +134,12 @@
         "FabricLocation": {
             "description": "Place holder for fabric location.",
             "type": "object",
-            "properties": {},
+            "properties": {
+                "properties" : {
+                    "description" : "Empty object.",
+                    "type" : "object"
+                }
+            },
             "allOf": [
                 {
                     "$ref": "Fabric.json#/definitions/Resource"

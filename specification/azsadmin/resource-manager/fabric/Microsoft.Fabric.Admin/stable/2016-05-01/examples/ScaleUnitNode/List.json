@@ -2,6 +2,7 @@
     "parameters": {
         "api-version": "2016-05-01",
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "resourceGroupName" : "System.local",
         "location": "local"
     },
     "responses": {
@@ -9,8 +10,8 @@
             "body": {
                 "value": [
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/scaleUnitNodes/HC1n25r2236",
-                        "name": "HC1n25r2236",
+                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/scaleUnitNodes/N1S2",
+                        "name": "N1S2",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/scaleUnitNodes",
                         "location": "local",
                         "tags": {},
@@ -29,6 +30,7 @@
                     }
                 ]
             }
-        }
+        },
+        "404": {}
     }
 }

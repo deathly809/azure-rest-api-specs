@@ -2,6 +2,7 @@
     "parameters": {
         "api-version": "2016-05-01",
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "resourceGroupName" : "System.local",
         "location": "local"
     },
     "responses": {
@@ -9,7 +10,7 @@
             "body": {
                 "value": [
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/00000000-2222-1111-9999-000000000001",
+                        "id": "/subscriptions/36e98cad-c8a5-4580-bef7-af878a237908/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/00000000-2222-1111-9999-000000000001",
                         "name": "00000000-2222-1111-9999-000000000001",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/logicalNetworks",
                         "location": "local",
@@ -17,12 +18,12 @@
                         "properties": {
                             "networkVirtualizationEnabled": false,
                             "subnets": [
-                                "9ea1839b-4025-416b-b67c-405d667691bb"
+                                "de2b8680-ed17-4df9-a5f9-c05c090e8f4a"
                             ]
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/47931036-2874-4d45-b1f1-b69666088968",
+                        "id": "/subscriptions/36e98cad-c8a5-4580-bef7-af878a237908/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/47931036-2874-4d45-b1f1-b69666088968",
                         "name": "47931036-2874-4d45-b1f1-b69666088968",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/logicalNetworks",
                         "location": "local",
@@ -30,12 +31,12 @@
                         "properties": {
                             "networkVirtualizationEnabled": false,
                             "subnets": [
-                                "af95176a-98f5-4302-b5d9-8723c535deef"
+                                "0af29a71-c4f4-42b3-bd7f-83b65340b0fb"
                             ]
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/B60B71AA-36BF-40AC-A9CE-A6915D1EAE1A",
+                        "id": "/subscriptions/36e98cad-c8a5-4580-bef7-af878a237908/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/B60B71AA-36BF-40AC-A9CE-A6915D1EAE1A",
                         "name": "B60B71AA-36BF-40AC-A9CE-A6915D1EAE1A",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/logicalNetworks",
                         "location": "local",
@@ -43,12 +44,12 @@
                         "properties": {
                             "networkVirtualizationEnabled": false,
                             "subnets": [
-                                "75d0e314-a6f5-4c06-a430-88419a931df7"
+                                "85f3102d-0213-4445-8aef-6507440f2228"
                             ]
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/bb6c6f28-bad9-441b-8e62-57d2be255904",
+                        "id": "/subscriptions/36e98cad-c8a5-4580-bef7-af878a237908/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/bb6c6f28-bad9-441b-8e62-57d2be255904",
                         "name": "bb6c6f28-bad9-441b-8e62-57d2be255904",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/logicalNetworks",
                         "location": "local",
@@ -56,12 +57,12 @@
                         "properties": {
                             "networkVirtualizationEnabled": true,
                             "subnets": [
-                                "cbcf1be3-652f-4854-b57d-e3b07401f29e"
+                                "e5e8cf68-5daf-4d4a-a2eb-c38852a6a1dc"
                             ]
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/F207C184-367C-4BC7-8C74-03AA39D68C24",
+                        "id": "/subscriptions/36e98cad-c8a5-4580-bef7-af878a237908/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/F207C184-367C-4BC7-8C74-03AA39D68C24",
                         "name": "F207C184-367C-4BC7-8C74-03AA39D68C24",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/logicalNetworks",
                         "location": "local",
@@ -69,12 +70,12 @@
                         "properties": {
                             "networkVirtualizationEnabled": false,
                             "subnets": [
-                                "3a1e55ef-6cb9-40fa-8deb-48db9363975c"
+                                "0cb684a8-0ccd-42b9-b1e4-243a05622b8f"
                             ]
                         }
                     },
                     {
-                        "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/f8f67956-3906-4303-94c5-09cf91e7e311",
+                        "id": "/subscriptions/36e98cad-c8a5-4580-bef7-af878a237908/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/logicalNetworks/f8f67956-3906-4303-94c5-09cf91e7e311",
                         "name": "f8f67956-3906-4303-94c5-09cf91e7e311",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/logicalNetworks",
                         "location": "local",
@@ -82,12 +83,18 @@
                         "properties": {
                             "networkVirtualizationEnabled": false,
                             "subnets": [
-                                "b5f364e5-e154-41ec-99c1-12ce4abfbc0c"
+                                "11313dcd-b797-43eb-8234-2d10b208e0b6",
+                                "Subnet-TestIpPool1992",
+                                "Subnet-TestIpPool199198",
+                                "Subnet-TestIpPool1993",
+                                "Subnet-TestIpPool1994",
+                                "Subnet-TestIpPool199196"
                             ]
                         }
                     }
                 ]
             }
-        }
+        },
+        "404": {}
     }
 }

@@ -49,8 +49,8 @@
                     "200": {
                         "description": "OK"
                     },
-                    "404": {
-                        "description": "NOT FOUND"
+                    "202": {
+                        "description": "ACCEPTED"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -91,9 +91,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -134,9 +131,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -177,9 +171,6 @@
                     },
                     "202": {
                         "description": "ACCEPTED"
-                    },
-                    "404": {
-                        "description": "NOT FOUND"
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -231,7 +222,7 @@
             "get": {
                 "x-ms-examples": {
                     "Returns a list of all infra role instances at a location.": {
-                        "$ref": "./examples/InfraRoleInstance/Get.json"
+                        "$ref": "./examples/InfraRoleInstance/List.json"
                     }
                 },
                 "tags": [
