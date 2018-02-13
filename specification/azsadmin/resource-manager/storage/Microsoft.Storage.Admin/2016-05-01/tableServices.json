@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the default table servie.": {
+                    "Returns the table servie.": {
                         "$ref": "./Examples/TableService/Get.json"
                     }
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "Returns the default table servie.",
+                "description": "Returns the table servie.",
                 "operationId": "TableServices_Get",
                 "parameters": [
                     {
@@ -44,10 +44,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "TODO",
+                        "description": "OK -- Table service has been returned.",
                         "schema": {
                             "$ref": "#/definitions/TableService"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm was not found."
                     }
                 }
             }
@@ -55,14 +58,14 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metricdefinitions": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of metric definitions for the default table service.": {
+                    "Returns a list of metric definitions for table service.": {
                         "$ref": "./Examples/TableService/ListMetricDefinitions.json"
                     }
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "Returns a list of metric definitions for the default table service.",
+                "description": "Returns a list of metric definitions for table service.",
                 "operationId": "TableServices_ListMetricDefinitions",
                 "parameters": [
                     {
@@ -80,10 +83,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "OK -- The list of metric definitions has been returned.",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm was not found."
                     }
                 },
                 "x-ms-pageable": {
@@ -94,14 +100,14 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/tableservices/default/metrics": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of metrics for the default table service..": {
+                    "Returns a list of metrics for table service.": {
                         "$ref": "./Examples/TableService/ListMetrics.json"
                     }
                 },
                 "tags": [
                     "TableServices"
                 ],
-                "description": "Returns a list of metrics for the default table service.",
+                "description": "Returns a list of metrics for table service.",
                 "operationId": "TableServices_ListMetrics",
                 "parameters": [
                     {
@@ -119,10 +125,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "OK -- The list of metrics has been returned.",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm was not found."
                     }
                 },
                 "x-ms-pageable": {
@@ -132,44 +141,8 @@
         }
     },
     "definitions": {
-        "TableServiceWritableSettings": {
-            "description": "TODO",
-            "type": "object",
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "storage.json#/definitions/WritableServiceSettings"
-                }
-            ]
-        },
-        "TableServiceSettings": {
-            "description": "TODO",
-            "type": "object",
-            "properties": {},
-            "allOf": [
-                {
-                    "$ref": "#/definitions/TableServiceWritableSettings"
-                }
-            ]
-        },
-        "TableServiceProperties": {
-            "description": "Properties of the table service.",
-            "type": "object",
-            "properties": {
-                "settings": {
-                    "description": "Table service settings.",
-                    "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/TableServiceSettings"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "storage.json#/definitions/Service"
-                }
-            ]
-        },
         "TableService": {
-            "description": "TODO",
+            "description": "Table service.",
             "type": "object",
             "properties": {
                 "properties": {
@@ -183,6 +156,22 @@
                     "$ref": "storage.json#/definitions/Resource"
                 }
             ]
+        },
+        "TableServiceProperties": {
+            "description": "Table service properties.",
+            "type": "object",
+            "properties": {
+                "settings": {
+                    "description": "Table service settings.",
+                    "x-ms-client-flatten": true,
+                    "$ref": "#/definitions/WritableServiceSettings"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "storage.json#/definitions/Service"
+                }
+            ]
         }
     },
     "parameters": {},
@@ -191,7 +180,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

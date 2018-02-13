@@ -16,52 +16,10 @@
         "application/json"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions/{acquisitionId}": {
-            "get": {
-                "x-ms-examples": {
-                    "Returns the requested page blob acquisition.": {
-                        "$ref": "./Examples/Acquisitions/Get.json"
-                    }
-                },
-                "tags": [
-                    "Acquisitions"
-                ],
-                "operationId": "Acquisitions_Get",
-                "description": "Returns the requested page blob acquisition.",
-                "parameters": [
-                    {
-                        "$ref": "storage.json#/parameters/SubscriptionIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/ResourceGroupNameParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/FarmIdParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/AcquisitionIdParameter"
-                    },
-                    {
-                        "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "OK -- Acquisition has been returned.",
-                        "schema": {
-                            "$ref": "#/definitions/Acquisition"
-                        }
-                    },
-                    "404": {
-                        "description": "NOT FOUND -- The Acquisition does not exist."
-                    }
-                }
-            }
-        },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of blob acquistions.": {
+                    "Returns a list of page blob acquistions.": {
                         "$ref": "./Examples/Acquisitions/List.json"
                     }
                 },
@@ -89,10 +47,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- Acquisitions have been returned.",
+                        "description": "OK -- The list of acquisitions has been returned.",
                         "schema": {
                             "$ref": "#/definitions/AcquisitionList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm cannot be found."
                     }
                 },
                 "x-ms-pageable": {
@@ -133,15 +94,15 @@
                     "$ref": "#/definitions/AcquisitionStatus"
                 },
                 "susbcriptionid": {
-                    "description": "ID of the subscription where the page blob is in.",
+                    "description": "ID of the subscription associated with the the page blob.",
                     "type": "string"
                 },
                 "storageaccount": {
-                    "description": "The storage account where the page blob is in.",
+                    "description": "The storage account that holds the page blob.",
                     "type": "string"
                 },
                 "container": {
-                    "description": "The container where the page blob is in.",
+                    "description": "The container associated with the the page blob.",
                     "type": "string"
                 },
                 "blob": {
@@ -178,22 +139,13 @@
             }
         }
     },
-    "parameters": {
-        "AcquisitionIdParameter": {
-            "description": "The ID of page blob acquisition.",
-            "name": "acquisitionId",
-            "type": "string",
-            "required": true,
-            "in": "path",
-            "x-ms-parameter-location": "method"
-        }
-    },
+    "parameters": {},
     "securityDefinitions": {
         "azure_auth": {
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

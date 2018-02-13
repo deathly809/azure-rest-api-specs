@@ -19,7 +19,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/operationresults/{operationId}": {
             "post": {
                 "x-ms-examples": {
-                    "Cancel container migration.": {
+                    "Cancel a container migration job.": {
                         "$ref": "./Examples/Containers/CancelMigration.json"
                     }
                 },
@@ -27,7 +27,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_CancelMigration",
-                "description": "Cancel container migration.",
+                "description": "Cancel a container migration job.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -57,15 +57,15 @@
             },
             "get": {
                 "x-ms-examples": {
-                    "Sets the status of the share to migrate.": {
-                        "$ref": "./Examples/Containers/MigrateShare.json"
+                    "Returns the status of a container migration job.": {
+                        "$ref": "./Examples/Containers/MigrationStatus.json"
                     }
                 },
                 "tags": [
                     "Containers"
                 ],
-                "operationId": "Containers_MigrateShare",
-                "description": "Sets the status of the share to migrate.",
+                "operationId": "Containers_MigrationStatus",
+                "description": "Returns the status of a container migration job.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -96,7 +96,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/containers": {
             "get": {
                 "x-ms-examples": {
-                    "Returns all containers under the given parameters.": {
+                    "Returns the list of containers which can be migrated in the specified share.": {
                         "$ref": "./Examples/Containers/List.json"
                     }
                 },
@@ -104,7 +104,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_List",
-                "description": "Returns all containers under the given parameters.",
+                "description": "Returns the list of containers which can be migrated in the specified share.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -133,10 +133,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "OK -- The list of containers has been returned.",
                         "schema": {
                             "$ref": "#/definitions/ContainerList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm or share was not found."
                     }
                 }
             }
@@ -144,7 +147,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/destinationshares": {
             "get": {
                 "x-ms-examples": {
-                    "Returns all destination shares under the given parameters.": {
+                    "Returns a list of destination shares that the system considers as best candidates for migration.": {
                         "$ref": "./Examples/Containers/ListDestinationShares.json"
                     }
                 },
@@ -152,7 +155,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_ListDestinationShares",
-                "description": "Returns all destination shares under the given parameters.",
+                "description": "Returns a list of destination shares that the system considers as best candidates for migration.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -172,21 +175,24 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "OK -- The list of shares has been returned.",
                         "schema": {
                             "$ref": "shares.json#/definitions/ShareList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm or share was not found."
                     }
                 },
                 "x-ms-pageable": {
-                    "nextLinkName": "nextLink"
+                    "nextLinkName": null
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/shares/{shareName}/migrate": {
             "post": {
                 "x-ms-examples": {
-                    "Migrate a container.": {
+                    "Starts a container migration job to migrate containers to the specified destination share.": {
                         "$ref": "./Examples/Containers/Migrate.json"
                     }
                 },
@@ -194,7 +200,7 @@
                     "Containers"
                 ],
                 "operationId": "Containers_Migrate",
-                "description": "Migrate a container.",
+                "description": "Starts a container migration job to migrate containers to the specified destination share.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -210,15 +216,6 @@
                     },
                     {
                         "$ref": "storage.json#/parameters/ApiVersionParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/MigrationIntentParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/MaxCountParameter"
-                    },
-                    {
-                        "$ref": "#/parameters/StartIndexParameter"
                     },
                     {
                         "$ref": "#/parameters/MigrationParameterParameter"
@@ -228,14 +225,14 @@
                     "200": {
                         "description": "OK -- Container has been migrated",
                         "schema": {
-                            "description": "location migrated too.",
+                            "description": "Migration job ID.",
                             "type": "string"
                         }
                     },
                     "202": {
                         "description": "ACCEPTED -- Operation accepted and will be performed asynchronously",
                         "schema": {
-                            "description": "location migrated too",
+                            "description": "Migration job ID.",
                             "type": "string"
                         }
                     }
@@ -246,32 +243,32 @@
     },
     "definitions": {
         "Container": {
-            "description": "TODO",
+            "description": "Container properties.",
             "type": "object",
             "properties": {
                 "sharename": {
-                    "description": "Name of the share container is located.",
+                    "description": "The name of the share where the container locates.",
                     "type": "string"
                 },
                 "accountname": {
-                    "description": "Name of account container belongs too.",
+                    "description": "The name of storage account where the container locates.",
                     "type": "string"
                 },
                 "containername": {
-                    "description": "Name of the container.",
+                    "description": "Container name.",
                     "type": "string"
                 },
                 "containerid": {
-                    "description": "The container id.",
+                    "description": "The container ID.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "accountid": {
-                    "description": "GUID of account.",
+                    "description": "The ID of storage account.",
                     "type": "string"
                 },
                 "usedBytesInPrimaryVolume": {
-                    "description": "Number of bytes used by the primary volume.",
+                    "description": "The used space (in Bytes) of the container in the primary volume.",
                     "type": "integer",
                     "format": "int64"
                 },
@@ -282,7 +279,7 @@
             }
         },
         "ContainerList": {
-            "description": "List of Containers.",
+            "description": "List of containers.",
             "type": "array",
             "items": {
                 "$ref": "#/definitions/Container"
@@ -299,66 +296,66 @@
             ],
             "properties": {
                 "jobId": {
-                    "description": "TODO",
+                    "description": "The migration job ID.",
                     "type": "string"
                 },
                 "sourceShareName": {
-                    "description": "TODO",
+                    "description": "The name of source storage share.",
                     "type": "string"
                 },
                 "storageAccountName": {
-                    "description": "TODO",
+                    "description": "The storage account name.",
                     "type": "string"
                 },
                 "containerName": {
-                    "description": "TODO",
+                    "description": "The name of container to be migrated.",
                     "type": "string"
                 },
                 "destinationShareName": {
-                    "description": "TODO",
+                    "description": "The name of destination storage share.",
                     "type": "string"
                 },
                 "migrationStatus": {
-                    "description": "TODO",
+                    "description": "The migration status.",
                     "type": "string"
                 },
                 "subEntitiesCompleted": {
-                    "description": "TODO",
+                    "description": "The number of entities which have been migrated.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "subEntitiesFailed": {
-                    "description": "TODO",
+                    "description": "The number of entities which failed in migration.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "failureReason": {
-                    "description": "TODO",
+                    "description": "The migration failure reason.",
                     "type": "string"
                 }
             }
         },
         "MigrationParameters": {
-            "description": "Parameters for container migration.",
+            "description": "Parameters of container migration job.",
             "type": "object",
             "properties": {
                 "storageAccountName": {
                     "type": "string",
-                    "description": "Share location where container is located."
+                    "description": "The name of storage account where the container locates."
                 },
                 "containerName": {
                     "type": "string",
-                    "description": "Name of container to migrate."
+                    "description": "NThe name of the container to be migrated."
                 },
-                "destinationShareUNCPath": {
+                "destinationShareUncPath": {
                     "type": "string",
-                    "description": "UNC path of share where container should be places."
+                    "description": "The UNC path of the destination share for migration."
                 }
             },
             "required": [
                 "storageAccountName",
                 "containerName",
-                "destinationShareUNCPath"
+                "destinationShareUncPath"
             ]
         }
     },
@@ -372,7 +369,7 @@
             "x-ms-parameter-location": "method"
         },
         "MaxCountParameter": {
-            "description": "TODO",
+            "description": "The max count of containers.",
             "name": "MaxCount",
             "in": "query",
             "type": "integer",
@@ -381,7 +378,7 @@
             "x-ms-parameter-location": "method"
         },
         "StartIndexParameter": {
-            "description": "TODO",
+            "description": "The start index of get containers.",
             "name": "StartIndex",
             "in": "query",
             "type": "integer",
@@ -390,7 +387,7 @@
             "x-ms-parameter-location": "method"
         },
         "MigrationParameterParameter": {
-            "description": "Parameters needed to perform migration",
+            "description": "The parameters of container migration job.",
             "name": "migrationParameters",
             "in": "body",
             "required": true,
@@ -405,7 +402,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

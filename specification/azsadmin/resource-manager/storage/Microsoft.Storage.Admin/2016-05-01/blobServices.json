@@ -19,7 +19,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the default blob service.": {
+                    "Returns the blob service.": {
                         "$ref": "./Examples/BlobService/Get.json"
                     }
                 },
@@ -27,7 +27,7 @@
                     "BlobServices"
                 ],
                 "operationId": "BlobServices_Get",
-                "description": "Returns the default blob service.",
+                "description": "Returns the blob service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -44,10 +44,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "OK -- The blob service has been returned.",
                         "schema": {
                             "$ref": "#/definitions/BlobService"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm was not found."
                     }
                 }
             }
@@ -55,7 +58,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metricdefinitions": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the list of metric definitions for the default blob service.": {
+                    "Returns the list of metric definitions for blob service.": {
                         "$ref": "./Examples/BlobService/ListMetricDefinitions.json"
                     }
                 },
@@ -63,7 +66,7 @@
                     "BlobServices"
                 ],
                 "operationId": "BlobServices_ListMetricDefinitions",
-                "description": "Returns the list of metric definitions for the default blob service.",
+                "description": "Returns the list of metric definitions for blob service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -80,21 +83,24 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "200",
+                        "description": "OK -- This list of metric definitions for blob service has been returned.",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm was not found."
                     }
                 },
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 }
             }
         },
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metrics": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the list of metric for the blob service.": {
+                    "Returns a list of metrics for blob service.": {
                         "$ref": "./Examples/BlobService/ListMetrics.json"
                     }
                 },
@@ -102,7 +108,7 @@
                     "BlobServices"
                 ],
                 "operationId": "BlobServices_ListMetrics",
-                "description": "Returns the list of metric for the blob service.",
+                "description": "Returns a list of metrics for blob service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -119,37 +125,40 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "OK -- The list of metrics has been returned.",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm was not found."
                     }
                 },
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 }
             }
         }
     },
     "definitions": {
         "BlobServiceWritableSettings": {
-            "description": "TODO",
+            "description": "Settings of blob service.",
             "type": "object",
             "properties": {
                 "blobSvcContainerGcInterval": {
+                    "description": "The interval (in seconds) of container garbage collection.",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "blobSvcShallowGcInterval": {
+                    "description": "The interval (in seconds) of shallow garbage collection.",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 },
                 "blobSvcStreamMapMinContainerOccupancyPercent": {
+                    "description": "The minimal container occupancy percent for stream mapping.",
                     "type": "integer",
-                    "format": "int32",
-                    "description": "TODO"
+                    "format": "int32"
                 }
             },
             "allOf": [
@@ -184,7 +193,7 @@
             ]
         },
         "BlobService": {
-            "description": "TODO",
+            "description": "The blob service.",
             "type": "object",
             "properties": {
                 "properties": {
@@ -206,7 +215,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

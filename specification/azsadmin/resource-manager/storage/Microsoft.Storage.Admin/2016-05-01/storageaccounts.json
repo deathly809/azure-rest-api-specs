@@ -47,10 +47,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "OK -- The list of storage accounts has been returned.",
                         "schema": {
                             "$ref": "#/definitions/StorageAccountList"
                         }
+                    },
+                    "404": {
+                        "description": "NOT FOUND -- The specified farm was not found."
                     }
                 },
                 "x-ms-pageable": {
@@ -89,13 +92,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- Returns the storage account.",
+                        "description": "OK -- The storage account has been returned.",
                         "schema": {
                             "$ref": "#/definitions/StorageAccount"
                         }
                     },
                     "404": {
-                        "description": "NOT FOUND -- The storage account was not found.",
+                        "description": "NOT FOUND -- The storage account or farm was not found."
                     }
                 }
             },
@@ -138,7 +141,7 @@
     "definitions": {
         "StorageAccountState": {
             "readOnly": true,
-            "description": "Current state of storage account",
+            "description": "Storage account state.",
             "type": "string",
             "enum": [
                 "PreCreate",
@@ -151,7 +154,7 @@
             }
         },
         "StorageAccountType": {
-            "description": "Current operation being performed on Storage Account",
+            "description": "Storage account type.",
             "type": "string",
             "enum": [
                 "Standard_LRS",
@@ -180,7 +183,7 @@
         },
         "StorageAccountOperation": {
             "readOnly": true,
-            "description": "Current operation being performed on Storage Account",
+            "description": "The permissions of storage account in WAC.",
             "type": "string",
             "enum": [
                 "None",
@@ -196,7 +199,7 @@
             }
         },
         "StorageAccountStatus": {
-            "description": "The current status of the storage account.",
+            "description": "The state of storage account in WAC.",
             "type": "string",
             "enum": [
                 "Active",
@@ -248,54 +251,54 @@
                 "tenantViewId": {
                     "type": "string",
                     "readOnly": true,
-                    "description": "TODO"
+                    "description": "Resource URI of storage account from tenant view."
                 },
                 "accountType": {
                     "readOnly": true,
-                    "description": "Current operation being performed on Storage Account",
+                    "description": "Storage account type.",
                     "$ref": "#/definitions/StorageAccountType"
                 },
                 "provisioningState": {
-                    "description": "TODO",
+                    "description": "The provisioning state of storage account.",
                     "$ref": "#/definitions/StorageAccountState"
                 },
                 "primaryEndpoints": {
-                    "description": "Gets the URLs that are used to perform a retrieval of a public blob, queue, or table object. Note that Standard_ZRS and Premium_LRS accounts only return the blob endpoint.",
+                    "description": "The URLs that are used to perform a retrieval of a public blob, queue, or table object.",
                     "additionalProperties": {
                         "type": "string"
                     },
                     "readOnly": true
                 },
                 "creationTime": {
-                    "description": "Gets the creation date and time of the storage account in UTC.",
+                    "description": "The creation date and time of storage account in UTC.",
                     "type": "string",
                     "format": "date-time",
                     "readOnly": true
                 },
                 "alternateName": {
-                    "description": "Used during undelete operation",
+                    "description": "Alternative storage account name being used during undelete operation.",
                     "type": "string"
                 },
                 "primaryLocation": {
-                    "description": "Gets the location of the primary data center for the storage account.",
+                    "description": "The primary location for the storage account.",
                     "type": "string",
                     "readOnly": true
                 },
                 "statusOfPrimary": {
-                    "description": "TODO",
+                    "description": "The status of primary location of storage account.",
                     "$ref": "#/definitions/LocationStatus"
                 },
                 "tenantSubscriptionId": {
-                    "description": "TODO",
+                    "description": "Subscription ID of the subscription under which the storage account locates.",
                     "type": "string",
                     "readOnly": true
                 },
                 "tenantStorageAccountName": {
-                    "description": "TODO",
+                    "description": "Storage account name from tenant view.",
                     "type": "string"
                 },
                 "tenantResourceGroupName": {
-                    "description": "TODO",
+                    "description": "The name of resource group under which the storage account locates.",
                     "type": "string"
                 },
                 "currentOperation": {
@@ -304,12 +307,12 @@
                     "readOnly": true
                 },
                 "customDomain": {
-                    "description": "Gets the custom domain the user assigned to this storage account.",
+                    "description": "The custom domain the user assigned to this storage account.",
                     "type": "string",
                     "readOnly": true
                 },
                 "acquisitionOperationCount": {
-                    "description": "TODO",
+                    "description": "The count of acquisitions in the storage account.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -320,35 +323,35 @@
                 },
                 "accountStatus": {
                     "$ref": "#/definitions/StorageAccountStatus",
-                    "description": "TODO"
+                    "description": "The status of storage account."
                 },
                 "recoveredTime": {
-                    "description": "TODO",
+                    "description": "The time when the storage account is undeleted.",
                     "type": "string",
                     "format": "date-time"
                 },
                 "recycledTime": {
-                    "description": "TODO",
+                    "description": "The time when the storage account is physically deleted.",
                     "type": "string",
                     "format": "date-time"
                 },
                 "permissions": {
-                    "description": "Current operation being performed on Storage Account",
+                    "description": "The permissions on the storage account.",
                     "$ref": "#/definitions/WacAccountPermissions",
                     "readOnly": true
                 },
                 "accountId": {
-                    "description": "TODO",
+                    "description": "Internal storage account ID, which is not visible to tenant.",
                     "type": "string",
                     "readOnly": true
                 },
                 "wacInternalState": {
-                    "description": "Current operation being performed on Storage Account",
+                    "description": "The internal state of storage account in WAC.",
                     "$ref": "#/definitions/WacAccountStates",
                     "readOnly": true
                 },
                 "resourceAdminApiVersion": {
-                    "description": "TODO",
+                    "description": "Storage admin REST API version.",
                     "type": "string",
                     "readOnly": true
                 }
@@ -371,7 +374,7 @@
             ]
         },
         "StorageAccountList": {
-            "description": "Page containing a list of storage accounts.",
+            "description": "Pageable list of storage accounts.",
             "type": "object",
             "properties": {
                 "value": {
@@ -390,43 +393,19 @@
     },
     "parameters": {
         "AccountIdParameter": {
+            "description": "Internal storage account ID, which is not visible to tenant.",
             "name": "accountId",
             "in": "path",
             "required": true,
             "type": "string",
-            "description": "The name of the storage account.",
-            "x-ms-parameter-location": "method"
-        },
-        "TenantIdParameter": {
-            "name": "tenantId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The tenant id.",
-            "x-ms-parameter-location": "method"
-        },
-        "TenantSubscriptionIdParameter": {
-            "name": "tenantSubscriptionId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "The tenant subscription id.",
             "x-ms-parameter-location": "method"
         },
         "SummaryParameter": {
+            "description": "Switch for wheter summary or detailed information is returned.",
             "name": "summary",
             "in": "query",
             "required": true,
             "type": "boolean",
-            "description": "TODO",
-            "x-ms-parameter-location": "method"
-        },
-        "ActionParameter": {
-            "description": "TODO",
-            "name": "action",
-            "type": "string",
-            "in": "query",
-            "default": "undelete",
             "x-ms-parameter-location": "method"
         }
     },
@@ -435,7 +414,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }
