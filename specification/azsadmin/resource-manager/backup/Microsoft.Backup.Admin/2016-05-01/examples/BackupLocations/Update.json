@@ -1,0 +1,77 @@
+{
+    "parameters": {
+        "subscriptionId": "11111111-2222-3333-4444-555555555555",
+        "resourceGroupName": "System.local",
+        "api-version": "2016-05-01"
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "Id": "/subscriptions/11111111-2222-3333-4444-555555555555/resourceGroups/system.local/providers/Microsoft.Backup.Admin/backupLocations/local/backups/290b4726-a9a1-40ba-a837-895a1173dc73",
+                "Name": "290b4726-a9a1-40ba-a837-895a1173dc73",
+                "Type": "Microsoft.Backup.Admin/backupLocations/backups",
+                "Location": "local",
+                "Tags": {},
+                "Properties": {
+                    "BackupInfo": {
+                        "BackupId": "290b4726-a9a1-40ba-a837-895a1173dc73",
+                        "RoleStatus": [
+                            {
+                                "RoleName": "NRP",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "SRP",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "CRP",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "KeyVaultInternalControlPlane",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "KeyVaultInternalDataPlane",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "KeyVaultControlPlane",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "KeyVaultDataPlane",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "KeyVaultNamingService",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "WAS",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "ECE",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "CA",
+                                "Status": 6
+                            },
+                            {
+                                "RoleName": "ACS",
+                                "Status": 6
+                            }
+                        ],
+                        "Status": 6,
+                        "CreatedDateTime": "2018-02-16T23:01:56.2015457Z",
+                        "TimeTakenToCreate": "PT4M54.5150429S"
+                    }
+                }
+            }
+        },
+        "202": {}
+    }
+}
