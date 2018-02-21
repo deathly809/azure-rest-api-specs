@@ -1,20 +1,12 @@
 {
     "parameters": {
-        "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
-        "location": "local",
-        "api-version": "2016-05-01",
-        "reportedStartTime": "2017-08-01T00:00:00.00Z",
-        "reportedEndTime": "2017-08-02T00:00:00.00Z",
-        "aggregationGranularity": "",
-        "subscriberId": "",
-        "continuationToken": ""
+        "subscriptionId": "11111111-2222-3333-4444-555555555555",
+        "backupLocation": "local",
+        "backup": "de038ae0-294d-468d-90a1-fbe5ae028ce2",
+        "api-version": "2016-05-01"
     },
     "responses": {
-        "200": {
-            "body": {
-                "value": [],
-                "nextLink": ""
-            }
-        }
+        "200": {},
+        "202": {}
     }
 }

@@ -1,19 +1,35 @@
 {
     "parameters": {
-        "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
-        "location": "local",
-        "api-version": "2016-05-01",
-        "reportedStartTime": "2017-08-01T00:00:00.00Z",
-        "reportedEndTime": "2017-08-02T00:00:00.00Z",
-        "aggregationGranularity": "",
-        "subscriberId": "",
-        "continuationToken": ""
+        "subscriptionId": "11111111-2222-3333-4444-555555555555",
+        "resourceGroupName": "System.local",
+        "api-version": "2016-05-01"
     },
     "responses": {
         "200": {
             "body": {
-                "value": [],
-                "nextLink": ""
+                "values": [
+                    {
+                        "id": "/subscriptions/11111111-2222-3333-4444-555555555555/resourcegroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local",
+                        "name": "local",
+                        "type": "Microsoft.Backup.Admin/backupLocations",
+                        "location": "local",
+                        "tags": {},
+                        "properties": {
+                            "externalStoreDefault": {
+                                "path": "\\\\100.68.88.192\\C$\\backup_test",
+                                "userName": "AzureStack\\Administrator",
+                                "password": null,
+                                "encryptionKeyBase64": null,
+                                "backupFrequencyInMinutes": "",
+                                "availableCapacity": "10GB",
+                                "isBackupSchedulerEnabled": false,
+                                "nextBackupTime": null,
+                                "lastBackupTime": null
+                            }
+                        }
+                    }
+                ],
+                "nextLink": null
             }
         }
     }

@@ -98,11 +98,11 @@
             },
             "put": {
                 "x-ms-examples": {
-                    "Create a new backup location.": {
-                        "$ref": "./examples/BackupLocations/Create.json"
+                    "Update new backup location.": {
+                        "$ref": "./examples/BackupLocations/Update.json"
                     }
                 },
-                "description": "Create a new backup location.",
+                "description": "Update a backup location.",
                 "tags": [
                     "BackupLocations"
                 ],
@@ -181,19 +181,13 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "Backup.json#/definitions/LongRunningOperationStatus"
+                            "$ref": "Backups.json#/definitions/Backup"
                         }
                     },
                     "202": {
                         "description": "ACCEPTED",
                         "schema": {
-                            "$ref": "Backup.json#/definitions/LongRunningOperationStatus"
-                        }
-                    },
-                    "500": {
-                        "description": "INTERNAL SERVER ERROR",
-                        "schema": {
-                            "$ref": "Backup.json#/definitions/LongRunningOperationStatus"
+                            "$ref": "Backups.json#/definitions/Backup"
                         }
                     }
                 },

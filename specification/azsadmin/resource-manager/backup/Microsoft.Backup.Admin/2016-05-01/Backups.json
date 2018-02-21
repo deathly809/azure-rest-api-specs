@@ -137,16 +137,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
-                        "schema": {
-                            "type": "string"
-                        }
+                        "description": "OK"
                     },
                     "202": {
-                        "description": "ACCEPTED",
-                        "schema": {
-                            "type": "string"
-                        }
+                        "description": "ACCEPTED"
                     },
                     "404": {
                         "description": "NOT FOUND"
