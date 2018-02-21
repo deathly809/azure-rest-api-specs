@@ -13,7 +13,13 @@
         }
     },
     "responses": {
-        "200": {},
+        "200": {
+            "body": {
+                "properties": {
+                    "provisioningState": "Succeeded"
+                }
+            }
+        },
         "202": {}
     }
 }

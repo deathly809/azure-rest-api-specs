@@ -10,7 +10,7 @@
         "200": {
             "body": {
                 "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/edgeGateways/AzS-Gwy01",
-                "name": "AzS-Gwy01",
+                "name": "local/AzS-Gwy01",
                 "type": "Microsoft.Fabric.Admin/fabricLocations/edgeGateways",
                 "location": "local",
                 "tags": {},

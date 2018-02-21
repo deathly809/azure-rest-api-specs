@@ -19,7 +19,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/slbMuxInstances/{slbMuxInstance}": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the requested Software Load Balancer Mux Instance": {
+                    "Returns the requested sftware load balancer MUX Instance": {
                         "$ref": "./examples/SlbMuxInstance/Get.json"
                     }
                 },
@@ -61,7 +61,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/slbMuxInstances": {
             "get": {
                 "x-ms-examples": {
-                    "Returns all Software Load Balancer Mux Instances": {
+                    "Returns all software load balancer MUX Instances": {
                         "$ref": "./examples/SlbMuxInstance/List.json"
                     }
                 },
@@ -111,7 +111,7 @@
             "type": "object",
             "properties": {
                 "properties": {
-                    "description": "Properties of a SLB MUX",
+                    "description": "Properties of a SLB MUX.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/SlbMuxInstanceModel"
                 }
@@ -123,7 +123,7 @@
             ]
         },
         "SlbMuxInstanceModel": {
-            "description": "Properties of a SLB MUX",
+            "description": "Properties of a SLB MUX.",
             "type": "object",
             "properties": {
                 "configurationState": {
@@ -144,11 +144,11 @@
             }
         },
         "SlbMuxInstanceList": {
-            "description": "A pageable list of SLB Mux instances.",
+            "description": "A pageable list of SLB MUX instances.",
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "List of SLB Mux instances on this page.",
+                    "description": "List of SLB MUX instances.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/SlbMuxInstance"
@@ -164,7 +164,7 @@
     "parameters": {
         "SLBMuxInstanceParameter": {
             "name": "slbMuxInstance",
-            "description": "Name of a SLB Mux instance.",
+            "description": "Name of a SLB MUX instance.",
             "in": "path",
             "required": true,
             "type": "string",
@@ -176,7 +176,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

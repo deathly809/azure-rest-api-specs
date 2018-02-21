@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "InfraRole instance operation endpoints and objects.",
+        "description": "Infrastructure role instance operation endpoints and objects.",
         "title": "FabricAdminClient",
         "version": "2016-05-01"
     },
@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/PowerOff": {
             "post": {
                 "x-ms-examples": {
-                    "Power off an infra role instance": {
+                    "Power off an infrastructure role instance": {
                         "$ref": "./examples/InfraRoleInstance/PowerOff.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Power off an infra role instance.",
+                "description": "Power off an infrastructure role instance.",
                 "operationId": "InfraRoleInstances_PowerOff",
                 "parameters": [
                     {
@@ -59,14 +59,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/PowerOn": {
             "post": {
                 "x-ms-examples": {
-                    "Power on an infra role instance": {
+                    "Power on an infrastructure role instance": {
                         "$ref": "./examples/InfraRoleInstance/PowerOn.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Power on an infra role instance.",
+                "description": "Power on an infrastructure role instance.",
                 "operationId": "InfraRoleInstances_PowerOn",
                 "parameters": [
                     {
@@ -99,14 +99,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/Shutdown": {
             "post": {
                 "x-ms-examples": {
-                    "Shutdown an infra role instance": {
+                    "Shutdown an infrastructure role instance": {
                         "$ref": "./examples/InfraRoleInstance/Shutdown.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Shut down an infra role instance.",
+                "description": "Shut down an infrastructure role instance.",
                 "operationId": "InfraRoleInstances_Shutdown",
                 "parameters": [
                     {
@@ -139,14 +139,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}/Reboot": {
             "post": {
                 "x-ms-examples": {
-                    "Reboot an infra role instance": {
+                    "Reboot an infrastructure role instance": {
                         "$ref": "./examples/InfraRoleInstance/Reboot.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Reboot an infra role instance.",
+                "description": "Reboot an infrastructure role instance.",
                 "operationId": "InfraRoleInstances_Reboot",
                 "parameters": [
                     {
@@ -179,14 +179,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances/{infraRoleInstance}": {
             "get": {
                 "x-ms-examples": {
-                    "Return the requested infra role instance.": {
+                    "Return the requested infrastructure role instance.": {
                         "$ref": "./examples/InfraRoleInstance/Get.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Return the requested infra role instance.",
+                "description": "Return the requested infrastructure role instance.",
                 "operationId": "InfraRoleInstances_Get",
                 "parameters": [
                     {
@@ -221,14 +221,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoleInstances": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of all infra role instances at a location.": {
+                    "Returns a list of all infrastructure role instances at a location.": {
                         "$ref": "./examples/InfraRoleInstance/List.json"
                     }
                 },
                 "tags": [
                     "InfraRoleInstances"
                 ],
-                "description": "Returns a list of all infra role instances at a location.",
+                "description": "Returns a list of all infrastructure role instances at a location.",
                 "operationId": "InfraRoleInstances_List",
                 "parameters": [
                     {
@@ -271,7 +271,7 @@
             "type": "object",
             "properties": {
                 "properties": {
-                    "description": "All properties of an infra role instance.",
+                    "description": "All properties of an infrastructure role instance.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/InfraRoleInstanceModel"
                 }
@@ -283,7 +283,7 @@
             ]
         },
         "InfraRoleInstanceModel": {
-            "description": "All properties of an infra role instance.",
+            "description": "All properties of an infrastructure role instance.",
             "type": "object",
             "properties": {
                 "scaleUnit": {
@@ -319,7 +319,7 @@
             "type": "object",
             "properties": {
                 "memoryGb": {
-                    "description": "The amount of memory, in GB, currently assigned to the virtual machine.  In Azure Stack V1, only static memory is used for infrastructure VMs.",
+                    "description": "The amount of memory, in GB, currently assigned to the virtual machine.",
                     "format": "float",
                     "type": "number"
                 },
@@ -331,11 +331,11 @@
             }
         },
         "InfraRoleInstanceList": {
-            "description": "Pageable list of infra role instances.",
+            "description": "Pageable list of infrastructure role instances.",
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "List of infra role instances for this page.",
+                    "description": "List of infrastructure role instances.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/InfraRoleInstance"
@@ -351,7 +351,7 @@
     "parameters": {
         "InfraRoleInstanceParameter": {
             "name": "infraRoleInstance",
-            "description": "Name of an infra role instance.",
+            "description": "Name of an infrastructure role instance.",
             "in": "path",
             "required": true,
             "type": "string",
@@ -363,7 +363,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

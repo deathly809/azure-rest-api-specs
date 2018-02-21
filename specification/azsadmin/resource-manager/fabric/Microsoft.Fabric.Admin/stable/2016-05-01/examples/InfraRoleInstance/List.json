@@ -11,7 +11,7 @@
                 "value": [
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ACS01",
-                        "name": "AzS-ACS01",
+                        "name": "local/AzS-ACS01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -27,7 +27,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-ADFS01",
-                        "name": "AzS-ADFS01",
+                        "name": "local/AzS-ADFS01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -43,7 +43,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-BGPNAT01",
-                        "name": "AzS-BGPNAT01",
+                        "name": "local/AzS-BGPNAT01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -59,7 +59,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-CA01",
-                        "name": "AzS-CA01",
+                        "name": "local/AzS-CA01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -75,7 +75,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Gwy01",
-                        "name": "AzS-Gwy01",
+                        "name": "local/AzS-Gwy01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -91,7 +91,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-NC01",
-                        "name": "AzS-NC01",
+                        "name": "local/AzS-NC01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -107,7 +107,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-SLB01",
-                        "name": "AzS-SLB01",
+                        "name": "local/AzS-SLB01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -123,7 +123,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Sql01",
-                        "name": "AzS-Sql01",
+                        "name": "local/AzS-Sql01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -139,7 +139,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WAS01",
-                        "name": "AzS-WAS01",
+                        "name": "local/AzS-WAS01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -155,7 +155,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-WASP01",
-                        "name": "AzS-WASP01",
+                        "name": "local/AzS-WASP01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},
@@ -171,7 +171,7 @@
                     },
                     {
                         "id": "/subscriptions/23a94a7f-64b3-42d8-807c-733284339015/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/infraRoleInstances/AzS-Xrp01",
-                        "name": "AzS-Xrp01",
+                        "name": "local/AzS-Xrp01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/infraRoleInstances",
                         "location": "local",
                         "tags": {},

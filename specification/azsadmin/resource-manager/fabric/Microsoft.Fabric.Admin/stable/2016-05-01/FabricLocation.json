@@ -151,7 +151,7 @@
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "List of fabric locations for this page.",
+                    "description": "List of fabric locations.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/FabricLocation"
@@ -166,7 +166,7 @@
     },
     "parameters": {
         "FabricLocationParameter": {
-            "description": "Fabric Location.",
+            "description": "Fabric location.",
             "name": "fabricLocation",
             "type": "string",
             "in": "path",
@@ -174,7 +174,7 @@
             "x-ms-parameter-location": "method"
         },
         "FabricLocationObjectParameter": {
-            "description": "Fabric Location object.",
+            "description": "Fabric location object.",
             "name": "fabricObject",
             "schema": {
                 "$ref": "#/definitions/FabricLocation"
@@ -189,7 +189,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

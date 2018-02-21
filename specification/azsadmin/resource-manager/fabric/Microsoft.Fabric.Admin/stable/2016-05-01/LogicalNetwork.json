@@ -107,7 +107,7 @@
     },
     "definitions": {
         "LogicalNetwork": {
-            "description": "This resource represents a logical partition of physical network that is dedicated for a particular purpose.  A logical network comprises of a collection of logical subnets.",
+            "description": "This resource represents a logical partition of physical network that is dedicated for a particular purpose.  A logical network comprises a collection of logical subnets.",
             "type": "object",
             "properties": {
                 "properties": {
@@ -127,18 +127,18 @@
             "type": "object",
             "properties": {
                 "metadata": {
-                    "description": "Metadata related to this Logical Network.",
+                    "description": "Metadata related to the logical network.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
                     }
                 },
                 "networkVirtualizationEnabled": {
-                    "description": "Is Network Virtualization is enabled on this Logical Network.",
+                    "description": "Flag to indicate that the network virtualization is enabled on the logical network.",
                     "type": "boolean"
                 },
                 "subnets": {
-                    "description": "List of subnets belonging to this Logical Network.",
+                    "description": "List of subnets belonging to the logical network.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -151,7 +151,7 @@
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "List of logical networks for this page.",
+                    "description": "List of logical networks.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/LogicalNetwork"
@@ -179,7 +179,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

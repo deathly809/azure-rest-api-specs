@@ -107,7 +107,7 @@
     },
     "definitions": {
         "FileShare": {
-            "description": "Representation of a file share resource.",
+            "description": "Object that contains properties of the file share resource.",
             "type": "object",
             "properties": {
                 "properties": {
@@ -127,7 +127,7 @@
             "type": "object",
             "properties": {
                 "associatedVolume": {
-                    "description": "Associated volume Id.",
+                    "description": "Associated volume ID.",
                     "type": "string"
                 },
                 "uncPath": {
@@ -141,7 +141,7 @@
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "List of fabric file shares for this page.",
+                    "description": "List of fabric file shares.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/FileShare"
@@ -165,7 +165,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

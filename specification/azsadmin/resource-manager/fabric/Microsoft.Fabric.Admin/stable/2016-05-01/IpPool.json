@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Ip pool operation endpoints and objects.",
+        "description": "IP pool operation endpoints and objects.",
         "title": "FabricAdminClient",
         "version": "2016-05-01"
     },
@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools/{ipPool}": {
             "get": {
                 "x-ms-examples": {
-                    "Return the requested Ip pool.": {
+                    "Return the requested IP pool.": {
                         "$ref": "./examples/IpPool/Get.json"
                     }
                 },
                 "tags": [
                     "IpPools"
                 ],
-                "description": "Return the requested Ip pool.",
+                "description": "Return the requested IP pool.",
                 "operationId": "IpPools_Get",
                 "parameters": [
                     {
@@ -59,14 +59,14 @@
             },
             "put": {
                 "x-ms-examples": {
-                    "Create an Ip pool.  Once created an Ip pool cannot be deleted.": {
+                    "Create an IP pool.  Once created an IP pool cannot be deleted.": {
                         "$ref": "./examples/IpPool/Create.json"
                     }
                 },
                 "tags": [
                     "IpPools"
                 ],
-                "description": "Create an Ip pool.  Once created an Ip pool cannot be deleted.",
+                "description": "Create an IP pool.  Once created an IP pool cannot be deleted.",
                 "operationId": "IpPools_CreateOrUpdate",
                 "parameters": [
                     {
@@ -105,14 +105,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/ipPools": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of all ip pools at a certain location.": {
+                    "Returns a list of all IP pools at a certain location.": {
                         "$ref": "./examples/IpPool/List.json"
                     }
                 },
                 "tags": [
                     "IpPools"
                 ],
-                "description": "Returns a list of all ip pools at a certain location.",
+                "description": "Returns a list of all IP pools at a certain location.",
                 "operationId": "IpPools_List",
                 "parameters": [
                     {
@@ -171,11 +171,11 @@
             "type": "object",
             "properties": {
                 "startIpAddress": {
-                    "description": "The starting Ip address.",
+                    "description": "The starting IP address.",
                     "type": "string"
                 },
                 "endIpAddress": {
-                    "description": "The ending Ip address.",
+                    "description": "The ending IP address.",
                     "type": "string"
                 },
                 "addressPrefix": {
@@ -183,28 +183,28 @@
                     "type": "string"
                 },
                 "numberOfIpAddresses": {
-                    "description": "The total number of ip addresses.",
+                    "description": "The total number of IP addresses.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "numberOfAllocatedIpAddresses": {
-                    "description": "The number of currently allocated ip addresses.",
+                    "description": "The number of currently allocated IP addresses.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "numberOfIpAddressesInTransition": {
-                    "description": "The current number of ip addresses in transition.",
+                    "description": "The current number of IP addresses in transition.",
                     "type": "integer",
                     "format": "int64"
                 }
             }
         },
         "IpPoolList": {
-            "description": "Pageable list of ip pools.",
+            "description": "Pageable list of IP pools.",
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "List of ip pools for this page.",
+                    "description": "List of IP pools.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/IpPool"
@@ -220,7 +220,7 @@
     "parameters": {
         "IpPoolParameter": {
             "name": "pool",
-            "description": "Ip pool object to send.",
+            "description": "IP pool object to send.",
             "in": "body",
             "required": true,
             "schema": {
@@ -230,7 +230,7 @@
         },
         "IpPoolNameParameter": {
             "name": "ipPool",
-            "description": "Ip pool name.",
+            "description": "IP pool name.",
             "type": "string",
             "in": "path",
             "required": true,
@@ -242,7 +242,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

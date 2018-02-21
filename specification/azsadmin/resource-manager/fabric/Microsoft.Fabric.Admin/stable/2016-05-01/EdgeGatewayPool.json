@@ -19,14 +19,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGatewayPools/{edgeGatewayPool}": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the requested edge gateway pool.": {
+                    "Returns the requested edge gateway pool object.": {
                         "$ref": "./examples/EdgeGatewayPool/Get.json"
                     }
                 },
                 "tags": [
                     "EdgeGatewayPools"
                 ],
-                "description": "Returns the requested edge gateway pool.",
+                "description": "Returns the requested edge gateway pool object.",
                 "operationId": "EdgeGatewayPools_Get",
                 "parameters": [
                     {
@@ -61,14 +61,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/edgeGatewayPools": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of all edge gateway pools at a location.": {
+                    "Returns a list of all edge gateway pool objects at a location.": {
                         "$ref": "./examples/EdgeGatewayPool/List.json"
                     }
                 },
                 "tags": [
                     "EdgeGatewayPools"
                 ],
-                "description": "Returns a list of all edge gateway pools at a location.",
+                "description": "Returns a list of all edge gateway pool objects at a location.",
                 "operationId": "EdgeGatewayPools_List",
                 "parameters": [
                     {
@@ -107,11 +107,11 @@
     },
     "definitions": {
         "EdgeGatewayPool": {
-            "description": "This resource represents an edge gateway pool, which contains an array of gateways.",
+            "description": "This object represents an edge gateway pool, which contains a list of gateways.",
             "type": "object",
             "properties": {
                 "properties": {
-                    "description": "All the properties of an edge gateway pool.",
+                    "description": "The properties of an edge gateway pool.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/EdgeGatewayPoolModel"
                 }
@@ -123,11 +123,11 @@
             ]
         },
         "EdgeGatewayPoolModel": {
-            "description": "A model holding all properties of an edge gateway pool.",
+            "description": "An object that contains the properties of an edge gateway pool.",
             "type": "object",
             "properties": {
                 "gatewayType": {
-                    "description": "The gateway type (S2sIPsec, S2sGre, etc).",
+                    "description": "The gateway type, for example, S2sIPsec, S2sGre, and so on.",
                     "type": "string"
                 },
                 "numberOfGateways": {
@@ -154,7 +154,7 @@
                     "type": "string"
                 },
                 "edgeGateways": {
-                    "description": "List of the edge gateways in this pool.",
+                    "description": "List of the edge gateways in the pool.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -163,11 +163,11 @@
             }
         },
         "EdgeGatewayPoolList": {
-            "description": "A pageable list of edge gateway pools.",
+            "description": "A pageable list of edge gateway pools objects.",
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "The array of edge gateway pools in this page.",
+                    "description": "List of edge gateway pool objects.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/EdgeGatewayPool"
@@ -195,7 +195,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

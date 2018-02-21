@@ -111,7 +111,7 @@
       "type": "object",
       "properties": {
         "properties": {
-          "description": "Model which holds information related to edge gateways.",
+          "description": "Object which holds information related to edge gateways.",
           "$ref": "#/definitions/EdgeGatewayModel",
           "x-ms-client-flatten": true
         }
@@ -123,7 +123,7 @@
       ]
     },
     "EdgeGatewayModel": {
-      "description": "Model which holds information related to edge gateways.",
+      "description": "Object which holds information related to edge gateways.",
       "type": "object",
       "properties": {
         "state": {
@@ -180,7 +180,7 @@
       "type": "oauth2",
       "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
       "flow": "implicit",
-      "description": "Azure Active Directory OAuth2 Flow",
+      "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
       "scopes": {
         "user_impersonation": "impersonate your user account"
       }

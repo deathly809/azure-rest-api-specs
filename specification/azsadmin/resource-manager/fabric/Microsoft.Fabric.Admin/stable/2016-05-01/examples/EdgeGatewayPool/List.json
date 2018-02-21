@@ -22,7 +22,7 @@
                             "gatewayCapacityKiloBitsPerSecond": 100000000,
                             "publicIpAddress": "00000000-5555-0000-0001-000000000000",
                             "edgeGateways": [
-                                "AzS-Gwy01"
+                                "local/AzS-Gwy01"
                             ]
                         }
                     }

@@ -20,7 +20,6 @@
                     "scaleUnitName": "S-Cluster",
                     "scaleUnitUri": "/fabricLocations/local/scaleUnits/S-Cluster",
                     "canPowerOff": false,
-                    "macAddress": "24-8A-07-89-15-62",
                     "capacity": {
                         "memoryGB": 255.875,
                         "cores": 56

@@ -19,7 +19,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/Shutdown": {
             "post": {
                 "x-ms-examples": {
-                    "Shutdown a scale unit node": {
+                    "Shutdown a scale unit node.": {
                         "$ref": "./examples/ScaleUnitNode/Shutdown.json"
                     }
                 },
@@ -59,7 +59,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/PowerOff": {
             "post": {
                 "x-ms-examples": {
-                    "Power off a scale unit node": {
+                    "Power off a scale unit node.": {
                         "$ref": "./examples/ScaleUnitNode/PowerOff.json"
                     }
                 },
@@ -99,7 +99,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/PowerOn": {
             "post": {
                 "x-ms-examples": {
-                    "Power on a scale unit node": {
+                    "Power on a scale unit node.": {
                         "$ref": "./examples/ScaleUnitNode/PowerOn.json"
                     }
                 },
@@ -139,7 +139,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/StartMaintenanceMode": {
             "post": {
                 "x-ms-examples": {
-                    "Start maintenance mode on a scale unit node": {
+                    "Start maintenance mode on a scale unit node.": {
                         "$ref": "./examples/ScaleUnitNode/StartMaintenanceMode.json"
                     }
                 },
@@ -179,7 +179,7 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/scaleUnitNodes/{scaleUnitNode}/StopMaintenanceMode": {
             "post": {
                 "x-ms-examples": {
-                    "Stop maintenance mode on a scale unit node": {
+                    "Stop maintenance mode on a scale unit node.": {
                         "$ref": "./examples/ScaleUnitNode/StopMaintenanceMode.json"
                     }
                 },
@@ -355,7 +355,7 @@
             "properties": {
                 "bmcIpv4Address": {
                     "x-ms-client-name": "BMCIPv4Address",
-                    "description": "Bmc address of the physical machine.",
+                    "description": "BMC address of the physical machine.",
                     "type": "string"
                 },
                 "vendor": {
@@ -383,7 +383,7 @@
                     "type": "string"
                 },
                 "macAddress": {
-                    "description": "Name of the mac address of the bare metal node.",
+                    "description": "Name of the MAC address of the bare metal node.",
                     "type": "string"
                 }
             }
@@ -436,7 +436,7 @@
                     }
                 },
                 "bmcAddress": {
-                    "description": "Bmc address of the physical machine.",
+                    "description": "BMC address of the physical machine.",
                     "type": "string"
                 },
                 "scaleUnitName": {
@@ -464,11 +464,7 @@
                     "type": "string"
                 },
                 "biosVersion": {
-                    "description": "Bios version of the physical machine.",
-                    "type": "string"
-                },
-                "macAddress": {
-                    "description": "MacAddress of the physical machine.",
+                    "description": "BIOS version of the physical machine.",
                     "type": "string"
                 },
                 "capacity": {
@@ -482,7 +478,7 @@
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "The list of nodes in this page.",
+                    "description": "List of scale unit nodes.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ScaleUnitNode"
@@ -520,7 +516,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

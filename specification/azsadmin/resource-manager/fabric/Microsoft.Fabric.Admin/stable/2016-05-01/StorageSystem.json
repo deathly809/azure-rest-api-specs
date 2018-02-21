@@ -138,7 +138,7 @@
             "type": "object",
             "properties": {
                 "value": {
-                    "description": "List of storage systems on this page.",
+                    "description": "List of storage systems.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/StorageSystem"
@@ -166,7 +166,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

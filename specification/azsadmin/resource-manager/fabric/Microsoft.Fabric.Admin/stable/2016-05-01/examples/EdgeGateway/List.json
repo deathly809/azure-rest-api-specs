@@ -11,7 +11,7 @@
                 "value": [
                     {
                         "id": "/subscriptions/20ff7fc3-e762-44dd-bd96-b71116dcdc23/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/edgeGateways/AzS-Gwy01",
-                        "name": "AzS-Gwy01",
+                        "name": "local/AzS-Gwy01",
                         "type": "Microsoft.Fabric.Admin/fabricLocations/edgeGateways",
                         "location": "local",
                         "tags": {},

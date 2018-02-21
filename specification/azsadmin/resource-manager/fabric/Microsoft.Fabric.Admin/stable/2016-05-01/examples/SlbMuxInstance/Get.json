@@ -10,7 +10,7 @@
         "200": {
             "body": {
                 "id": "/subscriptions/36e98cad-c8a5-4580-bef7-af878a237908/resourceGroups/System.local/providers/Microsoft.Fabric.Admin/fabricLocations/local/slbMuxInstances/AzS-SLB01",
-                "name": "AzS-SLB01",
+                "name": "local/AzS-SLB01",
                 "type": "Microsoft.Fabric.Admin/fabricLocations/slbMuxInstances",
                 "location": "local",
                 "tags": {},
