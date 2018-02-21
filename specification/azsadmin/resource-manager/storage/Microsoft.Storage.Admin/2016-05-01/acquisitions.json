@@ -19,7 +19,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/acquisitions": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of page blob acquistions.": {
+                    "Returns a list of page BLOB acquistions.": {
                         "$ref": "./Examples/Acquisitions/List.json"
                     }
                 },
@@ -27,7 +27,7 @@
                     "Acquisitions"
                 ],
                 "operationId": "Acquisitions_List",
-                "description": "Returns a list of blob acquistions.",
+                "description": "Returns a list of BLOB acquistions.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -64,7 +64,7 @@
     },
     "definitions": {
         "AcquisitionStatus": {
-            "description": "The status of page blob acquisition.",
+            "description": "The status of page BLOB acquisition.",
             "type": "string",
             "enum": [
                 "InProgress",
@@ -77,50 +77,50 @@
             }
         },
         "AcquisitionProperties": {
-            "description": "The Properties of page blob acquisition.",
+            "description": "The Properties of page BLOB acquisition.",
             "type": "object",
             "properties": {
                 "filePath": {
-                    "description": "The file path of the page blob file on storage cluster.",
+                    "description": "The file path of the page BLOB file on storage cluster.",
                     "type": "string"
                 },
                 "maximumblobsize": {
-                    "description": "The maximum size of the page blob.",
+                    "description": "The maximum size of the page BLOB.",
                     "type": "integer",
                     "format": "int64"
                 },
                 "status": {
-                    "description": "The status of the page blob acquisition.",
+                    "description": "The status of the page BLOB acquisition.",
                     "$ref": "#/definitions/AcquisitionStatus"
                 },
                 "susbcriptionid": {
-                    "description": "ID of the subscription associated with the the page blob.",
+                    "description": "ID of the subscription associated with the page BLOB.",
                     "type": "string"
                 },
                 "storageaccount": {
-                    "description": "The storage account that holds the page blob.",
+                    "description": "The storage account that holds the page BLOB.",
                     "type": "string"
                 },
                 "container": {
-                    "description": "The container associated with the the page blob.",
+                    "description": "The container associated with the the page BLOB.",
                     "type": "string"
                 },
                 "blob": {
-                    "description": "The name of the page blob.",
+                    "description": "The name of the page BLOB.",
                     "type": "string"
                 },
                 "acquisitionid": {
-                    "description": "The ID of page blob acquisition.",
+                    "description": "The ID of page BLOB acquisition.",
                     "type": "string"
                 }
             }
         },
         "Acquisition": {
-            "description": "The acquisition of page blob.",
+            "description": "The acquisition of the page BLOB.",
             "type": "object",
             "properties": {
                 "properties": {
-                    "description": "The properties of page blob acquisition.",
+                    "description": "The properties of the page blob acquisition.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/AcquisitionProperties"
                 }
@@ -132,7 +132,7 @@
             ]
         },
         "AcquisitionList": {
-            "description": "The list of page blob acquisitions.",
+            "description": "The list of page BLOB acquisitions.",
             "type": "array",
             "items": {
                 "$ref": "#/definitions/Acquisition"

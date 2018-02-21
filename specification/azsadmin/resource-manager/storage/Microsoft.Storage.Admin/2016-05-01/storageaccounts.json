@@ -263,7 +263,7 @@
                     "$ref": "#/definitions/StorageAccountState"
                 },
                 "primaryEndpoints": {
-                    "description": "The URLs that are used to perform a retrieval of a public blob, queue, or table object.",
+                    "description": "The URLs that are used to perform a retrieval of a public BLOB, queue, or table object.",
                     "additionalProperties": {
                         "type": "string"
                     },

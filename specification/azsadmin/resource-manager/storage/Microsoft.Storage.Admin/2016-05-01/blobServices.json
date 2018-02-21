@@ -19,7 +19,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the blob service.": {
+                    "Returns the BLOB service.": {
                         "$ref": "./Examples/BlobService/Get.json"
                     }
                 },
@@ -27,7 +27,7 @@
                     "BlobServices"
                 ],
                 "operationId": "BlobServices_Get",
-                "description": "Returns the blob service.",
+                "description": "Returns the BLOB service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -44,7 +44,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- The blob service has been returned.",
+                        "description": "OK -- The BLOB service has been returned.",
                         "schema": {
                             "$ref": "#/definitions/BlobService"
                         }
@@ -58,7 +58,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metricdefinitions": {
             "get": {
                 "x-ms-examples": {
-                    "Returns the list of metric definitions for blob service.": {
+                    "Returns the list of metric definitions for BLOB service.": {
                         "$ref": "./Examples/BlobService/ListMetricDefinitions.json"
                     }
                 },
@@ -66,7 +66,7 @@
                     "BlobServices"
                 ],
                 "operationId": "BlobServices_ListMetricDefinitions",
-                "description": "Returns the list of metric definitions for blob service.",
+                "description": "Returns the list of metric definitions for BLOB service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -83,7 +83,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- This list of metric definitions for blob service has been returned.",
+                        "description": "OK -- The list of metric definitions for the BLOB service has been returned.",
                         "schema": {
                             "$ref": "storage.json#/definitions/MetricDefinitionList"
                         }
@@ -100,7 +100,7 @@
         "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Storage.Admin/farms/{farmId}/blobservices/default/metrics": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of metrics for blob service.": {
+                    "Returns a list of metrics for BLOB service.": {
                         "$ref": "./Examples/BlobService/ListMetrics.json"
                     }
                 },
@@ -108,7 +108,7 @@
                     "BlobServices"
                 ],
                 "operationId": "BlobServices_ListMetrics",
-                "description": "Returns a list of metrics for blob service.",
+                "description": "Returns a list of metrics for BLOB service.",
                 "parameters": [
                     {
                         "$ref": "storage.json#/parameters/SubscriptionIdParameter"
@@ -142,16 +142,16 @@
     },
     "definitions": {
         "BlobServiceWritableSettings": {
-            "description": "Settings of blob service.",
+            "description": "Settings of BLOB service.",
             "type": "object",
             "properties": {
                 "blobSvcContainerGcInterval": {
-                    "description": "The interval (in seconds) of container garbage collection.",
+                    "description": "The interval, in seconds, of container garbage collection.",
                     "type": "integer",
                     "format": "int32"
                 },
                 "blobSvcShallowGcInterval": {
-                    "description": "The interval (in seconds) of shallow garbage collection.",
+                    "description": "The interval ,in seconds, of shallow garbage collection.",
                     "type": "integer",
                     "format": "int32"
                 },
@@ -193,7 +193,7 @@
             ]
         },
         "BlobService": {
-            "description": "The blob service.",
+            "description": "The BLOB service.",
             "type": "object",
             "properties": {
                 "properties": {

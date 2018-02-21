@@ -264,11 +264,11 @@
                     "format": "int64"
                 },
                 "accountid": {
-                    "description": "The ID of storage account.",
+                    "description": "The ID of the storage account.",
                     "type": "string"
                 },
                 "usedBytesInPrimaryVolume": {
-                    "description": "The used space (in Bytes) of the container in the primary volume.",
+                    "description": "The used space, in bytes, of the container in the primary volume.",
                     "type": "integer",
                     "format": "int64"
                 },
@@ -300,7 +300,7 @@
                     "type": "string"
                 },
                 "sourceShareName": {
-                    "description": "The name of source storage share.",
+                    "description": "The name of the source storage share.",
                     "type": "string"
                 },
                 "storageAccountName": {
@@ -308,11 +308,11 @@
                     "type": "string"
                 },
                 "containerName": {
-                    "description": "The name of container to be migrated.",
+                    "description": "The name of the container to be migrated.",
                     "type": "string"
                 },
                 "destinationShareName": {
-                    "description": "The name of destination storage share.",
+                    "description": "The name of the destination storage share.",
                     "type": "string"
                 },
                 "migrationStatus": {
@@ -341,11 +341,11 @@
             "properties": {
                 "storageAccountName": {
                     "type": "string",
-                    "description": "The name of storage account where the container locates."
+                    "description": "The name of the storage account where the container locates."
                 },
                 "containerName": {
                     "type": "string",
-                    "description": "NThe name of the container to be migrated."
+                    "description": "The name of the container to be migrated."
                 },
                 "destinationShareUncPath": {
                     "type": "string",
@@ -369,7 +369,7 @@
             "x-ms-parameter-location": "method"
         },
         "MaxCountParameter": {
-            "description": "The max count of containers.",
+            "description": "The maximum number of containers.",
             "name": "MaxCount",
             "in": "query",
             "type": "integer",
@@ -378,7 +378,7 @@
             "x-ms-parameter-location": "method"
         },
         "StartIndexParameter": {
-            "description": "The start index of get containers.",
+            "description": "The starting index the resource provider uses.",
             "name": "StartIndex",
             "in": "query",
             "type": "integer",
