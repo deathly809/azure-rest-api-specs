@@ -156,11 +156,11 @@
                     "type": "string"
                 },
                 "resourceURI": {
-                    "description": "Resource URI.",
+                    "description": "Gets or sets the resource URI.",
                     "type": "string"
                 },
                 "rpRegistrationId": {
-                    "description": "Resource provider registration Id.",
+                    "description": "Gets or sets the resource provider registration ID.",
                     "type": "string"
                 },
                 "usageMetrics": {
@@ -178,10 +178,10 @@
             ]
         },
         "ResourceHealthList": {
-            "description": "Pageable list of resource healths.",
+            "description": "Pageable list of resource health objects.",
             "properties": {
                 "value": {
-                    "description": "Array of of resource healths",
+                    "description": "List of resource health objects.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/ResourceHealth"
@@ -199,7 +199,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

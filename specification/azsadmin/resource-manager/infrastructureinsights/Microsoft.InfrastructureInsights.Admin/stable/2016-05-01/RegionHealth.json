@@ -13,14 +13,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.InfrastructureInsights.Admin/regionHealths": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of region's health status.": {
+                    "Returns the list of all health status for the region.": {
                         "$ref": "./examples/RegionHealth/List.json"
                     }
                 },
                 "tags": [
                     "RegionHealths"
                 ],
-                "description": "Returns a list of region's health status.",
+                "description": "Returns the list of all health status for the region.",
                 "operationId": "RegionHealths_List",
                 "parameters": [
                     {
@@ -107,10 +107,10 @@
     },
     "definitions": {
         "RegionHealth": {
-            "description": "Contains information related to a regions health.",
+            "description": "Contains information related to the health of a region.",
             "properties": {
                 "properties": {
-                    "description": "Contains information related to a regions health.",
+                    "description": "Contains information related to the health of a region.",
                     "$ref": "#/definitions/RegionHealthModel",
                     "x-ms-client-flatten": true
                 }
@@ -122,14 +122,14 @@
             ]
         },
         "RegionHealthModel": {
-            "description": "Contains information related to a regions health.",
+            "description": "Contains information related to the health of a region.",
             "properties": {
                 "alertSummary": {
                     "description": "Summary of alerts.",
                     "$ref": "InfrastructureInsights.json#/definitions/AlertSummary"
                 },
                 "usageMetrics": {
-                    "description": "List of usage metrics for this region.",
+                    "description": "List of usage metrics for the region.",
                     "type": "array",
                     "items": {
                         "$ref": "InfrastructureInsights.json#/definitions/UsageMetrics"
@@ -160,7 +160,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

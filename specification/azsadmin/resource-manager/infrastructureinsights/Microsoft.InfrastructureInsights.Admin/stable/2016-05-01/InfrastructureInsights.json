@@ -13,11 +13,11 @@
         "/providers/Microsoft.InfrastructureInsights/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Returns a list of support rest operations.": {
+                    "Returns a list of support REST operations.": {
                         "$ref": "./examples/Operations/List.json"
                     }
                 },
-                "description": "Returns a list of support rest operations.",
+                "description": "Returns a list of support REST operations.",
                 "tags": [
                     "InfrastructureInsights"
                 ],
@@ -49,7 +49,7 @@
     },
     "definitions": {
         "Dictionary": {
-            "description": "Dictionary of string keys and values.",
+            "description": "Dictionary of string key-value pairs.",
             "type": "object",
             "additionalProperties": {
                 "type": "string"
@@ -67,11 +67,11 @@
                     "type": "string"
                 },
                 "namespace": {
-                    "description": "Name space.",
+                    "description": "Namespace.",
                     "type": "string"
                 },
                 "registrationId": {
-                    "description": "Registration id.",
+                    "description": "Registration ID.",
                     "type": "string"
                 },
                 "routePrefix": {
@@ -84,7 +84,7 @@
             "description": "Base Resource Object",
             "type": "object",
             "properties": {
-                "id": {
+                "ID": {
                     "description": "URI of the resource.",
                     "type": "string",
                     "readOnly": true
@@ -100,12 +100,12 @@
                     "readOnly": true
                 },
                 "location": {
-                    "description": "Location where resource is location.",
+                    "description": "Location of the resource.",
                     "type": "string",
                     "readOnly": true
                 },
                 "tags": {
-                    "description": "List of key value pairs.",
+                    "description": "List of key-value pairs.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
@@ -118,11 +118,11 @@
             "description": "Summary of the alerts.",
             "properties": {
                 "criticalAlertCount": {
-                    "description": "How many critical alerts this service has.",
+                    "description": "The number of critical alerts for the service.",
                     "type": "integer"
                 },
                 "warningAlertCount": {
-                    "description": "How many warning alerts this service has.",
+                    "description": "The number of warning alerts for the service.",
                     "type": "integer"
                 }
             }
@@ -135,20 +135,20 @@
                     "type": "string"
                 },
                 "maCounterName": {
-                    "description": "Name of the usage metric.",
+                    "description": "Name of the counter.",
                     "type": "string"
                 },
                 "observedTimestamp": {
-                    "description": "Name of the usage metric.",
+                    "description": "Time counter was observed.",
                     "type": "string",
                     "format": "date-time"
                 },
                 "sourceType": {
-                    "description": "Name of the usage metric.",
+                    "description": "Type of the source.",
                     "type": "string"
                 },
                 "sourceName": {
-                    "description": "Source of the metric.",
+                    "description": "Name of the source.",
                     "$ref": "#/definitions/MetricsSourceType"
                 },
                 "unit": {
@@ -164,7 +164,7 @@
         },
         "MetricsSourceType": {
             "type": "string",
-            "description": "What created the metric.",
+            "description": "The origin of the metric.",
             "enum": [
                 "PhysicalNode",
                 "VirtualMachine",
@@ -209,14 +209,14 @@
             }
         },
         "Operation": {
-            "description": "Describes the supported rest operation.",
+            "description": "Describes the supported REST operation.",
             "properties": {
                 "name": {
-                    "description": "The name of the operation being performed on this particular object. It should match the action name that appears in RBAC / the event service.",
+                    "description": "The name of the operation performed on the object. The name should match the action name that appears in RBAC or the event service.",
                     "type": "string"
                 },
                 "display": {
-                    "description": "Contains the localized display information for this particular operation / action..",
+                    "description": "Contains the localized display information for this particular operation or action.",
                     "$ref": "#/definitions/Display"
                 }
             }
@@ -225,19 +225,19 @@
             "description": "Contains the localized display information for this particular operation / action..",
             "properties": {
                 "provider": {
-                    "description": "The localized friendly form of the resource provider name – it is expected to also include the publisher/company responsible. It should use Title Casing and begin with \"Microsoft\" for 1st party services. e.g. \"Microsoft Monitoring Insights\" or \"Microsoft Compute.\"",
+                    "description": "The localized, friendly version of the resource provider name. The provider name is expected to include the name of the publisher or company responsible. The provider name format should use title case and begin with \"Microsoft\" for first-party services. For example, the provider name may be\"Microsoft Monitoring Insights\" or \"Microsoft Compute\".",
                     "type": "string"
                 },
                 "resource": {
-                    "description": "The localized friendly form of the resource type related to this action/operation – it should match the public documentation for the resource provider.",
+                    "description": "The localized, friendly version of the resource type related to this action or operation; the resource type should match the public documentation for the resource provider.",
                     "type": "string"
                 },
                 "operation": {
-                    "description": "The localized friendly name for the operation, as it should be shown to the user.",
+                    "description": "The localized, friendly name for the operation. Use the name as it will be displayed to the user.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "The localized friendly description for the operation, as it should be shown to the user. It should be thorough, yet concise – it will be used in tool tips and detailed views.",
+                    "description": "The localized, friendly description for the operation. The description will be displayed to the user. It should be thorough and concise for used in both tooltips and detailed views.",
                     "type": "string"
                 }
             }
@@ -263,14 +263,14 @@
         "SubscriptionIdParameter": {
             "name": "subscriptionId",
             "in": "path",
-            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription.The subscription ID forms part of the URI for every service call.",
+            "description": "Subscription credentials that uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.",
             "required": true,
             "type": "string"
         },
         "ApiVersionParameter": {
             "name": "api-version",
             "in": "query",
-            "description": "Client Api Version.",
+            "description": "Client API Version.",
             "required": true,
             "type": "string",
             "default": "2016-05-01"
@@ -299,7 +299,7 @@
             "x-ms-parameter-location": "method"
         },
         "ResourceRegistrationIdParameter": {
-            "description": "Resource registration id.",
+            "description": "Resource registration ID.",
             "name": "resourceRegistrationId",
             "type": "string",
             "required": true,
@@ -307,7 +307,7 @@
             "x-ms-parameter-location": "method"
         },
         "ServiceRegistrationIdParameter": {
-            "description": "Service registration id.",
+            "description": "Service registration ID.",
             "name": "serviceRegistrationId",
             "type": "string",
             "required": true,
@@ -320,7 +320,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

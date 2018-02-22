@@ -165,11 +165,11 @@
     },
     "definitions": {
         "Alert": {
-            "description": "This class models an alert resource.",
+            "description": "This object represents an alert resource.",
             "type": "object",
             "properties": {
                 "properties": {
-                    "description": "Holds all information related to Alerts",
+                    "description": "Contains information related to alerts.",
                     "$ref": "#/definitions/AlertModel",
                     "x-ms-client-flatten": true
                 }
@@ -181,7 +181,7 @@
             ]
         },
         "AlertModel": {
-            "description": "Holds Alert data",
+            "description": "Contains alert data.",
             "properties": {
                 "closedTimestamp": {
                     "description": "Timestamp when the alert was closed.",
@@ -199,15 +199,15 @@
                     }
                 },
                 "faultId": {
-                    "description": "Fault id of the alert.",
+                    "description": "Gets or sets the fault ID of the alert.",
                     "type": "string"
                 },
                 "alertId": {
-                    "description": "Id of the alert.",
+                    "description": "Gets or sets the ID of the alert.",
                     "type": "string"
                 },
                 "faultTypeId": {
-                    "description": "Fault type id of the alert.",
+                    "description": "Gets or sets the fault type ID of the alert.",
                     "type": "string"
                 },
                 "lastUpdatedTimestamp": {
@@ -222,18 +222,18 @@
                     }
                 },
                 "remediation": {
-                    "description": "Admin friendly remediation instructions for the alert.",
+                    "description": "Gets or sets the admin friendly remediation instructions for the alert.",
                     "type": "array",
                     "items": {
                         "$ref": "InfrastructureInsights.json#/definitions/Dictionary"
                     }
                 },
                 "resourceRegistrationId": {
-                    "description": "Registration id of the atomic component the alert belongs to.  This is null if not associated with a resource.",
+                    "description": "Gets or sets the registration ID of the resource associated with the alert. If the alert is not associated with a resource, the resource registration ID is null.",
                     "type": "string"
                 },
                 "resourceProviderRegistrationId": {
-                    "description": "Registration id of the service the alert belongs to.",
+                    "description": "Gets or sets the registration ID of the service the alert belongs to.",
                     "type": "string"
                 },
                 "severity": {
@@ -245,11 +245,11 @@
                     "type": "string"
                 },
                 "title": {
-                    "description": "Title of the alert.",
+                    "description": "Gets or sets the Resource ID for the impacted item.",
                     "type": "string"
                 },
                 "impactedResourceId": {
-                    "description": "ResourceId for the impacted item.",
+                    "description": "Gets or sets the Resource ID for the impacted item.",
                     "type": "string"
                 },
                 "impactedResourceDisplayName": {
@@ -263,18 +263,18 @@
             }
         },
         "AlertList": {
-            "description": "A pageable list of Alerts",
+            "description": "A pageable list of alerts",
             "properties": {
                 "value": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Alert"
                     },
-                    "description": "Holds all alerts in this page."
+                    "description": "List of alerts."
                 },
                 "nextLink": {
                     "type": "string",
-                    "description": "Points to the next page."
+                    "description": "URI to the next page."
                 }
             }
         }
@@ -297,7 +297,7 @@
             "x-ms-parameter-location": "method"
         },
         "AlertParameter": {
-            "description": "Updated Alert Parameter.",
+            "description": "Updated alert parameter.",
             "name": "alert",
             "schema": {
                 "$ref": "#/definitions/Alert"
@@ -312,7 +312,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }
