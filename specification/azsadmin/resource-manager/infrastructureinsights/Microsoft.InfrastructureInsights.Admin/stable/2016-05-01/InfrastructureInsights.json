@@ -63,11 +63,11 @@
                     "$ref": "#/definitions/AlertSummary"
                 },
                 "healthState": {
-                    "description": "Health status.",
+                    "description": "Health state.",
                     "type": "string"
                 },
                 "namespace": {
-                    "description": "Namespace.",
+                    "description": "Namespace of the health resource.",
                     "type": "string"
                 },
                 "registrationId": {

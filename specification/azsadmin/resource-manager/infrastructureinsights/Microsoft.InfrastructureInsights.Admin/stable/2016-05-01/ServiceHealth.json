@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Service health operation endpoints and objects.",
+        "description": "Resource provider health operation endpoints and objects.",
         "title": "InfrastructureInsightsManagementClient",
         "version": "2016-05-01"
     },
