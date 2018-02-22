@@ -115,7 +115,7 @@
                     "InfraRole"
                 ],
                 "description": "Restart the requestd infrastructure role.",
-                "operationId": "InfraRole_Restart",
+                "operationId": "InfraRoles_Restart",
                 "parameters": [
                     {
                         "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
