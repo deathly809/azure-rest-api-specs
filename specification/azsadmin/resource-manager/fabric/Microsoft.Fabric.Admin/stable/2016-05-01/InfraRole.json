@@ -103,6 +103,46 @@
                 },
                 "x-ms-odata": "#/definitions/InfraRole"
             }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoles/{infraRole}/Restart": {
+            "post": {
+                "x-ms-examples": {
+                    "Restart the requestd infrastructure role.": {
+                        "$ref": "./examples/InfraRole/Restart.json"
+                    }
+                },
+                "tags": [
+                    "InfraRole"
+                ],
+                "description": "Restart the requestd infrastructure role.",
+                "operationId": "InfraRole_Restart",
+                "parameters": [
+                    {
+                        "$ref": "Fabric.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ResourceGroupParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/LocationParameter"
+                    },
+                    {
+                        "$ref": "#/parameters/InfraRoleParameter"
+                    },
+                    {
+                        "$ref": "Fabric.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "202": {
+                        "description": "ACCEPTED"
+                    }
+                },
+                "x-ms-long-running-operation": true
+            }
         }
     },
     "definitions": {
