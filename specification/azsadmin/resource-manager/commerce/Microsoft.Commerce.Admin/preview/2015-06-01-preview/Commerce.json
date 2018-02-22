@@ -13,11 +13,11 @@
         "/providers/Microsoft.Commerce.Admin/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of supported rest operations.": {
+                    "Returns the list of supported REST operations.": {
                         "$ref": "./examples/Operations/List.json"
                     }
                 },
-                "description": "Get the list of supported rest operations.",
+                "description": "Returns the list of supported REST operations.",
                 "tags": [
                     "Commerce"
                 ],
@@ -155,7 +155,7 @@
                 },
                 "tags": {
                     "readOnly": true,
-                    "description": "List of key value pairs.",
+                    "description": "List of key-value pairs.",
                     "type": "object",
                     "additionalProperties": {
                         "type": "string"
@@ -186,17 +186,17 @@
             "properties": {
                 "subscriptionId": {
                     "type": "string",
-                    "description": "Subscription id of tenant using plan."
+                    "description": "Subscription ID of tenant using plan."
                 },
                 "usageStartTime": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "UTC start time for the usage bucket to which this usage aggregate belongs."
+                    "description": "UTC start time for the usage category to which this usage aggregate belongs."
                 },
                 "usageEndTime": {
                     "type": "string",
                     "format": "date-time",
-                    "description": "UTC end time for the usage bucket to which this usage aggregate belongs."
+                    "description": "UTC end time for the usage category to which this usage aggregate belongs."
                 },
                 "instanceData": {
                     "description": "Key-value pairs of instance details represented as a string.",
@@ -207,16 +207,16 @@
                     "type": "string"
                 },
                 "meterId": {
-                    "description": "Unique ID for the resource that was consumed (aka ResourceID).",
+                    "description": "Unique ID for the resource that was consumed, for example, the Resource ID.",
                     "type": "string"
                 }
             }
         },
         "UsageAggregatePage": {
-            "description": "Holds an array of usage aggregates and the continuation token.",
+            "description": "Pageable list of usage aggregates",
             "properties": {
                 "value": {
-                    "description": "Array of usage aggregates.",
+                    "description": "List of usage aggregates.",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/UsageAggregate"
@@ -224,19 +224,19 @@
                 },
                 "nextLink": {
                     "type": "string",
-                    "description": "Continuation token"
+                    "description": "URI to the next page."
                 }
             }
         },
         "Operation": {
-            "description": "Describes the supported rest operation.",
+            "description": "Describes the supported REST operation.",
             "properties": {
                 "name": {
-                    "description": "The name of the operation being performed on this particular object. It should match the action name that appears in RBAC / the event service.",
+                    "description": "The name of the operation performed on the object. The name should match the action name that appears in RBAC or the event service.",
                     "type": "string"
                 },
                 "display": {
-                    "description": "Contains the localized display information for this particular operation / action..",
+                    "description": "Contains the localized display information for this particular operation or action.",
                     "$ref": "#/definitions/Display"
                 }
             }
@@ -245,19 +245,19 @@
             "description": "Contains the localized display information for this particular operation / action..",
             "properties": {
                 "provider": {
-                    "description": "The localized friendly form of the resource provider name – it is expected to also include the publisher/company responsible. It should use Title Casing and begin with \"Microsoft\" for 1st party services. e.g. \"Microsoft Monitoring Insights\" or \"Microsoft Compute.\"",
+                    "description": "The localized, friendly version of the resource provider name. The provider name is expected to include the name of the publisher or company responsible. The provider name format should use title case and begin with \"Microsoft\" for first-party services. For example, the provider name may be\"Microsoft Monitoring Insights\" or \"Microsoft Compute\".",
                     "type": "string"
                 },
                 "resource": {
-                    "description": "The localized friendly form of the resource type related to this action/operation – it should match the public documentation for the resource provider.",
+                    "description": "The localized, friendly version of the resource type related to this action or operation; the resource type should match the public documentation for the resource provider.",
                     "type": "string"
                 },
                 "operation": {
-                    "description": "The localized friendly name for the operation, as it should be shown to the user.",
+                    "description": "The localized, friendly name for the operation. Use the name as it will be displayed to the user.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "The localized friendly description for the operation, as it should be shown to the user. It should be thorough, yet concise – it will be used in tool tips and detailed views.",
+                    "description": "The localized, friendly description for the operation. The description will be displayed to the user. It should be thorough and concise for used in both tooltips and detailed views.",
                     "type": "string"
                 }
             }
@@ -290,7 +290,7 @@
         "ApiVersionParameter": {
             "name": "api-version",
             "in": "query",
-            "description": "Client Api Version.",
+            "description": "Client API Version.",
             "required": true,
             "type": "string",
             "default": "2015-06-01-preview"
@@ -343,7 +343,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Authorization uses an Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }
