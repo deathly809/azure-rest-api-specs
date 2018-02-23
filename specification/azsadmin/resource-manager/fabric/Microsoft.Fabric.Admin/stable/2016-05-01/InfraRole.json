@@ -107,14 +107,14 @@
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Fabric.Admin/fabricLocations/{location}/infraRoles/{infraRole}/Restart": {
             "post": {
                 "x-ms-examples": {
-                    "Restart the requestd infrastructure role.": {
+                    "Restarts the requestd infrastructure role.": {
                         "$ref": "./examples/InfraRole/Restart.json"
                     }
                 },
                 "tags": [
                     "InfraRole"
                 ],
-                "description": "Restart the requestd infrastructure role.",
+                "description": "Restarts the requestd infrastructure role.",
                 "operationId": "InfraRoles_Restart",
                 "parameters": [
                     {
