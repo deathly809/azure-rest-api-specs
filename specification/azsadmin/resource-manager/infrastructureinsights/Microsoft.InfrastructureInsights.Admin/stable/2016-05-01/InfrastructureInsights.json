@@ -84,7 +84,7 @@
             "description": "Base Resource Object",
             "type": "object",
             "properties": {
-                "ID": {
+                "id": {
                     "description": "URI of the resource.",
                     "type": "string",
                     "readOnly": true
