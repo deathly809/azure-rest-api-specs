@@ -10,7 +10,7 @@
         "https"
     ],
     "paths": {
-        "/providers/Microsoft.InfrastructureInsights/operations": {
+        "/providers/Microsoft.InfrastructureInsights.Admin/operations": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of support REST operations.": {
@@ -284,7 +284,7 @@
         },
         "RegionParameter": {
             "description": "Name of the region",
-            "name": "region",
+            "name": "location",
             "type": "string",
             "required": true,
             "in": "path",
