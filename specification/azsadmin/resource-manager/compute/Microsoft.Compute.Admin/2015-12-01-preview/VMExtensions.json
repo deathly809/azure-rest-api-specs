@@ -9,7 +9,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/VMExtension/publishers/{publisher}/types/{type}/versions/{version}": {
             "get": {
                 "x-ms-examples": {
                     "Returns requested Virtual Machine Extension Image.": {
@@ -161,7 +161,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/VMExtension": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/VMExtension": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of all Virtual Machine Extension Image.": {
@@ -228,7 +228,7 @@
             "properties": {
                 "vmOsType": {
                     "description": "Target virtual machine operating system type necessary for deploying the extension handler.",
-                    "$ref": "#/definitions/OsType"
+                    "$ref": "PlatformImages.json#/definitions/OsType"
                 },
                 "computeRole": {
                     "description": "Compute role",

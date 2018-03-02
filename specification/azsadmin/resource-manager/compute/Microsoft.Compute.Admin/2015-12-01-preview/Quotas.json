@@ -9,7 +9,7 @@
         "https"
     ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas/{quotaName}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/quotas/{quotaName}": {
             "get": {
                 "x-ms-examples": {
                     "Get an existing Quota.": {
@@ -137,7 +137,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/quotas": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/quotas": {
             "get": {
                 "x-ms-examples": {
                     "Get a list of existing quotas.": {

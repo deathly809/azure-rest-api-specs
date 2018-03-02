@@ -8,8 +8,14 @@
     "schemes": [
         "https"
     ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
     "paths": {
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/platformImage": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of all platform images.": {
@@ -22,10 +28,6 @@
                 "summary": "Returns all platform images.",
                 "description": "Returns a list of all platform images.",
                 "operationId": "PlatformImages_List",
-                "consumes": [],
-                "produces": [
-                    "application/json"
-                ],
                 "parameters": [
                     {
                         "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
@@ -50,7 +52,7 @@
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{locationName}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.Compute.Admin/locations/{location}/artifactTypes/platformImage/publishers/{publisher}/offers/{offer}/skus/{sku}/versions/{version}": {
             "get": {
                 "x-ms-examples": {
                     "Get a platform image by name.": {
@@ -63,12 +65,6 @@
                 "summary": "Returns the requested platform image.",
                 "description": "Returns the requested platform image.",
                 "operationId": "PlatformImages_Get",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
                 "parameters": [
                     {
                         "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
@@ -116,12 +112,6 @@
                 "description": "Creates a new platform image.",
                 "summary": "Creates a platform image.",
                 "operationId": "PlatformImages_Create",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
                 "parameters": [
                     {
                         "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
@@ -185,12 +175,6 @@
                 "summary": "Deletes a platform image",
                 "description": "Delete a platform image",
                 "operationId": "PlatformImages_Delete",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
                 "parameters": [
                     {
                         "$ref": "Compute.json#/parameters/SubscriptionIdParameter"
