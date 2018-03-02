@@ -244,7 +244,7 @@
         },
         "StorgeQuotaParameters": {
             "description": "The properties of quota being created or updated.",
-            "name": "parameters",
+            "name": "quotaObject",
             "in": "body",
             "required": true,
             "schema": {

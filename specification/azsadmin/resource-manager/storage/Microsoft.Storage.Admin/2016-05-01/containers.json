@@ -47,10 +47,16 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK -- Operation has been accepted and processed"
+                        "description": "OK -- Operation has been accepted and processed",
+                        "schema": {
+                            "$ref": "#/definitions/MigrationResult"
+                        }
                     },
                     "202": {
-                        "description": "ACCEPTED - Operation has been accepted will be processed asynchronously"
+                        "description": "ACCEPTED - Operation has been accepted will be processed asynchronously",
+                        "schema": {
+                            "$ref": "#/definitions/MigrationResult"
+                        }
                     }
                 },
                 "x-ms-long-running-operation": true
@@ -225,15 +231,13 @@
                     "200": {
                         "description": "OK -- Container has been migrated",
                         "schema": {
-                            "description": "Migration job ID.",
-                            "type": "string"
+                            "$ref": "#/definitions/MigrationResult"
                         }
                     },
                     "202": {
                         "description": "ACCEPTED -- Operation accepted and will be performed asynchronously",
                         "schema": {
-                            "description": "Migration job ID.",
-                            "type": "string"
+                            "$ref": "#/definitions/MigrationResult"
                         }
                     }
                 },
@@ -317,7 +321,7 @@
                 },
                 "migrationStatus": {
                     "description": "The migration status.",
-                    "type": "string"
+                    "$ref": "#/definitions/MigrationState"
                 },
                 "subEntitiesCompleted": {
                     "description": "The number of entities which have been migrated.",
@@ -333,6 +337,65 @@
                     "description": "The migration failure reason.",
                     "type": "string"
                 }
+            }
+        },
+        "MigrationState": {
+            "type": "string",
+            "enum": [
+                "Active",
+                "Paused",
+                "Deleted",
+                "Rollback",
+                "Complete",
+                "Canceled",
+                "Failed",
+                "All"
+            ],
+            "x-ms-enum": {
+                "name": "MigrationState",
+                "modelAsString": "true",
+                "values": [
+                    {
+                        "description": "Migration is currently active and progressing without issues.",
+                        "name": "Active",
+                        "value": 1
+                    },
+                    {
+                        "description": "Migration was paused by the user.",
+                        "name": "Paused",
+                        "value": 2
+                    },
+                    {
+                        "description": "The migration has been deleted.",
+                        "name": "Deleted",
+                        "value": 4
+                    },
+                    {
+                        "description": "Migration is currently active but rolling back.",
+                        "name": "Rollback",
+                        "value": 8
+                    },
+                    {
+                        "description": "Migration finished without issues. The migration job is no longer running.",
+                        "name": "Complete",
+                        "value": 16
+                    },
+                    {
+                        "description": "Migration rollback finished. The migration job is no longer running.",
+                        "name": "Canceled",
+                        "value": 32
+                    },
+                    {
+                        "description": "Migration failed and is currently not progressing. Requires action from the user to either resolve the problem or roll back the migration.",
+                        "name": "Failed",
+                        "value": 64
+                    },
+                    {
+                        "description": "The combination of all states.",
+                        "name": "All",
+                        "value": 127
+                    }
+                ]
             }
         },
         "MigrationParameters": {

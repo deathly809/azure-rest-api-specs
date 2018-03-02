@@ -116,7 +116,7 @@
                         "$ref": "storage.json#/parameters/FarmIdParameter"
                     },
                     {
-                        "$ref": "#/parameters/FarmParameters"
+                        "$ref": "#/parameters/FarmObject"
                     }
                 ],
                 "responses": {
@@ -587,35 +587,28 @@
                 }
             }
         },
-        "FarmPropertiesBase": {
-            "description": "Storage farm properties base object.",
+        "FarmProperties": {
+            "description": "The properties of storage farm.",
             "type": "object",
             "properties": {
+                "farmId": {
+                    "description": "Farm identifier.",
+                    "type": "string"
+                },
+                "version": {
+                    "description": "Resource version.",
+                    "type": "string"
+                },
+                "settingsStore": {
+                    "description": "The settings of storage farm.",
+                    "type": "string"
+                },
                 "settings": {
                     "description": "The properties of storage farm.",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/FarmSettings"
                 }
             }
-        },
-        "FarmProperties": {
-            "description": "The properties of storage farm.",
-            "type": "object",
-            "properties": {
-                "settingsStore": {
-                    "description": "The settings of storage farm.",
-                    "type": "string"
-                },
-                "healthStatus": {
-                    "description": "The health status of storage farm.",
-                    "$ref": "storage.json#/definitions/HealthStatus"
-                }
-            },
-            "allOf": [
-                {
-                    "$ref": "#/definitions/FarmPropertiesBase"
-                }
-            ]
         },
         "SettingAccessString": {
             "description": "Setting access string.",
@@ -630,12 +623,21 @@
     },
     "parameters": {
         "FarmParameters": {
-            "name": "parameters",
+            "name": "farmObject",
             "description": "Parameters used to create a farm",
             "in": "body",
             "required": true,
             "schema": {
                 "$ref": "#/definitions/FarmCreationProperties"
+            }
+        },
+        "FarmObject": {
+            "name": "farmObject",
+            "description": "Farm to update.",
+            "in": "body",
+            "required": true,
+            "schema": {
+                "$ref": "#/definitions/Farm"
             }
         }
     },

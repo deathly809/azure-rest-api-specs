@@ -144,8 +144,8 @@
             "description": "Storage account state.",
             "type": "string",
             "enum": [
-                "PreCreate",
-                "Created",
+                "Creating",
+                "Succeeded",
                 "Suspended"
             ],
             "x-ms-enum": {
@@ -173,8 +173,8 @@
             "type": "string",
             "description": "Gets the status indicating whether the primary location of the storage account is available or unavailable.",
             "enum": [
-                "available",
-                "unavailable"
+                "Available",
+                "Unavailable"
             ],
             "x-ms-enum": {
                 "name": "LocationStatus",
@@ -272,7 +272,6 @@
                 "creationTime": {
                     "description": "The creation date and time of storage account in UTC.",
                     "type": "string",
-                    "format": "date-time",
                     "readOnly": true
                 },
                 "alternateName": {

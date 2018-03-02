@@ -164,7 +164,7 @@
                 "settings": {
                     "description": "Table service settings.",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/WritableServiceSettings"
+                    "$ref": "storage.json#/definitions/WritableServiceSettings"
                 }
             },
             "allOf": [
