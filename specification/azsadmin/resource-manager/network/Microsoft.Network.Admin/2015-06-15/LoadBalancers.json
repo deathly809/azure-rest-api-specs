@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "List all load balancers": {
-                        "$ref": "./examples/LoadBalancers/LoadBalancersList.json"
+                        "$ref": "./examples/LoadBalancers/List.json"
                     }
                 },
                 "tags": [
@@ -60,7 +60,7 @@
                     }
                 },
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 },
                 "x-ms-odata": "#/definitions/LoadBalancer"
             }
@@ -74,16 +74,16 @@
                 "properties": {
                     "description": "Properties of a load balancer.",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/LoadBalancerPropery"
+                    "$ref": "#/definitions/LoadBalancerProperty"
                 }
             },
             "allOf": [
                 {
-                    "$ref": "Network.json#/definitions/ResourceTenant"
+                    "$ref": "Network.json#/definitions/Resource"
                 }
             ]
         },
-        "LoadBalancerPropery": {
+        "LoadBalancerProperty": {
             "description": "Properties of a load balancer.",
             "type": "object",
             "properties": {
@@ -94,7 +94,12 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "Network.json#/definitions/ResourceTenant"
+                }
+            ]
         },
         "LoadBalancerList": {
             "description": "Pageable list of load balancers.",
@@ -112,17 +117,15 @@
                     "type": "string"
                 }
             }
-        }        
-
+        }
     },
-    "parameters": {
-    },
+    "parameters": {},
     "securityDefinitions": {
         "azure_auth": {
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

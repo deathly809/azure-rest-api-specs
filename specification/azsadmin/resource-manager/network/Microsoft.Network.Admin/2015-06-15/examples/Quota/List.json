@@ -1,0 +1,51 @@
+{
+    "parameters": {
+        "api-version": "2015-06-15",
+        "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
+        "location": "local"
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "value": [
+                    {
+                        "name": "Default Quota",
+                        "etag": "W/\\\"f6b0d071-da58-4a42-b5f7-b98e9f7b2dbf\\\"",
+                        "type": "Microsoft.Network.Admin/quotas",
+                        "location": "local",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "maxPublicIpsPerSubscription": 50,
+                            "maxVnetsPerSubscription": 50,
+                            "maxVirtualNetworkGatewaysPerSubscription": 1,
+                            "maxVirtualNetworkGatewayConnectionsPerSubscription": 2,
+                            "maxLoadBalancersPerSubscription": 50,
+                            "maxNicsPerSubscription": 100,
+                            "maxSecurityGroupsPerSubscription": 50,
+                            "migrationPhase": "None"
+                        },
+                        "id": "/subscriptions/57567fab-bab7-4071-9281-8efeda4c7995/providers/Microsoft.Network.Admin/locations/local/quotas/Default Quota"
+                    },
+                    {
+                        "name": "Test1",
+                        "etag": "W/\\\"f6b0d071-da58-4a42-b5f7-b98e9f7b2dbf\\\"",
+                        "type": "Microsoft.Network.Admin/quotas",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "maxPublicIpsPerSubscription": 50,
+                            "maxVnetsPerSubscription": 50,
+                            "maxVirtualNetworkGatewaysPerSubscription": 1,
+                            "maxVirtualNetworkGatewayConnectionsPerSubscription": 2,
+                            "maxLoadBalancersPerSubscription": 50,
+                            "maxNicsPerSubscription": 10,
+                            "maxSecurityGroupsPerSubscription": 50,
+                            "migrationPhase": "None"
+                        },
+                        "id": "/subscriptions/57567fab-bab7-4071-9281-8efeda4c7995/providers/Microsoft.Network.Admin/locations/local/quotas/Jeff"
+                    }
+                ]
+            }
+        },
+        "404": {}
+    }
+}

@@ -3,7 +3,7 @@
         "api-version": "2015-06-15",
         "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
         "location": "local",
-        "resourceName": "Default Quota"
+        "quotaName": "Default Quota"
     },
     "responses": {
         "200": {
@@ -26,14 +26,6 @@
                 "id": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/locations/local/quotas/Default Quota"
             }
         },
-        "404": {
-            "body": {
-                "error": {
-                    "code": "NotFound",
-                    "message": "Resource /subscriptions/17f638c8-a0e3-404b-92b8-04c749c03b58/resourceGroups//providers/Microsoft.Network.Admin/quotas/TestQuotaForRemoval not found.",
-                    "details": []
-                }
-            }
-        }
+        "404": {}
     }
 }

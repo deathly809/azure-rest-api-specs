@@ -20,14 +20,14 @@
             "get": {
                 "x-ms-examples": {
                     "Get overview of the state of the network resource provider": {
-                        "$ref": "./examples/Network/ResourceProviderState.json"
+                        "$ref": "./examples/ResourceProviderState/Get.json"
                     }
                 },
                 "tags": [
                     "Network"
                 ],
                 "description": "Get an overview of the state of the network resource provider.",
-                "operationId": "ResourceProviderState",
+                "operationId": "ResourceProviderState_Get",
                 "parameters": [
                     {
                         "$ref": "Network.json#/parameters/SubscriptionIdParameter"
@@ -68,7 +68,7 @@
                     "readOnly": true
                 },
                 "location": {
-                    "description": "Region Location of resource.",
+                    "description": "Region location of resource.",
                     "type": "string",
                     "readOnly": true
                 },
@@ -78,6 +78,10 @@
                     "additionalProperties": {
                         "type": "string"
                     }
+                },
+                "etag": {
+                    "type": "string",
+                    "default": "A unique read-only string that changes whenever the resource is updated."
                 }
             },
             "x-ms-azure-resource": true
@@ -88,22 +92,17 @@
             "properties": {
                 "provisioningState": {
                     "description": "The provisioning state.",
-                    "type": "string"
+                    "$ref": "Network.json#/definitions/ProvisioningState"
                 },
                 "subscriptionId": {
-                    "description": "The subscription Id.",
+                    "description": "The subscription ID.",
                     "type": "string"
                 },
                 "tenantResourceUri": {
                     "description": "The tenant resource URI.",
                     "type": "string"
                 }
-            },
-            "allOf": [
-                {
-                    "$ref": "#/definitions/Resource"
-                }
-            ]
+            }
         },
         "AdminOverview": {
             "description": "Admin overview resource object.",
@@ -125,7 +124,7 @@
             "properties": {
                 "provisioningState": {
                     "description": "The provisioning state.",
-                    "type": "string"
+                    "$ref": "#/definitions/ProvisioningState"
                 },
                 "virtualNetworkHealth": {
                     "description": "Health for all virtual networks as reported by the NC.",
@@ -136,7 +135,7 @@
                     "$ref": "#/definitions/AdminOverviewResourceHealth"
                 },
                 "virtualGatewayHealth": {
-                    "description": "Health for all Gateways as reported by the NC.",
+                    "description": "Health for all gateways as reported by the NC.",
                     "$ref": "#/definitions/AdminOverviewResourceHealth"
                 },
                 "publicIpAddressUsage": {
@@ -148,7 +147,7 @@
                     "$ref": "#/definitions/AdminOverviewResourceUsage"
                 },
                 "macAddressUsage": {
-                    "description": "Total MAC Address usage as reported by the NC.",
+                    "description": "Total MAC address usage as reported by the NC.",
                     "$ref": "#/definitions/AdminOverviewResourceUsage"
                 }
             }
@@ -177,7 +176,7 @@
                     "format": "int64"
                 },
                 "healthUnknownCount": {
-                    "description": "number of resources in an unknown state.",
+                    "description": "Number of resources in an unknown state.",
                     "type": "integer",
                     "format": "int64"
                 }
@@ -197,20 +196,33 @@
                     "format": "int64"
                 }
             }
+        },
+        "ProvisioningState": {
+            "type": "string",
+            "enum": [
+                "Succeeded",
+                "Updating",
+                "Deleting",
+                "Failed"
+            ],
+            "x-ms-enum": {
+                "modelAsString": false,
+                "name": "ProvisioningState"
+            }
         }
     },
     "parameters": {
         "SubscriptionIdParameter": {
             "name": "subscriptionId",
             "in": "path",
-            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription.The subscription ID forms part of the URI for every service call.",
+            "description": "Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.",
             "required": true,
             "type": "string"
         },
         "ApiVersionParameter": {
             "name": "api-version",
             "in": "query",
-            "description": "Client Api Version.",
+            "description": "Client API Version.",
             "required": true,
             "type": "string",
             "default": "2015-06-15"
@@ -218,14 +230,6 @@
         "LocationParameter": {
             "description": "Location of the resource.",
             "name": "location",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "x-ms-parameter-location": "method"
-        },
-        "ResourceNameParameter": {
-            "description": "Name of the resource.",
-            "name": "resourceName",
             "in": "path",
             "required": true,
             "type": "string",
@@ -272,7 +276,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

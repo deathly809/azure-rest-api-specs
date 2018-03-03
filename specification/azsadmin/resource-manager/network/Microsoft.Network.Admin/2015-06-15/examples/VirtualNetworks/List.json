@@ -8,20 +8,20 @@
             "body": {
                 "value": [
                     {
-                        "name": "TestVirtualNetwork",
+                        "name": "testing-vnet",
                         "type": "Microsoft.Network.Admin/adminVirtualNetworks",
                         "location": "",
-                        "id": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminVirtualNetworks/TestVirtualNetwork",
+                        "id": "/subscriptions/57567fab-bab7-4071-9281-8efeda4c7995/providers/Microsoft.Network.Admin/adminVirtualNetworks/testing-vnet",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "configurationState": {
                                 "status": "Success",
-                                "lastUpdatedTime": "2017-10-12T15:24:47.4985673-07:00",
+                                "lastUpdatedTime": "2018-03-02T13:58:34.9406618-08:00",
                                 "virtualNetworkInterfaceErrors": [],
                                 "hostErrors": []
                             },
-                            "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
-                            "tenantResourceUri": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/resourceGroups/GreatResource/providers/Microsoft.Network/virtualNetworks/TestVirtualNetwork"
+                            "subscriptionId": "57567fab-bab7-4071-9281-8efeda4c7995",
+                            "tenantResourceUri": "/subscriptions/57567fab-bab7-4071-9281-8efeda4c7995/resourceGroups/testing/providers/Microsoft.Network/virtualNetworks/testing-vnet"
                         }
                     }
                 ]

@@ -8,17 +8,17 @@
             "body": {
                 "value": [
                     {
-                        "name": "192.168.1.2",
+                        "name": "testing-ip",
                         "type": "Microsoft.Network.Admin/adminPublicIPAddresses",
                         "location": "",
-                        "id": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/providers/Microsoft.Network.Admin/adminPublicIPAddresses/192.168.1.2",
+                        "id": "/subscriptions/57567fab-bab7-4071-9281-8efeda4c7995/providers/Microsoft.Network.Admin/adminPublicIPAddresses/testing-ip",
                         "properties": {
                             "provisioningState": "Succeeded",
                             "ipAddress": "192.168.102.32",
-                            "ipPool": "5e85a60b-1da2-45e2-8780-11617421a708",
-                            "allocationMethod": "Static",
-                            "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
-                            "tenantResourceUri": "/subscriptions/fc8456aa-4843-4079-a152-f3497c63aa73/resourceGroups/GreatResource/providers/Microsoft.Network/publicIPAddresses/192.168.1.2"
+                            "ipPool": "ee255780-ef6a-4b4f-85a0-99063f23bc65",
+                            "allocationMethod": "Dynamic",
+                            "subscriptionId": "57567fab-bab7-4071-9281-8efeda4c7995",
+                            "tenantResourceUri": "/subscriptions/57567fab-bab7-4071-9281-8efeda4c7995/resourceGroups/testing/providers/Microsoft.Network/publicIPAddresses/testing-ip"
                         }
                     }
                 ]

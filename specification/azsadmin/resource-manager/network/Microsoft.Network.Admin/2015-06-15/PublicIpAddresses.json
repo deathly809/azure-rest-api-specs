@@ -20,7 +20,7 @@
             "get": {
                 "x-ms-examples": {
                     "List of public ip addresses": {
-                        "$ref": "./examples/PublicIpAddresses/PublicIpAddressesList.json"
+                        "$ref": "./examples/PublicIpAddresses/List.json"
                     }
                 },
                 "tags": [
@@ -55,36 +55,36 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/PublicIpAddressesList"
+                            "$ref": "#/definitions/PublicIpAddressList"
                         }
                     }
                 },
                 "x-ms-pageable": {
-                    "nextLinkName": null
+                    "nextLinkName": "nextLink"
                 },
-                "x-ms-odata": "#/definitions/PublicIpAddresses"
+                "x-ms-odata": "#/definitions/PublicIpAddress"
             }
         }
     },
     "definitions": {
-        "PublicIpAddresses": {
+        "PublicIpAddress": {
             "description": "This resource represents an IP Address.",
             "type": "object",
             "properties": {
                 "properties": {
                     "description": "Properties of an IP Address.",
                     "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/PublicIPAddressesProperties"
+                    "$ref": "#/definitions/PublicIPAddressProperties"
                 }
             },
             "allOf": [
                 {
-                    "$ref": "Network.json#/definitions/ResourceTenant"
+                    "$ref": "Network.json#/definitions/Resource"
                 }
             ]
         },
-        "PublicIPAddressesProperties": {
-            "description": "Properties of an public IP Address.",
+        "PublicIPAddressProperties": {
+            "description": "Properties of a public IP Address.",
             "type": "object",
             "properties": {
                 "ipAddress": {
@@ -107,9 +107,14 @@
                         "name": "AllocationMethodType"
                     }
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "$ref": "Network.json#/definitions/ResourceTenant"
+                }
+            ]
         },
-        "PublicIpAddressesList": {
+        "PublicIpAddressList": {
             "description": "Pageable list of public ip addresses.",
             "type": "object",
             "properties": {
@@ -117,7 +122,7 @@
                     "description": "List of public ip addresses for this page.",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/PublicIpAddresses"
+                        "$ref": "#/definitions/PublicIpAddress"
                     }
                 },
                 "nextLink": {
@@ -142,7 +147,7 @@
             "type": "oauth2",
             "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
             "flow": "implicit",
-            "description": "Azure Active Directory OAuth2 Flow",
+            "description": "Azure Active Directory OAuth2 flow.",
             "scopes": {
                 "user_impersonation": "impersonate your user account"
             }

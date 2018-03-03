@@ -34,13 +34,9 @@ These settings apply only when `--tag=package-2015-06-15` is specified on the co
 ``` yaml $(tag) == 'package-2015-06-15'
 input-file:
     - "Microsoft.Network.Admin/2015-06-15/Network.json"
-    - "Microsoft.Network.Admin/2015-06-15/BackendAddressPools.json"
-    - "Microsoft.Network.Admin/2015-06-15/ConnectionSkus.json"
     - "Microsoft.Network.Admin/2015-06-15/LoadBalancers.json"
-    - "Microsoft.Network.Admin/2015-06-15/Operations.json"
     - "Microsoft.Network.Admin/2015-06-15/PublicIpAddresses.json"
     - "Microsoft.Network.Admin/2015-06-15/Quotas.json"
-    - "Microsoft.Network.Admin/2015-06-15/Usage.json"
     - "Microsoft.Network.Admin/2015-06-15/VirtualNetworks.json"
 ```
 
@@ -79,5 +75,5 @@ python:
 These settings apply only when `--tag=package-2015-06-15 --python` is specified on the command line.
 
 ``` yaml $(tag) == 'package-2015-06-15' && $(python)
-namespace: azure.mgmt.Network.admin.v2016_05_01
+namespace: azure.mgmt.network.admin.v2015_06_15
 ```

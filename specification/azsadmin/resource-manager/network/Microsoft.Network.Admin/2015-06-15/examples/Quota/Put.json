@@ -1,0 +1,59 @@
+{
+    "parameters": {
+        "api-version": "2015-06-15",
+        "subscriptionId": "fc8456aa-4843-4079-a152-f3497c63aa73",
+        "location": "local",
+        "quotaName": "TestQuotaForUpdate",
+        "newQuota": {
+            "properties": {
+                "maxPublicIpsPerSubscription": 32,
+                "maxVnetsPerSubscription": 32,
+                "maxVirtualNetworkGatewaysPerSubscription": 32,
+                "maxVirtualNetworkGatewayConnectionsPerSubscription": 32,
+                "maxLoadBalancersPerSubscription": 32,
+                "maxNicsPerSubscription": 4,
+                "maxSecurityGroupsPerSubscription": 2
+            }
+        }
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "name": "TestQuotaForRemoval",
+                "etag": "W/\\\"facfec6c-d83d-4316-b1a7-2ed93a5b764c\\\"",
+                "type": "Microsoft.Network.Admin/quotas",
+                "properties": {
+                    "provisioningState": "Updating",
+                    "maxPublicIpsPerSubscription": 32,
+                    "maxVnetsPerSubscription": 32,
+                    "maxVirtualNetworkGatewaysPerSubscription": 32,
+                    "maxVirtualNetworkGatewayConnectionsPerSubscription": 32,
+                    "maxLoadBalancersPerSubscription": 32,
+                    "maxNicsPerSubscription": 4,
+                    "maxSecurityGroupsPerSubscription": 2,
+                    "migrationPhase": "None"
+                },
+                "id": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/providers/Microsoft.Network.Admin/locations/local/quotas/TestQuotaForRemoval"
+            }
+        },
+        "201": {
+            "body": {
+                "name": "TestQuotaForRemoval",
+                "etag": "W/\\\"facfec6c-d83d-4316-b1a7-2ed93a5b764c\\\"",
+                "type": "Microsoft.Network.Admin/quotas",
+                "properties": {
+                    "provisioningState": "Updating",
+                    "maxPublicIpsPerSubscription": 32,
+                    "maxVnetsPerSubscription": 32,
+                    "maxVirtualNetworkGatewaysPerSubscription": 32,
+                    "maxVirtualNetworkGatewayConnectionsPerSubscription": 32,
+                    "maxLoadBalancersPerSubscription": 32,
+                    "maxNicsPerSubscription": 4,
+                    "maxSecurityGroupsPerSubscription": 2,
+                    "migrationPhase": "None"
+                },
+                "id": "/subscriptions/8827b0fb-6039-47eb-a7e8-35ca9d2a7a00/providers/Microsoft.Network.Admin/locations/local/quotas/TestQuotaForRemoval"
+            }
+        }
+    }
+}
