@@ -2,76 +2,65 @@
     "parameters": {
         "subscriptionId": "11111111-2222-3333-4444-555555555555",
         "resourceGroupName": "System.local",
+        "location": "local",
+        "backup": {
+            "properties": {
+                "externalStoreDefault": {
+                    "path": "\\\\192.168.1.1\\Share",
+                    "userName": "UserName",
+                    "password": "secretPassword",
+                    "encryptionKeyBase64": "YVVOa0J3S2xTamhHZ1lyRU9wQ1pKQ0xWanhjaHlkaU5ZQnNDeHRPTGFQenJKdWZsRGtYT25oYmlaa1RMVWFKeQ==",
+                    "backupFrequencyInMinutes": "",
+                    "availableCapacity": "10GB",
+                    "isBackupSchedulerEnabled": false
+                }
+            },
+            "location": "local",
+            "tags": {}
+        },
         "api-version": "2016-05-01"
     },
     "responses": {
         "200": {
             "body": {
-                "Id": "/subscriptions/11111111-2222-3333-4444-555555555555/resourceGroups/system.local/providers/Microsoft.Backup.Admin/backupLocations/local/backups/290b4726-a9a1-40ba-a837-895a1173dc73",
-                "Name": "290b4726-a9a1-40ba-a837-895a1173dc73",
-                "Type": "Microsoft.Backup.Admin/backupLocations/backups",
-                "Location": "local",
-                "Tags": {},
-                "Properties": {
-                    "BackupInfo": {
-                        "BackupId": "290b4726-a9a1-40ba-a837-895a1173dc73",
-                        "RoleStatus": [
-                            {
-                                "RoleName": "NRP",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "SRP",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "CRP",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "KeyVaultInternalControlPlane",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "KeyVaultInternalDataPlane",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "KeyVaultControlPlane",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "KeyVaultDataPlane",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "KeyVaultNamingService",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "WAS",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "ECE",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "CA",
-                                "Status": 6
-                            },
-                            {
-                                "RoleName": "ACS",
-                                "Status": 6
-                            }
-                        ],
-                        "Status": 6,
-                        "CreatedDateTime": "2018-02-16T23:01:56.2015457Z",
-                        "TimeTakenToCreate": "PT4M54.5150429S"
+                "id": "/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourcegroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local",
+                "name": "local",
+                "type": "Microsoft.Backup.Admin/backupLocations",
+                "location": "local",
+                "tags": {},
+                "properties": {
+                    "externalStoreDefault": {
+                        "path": "\\\\192.168.1.1\\Share",
+                        "userName": "UserName",
+                        "password": "",
+                        "encryptionKeyBase64": "",
+                        "backupFrequencyInMinutes": "",
+                        "availableCapacity": "10GB",
+                        "isBackupSchedulerEnabled": false
                     }
                 }
             }
         },
-        "202": {}
+        "202": {
+            "body": {
+                "id": "/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/resourcegroups/System.local/providers/Microsoft.Backup.Admin/backupLocations/local",
+                "name": "local",
+                "type": "Microsoft.Backup.Admin/backupLocations",
+                "location": "local",
+                "tags": {},
+                "properties": {
+                    "externalStoreDefault": {
+                        "path": "\\\\192.168.1.1\\Share",
+                        "userName": "UserName",
+                        "password": "",
+                        "encryptionKeyBase64": "",
+                        "backupFrequencyInMinutes": "",
+                        "availableCapacity": "10GB",
+                        "isBackupSchedulerEnabled": false
+                    }
+                }
+            }
+        },
+        "404": {}
     }
 }

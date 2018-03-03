@@ -9,6 +9,12 @@
     "schemes": [
         "https"
     ],
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
     "paths": {
         "/providers/Microsoft.Backup.Admin/operations": {
             "get": {
@@ -159,7 +165,7 @@
             "default": "2016-05-01"
         },
         "ResourceGroupParameter": {
-            "name": "resourceGroup",
+            "name": "resourceGroupName",
             "in": "path",
             "description": "Name of the resource group.",
             "required": true,

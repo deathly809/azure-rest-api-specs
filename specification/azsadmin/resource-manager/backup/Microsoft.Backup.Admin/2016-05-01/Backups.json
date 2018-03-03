@@ -9,8 +9,14 @@
     "schemes": [
         "https"
     ],
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
     "paths": {
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/backups": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Backup.Admin/backupLocations/{location}/backups": {
             "get": {
                 "x-ms-examples": {
                     "Returns a list of backups from a location.": {
@@ -47,18 +53,12 @@
                         "description": "NOT FOUND"
                     }
                 },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
                 "x-ms-pageable": {
                     "nextLinkName": null
                 }
             }
         },
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/backups/{backup}": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Backup.Admin/backupLocations/{location}/backups/{backup}": {
             "get": {
                 "x-ms-examples": {
                     "Returns a backup from a location based on name.": {
@@ -97,16 +97,10 @@
                     "404": {
                         "description": "NOT FOUND"
                     }
-                },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ]
+                }
             }
         },
-        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroup}/providers/Microsoft.Backup.Admin/backupLocations/{backupLocation}/backups/{backup}/restore": {
+        "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Backup.Admin/backupLocations/{location}/backups/{backup}/restore": {
             "post": {
                 "x-ms-examples": {
                     "Get a backup from a location based on name.": {
@@ -146,12 +140,6 @@
                         "description": "NOT FOUND"
                     }
                 },
-                "produces": [
-                    "application/json"
-                ],
-                "consumes": [
-                    "application/json"
-                ],
                 "x-ms-long-running-operation": true
             }
         }
@@ -216,19 +204,49 @@
         },
         "OperationStatus": {
             "description": "Status of an operation.",
-            "type": "string",
+            "type": "integer",
             "enum": [
-                "Creating",
-                "Queued",
-                "Running",
-                "Deleted",
-                "Failed",
-                "PartialSucceeded",
-                "Succeeded"
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
             ],
             "x-ms-enum": {
                 "name": "OperationStatus",
-                "modelAsString": true
+                "modelAsString": false,
+                "values": [
+                    {
+                        "value": "Creating",
+                        "name": 0
+                    },
+                    {
+                        "value": "Queued",
+                        "name": 1
+                    },
+                    {
+                        "value": "Running",
+                        "name": 2
+                    },
+                    {
+                        "value": "Deleted",
+                        "name": 3
+                    },
+                    {
+                        "value": "Failed",
+                        "name": 4
+                    },
+                    {
+                        "value": "PartialSucceeded",
+                        "name": 5
+                    },
+                    {
+                        "value": "Succeeded",
+                        "name": 6
+                    }
+                ]
             }
         },
         "RoleOperationStatusList": {
@@ -246,7 +264,7 @@
                     "description": "Name of the role.",
                     "type": "string"
                 },
-                "operationStatus": {
+                "status": {
                     "description": "Status of the role.",
                     "$ref": "#/definitions/OperationStatus"
                 }
