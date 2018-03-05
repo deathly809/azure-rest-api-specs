@@ -353,49 +353,7 @@
             ],
             "x-ms-enum": {
                 "name": "MigrationState",
-                "modelAsString": "true",
-                "values": [
-                    {
-                        "description": "Migration is currently active and progressing without issues.",
-                        "name": "Active",
-                        "value": 1
-                    },
-                    {
-                        "description": "Migration was paused by the user.",
-                        "name": "Paused",
-                        "value": 2
-                    },
-                    {
-                        "description": "The migration has been deleted.",
-                        "name": "Deleted",
-                        "value": 4
-                    },
-                    {
-                        "description": "Migration is currently active but rolling back.",
-                        "name": "Rollback",
-                        "value": 8
-                    },
-                    {
-                        "description": "Migration finished without issues. The migration job is no longer running.",
-                        "name": "Complete",
-                        "value": 16
-                    },
-                    {
-                        "description": "Migration rollback finished. The migration job is no longer running.",
-                        "name": "Canceled",
-                        "value": 32
-                    },
-                    {
-                        "description": "Migration failed and is currently not progressing. Requires action from the user to either resolve the problem or roll back the migration.",
-                        "name": "Failed",
-                        "value": 64
-                    },
-                    {
-                        "description": "The combination of all states.",
-                        "name": "All",
-                        "value": 127
-                    }
-                ]
+                "modelAsString": true
             }
         },
         "MigrationParameters": {
