@@ -204,17 +204,6 @@
                 }
             }
         },
-        "StorageCreationProperties": {
-            "description": "Properties of the storage quota being created or updated.",
-            "type": "object",
-            "properties": {
-                "properties": {
-                    "description": "Storage quota properties.",
-                    "x-ms-client-flatten": true,
-                    "$ref": "#/definitions/StorageQuotaProperties"
-                }
-            }
-        },
         "StorageQuotaList": {
             "description": "Pageable list of storage quotas.",
             "type": "object",
@@ -248,7 +237,7 @@
             "in": "body",
             "required": true,
             "schema": {
-                "$ref": "#/definitions/StorageCreationProperties"
+                "$ref": "#/definitions/StorageQuota"
             },
             "x-ms-parameter-location": "method"
         }
