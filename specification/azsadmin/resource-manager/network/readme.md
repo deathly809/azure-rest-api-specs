@@ -34,10 +34,7 @@ These settings apply only when `--tag=package-2015-06-15` is specified on the co
 ``` yaml $(tag) == 'package-2015-06-15'
 input-file:
     - "Microsoft.Network.Admin/2015-06-15/Network.json"
-    - "Microsoft.Network.Admin/2015-06-15/LoadBalancers.json"
-    - "Microsoft.Network.Admin/2015-06-15/PublicIpAddresses.json"
     - "Microsoft.Network.Admin/2015-06-15/Quotas.json"
-    - "Microsoft.Network.Admin/2015-06-15/VirtualNetworks.json"
 ```
 
 ---
