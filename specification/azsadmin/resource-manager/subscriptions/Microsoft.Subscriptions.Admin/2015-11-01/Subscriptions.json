@@ -13,13 +13,13 @@
         "/providers/Microsoft.Subscriptions.Admin/operations": {
             "get": {
                 "x-ms-examples": {
-                    "Get the list of subscriptions.": {
-                        "$ref": "./examples/Subscriptions/List.json"
+                    "Get the list of Operations.": {
+                        "$ref": "./examples/Subscriptions/Operations.json"
                     }
                 },
-                "description": "Get the list of subscriptions.",
+                "description": "Get the list of Operations.",
                 "tags": [
-                    "Subscriptions"
+                    "Operations"
                 ],
                 "operationId": "ListOperations",
                 "parameters": [
@@ -98,7 +98,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SubscriptionList"
+                        }
                     }
                 },
                 "produces": [
@@ -219,7 +222,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK"
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Subscription"
+                        }
                     },
                     "404": {
                         "description": "NOT FOUND"
@@ -235,7 +241,7 @@
             "put": {
                 "x-ms-examples": {
                     "Get the list of subscriptions.": {
-                        "$ref": "./examples/Subscriptions/List.json"
+                        "$ref": "./examples/Subscriptions/Create.json"
                     }
                 },
                 "description": "Creates a new subscription.",

@@ -11,10 +11,6 @@
     },
     "responses": {
         "200": {
-            "body": {
-                "value": [],
-                "nextLink": ""
-            }
         }
     }
 }

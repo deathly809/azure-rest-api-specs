@@ -177,7 +177,13 @@
                             "$ref": "#/definitions/PlanAcquisition"
                         }
                     }
-                }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "consumes": [
+                    "application/json"
+                ]
             }
         }
    },
