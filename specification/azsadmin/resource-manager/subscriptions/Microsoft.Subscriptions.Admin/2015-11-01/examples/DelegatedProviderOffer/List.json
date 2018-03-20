@@ -1,0 +1,16 @@
+{
+    "parameters": {
+        "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
+        "location": "local",
+        "api-version": "2015-06-01-preview",
+        "delegatedProviderSubscriptionId": "d16dfcf0-44cc-4498-9937-08b94159d27b"
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "value": [],
+                "nextLink": ""
+            }
+        }
+    }
+}
