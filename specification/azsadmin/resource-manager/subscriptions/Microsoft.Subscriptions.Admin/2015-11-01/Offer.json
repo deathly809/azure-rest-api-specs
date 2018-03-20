@@ -339,9 +339,12 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK"
+                  "200": {
+                    "description": "OK",
+                    "schema": {
+                      "$ref": "#/definitions/Offer"
                     }
+                  }
                 },
                 "produces": [
                     "application/json"
@@ -381,9 +384,12 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK"
+                  "200": {
+                    "description": "OK",
+                    "schema": {
+                      "$ref": "#/definitions/Offer"
                     }
+                  }
                 },
                 "produces": [
                     "application/json"
