@@ -199,54 +199,36 @@
                 "timeTakenToCreate": {
                     "description": "Duration to create the backup.",
                     "type": "string"
+                },
+                "deploymentID": {
+                    "description": "Deployment Id of the stamp.",
+                    "type": "string"
+                },
+                "stampVersion": {
+                    "description": "Current version.",
+                    "type": "string"
+                },
+                "oemVersion": {
+                    "description": "OEM version.",
+                    "type": "string"
                 }
             }
         },
         "OperationStatus": {
             "description": "Status of an operation.",
-            "type": "integer",
+            "type": "string",
             "enum": [
-                0,
-                1,
-                2,
-                3,
-                4,
-                5,
-                6
+                "Creating",
+                "Queued",
+                "Running",
+                "Deleted",
+                "Failed",
+                "PartialSucceeded",
+                "Succeeded"
             ],
             "x-ms-enum": {
                 "name": "OperationStatus",
-                "modelAsString": false,
-                "values": [
-                    {
-                        "value": "Creating",
-                        "name": 0
-                    },
-                    {
-                        "value": "Queued",
-                        "name": 1
-                    },
-                    {
-                        "value": "Running",
-                        "name": 2
-                    },
-                    {
-                        "value": "Deleted",
-                        "name": 3
-                    },
-                    {
-                        "value": "Failed",
-                        "name": 4
-                    },
-                    {
-                        "value": "PartialSucceeded",
-                        "name": 5
-                    },
-                    {
-                        "value": "Succeeded",
-                        "name": 6
-                    }
-                ]
+                "modelAsString": false
             }
         },
         "RoleOperationStatusList": {

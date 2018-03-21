@@ -1,8 +1,9 @@
 {
     "parameters": {
         "subscriptionId": "11111111-2222-3333-4444-555555555555",
+        "resourceGroupName" : "System.local",
         "location": "local",
-        "backup" : "de038ae0-294d-468d-90a1-fbe5ae028ce2",
+        "backup": "de038ae0-294d-468d-90a1-fbe5ae028ce2",
         "api-version": "2016-05-01"
     },
     "responses": {
@@ -15,7 +16,7 @@
                 "tags": {},
                 "properties": {
                     "backupInfo": {
-                        "backupDataVersion": null,
+                        "backupDataVersion": "",
                         "backupId": "de038ae0-294d-468d-90a1-fbe5ae028ce2",
                         "roleStatus": [
                             {
@@ -70,12 +71,13 @@
                         "status": "Succeeded",
                         "createdDateTime": "2018-02-16T16:06:10.1160531Z",
                         "timeTakenToCreate": "PT5M1.5611298S",
-                        "stampVersion": null,
-                        "oemVersion": null,
-                        "deploymentID": null
+                        "stampVersion": "",
+                        "oemVersion": "",
+                        "deploymentID": ""
                     }
                 }
             }
-        }
+        },
+        "404": {}
     }
 }

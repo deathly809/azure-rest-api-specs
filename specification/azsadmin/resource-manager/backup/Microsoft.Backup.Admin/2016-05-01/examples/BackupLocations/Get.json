@@ -17,7 +17,7 @@
                     "externalStoreDefault": {
                         "path": "\\\\\\\\100.68.88.192\\\\C$\\\\backup_test",
                         "userName": "AzureStack\\\\Administrator",
-                        "backupFrequencyInMinutes": "",
+                        "backupFrequencyInHours": "",
                         "availableCapacity": "10GB",
                         "isBackupSchedulerEnabled": false
                     }

@@ -10,7 +10,7 @@
                     "userName": "UserName",
                     "password": "secretPassword",
                     "encryptionKeyBase64": "YVVOa0J3S2xTamhHZ1lyRU9wQ1pKQ0xWanhjaHlkaU5ZQnNDeHRPTGFQenJKdWZsRGtYT25oYmlaa1RMVWFKeQ==",
-                    "backupFrequencyInMinutes": "",
+                    "backupFrequencyInHours": "",
                     "availableCapacity": "10GB",
                     "isBackupSchedulerEnabled": false
                 }
@@ -34,7 +34,7 @@
                         "userName": "UserName",
                         "password": "",
                         "encryptionKeyBase64": "",
-                        "backupFrequencyInMinutes": "",
+                        "backupFrequencyInHours": "",
                         "availableCapacity": "10GB",
                         "isBackupSchedulerEnabled": false
                     }
@@ -54,7 +54,7 @@
                         "userName": "UserName",
                         "password": "",
                         "encryptionKeyBase64": "",
-                        "backupFrequencyInMinutes": "",
+                        "backupFrequencyInHours": "",
                         "availableCapacity": "10GB",
                         "isBackupSchedulerEnabled": false
                     }
