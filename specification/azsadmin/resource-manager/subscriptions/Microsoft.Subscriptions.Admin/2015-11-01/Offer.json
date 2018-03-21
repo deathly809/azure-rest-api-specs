@@ -95,7 +95,7 @@
             "get": {
                 "x-ms-examples": {
                     "Get the specified offer.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/Offer/Get.json"
                     }
                 },
                 "description": "Get the specified offer.",
@@ -138,7 +138,7 @@
             "put": {
                 "x-ms-examples": {
                     "Create or update the offer.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/Offer/Create.json"
                     }
                 },
                 "description": "Create or update the offer.",
@@ -187,7 +187,7 @@
             "delete": {
                 "x-ms-examples": {
                     "Delete the specified offer.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/Offer/Delete.json"
                     }
                 },
                 "description": "Delete the specified offer.",
@@ -313,7 +313,7 @@
             "post": {
                 "x-ms-examples": {
                     "Links a plan to an offer.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/Offer/Link.json"
                     }
                 },
                 "description": "Links a plan to an offer.",
@@ -339,9 +339,12 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK"
+                  "200": {
+                    "description": "OK",
+                    "schema": {
+                      "$ref": "#/definitions/Offer"
                     }
+                  }
                 },
                 "produces": [
                     "application/json"
@@ -355,7 +358,7 @@
             "post": {
                 "x-ms-examples": {
                     "Unlink a plan from an offer.": {
-                        "$ref": "./examples/Offer/List.json"
+                        "$ref": "./examples/Offer/Unlink.json"
                     }
                 },
                 "description": "Unlink a plan from an offer.",
@@ -381,9 +384,12 @@
                     }
                 ],
                 "responses": {
-                    "200": {
-                        "description": "OK"
+                  "200": {
+                    "description": "OK",
+                    "schema": {
+                      "$ref": "#/definitions/Offer"
                     }
+                  }
                 },
                 "produces": [
                     "application/json"

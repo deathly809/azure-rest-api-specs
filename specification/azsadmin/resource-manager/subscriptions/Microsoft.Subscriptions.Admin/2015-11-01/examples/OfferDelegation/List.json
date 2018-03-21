@@ -3,17 +3,23 @@
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
         "location": "local",
         "api-version": "2015-06-01-preview",
-        "reportedStartTime": "2017-08-01T00:00:00.00Z",
-        "reportedEndTime": "2017-08-02T00:00:00.00Z",
-        "aggregationGranularity": "",
-        "subscriberId": "",
-        "continuationToken": ""
+        "resourceGroupName": "RG",
+        "offer": "Default Offer"
     },
     "responses": {
         "200": {
             "body": {
-                "value": [],
-                "nextLink": ""
+                "value": [
+                    {
+                        "id": "/subscriptions/2ac7d4ad-fece-4cf0-bc29-e8678897fa75/resourceGroups/cnur9852subscrrg374/providers/Microsoft.Subscriptions.Admin/offers/cnur9852tenantoffer374/offerDelegations/testOfferDelegation",
+                        "name": "cnur9852tenantoffer374/testOfferDelegation",
+                        "type": "Microsoft.Subscriptions.Admin/offers/offerDelegations",
+                        "location": "local",
+                        "properties": {
+                            "subscriptionId": "9e8052f2-70df-44c0-8300-f97949ca75f0"
+                        }
+                    }
+                ]
             }
         }
     }

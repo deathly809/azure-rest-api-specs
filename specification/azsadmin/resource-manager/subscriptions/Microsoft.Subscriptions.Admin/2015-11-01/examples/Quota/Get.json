@@ -3,18 +3,20 @@
         "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
         "location": "local",
         "api-version": "2015-06-01-preview",
-        "reportedStartTime": "2017-08-01T00:00:00.00Z",
-        "reportedEndTime": "2017-08-02T00:00:00.00Z",
-        "aggregationGranularity": "",
-        "subscriberId": "",
-        "continuationToken": ""
+        "quota": "local/delegatedProviderQuota"
     },
     "responses": {
         "200": {
             "body": {
-                "value": [],
-                "nextLink": ""
+                "id": "/subscriptions/8158498d-27b1-4ccf-9aa1-de0f925731e6/providers/Microsoft.Subscriptions.Admin/locations/local/quotas/delegatedProviderQuota",
+                "name": "local/delegatedProviderQuota",
+                "type": "Microsoft.Subscriptions.Admin/locations/quotas",
+                "location": "local",
+                "properties": {
+                    "allowCustomPortalBranding": false
+                }
             }
-        }
+        },
+        "404": {}
     }
 }
