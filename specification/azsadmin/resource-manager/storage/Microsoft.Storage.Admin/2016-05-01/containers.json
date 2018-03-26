@@ -395,7 +395,7 @@
             "in": "query",
             "type": "integer",
             "format": "int32",
-            "required": true,
+            "required": false,
             "x-ms-parameter-location": "method"
         },
         "StartIndexParameter": {
@@ -404,7 +404,7 @@
             "in": "query",
             "type": "integer",
             "format": "int32",
-            "required": true,
+            "required": false,
             "x-ms-parameter-location": "method"
         },
         "MigrationParameterParameter": {
