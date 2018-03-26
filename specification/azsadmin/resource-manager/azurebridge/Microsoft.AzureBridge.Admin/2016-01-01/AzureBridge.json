@@ -48,6 +48,7 @@
         },
         "ProvisioningState": {
             "description": "The provisioning state of the resource.",
+            "type" : "string",
             "enum": [
                 "Stopped",
                 "Starting",
@@ -144,7 +145,7 @@
                 "small": {
                     "description": "The small (40x40) icon relative path.",
                     "type": "string"
-                }                                
+                }
             }
         },
         "ProductProperties": {
