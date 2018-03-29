@@ -236,7 +236,7 @@
             }
         },
         "Display": {
-            "description": "Contains the localized display information for this particular operation / action..",
+            "description": "Contains the localized display information for this particular operation / action.",
             "properties": {
                 "provider": {
                     "description": "The localized, friendly version of the resource provider name. The provider name is expected to include the name of the publisher or company responsible. The provider name format should use title case and begin with \"Microsoft\" for first-party services. For example, the provider name may be\"Microsoft Monitoring Insights\" or \"Microsoft Compute\".",
