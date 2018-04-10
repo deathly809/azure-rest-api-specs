@@ -1,9 +1,8 @@
 {
-    "parameters": {
-        "subscriptionId": "20ff7fc3-e762-44dd-bd96-b71116dcdc23",
-        "location": "local",
-        "api-version": "2015-06-01-preview"
-    },
+  "parameters": {
+    "subscriptionId": "8ab2551d-41e5-489b-9273-1cdf1cbc7dc6",
+    "api-version": "2015-06-01-preview"
+  },
     "responses": {
         "200": {
             "body": {
